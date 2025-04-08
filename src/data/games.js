@@ -1,0 +1,83 @@
+export const games = {
+    game1: {
+        id: 'game1',
+        title: 'Tube Fall',
+        image: 'game-01.webp',
+        iframeUrl: 'https://1games.io/game/escape-road/',
+        background: 'linear-gradient(135deg, #2c3e50 0%, #3498db 100%)',
+        aboutTitle1: "About Escape Road game online",
+        aboutContent1: "You are a daring bank robber on the run after a big heist, and the police are hot on your trail. In Escape Road, sharp driving, expert drifting, and lightning-fast reflexes are your only hope for freedom. With blaring sirens and chaotic traffic, one wrong move could end it all. Are you ready to take on the challenge? Play Escape Road now and prove you have what it takes to outsmart the cops. Buckle up—Escape Road is the ultimate test of your getaway skills.",
+        aboutTitle2: "How to Controls Escape Road game online",
+        aboutContent2: "A/D: Start. \n Up or W keys: Accelerate. \n Down or S keys : Reverse. \n Arrow or A/D keys: Turn.",
+        aboutTitle3: "What is Escape Road game?",
+        aboutContent3: "Escape Road game is a high-speed driving game where players take on the role of a bank robber, dodging relentless police cars, military vehicles, helicopters and trying to avoid obstacles. In Escape Road, players are tasked with running non-stop through a series of obstacles and dangers to avoid being caught. \n Players have four chances, and once they run out of chances, the game is over. Can players master the roads and survive the chaos in Escape Road?",
+        aboutTitle4: "How to play Escape Road online?",
+        aboutContent4: "Get ready for a thrilling escape in Escape Road! \n Play as a skilled driver fleeing from the police after a bank heist. Navigate crowded streets, dodge buildings, lakes, and trees—one mistake and it’s game over. Police cars will block your path and chase you relentlessly. Stay sharp, react fast, and keep the escape going as long as possible to collect rewards in this fast-paced, addictive game!",
+        aboutTitle5: "Collect Money and Gifts in Escape Road!",
+        aboutContent5: "After each thrilling escape road, you'll receive a mystery gift box packed with random cash rewards. Keep an eye on the streets—money can pop up at any time! Don’t miss the chance to grab it, because every dollar brings you closer to unlocking powerful supercars that make your getaway even more unstoppable.\nUpgrade to New Supercars in Escape Road\nTo unlock top-tier supercars in Escape Road, you’ll need to stack up in-game cash and try your luck with the Lucky Spin. The game features 90 unique supercars, each with its own special abilities to help you last longer during your high-speed escape. Use your earnings to activate the Lucky Spin and win a random supercar to boost your getaway power!",
+        aboutTitle6:"Tips and Tricks to Survive in Escape Road game",
+        aboutContent6:"In Escape Road game master the Controls \n Before diving into the chase, take time to get used to your car’s handling. Smooth control makes it easier to dodge obstacles and outmaneuver the police. Learn how to drift, handle sharp turns, and spin on the spot to stay in the game longer",
+        aboutTitle7: "In Escape Road game use the Terrain to Your Advantage",
+        aboutContent7: "The city is your playground. Use narrow alleys, overpasses, and tight corners to your advantage. Knowing the map well gives you the upper hand—use tricky paths to shake off the police and extend your escape!",
+        aboutTitle8: "Be Ready for the Unexpected",
+        aboutContent8: "In Escape Road game, surprises are everywhere—police cars may appear out of nowhere, new obstacles can block your path, and the terrain may shift in an instant. Stay alert and react quickly. Staying calm under pressure is key to surviving longer.",
+        aboutTitle9: "Focus on the Escape",
+        aboutContent9: "While you can crash into police cars, your ultimate goal is to escape. A smart trick: drive straight toward a dead end or obstacle, then quickly turn at the last second. Police cars often can't react fast enough and crash into each other—giving you the perfect chance to flee!",
+        aboutTitle10: "Features",
+        aboutContent10: "In Escape Road you canunlock 90 Unique Vehicles \n Choose from 90 different vehicles, each with distinct features and driving styles to match your strategy and keep every chase exciting.",
+        aboutTitle11: "In Escape Road you canStunning 3D Graphics",
+        aboutContent11: "Enjoy highly detailed street visuals with realistic cars, lakes, trees, and city landscapes that immerse you in the heart of the action.",
+        aboutTitle12: "In Escape Road you canImmersive Sound Effects",
+        aboutContent12: "Feel the tension rise with every screech and siren. High-quality sound design makes every drift and police chase feel incredibly real.",
+        aboutTitle13: "In Escape Road you can Intense Police Chases",
+        aboutContent13: "Escape Road delivers high-stakes, edge-of-your-seat pursuits. Quick reflexes and sharp driving skills are essential to survive.",
+        aboutTitle14: "Conclusion",
+        aboutContent14: "Escape Road is not only a chase game, it is also an adventure full of drama and challenges. Each turn brings a new and surprising experience that requires driving skills and quick reactions. Fasten your seat belts, start your engine and get ready for a dramatic escape. The game is available to play for free at https://escape-road-online.com/",
+    },
+    // game2: {
+    //     id: 'game2',
+    //     title: 'Game 2',
+    //     image: 'game-02.webp',
+    //     iframeUrl: 'https://1games.io/game/escape-road-2/',
+    //     description: 'This is the second game.',
+    //     background: 'linear-gradient(135deg, #2c3e50 0%, #3498db 100%)',
+    //     rightContent: 'Game 2 content'
+    // },
+    // game3: {
+    //     id: 'game3',
+    //     title: 'Game 3',
+    //     image: 'game-03.webp',
+    //     iframeUrl: 'https://1games.io/game/escape-road-2/',
+    //     description: 'This is the second game.',
+    //     background: 'linear-gradient(135deg, #2c3e50 0%, #3498db 100%)',
+    //     rightContent: 'Game 2 content'
+    // },
+    // game4: {
+    //     id: 'game4',
+    //     title: 'Game 4',
+    //     image: 'game-04.webp',
+    //     iframeUrl: 'https://1games.io/game/escape-road-2/',
+    //     description: 'This is the second game.',
+    //     background: 'linear-gradient(135deg, #2c3e50 0%, #3498db 100%)',
+    //     rightContent: 'Game 2 content'
+    // },
+    // game5: {
+    //     id: 'game5',
+    //     title: 'Game 5',
+    //     image: 'game-05.webp',
+    //     iframeUrl: 'https://1games.io/game/escape-road-2/',
+    //     description: 'This is the second game.',
+    //     background: 'linear-gradient(135deg, #2c3e50 0%, #3498db 100%)',
+    //     rightContent: 'Game 2 content'
+    // },
+    // game6: {
+    //     id: 'game6',
+    //     title: 'Game 6',
+    //     image: 'game-06.webp',
+    //     iframeUrl: 'https://1games.io/game/escape-road-2/',
+    //     description: 'This is the second game.',
+    //     background: 'linear-gradient(135deg, #2c3e50 0%, #3498db 100%)',
+    //     rightContent: 'Game 2 content'
+    // }
+    // 可以继续添加更多游戏
+}
