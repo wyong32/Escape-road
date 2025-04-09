@@ -9,7 +9,7 @@
         <!-- 游戏区域 -->
         <div class="game-main" ref="gameContainerRef">
             <div v-if="!iframeSrc" class="iframe-overlay">
-                <img :src="'/src/assets/images/' + gameData.image" :alt="gameData.title" class="overlay-image">
+                <img :src="getImageUrl(gameData.image)" :alt="gameData.title" class="overlay-image" />
                 <div class="blur-layer"></div>
                 <button @click="loadGame" class="load-button">Start Game</button>
             </div>
@@ -55,6 +55,17 @@ const theaterButtonText = computed(() => isTheaterMode.value ? 'Exit the Theater
 // Fullscreen按钮文字
 const fullscreenButtonText = computed(() => isFullscreen.value ? 'Exit the Fullscreen' : 'Fullscreen');
 
+// Helper function to get correct image URL for production builds
+const getImageUrl = (imageName) => {
+  if (!imageName) return ''
+  // Relative path from GameMain.vue (in src/components) to src/assets/images
+  try {
+    return new URL(`../assets/images/${imageName}`, import.meta.url).href
+  } catch (error) {
+    console.error(`Error creating URL for image in GameMain.vue: ${imageName}`, error);
+    return ''; // Return empty or a default placeholder
+  }
+}
 
 /**
  * 加载游戏
