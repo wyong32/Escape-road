@@ -4,7 +4,7 @@
         <ul class="recommend-list">
             <li class="recommend-item" v-for="game in allGames" :key="game.id">
                 <router-link :to="'/' + game.addressBar">
-                    <img :src="'/src/assets/images/' + game.image" :alt="game.title" />
+                     <img :src="getImageUrl(game.image)" :alt="game.title" />
                 </router-link>
             </li>
         </ul>
@@ -24,6 +24,17 @@ const allGames = computed(() => {
     image: game.image
   }))
 })
+
+  const getImageUrl = (imageName) => {
+  if (!imageName) return ''
+  // Relative path from Recommend.vue (in src/components) to src/assets/images
+  try {
+    return new URL(`../assets/images/${imageName}`, import.meta.url).href
+  } catch (error) {
+    console.error(`Error creating URL for image in Recommend.vue: ${imageName}`, error);
+    return ''; // Return empty or a default placeholder
+  }
+}
 
 </script>
 
