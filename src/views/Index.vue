@@ -110,7 +110,15 @@ const rightGames = computed(() => {
 // 获取图片URL
 const getImageUrl = (imageName) => {
   if (!imageName) return ''
-  return `/src/assets/images/${imageName}`
+  // 使用 new URL() 来让 Vite 处理资源路径
+  // 第一个参数是相对于当前文件(Index.vue)的路径 ../assets/images/
+  // 第二个参数是当前文件的 URL 基准 import.meta.url
+  try {
+    return new URL(`../assets/images/${imageName}`, import.meta.url).href
+  } catch (error) {
+    console.error(`Error creating URL for image: ${imageName}`, error);
+    return ''; // 返回空字符串或默认图片路径
+  }
 }
 
 /**
