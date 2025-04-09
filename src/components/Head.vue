@@ -1,40 +1,59 @@
 <template>
   <header class="header">
-    <div class="logo">
-      <img :src="'/src/assets/images/' + gameData.image" :alt="gameData.title">
-      <h1>{{ gameData.title }}</h1>
+    <div class="header-content">
+      <div class="logo">
+        <img :src="logoImage" alt="Logo">
+        <h1 class="logo-text">{{ logoText }}</h1>
+      </div>
+      <nav class="header-nav">
+        <ul>
+          <li v-for="game in headerGames" :key="game.id">
+            <router-link :to="'/' + game.addressBar">{{ game.addressBar }}</router-link>
+          </li>
+        </ul>
+      </nav>
     </div>
-    <nav class="header-nav">
-      <ul>
-        <li><router-link :to="'/game-1'">Escape Road 2</router-link></li>
-        <li><router-link :to="'/game-2'">Escape Road 2</router-link></li>
-        <li><router-link :to="'/game-3'">Escape Road 2</router-link></li>
-        <li><router-link :to="'/game-4'">Escape Road 2</router-link></li>
-        <li><router-link :to="'/game-5'">Escape Road 2</router-link></li>
-        <li><router-link :to="'/game-6'">Escape Road 2</router-link></li>
-      </ul>
-    </nav>
   </header>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { computed } from 'vue'
 import { games } from '../data/games'
 
 const props = defineProps({
   gameId: {
     type: String,
-    required: true,
-    validator: (value) => {
-      return Object.keys(games).includes(value)
-    }
+    required: false
   }
 })
 
-// 获取当前游戏数据
-const gameData = computed(() => {
-  return games[props.gameId] || games.game1
+const currentGameData = computed(() => {
+  return (props.gameId && games[props.gameId]) ? games[props.gameId] : games.game1;
 })
+
+const logoImage = computed(() => {
+  const imageName = currentGameData.value?.image || games.game1?.image || 'logo.webp';
+  try {
+    return new URL(`../assets/images/${imageName}`, import.meta.url).href;
+  } catch (e) {
+    console.error(`[Head.vue] Error creating URL for image: ${imageName}`, e);
+    return '';
+  }
+})
+
+const logoText = computed(() => {
+  return currentGameData.value?.logoText || games.game1?.logoText || 'AZGames';
+})
+
+const headerGames = computed(() => {
+  return Object.values(games)
+    .filter(game => game.showHeader === true)
+    .map(game => ({
+      id: game.id,
+      title: game.title,
+      addressBar: game.addressBar
+    }));
+});
 
 </script>
 
@@ -55,6 +74,13 @@ const gameData = computed(() => {
   /* Soft shadow */
 }
 
+.header-content{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -65,6 +91,7 @@ const gameData = computed(() => {
   height: 50px;
   object-fit: cover;
   border-radius: 10px;
+  margin-right: 10px;
 }
 
 .logo h1 {
@@ -137,5 +164,15 @@ const gameData = computed(() => {
   /* Slightly smaller scale on active */
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
   /* Reduced shadow on active */
+}
+
+/* 可以添加响应式设计 */
+@media (max-width: 768px) {
+  .header-nav {
+    display: none;
+  }
+  .header-content {
+    justify-content: center;
+  }
 }
 </style>

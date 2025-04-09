@@ -1,19 +1,27 @@
 <template>
-    <div class="game">
-        <div class="game-main">
+    <div class="game" :class="{ 'theater-mode': isTheaterMode }">
+        <!-- 操作按钮区域 -->
+        <div class="controls">
+             <button @click="toggleTheaterMode" class="control-button theater-button" :disabled="!iframeSrc || !isIframeLoaded">{{ theaterButtonText }}</button>
+             <button @click="toggleFullscreen" class="control-button fullscreen-button" :disabled="!iframeSrc || !isIframeLoaded">{{ fullscreenButtonText }}</button>
+        </div>
+
+        <!-- 游戏区域 -->
+        <div class="game-main" ref="gameContainerRef">
             <div v-if="!iframeSrc" class="iframe-overlay">
                 <img :src="'/src/assets/images/' + gameData.image" :alt="gameData.title" class="overlay-image">
                 <div class="blur-layer"></div>
                 <button @click="loadGame" class="load-button">Start Game</button>
             </div>
-            <iframe v-if="iframeSrc" class="iframehtml1" :src="iframeSrc" frameborder="0"></iframe>
+            <iframe v-if="iframeSrc" class="iframehtml1" :src="iframeSrc" frameborder="0" allowfullscreen @load="onIframeLoad"></iframe>
+             <!-- 添加 @load="onIframeLoad" -->
         </div>
-        <h2 class="game-title">{{ gameData.title }}</h2>
+        <h2 class="game-title" v-show="!isTheaterMode">{{ gameData.title }}</h2>
     </div>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onUnmounted, nextTick, onMounted } from 'vue' // 引入 nextTick 和 onMounted
 import { games } from '../data/games'
 
 // 组件属性定义
@@ -34,6 +42,19 @@ const gameData = computed(() => {
 
 // iframe源地址
 const iframeSrc = ref(null)
+// 剧院模式状态
+const isTheaterMode = ref(false)
+// 全屏状态 (通过监听事件更新)
+const isFullscreen = ref(false)
+// iframe 是否加载完成
+const isIframeLoaded = ref(false)
+// 游戏容器的模板引用
+const gameContainerRef = ref(null)
+// Theater按钮文字
+const theaterButtonText = computed(() => isTheaterMode.value ? 'Exit the Theater' : 'Theater');
+// Fullscreen按钮文字
+const fullscreenButtonText = computed(() => isFullscreen.value ? 'Exit the Fullscreen' : 'Fullscreen');
+
 
 /**
  * 加载游戏
@@ -41,37 +62,189 @@ const iframeSrc = ref(null)
  */
 const loadGame = () => {
   iframeSrc.value = gameData.value.iframeUrl
+  isIframeLoaded.value = false; // Reset loading state when starting a new game
+  console.log('Loading game, iframe source set, isIframeLoaded reset to false.');
 }
+
+/**
+ * iframe 加载完成处理函数
+ */
+const onIframeLoad = () => {
+  isIframeLoaded.value = true;
+  console.log('iframe content loaded.');
+}
+
+/**
+ * 切换剧院模式
+ */
+const toggleTheaterMode = async () => {
+  if (!isIframeLoaded.value) return; // Prevent action if iframe not loaded
+  const newValue = !isTheaterMode.value;
+  isTheaterMode.value = newValue;
+  await nextTick(); // Wait for DOM update (class binding)
+  // 如果进入剧院模式时处于全屏，则退出全屏
+  if (newValue && isFullscreen.value) {
+    await exitFullscreen();
+  }
+}
+
+/**
+ * 切换全屏模式
+ */
+const toggleFullscreen = async () => {
+  if (!isIframeLoaded.value) return; // Prevent action if iframe not loaded
+  await nextTick(); // Wait for any pending Vue updates first
+  if (!document.fullscreenElement) {
+    await enterFullscreen();
+  } else {
+    await exitFullscreen();
+  }
+}
+
+/**
+ * 进入全屏
+ */
+const enterFullscreen = async () => {
+    const element = gameContainerRef.value;
+    if (!element) return;
+    await nextTick(); // Wait for DOM to be ready before requesting fullscreen
+    try {
+        if (element.requestFullscreen) {
+            await element.requestFullscreen();
+        } else if (element.webkitRequestFullscreen) { /* Safari */
+            await element.webkitRequestFullscreen();
+        } else if (element.msRequestFullscreen) { /* IE11 */
+            await element.msRequestFullscreen();
+        }
+        // 进入全屏后，如果处于剧院模式，则退出剧院模式
+        if (isTheaterMode.value) {
+           isTheaterMode.value = false;
+        }
+    } catch (err) {
+        console.error(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+    }
+}
+
+/**
+ * 退出全屏
+ */
+const exitFullscreen = async () => {
+    try {
+        if (document.exitFullscreen) {
+            await document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) { /* Safari */
+            await document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { /* IE11 */
+            await document.msExitFullscreen();
+        }
+    } catch (err) {
+        console.error(`Error attempting to disable full-screen mode: ${err.message} (${err.name})`);
+    }
+}
+
+
+/**
+ * 处理全屏状态变化事件
+ */
+const handleFullscreenChange = () => {
+    isFullscreen.value = !!document.fullscreenElement || !!document.webkitFullscreenElement; // 更新状态
+    console.log("Fullscreen change event. Is fullscreen:", isFullscreen.value);
+}
+
+
+// 监听全屏变化事件
+onMounted(() => {
+  document.addEventListener('fullscreenchange', handleFullscreenChange);
+  document.addEventListener('webkitfullscreenchange', handleFullscreenChange); // Safari
+})
+
+// 组件卸载时清空 iframeSrc 并移除监听器
+onUnmounted(() => {
+  iframeSrc.value = null
+  console.log(`GameMain for ${props.gameId} unmounted, iframeSrc reset.`);
+  document.removeEventListener('fullscreenchange', handleFullscreenChange);
+  document.removeEventListener('webkitfullscreenchange', handleFullscreenChange);
+})
 </script>
 
 <style lang="css" scoped>
-.game-main{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    overflow: hidden;
+/* General Styles */
+.game {
+  width: 100%;
+  padding: 20px; /* Increased padding for better spacing */
+  background-color: #f0f2f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center children horizontally */
+  transition: all 0.3s ease; /* Transition all properties */
+  position: relative;
+  box-sizing: border-box;
+  /* Removed min-height: 100vh */
 }
 
-.game-main{
-    height: 720px;
+/* Controls Container */
+.controls {
+  width: 100%;
+  max-width: 1280px; /* Match game-main max-width */
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 15px; /* Add padding below buttons */
+  transition: all 0.3s ease;
+}
+
+/* Control Buttons General Style */
+.control-button {
+  padding: 8px 16px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #48b8c9;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500; /* Slightly bolder */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Added box-shadow transition */
+}
+
+.control-button:hover {
+  background-color: #3a9ca6;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add subtle shadow on hover */
+}
+
+/* Game Main Area */
+.game-main {
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #000;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
 }
 
 .iframehtml1 {
   display: block;
   width: 100%;
   height: 100%;
+  border: none;
 }
 
+/* Game Title */
 .game-title {
-  color: #48b8c9;
-  line-height: 2;
+  color: #333;
+  line-height: 1.5;
   text-transform: uppercase;
-  font-size: 24px;
-  font-weight: normal;
+  font-size: 20px;
+  font-weight: 600;
   text-align: center;
+  margin-top: 20px; /* Increased margin */
+  transition: opacity 0.3s ease, height 0.3s ease, margin 0.3s ease; /* Added height/margin transition */
 }
 
+/* iframe Overlay Styles (Loading Screen) */
 .iframe-overlay {
     position: absolute;
     top: 0;
@@ -85,7 +258,6 @@ const loadGame = () => {
     border-radius: inherit;
 }
 
-/* 图片样式 */
 .overlay-image {
     position: absolute;
     top: 0;
@@ -96,20 +268,18 @@ const loadGame = () => {
     z-index: 1;
 }
 
-/* 毛玻璃效果层 */
 .blur-layer {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.6); /* Darker overlay */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     z-index: 2;
 }
 
-/* 确保按钮在最上层 */
 .load-button {
     position: relative;
     z-index: 3;
@@ -122,10 +292,77 @@ const loadGame = () => {
     border-radius: 30px;
     cursor: pointer;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .load-button:hover {
     transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(86, 207, 225, 0.4);
+    box-shadow: 0 6px 15px rgba(86, 207, 225, 0.5);
 }
+
+/* Theater Mode Styles */
+.game.theater-mode {
+  background-color: #111;
+  padding: 0; /* Remove padding */
+  position: fixed; /* Take over viewport */
+  inset: 0; /* Replaces top, left, right, bottom: 0 */
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game.theater-mode .game-main {
+  width: 90vw;
+  max-width: 1800px; /* Allow wider game in theater */
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 0;
+  box-shadow: none;
+  max-height: 98vh; /* Slightly more height allowance */
+}
+
+.game.theater-mode .game-title {
+  opacity: 0;
+  height: 0;
+  margin: 0;
+  padding: 0; /* Ensure no padding */
+  overflow: hidden;
+}
+
+.game.theater-mode .controls {
+  position: absolute; /* Position relative to .game.theater-mode */
+  top: 15px;     /* More space from top */
+  right: 15px;    /* More space from right */
+  width: auto;
+  background-color: rgba(0, 0, 0, 0.6); /* Slightly darker background */
+  padding: 8px 12px; /* Adjusted padding */
+  border-radius: 8px; /* More rounded corners */
+  z-index: 1001; /* Ensure controls are above game-main */
+  max-width: none; /* Override max-width from normal state */
+  padding-bottom: 8px; /* Override padding-bottom from normal state */
+}
+
+/* Fullscreen Specific Styles */
+/* Style the container WHEN it is fullscreen */
+.game-main:fullscreen {
+  max-width: none;    /* Remove max-width limit */
+  max-height: none;   /* Remove max-height limit */
+  border-radius: 0;   /* Remove border-radius */
+  box-shadow: none;     /* Remove shadow */
+  /* Width and height are automatically 100% in fullscreen */
+}
+
+/* Safari uses :-webkit-full-screen */
+.game-main:-webkit-full-screen {
+  max-width: none;
+  max-height: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Note: Hiding siblings like title/controls isn't strictly necessary
+   when game-main itself is fullscreen, as they are outside the
+   fullscreen element's rendering context. The browser handles this. */
+
 </style>

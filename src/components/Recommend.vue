@@ -2,8 +2,8 @@
     <div class="recommend below-content">
         <h2 class="below-title">Recommend For You</h2>
         <ul class="recommend-list">
-            <li class="recommend-item" v-for="game in games" :key="game.id">
-                <router-link :to="'/' + game.title.toLowerCase().replace(/\s+/g, '-')">
+            <li class="recommend-item" v-for="game in allGames" :key="game.id">
+                <router-link :to="'/' + game.addressBar">
                     <img :src="'/src/assets/images/' + game.image" :alt="game.title" />
                 </router-link>
             </li>
@@ -12,32 +12,18 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { computed } from 'vue'
 import { games } from '../data/games'
 
-const recommendGames = computed(() => {
-    return games.slice(0, 6)
-})
-
-// 组件属性定义
-const props = defineProps({
-  gameId: {
-    type: String,
-    required: true,
-    validator: (value) => {
-      return Object.keys(games).includes(value)
-    }
-  }
-})
-
-
-// 获取当前游戏数据
+// 获取所有游戏列表，确保包含 addressBar
 const allGames = computed(() => {
-  return Object.values(games)
+  return Object.values(games).map(game => ({
+    id: game.id,
+    title: game.title,
+    addressBar: game.addressBar, // 确保包含 addressBar
+    image: game.image
+  }))
 })
-
-console.log(games)
-
 
 </script>
 
@@ -63,11 +49,13 @@ console.log(games)
     /* 行列间隙均为10px */
     list-style: none;
     padding: 0;
+    justify-content: center; /* 在网格布局中使项目居中 */
 }
 
 .recommend-item {
     display: block;
     width: 130px;
+    height: 130px;
 }
 
 .recommend-item img {
@@ -82,5 +70,17 @@ console.log(games)
 .recommend-item:hover img {
     transform: scale(1.05);
     box-shadow: 0 6px 12px 0 #00000080;
+}
+
+/* 添加手机端样式 */
+@media (max-width: 768px) {
+  .recommend {
+    width: 100%; /* 在小屏幕上占满宽度 */
+    max-width: 500px; /* 可以设置一个最大宽度 */
+  }
+  .recommend-list {
+      /* 可以调整列宽或列数以适应小屏幕 */
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); 
+  }
 }
 </style>
