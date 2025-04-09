@@ -19,7 +19,7 @@ export default defineConfig({
     vueJsx(),
     vueDevTools(),
     Sitemap({
-      hostname: 'https://example.com',
+      hostname: 'https://escape-road-gamma.vercel.app',
       dynamicRoutes: dynamicRoutes,
     })
   ],
