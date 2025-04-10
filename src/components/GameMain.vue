@@ -1,9 +1,15 @@
 <template>
     <div class="game" :class="{ 'theater-mode': isTheaterMode }">
-        <!-- 操作按钮区域 -->
-        <div class="controls">
-             <button @click="toggleTheaterMode" class="control-button theater-button" :disabled="!iframeSrc || !isIframeLoaded">{{ theaterButtonText }}</button>
-             <button @click="toggleFullscreen" class="control-button fullscreen-button" :disabled="!iframeSrc || !isIframeLoaded">{{ fullscreenButtonText }}</button>
+        <!-- 修改：用 top-bar 包裹 Rating 和 controls -->
+        <div class="top-bar">
+            <!-- 1. 移动 Rating 到按钮前面 -->
+            <Rating :page-id="props.gameId" :key="'rating-' + props.gameId" />
+
+            <!-- 操作按钮区域 -->
+            <div class="controls">
+                 <button @click="toggleTheaterMode" class="control-button theater-button" :disabled="!iframeSrc || !isIframeLoaded">{{ theaterButtonText }}</button>
+                 <button @click="toggleFullscreen" class="control-button fullscreen-button" :disabled="!iframeSrc || !isIframeLoaded">{{ fullscreenButtonText }}</button>
+            </div>
         </div>
 
         <!-- 游戏区域 -->
@@ -23,6 +29,7 @@
 <script setup>
 import { ref, computed, onUnmounted, nextTick, onMounted } from 'vue' // 引入 nextTick 和 onMounted
 import { games } from '../data/games'
+import Rating from './Rating.vue' // 1. 导入 Rating 组件
 
 // 组件属性定义
 const props = defineProps({
@@ -193,14 +200,40 @@ onUnmounted(() => {
   /* Removed min-height: 100vh */
 }
 
-/* Controls Container */
+/* === 修改：Top Bar 样式 === */
+.top-bar {
+    width: 100%;
+    max-width: 1280px; /* 与 game-main 对齐 */
+    display: flex;
+    justify-content: space-between; /* 两端对齐 */
+    align-items: center; /* 垂直居中 */
+    margin-bottom: 15px; /* 与下方游戏区域的间距 */
+    padding: 0 5px; /* 微调左右内边距 */
+    box-sizing: border-box;
+}
+
+/* === 修改：调整 Rating 组件在 Flex 布局中的样式 === */
+.top-bar > :deep(.rating-section) {
+    /* 移除之前设置的宽度和边距，让 Flex 控制 */
+    /* width: 100%; */
+    /* max-width: 1280px; */
+    /* margin-bottom: 15px; */
+    border-bottom: none; /* 移除底部分隔线 */
+    padding: 0; /* 移除内边距，或根据需要微调 */
+    flex-shrink: 0; /* 防止评分区域被压缩 */
+    /* 可以添加 margin-right 来与按钮保持距离，如果 space-between 不够的话 */
+    /* margin-right: 20px; */
+}
+
+/* === 修改：调整 Controls 在 Flex 布局中的样式 === */
 .controls {
-  width: 100%;
-  max-width: 1280px; /* Match game-main max-width */
-  display: flex;
-  justify-content: flex-end;
-  padding-bottom: 15px; /* Add padding below buttons */
-  transition: all 0.3s ease;
+    /* 移除宽度限制，因为父级 top-bar 已限制 */
+    /* width: 100%; */
+    /* max-width: 1280px; */
+    display: flex; /* 保持 flex 布局 */
+    justify-content: flex-end; /* 按钮内部仍然靠右 */
+    padding-bottom: 0; /* 移除下内边距 */
+    flex-shrink: 0; /* 防止按钮被压缩 */
 }
 
 /* Control Buttons General Style */
@@ -375,5 +408,45 @@ onUnmounted(() => {
 /* Note: Hiding siblings like title/controls isn't strictly necessary
    when game-main itself is fullscreen, as they are outside the
    fullscreen element's rendering context. The browser handles this. */
+
+/* 为 Rating 组件添加样式 */
+.game > :deep(.rating-section) {
+    width: 100%;
+    max-width: 1280px; /* 与 game-main 对齐 */
+    margin-bottom: 15px; /* 与下方游戏区域的间距 */
+    padding: 10px 0; /* 微调内边距 */
+    box-sizing: border-box;
+    border-bottom: 1px solid #e0e0e0; /* 保持分隔线 */
+}
+
+/* 调整 controls 的下边距，给 Rating 留出空间 */
+.controls {
+    /* padding-bottom: 15px; */ /* 移除或调整 */
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) { /* 或更小的断点 */
+    .top-bar {
+        flex-direction: column; /* 在小屏幕上垂直堆叠 */
+        align-items: center; /* 居中对齐 */
+        gap: 10px; /* 添加一些间距 */
+        margin-bottom: 10px;
+    }
+    .top-bar > :deep(.rating-section) {
+        /* 在堆叠时可能需要一些底部边距 */
+        margin-bottom: 5px;
+        border-bottom: 1px solid #eee; /* 在堆叠时重新添加分隔线 */
+        padding-bottom: 10px; /* 添加一些内边距 */
+        width: 100%; /* 堆叠时占满宽度 */
+    }
+    .controls {
+        /* 小屏幕上按钮居中可能更好？或者保持靠右 */
+        justify-content: center;
+        width: 100%;
+    }
+    .game {
+        padding: 10px;
+    }
+}
 
 </style>

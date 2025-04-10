@@ -11,12 +11,16 @@
         <button @click="toggleExpand" class="toggle-button">
             {{ isExpanded ? 'Show less' : 'Show More' }}
         </button>
+
+        <!-- Comments 组件已移除 -->
+
     </div>
 </template>
 
 <script setup>
 import { ref, computed, watch, nextTick } from 'vue'
 import { games } from '../data/games'
+// import Comments from './Comments.vue' // 移除导入
 
 const props = defineProps({
   gameId: {
@@ -183,4 +187,10 @@ watch(() => props.gameId, () => {
       font-size: 0.9rem; /* 调整按钮字体 */
   }
 }
+
+/* 移除之前为评论区添加的样式 */
+/* .about > :deep(.comments-section) {
+    margin-top: 2rem;
+} */
+
 </style>
