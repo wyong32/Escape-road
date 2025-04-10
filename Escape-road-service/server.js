@@ -286,9 +286,30 @@ app.post('/api/ratings', ratingLimiter, async (req, res) => {
     }
 });
 
-// --- Server Start ---
+// --- 仅供调试：查看 data.json 内容 ---
+// 警告：这个接口不应该在生产环境中无保护地暴露！
+// 可以考虑添加一个简单的密码查询参数，例如 ?secret=yourpassword
+app.get('/api/debug/view-data', async (req, res) => {
+    // 可选：添加简单的密码保护
+    const secret = req.query.secret; // 从查询参数获取 secret
+    const expectedSecret = 'YOUR_VERY_SECRET_PASSWORD'; // **在这里设置一个复杂的密码！**
+
+    if (secret !== expectedSecret) {
+        return res.status(403).send('Forbidden: Invalid secret');
+    }
+
+    try {
+        const data = await readData(); // 使用你已有的 readData 函数
+        res.json(data); // 将整个 data 对象作为 JSON 返回
+    } catch (error) {
+        console.error('Error reading data for debug view:', error);
+        res.status(500).send('Error reading data');
+    }
+});
+
+// --- 启动服务器 ---
 app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Server listening at http://localhost:${PORT}`);
     // 检查数据文件
     readData().then(data => {
          // 移除对 fs.existsSync 的调用，因为 readData 已处理文件不存在的情况
