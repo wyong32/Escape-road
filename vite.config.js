@@ -14,9 +14,9 @@ const gameRoutes = Object.values(games)
 
 // *** 关键部分：你需要提供你的实际游戏路由列表 ***
 // 你需要根据你的游戏数据生成这个数组
-const dynamicRoutes = Object.values(games)
-  .map(game => game.addressBar ? `/${game.addressBar.toLowerCase()}` : null)
-  .filter(Boolean);
+// const dynamicRoutes = Object.values(games)
+//   .map(game => game.addressBar ? `/${game.addressBar.toLowerCase()}` : null)
+//   .filter(Boolean);
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -25,7 +25,7 @@ export default defineConfig({
     vueJsx(),
     vueDevTools(),
     Sitemap({
-      hostname: 'https://escape-road-gamma.vercel.app', // !!! 重要：替换成你的网站最终域名 !!!
+      hostname: 'https://escape-road-online.com/', // !!! 重要：替换成你的网站最终域名 !!!
       dynamicRoutes: gameRoutes, // 使用修正后的 gameRoutes
       // 可选配置:
       // changefreq: 'weekly', // 页面更新频率
