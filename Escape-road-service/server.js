@@ -292,7 +292,7 @@ app.post('/api/ratings', ratingLimiter, async (req, res) => {
 app.get('/api/debug/view-data', async (req, res) => {
     // 可选：添加简单的密码保护
     const secret = req.query.secret; // 从查询参数获取 secret
-    const expectedSecret = 'YOUR_VERY_SECRET_PASSWORD'; // **在这里设置一个复杂的密码！**
+    const expectedSecret = 'wanghuan'; // **在这里设置一个复杂的密码！**
 
     if (secret !== expectedSecret) {
         return res.status(403).send('Forbidden: Invalid secret');
