@@ -17,7 +17,29 @@ const EMAIL_REGEX = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/; // Improved email regex
 app.set('trust proxy', 1);
 
 // 中间件
-app.use(cors()); // 允许跨域请求
+// app.use(cors()); // 允许跨域请求 - 替换为下面的带选项的版本
+
+// --- 定义允许的源 ---
+const allowedOrigins = [
+    'http://localhost:5173',          // 本地开发前端
+    'https://escape-road-online.com' // 你部署的前端 Vercel URL
+];
+
+// --- 配置 CORS 选项 ---
+const corsOptions = {
+  origin: function (origin, callback) {
+    // 允许来自 allowedOrigins 列表的请求，或者没有 origin 的请求 (例如服务器间调用或 Postman)
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true); // 允许
+    } else {
+      callback(new Error('Not allowed by CORS')); // 拒绝
+    }
+  }
+};
+
+// --- 应用带选项的 CORS 中间件 ---
+app.use(cors(corsOptions)); // 使用配置好的选项
+
 app.use(express.json()); // 解析 JSON 请求体
 
 // 1. 定义自定义 Key 生成器函数
