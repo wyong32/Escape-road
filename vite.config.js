@@ -7,7 +7,13 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 import Sitemap from 'vite-plugin-sitemap'
 import { games } from './src/data/games'
 
-// Generate dynamic routes from game data
+// 从 games 数据中提取 addressBar 并生成路由路径
+const gameRoutes = Object.values(games)
+  .map(game => game.addressBar ? `/game/${game.addressBar.trim()}` : null)
+  .filter(route => route !== null);
+
+// *** 关键部分：你需要提供你的实际游戏路由列表 ***
+// 你需要根据你的游戏数据生成这个数组
 const dynamicRoutes = Object.values(games)
   .map(game => game.addressBar ? `/${game.addressBar.toLowerCase()}` : null)
   .filter(Boolean);
@@ -19,8 +25,12 @@ export default defineConfig({
     vueJsx(),
     vueDevTools(),
     Sitemap({
-      hostname: 'https://escape-road-gamma.vercel.app',
-      dynamicRoutes: dynamicRoutes,
+      hostname: 'https://escape-road-gamma.vercel.app', // !!! 重要：替换成你的网站最终域名 !!!
+      dynamicRoutes: gameRoutes, // 只保留生成的 gameRoutes
+      // 可选配置:
+      // changefreq: 'weekly', // 页面更新频率
+      // priority: 0.7, // 页面优先级
+      // outDir: 'dist', // 输出目录 (默认就是 dist)
     })
   ],
   resolve: {
