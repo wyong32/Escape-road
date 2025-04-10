@@ -7,9 +7,9 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 import Sitemap from 'vite-plugin-sitemap'
 import { games } from './src/data/games'
 
-// 从 games 数据中提取 addressBar 并生成路由路径
+// 从 games 数据中提取 addressBar 并生成路由路径 (去掉 /game/ 前缀)
 const gameRoutes = Object.values(games)
-  .map(game => game.addressBar ? `/game/${game.addressBar.trim()}` : null)
+  .map(game => game.addressBar ? `/${game.addressBar.trim()}` : null)
   .filter(route => route !== null);
 
 // *** 关键部分：你需要提供你的实际游戏路由列表 ***
@@ -26,7 +26,7 @@ export default defineConfig({
     vueDevTools(),
     Sitemap({
       hostname: 'https://escape-road-gamma.vercel.app', // !!! 重要：替换成你的网站最终域名 !!!
-      dynamicRoutes: gameRoutes, // 只保留生成的 gameRoutes
+      dynamicRoutes: gameRoutes, // 使用修正后的 gameRoutes
       // 可选配置:
       // changefreq: 'weekly', // 页面更新频率
       // priority: 0.7, // 页面优先级
