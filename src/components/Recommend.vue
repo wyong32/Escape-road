@@ -99,7 +99,7 @@ const allGames = computed(() => {
     display: block; /* 消除图片底部空隙 */
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    /* object-fit: cover; */
     /* 移除图片圆角，让容器的圆角生效 */
     /* border-radius: 10px; */
     /* 阴影移到父元素 .recommend-item */

@@ -4,6 +4,7 @@ import AboutView from '../views/AboutView.vue'
 import DmcaView from '../views/DmcaView.vue'
 import PrivacyPolicyView from '../views/PrivacyPolicyView.vue'
 import TermsOfServiceView from '../views/TermsOfServiceView.vue'
+// import AdminPanel from '../views/AdminPanel.vue'
 import { games } from '../data/games'
 
 /**
@@ -72,7 +73,12 @@ const router = createRouter({
       name: 'terms-of-service',
       component: TermsOfServiceView,
       meta: { title: 'Terms of Service' }
-    }
+    },
+    // {
+    //   path: '/admin-panel',
+    //   name: 'AdminPanel',
+    //   component: AdminPanel
+    // },
   ]
 })
 

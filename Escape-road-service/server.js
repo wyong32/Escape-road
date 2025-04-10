@@ -16,42 +16,38 @@ const EMAIL_REGEX = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/; // Improved email regex
 // '1' 表示信任直接连接的代理
 app.set('trust proxy', 1);
 
-// 中间件
-// app.use(cors()); // 允许跨域请求 - 替换为下面的带选项的版本
-
-// --- 定义允许的源 ---
+// --- CORS Configuration --- (Keep this)
 const allowedOrigins = [
-    'http://localhost:5173',          // 本地开发前端
-    'https://escape-road-online.com' // 你部署的前端 Vercel URL
+    'http://localhost:5173',
+    'https://escape-road-online.com'
 ];
-
-// --- 配置 CORS 选项 ---
 const corsOptions = {
   origin: function (origin, callback) {
-    // 允许来自 allowedOrigins 列表的请求，或者没有 origin 的请求 (例如服务器间调用或 Postman)
     if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true); // 允许
+      callback(null, true);
     } else {
-      callback(new Error('Not allowed by CORS')); // 拒绝
+      callback(new Error('Not allowed by CORS'));
     }
   }
 };
+app.use(cors(corsOptions));
+app.use(express.json());
 
-// --- 应用带选项的 CORS 中间件 ---
-app.use(cors(corsOptions)); // 使用配置好的选项
-
-app.use(express.json()); // 解析 JSON 请求体
-
-// 1. 定义自定义 Key 生成器函数
-// 它结合了 IP 地址和请求体中的 pageId
-const keyGenerator = (req /*, res */) => {
-    // 从请求体中获取 pageId，如果没有则使用默认值或标记
-    const pageId = req.body?.pageId || 'unknown_page';
-    // 返回组合键，确保 IP 地址可用 (注意: req.ip 可能需要正确配置代理信任)
-    return `${req.ip}-${pageId}`;
+// --- RE-ADD Password Check Middleware ---
+const checkAdminSecret = (req, res, next) => {
+    const secret = req.query.secret;
+    const expectedSecret = 'wanghuan'; 
+    if (secret !== expectedSecret) {
+        return res.status(403).send('Forbidden: Invalid secret');
+    }
+    next(); 
 };
 
-// 2. 创建速率限制器，并应用自定义 keyGenerator
+// --- Rate Limiters (Keep these) ---
+const keyGenerator = (req /*, res */) => {
+    const pageId = req.body?.pageId || 'unknown_page';
+    return `${req.ip}-${pageId}`;
+};
 const commentLimiter = rateLimit({
 	windowMs: 1 * 60 * 1000, // 1 minute
 	max: 1,
@@ -76,10 +72,8 @@ const ratingLimiter = rateLimit({
 	legacyHeaders: false,
 });
 
-// 初始化评分计数的辅助函数
+// --- Helper Functions (Keep these) ---
 const initializeRatingCounts = () => ({ '1': 0, '2': 0, '3': 0, '4': 0, '5': 0 });
-
-// 读取 data.json，确保 ratings 结构正确
 async function readData() {
     try {
         await fs.access(DATA_FILE);
@@ -111,7 +105,6 @@ async function readData() {
     }
 }
 
-// 写入 data.json
 async function writeData(data) {
     try {
         await fs.writeFile(DATA_FILE, JSON.stringify(data, null, 2));
@@ -121,9 +114,21 @@ async function writeData(data) {
     }
 }
 
-// API 路由：获取评论
-// GET /api/comments?pageId=xxx
-// 返回特定页面的评论列表，但不包含 email 字段
+const calculateRatingStats = (ratingCounts) => {
+    let sum = 0;
+    let count = 0;
+    for (let i = 1; i <= 5; i++) {
+        const key = i.toString();
+        const numRatings = ratingCounts[key] || 0;
+        sum += numRatings * i;
+        count += numRatings;
+    }
+    const average = count > 0 ? sum / count : 0;
+    return { average: parseFloat(average.toFixed(1)), count };
+};
+
+// --- Public API Routes (Keep these) ---
+// GET /api/comments
 app.get('/api/comments', async (req, res) => {
     const pageId = req.query.pageId;
     // 验证 pageId 是否提供
@@ -146,9 +151,7 @@ app.get('/api/comments', async (req, res) => {
     }
 });
 
-// API 路由：添加评论
 // POST /api/comments
-// 需要请求体包含 { pageId, name, email, text }
 app.post('/api/comments', commentLimiter, async (req, res) => {
     // 从请求体中解构所需字段
     const { pageId, name, email, text } = req.body;
@@ -218,23 +221,7 @@ app.post('/api/comments', commentLimiter, async (req, res) => {
     }
 });
 
-// 计算评分的辅助函数
-const calculateRatingStats = (ratingCounts) => {
-    let sum = 0;
-    let count = 0;
-    for (let i = 1; i <= 5; i++) {
-        const key = i.toString();
-        const numRatings = ratingCounts[key] || 0;
-        sum += numRatings * i;
-        count += numRatings;
-    }
-    const average = count > 0 ? sum / count : 0;
-    return { average: parseFloat(average.toFixed(1)), count };
-};
-
-// API 路由：获取评分
-// GET /api/ratings?pageId=xxx
-// 返回特定页面的评分列表
+// GET /api/ratings
 app.get('/api/ratings', async (req, res) => {
     const pageId = req.query.pageId;
     if (!pageId) {
@@ -251,63 +238,54 @@ app.get('/api/ratings', async (req, res) => {
     }
 });
 
-// API 路由：添加评分
-// POST /api/ratings
-// 需要请求体包含 { pageId, rating }
-app.post('/api/ratings', ratingLimiter, async (req, res) => {
-    const { pageId, rating } = req.body;
-
-    // 验证输入
-    if (!pageId) {
-        return res.status(400).json({ message: 'pageId is required' });
+// POST /api/ratings (Assuming you had this or want to keep it)
+app.post('/api/ratings', ratingLimiter, async (req, res) => { 
+    const { pageId, rating } = req.body; 
+    if (!pageId || typeof rating !== 'number' || rating < 1 || rating > 5) {
+        return res.status(400).send('pageId and a rating (1-5) are required.');
     }
-    const ratingValue = parseInt(rating, 10);
-    if (isNaN(ratingValue) || ratingValue < 1 || ratingValue > 5) {
-        return res.status(400).json({ message: 'Rating must be a number between 1 and 5' });
-    }
-
+    const ratingField = rating.toString();
     try {
         const data = await readData();
-        // 获取或初始化该页面的评分计数对象
-        if (!data.ratings[pageId]) {
+        if (typeof data.ratings[pageId] !== 'object' || data.ratings[pageId] === null) {
             data.ratings[pageId] = initializeRatingCounts();
+        } else {
+             for (let i = 1; i <= 5; i++) {
+                 const key = i.toString();
+                 data.ratings[pageId][key] = parseInt(data.ratings[pageId][key] || 0, 10);
+             }
         }
-        const ratingKey = ratingValue.toString();
-        data.ratings[pageId][ratingKey] = (data.ratings[pageId][ratingKey] || 0) + 1; // 增加对应星级的计数
-
-        await writeData(data); // 写回文件
-
-        // 使用更新后的计数重新计算统计信息并返回
+        data.ratings[pageId][ratingField]++;
+        await writeData(data);
+        // Return updated stats for the specific game
         const stats = calculateRatingStats(data.ratings[pageId]);
         res.status(201).json(stats);
-
     } catch (error) {
-        res.status(500).json({ message: 'Error saving rating' });
+        console.error('Error submitting rating:', error);
+        res.status(500).send('Error submitting rating');
     }
 });
 
-// --- 仅供调试：查看 data.json 内容 ---
-// 警告：这个接口不应该在生产环境中无保护地暴露！
-// 可以考虑添加一个简单的密码查询参数，例如 ?secret=yourpassword
-app.get('/api/debug/view-data', async (req, res) => {
-    // 可选：添加简单的密码保护
-    const secret = req.query.secret; // 从查询参数获取 secret
-    const expectedSecret = 'wanghuan'; // **在这里设置一个复杂的密码！**
+// --- REMOVE Admin API Endpoints ---
+/*
+app.delete('/api/admin/comments/:pageId/:commentId', checkAdminSecret, async (req, res) => { ... });
+app.delete('/api/admin/ratings/:pageId', checkAdminSecret, async (req, res) => { ... });
+app.put('/api/admin/ratings/:pageId', checkAdminSecret, async (req, res) => { ... });
+*/
 
-    if (secret !== expectedSecret) {
-        return res.status(403).send('Forbidden: Invalid secret');
-    }
-
+// --- RE-ADD Debug API Endpoint ---
+app.get('/api/debug/view-data', checkAdminSecret, async (req, res) => {
+    // Note: We now apply the checkAdminSecret middleware here!
     try {
-        const data = await readData(); // 使用你已有的 readData 函数
-        res.json(data); // 将整个 data 对象作为 JSON 返回
+        const data = await readData();
+        res.json(data); 
     } catch (error) {
         console.error('Error reading data for debug view:', error);
         res.status(500).send('Error reading data');
     }
 });
 
-// --- 启动服务器 ---
+// --- 启动服务器 (Keep this) ---
 app.listen(PORT, () => {
     console.log(`Server listening at http://localhost:${PORT}`);
     // 检查数据文件
