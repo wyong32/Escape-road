@@ -16,6 +16,7 @@
     "api/index.js": {
       "memory": 1024
     }
+    
   },
   "headers": [
     {
