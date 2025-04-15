@@ -166,6 +166,7 @@ app.get('/ratings', getLimiter, async (req, res) => {
     } catch (error) {
         console.error(`[API] Error fetching ratings for pageId ${pageId}:`, error);
         res.status(500).json({ message: 'Internal server error fetching ratings.' });
+        console.log('Attempting new build...');
     }
 });
 
