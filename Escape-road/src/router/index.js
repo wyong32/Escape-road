@@ -93,21 +93,35 @@ const router = createRouter({
   ]
 })
 
-// 全局前置守卫，用于设置页面标题
+// 全局前置守卫，用于设置页面标题和路由保护
 router.beforeEach((to, from, next) => {
+  // Set document title
   if (to.meta.title) {
     document.title = typeof to.meta.title === 'function' 
       ? to.meta.title(to) 
-      : to.meta.title
+      : to.meta.title;
   }
+
+  // --- RE-ENABLE AUTH CHECK --- 
+  // Check for protected routes
   if (to.meta.requiresAuth) {
-    const token = localStorage.getItem('admin_token')
+    const token = localStorage.getItem('adminToken'); // Check for 'adminToken'
     if (!token) {
-      next('/admin/login')
-      return
+      // No token found, redirect to login page
+      console.log('Auth required, no token found, redirecting to login.');
+      next({ name: 'AdminLogin' }); // Redirect to login route by name
+      return;
+    } else {
+      // Token found, allow access
+      console.log('Auth required, token found, proceeding.');
+      // In a real app, you might want to verify the token with the backend here
+      next(); 
     }
+  } else {
+    // This route does not require authentication
+    next();
   }
-  next()
-})
+
+});
 
 export default router

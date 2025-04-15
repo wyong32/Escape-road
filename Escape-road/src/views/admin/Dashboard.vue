@@ -45,37 +45,39 @@ export default {
     const comments = ref({}) // 存储所有评论，按 pageId 分组
     const loading = ref(true)
     const error = ref('')
-    let adminToken = ''
 
     // 获取所有评论
     const fetchComments = async () => {
       loading.value = true;
       error.value = null;
       const token = localStorage.getItem('adminToken');
+      const baseUrl = import.meta.env.VITE_API_BASE_URL || ''; // Get base URL
       if (!token) {
         error.value = '用户未认证';
         loading.value = false;
         return;
       }
       try {
-        // const response = await fetch('/api/admin/comments', {
-        //   headers: {
-        //     'Authorization': `Bearer ${token}`
-        //   }
-        // });
-        // if (!response.ok) {
-        //   if (response.status === 401 || response.status === 403) {
-        //     localStorage.removeItem('adminToken'); // Remove invalid token
-        //     router.push('/admin/login'); // Redirect to login
-        //   } else {
-        //     const errorData = await response.json();
-        //     throw new Error(errorData.message || 'Failed to fetch comments');
-        //   }
-        // }
-        // const data = await response.json();
-        // comments.value = data;
-        console.warn("API call fetchComments commented out. Returning empty array.");
-        comments.value = []; // Return empty array
+        const response = await fetch(`${baseUrl}/admin/comments`, { // Use base URL
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+        if (!response.ok) {
+          if (response.status === 401 || response.status === 403) {
+            localStorage.removeItem('adminToken'); // Remove invalid token
+            router.push('/admin/login'); // Redirect to login
+          } else {
+            const errorData = await response.json();
+            throw new Error(errorData.message || 'Failed to fetch comments');
+          }
+          return; // Stop execution if not ok
+        }
+        const data = await response.json();
+        comments.value = data;
+        // Remove simulation logic
+        // console.warn("API call fetchComments commented out. Returning empty array.");
+        // comments.value = []; // Already removed
       } catch (err) {
         console.error('Error fetching comments:', err);
         error.value = err.message || '获取评论失败';
@@ -89,31 +91,34 @@ export default {
       console.log(`[删除请求] Page ID: ${pageId}, Comment ID: ${commentId}`);
       if (!confirm('确定要删除这条评论吗?')) return;
       const token = localStorage.getItem('adminToken');
+      const baseUrl = import.meta.env.VITE_API_BASE_URL || ''; // Get base URL
       if (!token) {
         error.value = '用户未认证';
         return;
       }
       try {
-        // const response = await fetch(`/api/admin/comments/${pageId}/${commentId}`, {
-        //   method: 'DELETE',
-        //   headers: {
-        //     'Authorization': `Bearer ${token}`
-        //   }
-        // });
-        // if (!response.ok) {
-        //   const errorData = await response.json();
-        //    if (response.status === 401 || response.status === 403) {
-        //     localStorage.removeItem('adminToken');
-        //     router.push('/admin/login');
-        //   } else {
-        //     throw new Error(errorData.message || 'Failed to delete comment');
-        //   }
-        // }
-        // // Refresh comments after deletion
-        // fetchComments();
-        console.warn(`API call deleteComment(${pageId}, ${commentId}) commented out. Simulating deletion.`);
-        // Simulate deletion locally for UI feedback
-        comments.value = comments.value.filter(c => !(c.pageId === pageId && c.id === commentId));
+        const response = await fetch(`${baseUrl}/admin/comments/${pageId}/${commentId}`, { // Use base URL
+          method: 'DELETE',
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+        if (!response.ok) {
+          const errorData = await response.json();
+           if (response.status === 401 || response.status === 403) {
+            localStorage.removeItem('adminToken');
+            router.push('/admin/login');
+          } else {
+            throw new Error(errorData.message || 'Failed to delete comment');
+          }
+          return; // Stop execution if not ok
+        }
+        // Refresh comments after deletion
+        fetchComments();
+        // Remove simulation logic
+        // console.warn(`API call deleteComment(${pageId}, ${commentId}) commented out. Simulating deletion.`);
+        // // Simulate deletion locally for UI feedback
+        // comments.value = comments.value.filter(c => !(c.pageId === pageId && c.id === commentId)); // Already removed
 
       } catch (err) {
         console.error('删除评论时出错:', err)
@@ -123,17 +128,12 @@ export default {
 
     // 退出登录
     const handleLogout = () => {
-      localStorage.removeItem('admin_token')
-      router.push('/admin/login')
+      localStorage.removeItem('adminToken');
+      router.push('/admin/login');
     }
 
     onMounted(() => {
-      adminToken = localStorage.getItem('admin_token')
-      if (!adminToken) {
-        router.push('/admin/login')
-      } else {
-        fetchComments() // 获取评论数据
-      }
+      fetchComments();
     })
 
     return {

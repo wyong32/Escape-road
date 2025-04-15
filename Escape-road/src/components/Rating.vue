@@ -46,9 +46,6 @@ const props = defineProps({
   }
 });
 
-// !!! 与 Comments.vue 一致，生产环境需修改 !!!
-const API_URL = '/api/ratings';
-
 const averageRating = ref(null);
 const ratingCount = ref(0);
 const hoverRating = ref(0); // 用户鼠标悬停的星级
@@ -60,48 +57,51 @@ const isLoading = ref(false); // 用于初始加载
 
 // 获取当前评分信息
 const fetchRating = async () => {
-  loading.value = true;
-  error.value = null;
+  isLoading.value = true;
+  const baseUrl = import.meta.env.VITE_API_BASE_URL || ''; // Get base URL
   try {
-    // const response = await axios.get(API_URL, { params: { pageId: props.pageId } });
-    // currentRating.value = response.data.average;
-    // ratingCount.value = response.data.count;
-    console.warn(`API call fetchRating(${props.pageId}) commented out. Returning default values.`);
-    currentRating.value = 0; // Return default value
-    ratingCount.value = 0; // Return default value
+    const response = await axios.get(`${baseUrl}/ratings`, { params: { pageId: props.pageId } }); // Use base URL
+    averageRating.value = response.data.average;
+    ratingCount.value = response.data.count;
+    // Remove simulation logic
+    // console.warn(`API call fetchRating(${props.pageId}) commented out. Returning default values.`);
+    // currentRating.value = 0; // Already removed
+    // ratingCount.value = 0; // Already removed
   } catch (err) {
     console.error('Error fetching rating:', err);
-    error.value = 'Failed to load rating.';
-    currentRating.value = 0; // Reset on error
+    // error.value = 'Failed to load rating.'; // Need error ref
+    averageRating.value = 0; // Use averageRating
     ratingCount.value = 0;
   } finally {
-    loading.value = false;
+    isLoading.value = false;
   }
 };
 
 // 提交用户评分
 const submitRating = async (ratingValue) => {
-  if (submitting.value) return; // Prevent double submission
-  submitting.value = true;
-  error.value = null;
+  if (isSubmitting.value) return; // Use isSubmitting
+  isSubmitting.value = true;     // Use isSubmitting
+  // error.value = null; // Need error ref
+  submitError.value = null; // Use submitError for submission specific errors
+  const baseUrl = import.meta.env.VITE_API_BASE_URL || ''; // Get base URL
   try {
-    // const response = await axios.post(API_URL, {
-    //   pageId: props.pageId,
-    //   rating: ratingValue
-    // });
-    // // Optimistically update the UI based on the expected response structure
-    // currentRating.value = response.data.average;
-    // ratingCount.value = response.data.count;
-    // // Optionally, provide user feedback, e.g., a success message
-    // // alert('Rating submitted successfully!');
-
-    console.warn(`API call submitRating(${props.pageId}, ${ratingValue}) commented out. Simulating submission.`);
-    // Simulate rating submission locally for UI feedback
-    // This is a very basic simulation, real logic might be more complex
-    ratingCount.value += 1;
-    // A more realistic simulation would recalculate average, but we'll just set it for now
-    currentRating.value = ratingValue; // Or recalculate based on a mock total
-    // alert('Rating submitted (simulated)!');
+    const response = await axios.post(`${baseUrl}/ratings`, { // Use base URL
+      pageId: props.pageId,
+      rating: ratingValue
+    });
+    // Optimistically update the UI based on the expected response structure
+    averageRating.value = response.data.average; // Use averageRating
+    ratingCount.value = response.data.count;
+    hasRated.value = true; // Set hasRated after successful submission
+    currentSelection.value = ratingValue; // Update selection to submitted value
+    // Remove simulation logic
+    // console.warn(`API call submitRating(${props.pageId}, ${ratingValue}) commented out. Simulating submission.`);
+    // // Simulate rating submission locally for UI feedback
+    // // This is a very basic simulation, real logic might be more complex
+    // ratingCount.value += 1;
+    // // A more realistic simulation would recalculate average, but we'll just set it for now
+    // averageRating.value = ratingValue; // Or recalculate based on a mock total
+    // // alert('Rating submitted (simulated)!'); // Already removed
 
   } catch (err) {
     console.error('Error submitting rating:', err);
@@ -114,7 +114,7 @@ const submitRating = async (ratingValue) => {
     currentSelection.value = 0; // 提交失败，清除选择状态
     setTimeout(() => { submitError.value = null; }, 3000);
   } finally {
-    submitting.value = false;
+    isSubmitting.value = false; // Use isSubmitting
   }
 };
 

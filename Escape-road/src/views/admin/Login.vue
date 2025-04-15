@@ -46,38 +46,57 @@ export default {
     const error = ref('')
 
     const handleLogin = async () => {
+      console.log("handleLogin started. Token:", localStorage.getItem('adminToken'));
       try {
-        loading.value = true
-        error.value = null
-        console.log('Attempting login with:', { username: username.value })
+        loading.value = true;
+        error.value = null;
+        const baseUrl = import.meta.env.VITE_API_BASE_URL || '';
+        console.log('Attempting login with:', { username: username.value });
+        console.log('[DEBUG] VITE_API_BASE_URL is:', baseUrl); // Log the base URL
+        const loginUrl = `${baseUrl}/admin/login`;
+        console.log('[DEBUG] Full login URL is:', loginUrl); // Log the full URL
 
-        // const response = await fetch('/api/admin/login', {
-        //   method: 'POST',
-        //   headers: {
-        //     'Content-Type': 'application/json',
-        //   },
-        //   body: JSON.stringify({ password: password.value }),
-        // });
+        // --- TEMPORARY FETCH TEST ---
+        /* try {
+          console.log('[DEBUG] Testing fetch to jsonplaceholder...');
+          const testResponse = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+          console.log('[DEBUG] Test fetch response status:', testResponse.status);
+          const testData = await testResponse.json();
+          console.log('[DEBUG] Test fetch data:', testData);
+        } catch (testErr) {
+          console.error('[DEBUG] Test fetch failed:', testErr);
+        } */
+        // --- END TEMPORARY FETCH TEST ---
 
-        // if (!response.ok) {
-        //   const errorData = await response.json();
-        //   throw new Error(errorData.message || 'Login failed');
-        // }
+        console.log("Sending actual fetch request to:", loginUrl);
+        const response = await fetch(loginUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            username: username.value.trim(),
+            password: password.value
+          }),
+        });
+        console.log("Fetch response received. Status:", response.status);
 
-        // const data = await response.json();
-        // localStorage.setItem('adminToken', data.token);
-        // router.push('/admin/dashboard'); // Redirect on success
+        if (!response.ok) {
+          const errorData = await response.json();
+          console.error("Login API Error Data:", errorData);
+          throw new Error(errorData.message || 'Login failed');
+        }
 
-        // Simulate successful login for now without API call
-        console.warn("API call commented out. Simulating login.");
-        localStorage.setItem('adminToken', 'fake-token'); // Use a fake token
+        const data = await response.json();
+        console.log("Login successful. Data:", data);
+        localStorage.setItem('adminToken', data.token);
         router.push('/admin/dashboard');
-
       } catch (err) {
-        console.error('Login error:', err)
-        error.value = err.message || '登录失败，请重试'
+        console.error('Login error caught in catch block:', err);
+        error.value = err.message || '登录失败，请重试';
       } finally {
-        loading.value = false
+        loading.value = false;
+        console.log("handleLogin finished.");
       }
     }
 

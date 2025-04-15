@@ -76,10 +76,6 @@ const props = defineProps({
   }
 });
 
-// 后端 API 地址 (确保与你的后端服务地址和端口一致)
-// !!! 注意：生产环境部署时需要修改为你的后端服务实际地址 !!!
-const API_URL = '/api/comments'; // 使用相对路径
-
 // 响应式状态
 const comments = ref([]);
 const newCommentName = ref('');
@@ -92,57 +88,61 @@ const submitError = ref(null);
 
 // 获取评论的函数
 const fetchComments = async () => {
-  loading.value = true;
-  error.value = null;
+  isLoading.value = true;
+  fetchError.value = null;
+  const baseUrl = import.meta.env.VITE_API_BASE_URL || ''; // Get base URL
   try {
-    // const response = await axios.get(API_URL, {
-    //   params: { pageId: props.pageId }
-    // });
-    // comments.value = response.data;
-    console.warn(`API call fetchComments(${props.pageId}) commented out. Returning empty array.`);
-    comments.value = []; // Return empty array
+    const response = await axios.get(`${baseUrl}/comments`, { // Use base URL
+      params: { pageId: props.pageId }
+    });
+    comments.value = response.data;
+    // Remove simulation logic
+    // console.warn(`API call fetchComments(${props.pageId}) commented out. Returning empty array.`);
+    // comments.value = []; // Already removed
   } catch (err) {
     console.error('Error fetching comments:', err);
-    error.value = 'Failed to load comments. Please try again later.';
+    fetchError.value = 'Failed to load comments. Please try again later.';
   } finally {
-    loading.value = false;
+    isLoading.value = false;
   }
 };
 
 // 提交评论的函数
 const submitComment = async () => {
-  if (newComment.value.trim() === '' || newName.value.trim() === '') {
-    error.value = 'Name and comment cannot be empty.';
+  if (newCommentText.value.trim() === '' || newCommentName.value.trim() === '' || newCommentEmail.value.trim() === '') {
+    submitError.value = 'Name, email, and comment cannot be empty.';
     return;
   }
-  submitting.value = true;
-  error.value = null;
+  isSubmitting.value = true;
+  submitError.value = null;
+  const baseUrl = import.meta.env.VITE_API_BASE_URL || ''; // Get base URL
   try {
-    // const response = await axios.post(API_URL, {
-    //   pageId: props.pageId,
-    //   name: newName.value,
-    //   text: newComment.value,
-    //   email: newEmail.value // Include email in the POST request
-    // });
-    // // Add the new comment to the top of the list
-    // comments.value.unshift(response.data);
-    // newComment.value = '';
-    // newName.value = '';
-    // newEmail.value = ''; // Clear email field after submission
+    const response = await axios.post(`${baseUrl}/comments`, { // Use base URL
+      pageId: props.pageId,
+      name: newCommentName.value,
+      text: newCommentText.value,
+      email: newCommentEmail.value
+    });
+    // Add the new comment to the top of the list
+    comments.value.unshift(response.data);
+    newCommentText.value = '';
+    newCommentName.value = '';
+    newCommentEmail.value = '';
 
-    console.warn(`API call submitComment(${props.pageId}) commented out. Simulating submission.`);
-    // Simulate adding comment locally for UI feedback
-    const mockComment = {
-      id: Date.now().toString(),
-      name: newName.value,
-      text: newComment.value,
-      email: newEmail.value,
-      timestamp: new Date().toISOString()
-    };
-    comments.value.unshift(mockComment);
-    newComment.value = '';
-    newName.value = '';
-    newEmail.value = '';
+    // Remove simulation logic
+    // console.warn(`API call submitComment(${props.pageId}) commented out. Simulating submission.`);
+    // // Simulate adding comment locally for UI feedback
+    // const mockComment = {
+    //   id: Date.now().toString(),
+    //   name: newCommentName.value,
+    //   text: newCommentText.value,
+    //   email: newCommentEmail.value,
+    //   timestamp: new Date().toISOString()
+    // };
+    // comments.value.unshift(mockComment);
+    // newCommentText.value = '';
+    // newCommentName.value = '';
+    // newCommentEmail.value = ''; // Already removed
 
   } catch (err) {
     console.error('Error submitting comment:', err);
@@ -157,7 +157,7 @@ const submitComment = async () => {
     // 短暂显示错误后清除
     setTimeout(() => { submitError.value = null; }, 5000);
   } finally {
-    submitting.value = false;
+    isSubmitting.value = false;
   }
 };
 

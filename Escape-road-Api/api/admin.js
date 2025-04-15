@@ -1,6 +1,7 @@
 import jwt from 'jsonwebtoken'
-import bcrypt from 'bcryptjs'
+import bcrypt from 'bcrypt'
 import { kv } from "@vercel/kv"
+import 'dotenv/config'
 
 // JWT 密钥，生产环境应该使用环境变量配置
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key'
@@ -13,7 +14,10 @@ const initializeAdmin = async () => {
     
     // 如果管理员账户不存在，创建默认账户
     if (!adminExists) {
-      const hashedPassword = await bcrypt.hash('admin123', 10)
+      // Read initial password from environment variable, with fallback
+      const initialPassword = process.env.ADMIN_PASSWORD || 'admin123'; 
+      console.log("[Admin Init] Using initial password from env or fallback.");
+      const hashedPassword = await bcrypt.hash(initialPassword, 10); // Use the variable
       const adminData = {
         username: 'admin',
         password: hashedPassword,
