@@ -95,11 +95,29 @@ const router = createRouter({
 
 // 全局前置守卫，用于设置页面标题和路由保护
 router.beforeEach((to, from, next) => {
-  // Set document title
+  // --- Set Document Title ---
+  let pageTitle = 'Escape Road'; // Default title
   if (to.meta.title) {
-    document.title = typeof to.meta.title === 'function' 
+    pageTitle = typeof to.meta.title === 'function' 
       ? to.meta.title(to) 
       : to.meta.title;
+  }
+  document.title = pageTitle;
+
+  // --- Set Canonical URL ---
+  const baseUrl = 'https://escape-road-eta.vercel.app'; // CHANGE THIS if your domain changes
+  const canonicalUrl = baseUrl + (to.path === '/' ? '/' : to.path); // Construct full URL
+
+  let link = document.querySelector('link[rel="canonical"]');
+  if (link) {
+    link.setAttribute('href', canonicalUrl);
+  } else {
+    // Fallback if the link doesn't exist (e.g., SSR or prerendering might remove it)
+    link = document.createElement('link');
+    link.setAttribute('rel', 'canonical');
+    link.setAttribute('href', canonicalUrl);
+    document.head.appendChild(link);
+    console.warn('Canonical link tag was missing, created dynamically.');
   }
 
   // --- RE-ENABLE AUTH CHECK --- 
