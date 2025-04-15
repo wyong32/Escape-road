@@ -2,7 +2,7 @@ export const games = {
     game1: {
         id: 'game1',
         title: 'Escape Road -escape road game -escape road online',
-        description: 'Escape Road is an exciting car chase adventure game where every second counts. Drive the car, dodge obstacles and escape the relentless police pursuit during the chase.', // 游戏描述
+        description: 'Escape Road is an exciting car chase adventure game . In Escape-Road-Online Drive car dodge obstacles and escape the relentless police pursuit during the chase.', // 游戏描述
         keywords: 'escape road,Escape Road 2 ,escape road city,escape road game,escape road online', // 新增关键词
         addressBar: "Escape-Road",
         logoText: "Escape Road",
@@ -44,16 +44,16 @@ export const games = {
                 In Escape Road you canImmersive Sound Effects <br/>
                 Feel the tension rise with every screech and siren. High-quality sound design makes every drift and police chase feel incredibly real. <br/>
                 In Escape Road you can Intense Police Chases <br/>
-                Escape Road delivers high-stakes, edge-of-your-seat pursuits. Quick reflexes and sharp driving skills are essential to survive.
+                <a href="https://escape-road-online.com/Escape-Road">Escape Road</a> delivers high-stakes, edge-of-your-seat pursuits. Quick reflexes and sharp driving skills are essential to survive.
             </p>
             <h3>Conclusion</h3>
-            <p>Escape Road is not only a chase game, it is also an adventure full of drama and challenges. Each turn brings a new and surprising experience that requires driving skills and quick reactions. Fasten your seat belts, start your engine and get ready for a dramatic escape. The game is available to play for free at https://escape-road-online.com/</p>
+            <p>Escape Road is not only a chase game, it is also an adventure full of drama and challenges. Each turn brings a new and surprising experience that requires driving skills and quick reactions. Fasten your seat belts, start your engine and get ready for a dramatic escape. The game is available to play for free at <a href="https://escape-road-online.com">Escape-Road-online</a> </p>
         `
     },
     game2: {
         id: 'game2',
         title: 'Escape Road 2  -Escape Road 2  game -Escape Road 2  online',
-        description: 'Escape Road 2  is an exciting car chase adventure game where every second counts. Drive the car, dodge obstacles and escape the relentless police pursuit during the chase.', // 游戏描述
+        description: 'Escape Road 2 is an exciting car chase adventure game,In escape-road-online Drive car dodge obstacles and escape the relentless police pursuit during the chase.', // 游戏描述
         keywords: 'escape road,Escape Road 2  ,escape road city,escape road game,escape road online', // 新增关键词
         addressBar: "Escape-Road-2",
         logoText: "Escape Road 2",
@@ -79,13 +79,13 @@ export const games = {
             <h3>How to Controls Escape Road 2 :</h3>
             <p>A/D: Start.<br/> Up or W keys: Accelerate.<br/> Down or S keys : Reverse.<br/>  Arrow or A/D keys: Turn.</p>
             <h3>Are You Ready to Break Free in Escape Road 2 ?​​​</h3>
-            <p>Enter Escape Road 2  - every second is a gamble and only the bravest will make it out alive. Get your adrenaline pumping with the relentless, thrilling Escape Road 2  now. Escape Road 2  is free to play athttps://escape-road-online.com .</p>
+            <p>Enter <a href="https://escape-road-online.com/Escape-Road-2">Escape Road 2</a>  - every second is a gamble and only the bravest will make it out alive. Get your adrenaline pumping with the relentless, thrilling Escape Road 2  now. Escape Road 2  is free to play athttps://escape-road-online.com .</p>
         `
     },
     game3: {
         id: 'game3',
         title: 'Escape Road city -escape road city game -escape road city online',
-        description: 'Escape Road city is an exciting car chase adventure game where every second counts. Drive the car, dodge obstacles and escape the relentless police pursuit during the chase.', // 游戏描述
+        description: 'Escape Road City is the city version of Escape Road. Drive car through the city to avoid obstacles,escape the ruthless pursuit of the police during the chase.', // 游戏描述
         keywords: 'escape road,escape road city,escape road city game,escape road game,escape road online', // 新增关键词
         addressBar: "Escape-Road-City",
         logoText: "Escape Road City",
@@ -122,14 +122,14 @@ export const games = {
             <img src="/images/game03-img1.jpg" alt="Escape Road City" class="game-content-image" />
             <h3>How to Controls Escape Road city:</h3>
             <p>A/D: Start.<br/>Up or W keys: Accelerate.<br/>Down or S keys : Reverse.<br/>Arrow or A/D keys: Turn.</p>
-            <h3>Are You Ready to Break Free in  Escape Road city?​​</h3>
+            <h3>Are You Ready to Break Free in  <a href="https://escape-road-online.com/Escape-Road-City">Escape Road city</a>?​​</h3>
             <p>Dive into  Escape Road city—w🚨 When sirens wail, your only choice is: turn sharply into the unknown… or crash spectacularly.The city is your battleground.<br/>Escape Road city is available to play for free at https://escape-road-online.com/</p>
         `
     },
     game4: {
         id: 'game4',
         title: 'Escape Road city 2 -escape road city 2 game -escape road  city 2 online',
-        description: 'Escape Road city 2 is an exciting car chase adventure game where every second counts. Drive the car, dodge obstacles and escape the relentless police pursuit during the chase.', // 游戏描述
+        description: 'Escape Road City 2 is the version 2 of Escape Road city. in Escape Road Drive a car through the city escape the ruthless pursuit of the police during the chase.', // 游戏描述
         keywords: 'escape road,escape road city,escape road city 2,escape road game,escape road online', // 新增关键词
         addressBar: "Escape-Road-City-2",
         logoText: "Escape Road City2",
@@ -167,13 +167,13 @@ export const games = {
             </p>
             <h3>Are You Ready to Break Free in Escape Road city2?​​</h3>
             <p>Experience a fresh blend of racing and stealth mechanics in an open-city environment. Perfect for fans of high-speed chases and tactical escapes!</p>
-            <p>Ready to hit the road? Dive into Escape Road City 2 now! 🚗💨</p>
+            <p>Ready to hit the road? Dive into <a href="https://escape-road-online.com/Escape-Road-City-2">Escape Road city 2 </a> now! 🚗💨</p>
         `
     },
     game5: {
         id: 'game5',
         title: 'Escape Road Winter -escape road Winter game -escape road  Winter online',
-        description: 'Escape Road Winter is an exciting car chase adventure game where every second counts. Drive the car, dodge obstacles and escape the relentless police pursuit during the chase.', // 游戏描述
+        description: 'Escape Road winter is the winter version of Escape Road, adding winter scene elements, giving you a rich visual experience while chasing excitement!', // 游戏描述
         keywords: 'Escape Road Winter,Escape Road Winter game,Escape Road Winter game online', // 新增关键词
         addressBar: "Escape-Road-Winter",
         logoText: "Escape Road Winter",
@@ -193,14 +193,14 @@ export const games = {
                 <strong>Diverse vehicle system:</strong> Unlock and test drive unique vehicles with different designs and performance.<br/>
                 <strong>Challenging gameplay:</strong> Police pursuit becomes increasingly fierce, requiring you to handle it skillfully and decisively.</p>
             <img src="/images/game05-img1.jpg" alt="Escape Road Winter" class="game-content-image" />
-            <h3>Are You Ready to Break Free in  Escape Road Winter?​​</h3>
+            <h3>Are You Ready to Break Free in <a href="https://escape-road-online.com/Escape-Road-Winter">Escape Road Winter </a>?​​</h3>
             <p>You control Escape Road Winter's sparkling pine tree cart through the crowded streets and escape from the police. During your escape, you can collect gift boxes and create shocking collisions to disrupt the city and distract the cops. Your achievements after each level serve as the criteria to enter the lottery and win new vehicles.</p>
         `
     },
     game6: {
         id: 'game6',
         title: 'Escape Road halloween -escape road halloween game -escape road  halloween online',
-        description: 'Escape Road halloween is an exciting car chase adventure game where every second counts. Drive the car, dodge obstacles and escape the relentless police pursuit during the chase.', // 游戏描述
+        description: 'Escape Road Halloween is a special Halloween version of Escape Road. Drive a car on Halloween, avoid obstacles, and escape the ruthless pursuit of the police.', // 游戏描述
         keywords: 'Escape Road  halloween ,Escape Road  halloween game,Escape Road  halloween game online', // 新增关键词
         addressBar: "Escape-Road-Halloween",
         logoText: "Escape Road Halloween",
@@ -236,7 +236,7 @@ export const games = {
                 Up or W keys: Accelerate.<br/>
                 Down or S keys : Reverse.<br/>
                 Arrow or A/D keys: Turn.</p>
-            <h3>Are You Ready to Break Free in  Escape Road Halloween?​​</h3>
+            <h3>Are You Ready to Break Free in  <a href="https://escape-road-online.com/Escape-Road-Halloween">Escape Road Halloween </a>?​​</h3>
             <p>Escape Road Halloween blends high-speed thrills with bone-chilling horror. Whether you're a daredevil racer or a horror fan craving chaos, this game delivers a ghoulishly fun escape mission like no other!<br/>
                 🎮 ​​This Halloween, unleash your inner ghost racer… and pray you survive the night!​​ 🚗👻</p>
         `
@@ -244,7 +244,7 @@ export const games = {
     game10: {
         id: 'game10',
         title: 'Shell shockers-Shockers Unblocked-shell shockers hacks',
-        description: 'Shell Shockers is a browser-based egg-themed battle royale FPS game where players control tiny armed eggs in a battle for survival. Create your own team of Shell Shockers and fight together!', // 游戏描述
+        description: 'Shell Shockers is a browser-based egg-themed battle royale FPS game where players control tiny armed eggs in a battle for survival.Come and fight together!', // 游戏描述
         keywords: 'Shell Shockers,egg themed ,battle royale FPS game，shell shockers hacks', // 新增关键词
         addressBar: "Shell-Shockers",
         logoText: "Shell Shockers",
@@ -291,7 +291,7 @@ export const games = {
                 Dodge sideways (strafe) to avoid bullets.<br/>
                 Spam jump + shoot to confuse foes mid-air.<br/>
             </p>
-            <h3>Play  Shell Shockers Now​​</h3>
+            <h3>Play <a href="https://escape-road-online.com/Shell-Shockers">Shell Shockers</a> Now​​</h3>
             <p>​​Join Shell Shockers – Limited-time golden egg skins for new players!​​<br/>
                 🥚 Boom! Crack eggs, dominate rivals, and laugh your shell off – Shell Shockers awaits!​​ 🥚</p>
         `
@@ -347,7 +347,7 @@ export const games = {
                 Avoid the ​​Inspector's flashlight beam​​—spotlight = instant game over!
             </p>
             <p>🚨 Warning: Trains are faster than your reflexes. Survival is optional. Bravery is mandatory.​​ 🚨</p>
-            <h3>Play Subway Surfers now!</h3>
+            <h3>Play <a href="https://escape-road-online.com/Subway-Surfers">Subway Surfers</a>now!</h3>
         `
     },
     game9: {
@@ -384,15 +384,15 @@ export const games = {
                 ✅ ​​50+ New Sound Effects​​: From psychedelic electronic tones to retro hip-hop beats.<br/>
                 ✅ ​​Dynamic Character Animations​​: Each character reacts with unique animations and sound feedback.<br/>
                 ✅ ​​Creative Workshop Support​​: Players can design and share custom mods for endless possibilities.</p>
-            <h3>​​Play Incredibox Sprunki Now​​</h3>
+            <h3>​​Play <a href="https://escape-road-online.com/Incredibox-Sprunki">Incredibox Sprunki</a> Now​​</h3>
             <p>​​Visit to start your musical revolution today!​​<br/>
                 ​​🔥 Ditch your creative blocks— Incredibox Sprunki turns everyone into a Beatmaker genius!​​ 🔥</p>
         `
     },
     game8: {
         id: 'game8',
-        title: 'Planet Clicker: Galactic Empire Builder - From Earth to Mars in Clicks',
-        description: 'Planet Clicker Build your cosmic empire! Click to gather energy, unlock Mars/Venus, and automate interplanetary dominance. Choose benevolent or ruthless cosmic rule!', // 游戏描述
+        title: 'Planet Clicker-Galactic Planet Clicker unblocked',
+        description: 'Planet Clicker Build your cosmic empire!gather energy,unlock Mars/Venus,and automate interplanetary dominance.Choose benevolent or ruthless cosmic rule!', // 游戏描述
         keywords: 'Planet Clicker:Clicker games, interstellar colonization simulations, space strategy games', // 新增关键词
         addressBar: "Planet-Clicker",
         logoText: "Planet Clicker",
@@ -424,7 +424,7 @@ export const games = {
                 <strong>Mid Game​​:</strong> Invest in ​​auto-income upgrades​​ (e.g., "Alien Tax Collectors") for passive gains.<br/>
                 <strong>Late Game​​:</strong> Aim for ​​planet-specific upgrades​​ (e.g., Venus' acid rain defense systems) to dominate rivals.</p>
             <h3>​​Why It's Irresistible​​</h3>
-            <p>Planet Clicker masterfully blends addictive clicker mechanics with galactic ambition. Whether you're a casual player seeking quick dopamine hits or a strategy guru planning an interstellar empire, this game delivers endless fun!</p>
+            <p><a href="https://escape-road-online.com/Planet-Clicker">Planet Clicker</a> masterfully blends addictive clicker mechanics with galactic ambition. Whether you're a casual player seeking quick dopamine hits or a strategy guru planning an interstellar empire, this game delivers endless fun!</p>
             <p>🌌 ​​Click, conquer, and ascend—your galactic dynasty starts now!​​ 👑🚀</p>
         `
     },
@@ -461,15 +461,15 @@ export const games = {
                 <strong>​​Use Boost Wisely​​:</strong> Save nitro boosts (earned via clean drifts) to break through traffic jams or escape danger.</p>
             <h3>Why Traffic Road is Addictive​​？</h3>
             <p>Traffic Road blends arcade-style fun with realistic driving tension. Whether you're a casual gamer craving speed or a hardcore racer chasing perfection, this game offers endless thrills in a concrete jungle of chaos!</p>
-            <p>🚦 ​​Hit the gas, dodge the chaos, and etch your name into racing history—Traffic Road awaits!​​ 🏁💨</p>
+            <p>🚦 ​​Hit the gas, dodge the chaos, and etch your name into racing history—<a href="https://escape-road-online.com/Traffic-Road">Traffic Road</a> awaits!​​ 🏁💨</p>
         `
     },
     
     game13: {
         id: 'game13',
-        title: 'house of hazards-house of hazards github-house of hazards unblocked',
+        title: 'house of hazards-house of hazards github unblocked',
         description: 'House of Hazards is a local multiplayer party game where players battle to complete menial tasks in a house rigged with absurd hazards.', // 游戏描述
-        keywords: 'house of hazards, unblock house of hazards', // 新增关键词
+        keywords: 'house of hazards, unblock house of hazards github,house of hazards github unblocked', // 新增关键词
         addressBar: "House-Of-Hazards",
         logoText: "House Of Hazards",
         image: 'game-13.jpg',
@@ -499,7 +499,7 @@ export const games = {
             </p>
             <h3>How do you in House of Hazards unblocked?</h3>
             <p>In House of Hazards, unlocking additional characters enhances your gameplay experience. Initially, four characters—Marissa, Jerry, Samantha, and Dom—are available. To unlock the remaining four characters—Robo Rob, Buster, Rocking Grandma, and Super Sam—you need to achieve specific milestones in the game.</p>
-            <h3>Play House of Hazards now!</h3>
+            <h3>Play <a href="https://escape-road-online.com/House-Of-Hazards">House of Hazards</a> now!</h3>
         `
     },
     game11: {
@@ -524,7 +524,7 @@ export const games = {
                 <strong>🎭 ​​Fashion Revolution​​:</strong> 200+ outfits ranging from ​​beach bum chic​​ to ​​quantum physics professor chic​​.<br/>
                 <strong>⏳ ​​Offline Gains​​:</strong> Earn coins while AFK—your empire thrives even while you sleep!
             </p>
-            <h3>How to Build Your Chill Empire​​</h3>
+            <h3>How to Build Your Chill Empire?​i'm just a chill guy clicker​</h3>
             <p>1️⃣ ​​Start Small​​: Tap Chill Guy on the main screen to earn ​​Chill Coins™​​.<br/>
                 2️⃣ ​​Invest Wisely​​: Buy upgrades like Auto-Clicker 3000 or Meditation Bench from the in-game shop.<br/>
                 3️⃣ ​​Strategic Patience​​: Prices scale dynamically (e.g., Golden Hammock costs 5,000 coins initially, then 7,500 after 3 purchases).<br/>
@@ -545,16 +545,16 @@ export const games = {
                 <strong>​​Mental Health​​:</strong> ASMR sounds + calming visuals	No soul-soothing mechanics​<br/>
                 <strong>​​Join the Chill Movement​​:</strong>
             </p>
-            <h3>how to get galactic chill guy in chill guy clicker​?</h3>
+            <h3>how to get <a href="https://escape-road-online.com/Chill-Guy-Clicker">galactic chill guy</a> in chill guy clicker​?</h3>
             <p>In Chill Guy Clicker, unlocking the Galactic Chill Guy requires accumulating a substantial number of Chill Points through continuous clicking and strategic upgrades. Each click on the Chill Guy character earns you Chill Points, which can be used to purchase enhancements that increase your points per click or generate passive income. As you progress, you'll unlock various characters, including the Galactic Chill Guy. ​</p>
             <p>🛌 Chill is the new justice—build your empire, one effortless tap at a time!​​ 🛌</p>
         `
-    },
+    },  
     game12: {
         id: 'game12',
-        title: 'tap road-tapping road-tap road game-tap road online',
+        title: 'tap road-tapping road-tap road game-plank road tap room',
         description: 'Tap Road,Neon Dash Addiction – Tap, Dodge, and Conquer the Infinite Speedway!​​No brakes, no rules—just pure adrenaline-fueled rhythm gaming!', // 游戏描述
-        keywords: 'tap road,tap road game,Tap, Dodge', // 新增关键词
+        keywords: 'tap road,tap road game,Tap, Dodge,plank road tap room', // 新增关键词
         addressBar: "Tap-Road",
         logoText: "Tap Road",
         image: 'game-12.webp',
@@ -592,7 +592,7 @@ export const games = {
                 Tap ​​7 times in 2 seconds​​ to activate ​​Ghost Ball​​ (temporarily invincible).<br/>
                 Collect ​​Mystery Orbs​​ to unlock secret tracks like ​​Retro Arcade​​ or ​​Cyber Mall​​.
             </p>
-            <h3>Play Tap Road now!</h3>
+            <h3>Play <a href="https://escape-road-online.com/Tap-Road">Tap Road</a> now!</h3>
             <p>​​💥 Speed kills… but style? Immortal.​​ 💥</p>
             <p>Need damage formulas or optimal tapping cadence guides? Let me know! 🎮⚡</p>
         `
@@ -600,7 +600,7 @@ export const games = {
     game15: {
         id: 'game15',
         title: 'snow road-snow road game -snow roads game',
-        description: "In Snow Road, you're a daring snowboarder racing through a vibrant pixel-art winter wonderland filled with deadly traps, hidden rewards, and ever-changing terrain.", // 游戏描述
+        description: "In Snow Road, you're a snowboarder racing through a vibrant pixel-art winter wonderland filled with deadly traps, hidden rewards, and ever-changing terrain.", // 游戏描述
         keywords: "snow road, snow rd, snow road game online, snow roads game online", // 新增关键词
         addressBar: "Snow-Road",
         logoText: "Snow Road",
@@ -634,14 +634,14 @@ export const games = {
                 ✅ ​​Risk vs. Reward​​: Chase ​​Golden Chests​​ in hazardous zones for rare sleighs—but brace for avalanches!
             </p>
             <p>⚠️ Snow Road Warning: One wrong turn and you'll become a human popsicle. Bravery is frosty.​​ ⚠️</p>
-            <h3>Play Snow Road now！</h3>
+            <h3>Play <a href="https://escape-road-online.com/Snow-Road">Snow Road</a> now！</h3>
         `
     },
     game16: {
         id: 'game16',
         title: 'ragdoll archers-ragdoll archer-ragdoll archers unblocked',
         description: 'In Ragdoll Archers,you command adorable yet deadly stick-figure archers in a world of chaotic battles.', // 游戏描述
-        keywords: 'ragdoll archers,ragdoll archer,ragdoll archers unblocked game online', // 新增关键词
+        keywords: 'ragdoll archers,ragdoll archer,ragdoll archers unblocked game online,ragdoll archers unblocked', // 新增关键词
         addressBar: "Ragdoll-Archers",
         logoText: "Ragdoll Archers",
         image: 'game-16.jpg',
@@ -675,7 +675,7 @@ export const games = {
                 ✅ ​​Team Synergy​​: In co-op, use ​​Electric Bolts​​ to stun foes and set up ​​Explosive Balloon​​ combos.<br/>
                 ✅ ​​Risk vs. Reward​​: Attack ​​boss-level giants​​ for massive skull rewards—but dodge their AoE attacks!<br/>
             </p>
-            <h3>Play Ragdoll Archers now！</h3>
+            <h3>Play <a href="https://escape-road-online.com/Ragdoll-Archers">Ragdoll Archers</a> now！</h3>
             <p>⚠️ Warning: One wrong shot and your ragdoll will become a human pretzel. Precision is poetic.​​ ⚠️</p>
             <p>Need arrow type stats or boss drop tables? Let me know! 🏹🎯</p>
         `
