@@ -1,16 +1,7 @@
 {
-  "functions": {
-    "api/index.js": {
-      "memory": 1024
-    }
-  },
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/index"
-    },
-    {
-      "source": "/((?!api/|_next/|favicon.ico|.*\\.).*)",
+      "source": "/((?!.*\\.).*)",
       "destination": "/index.html"
     }
   ]
