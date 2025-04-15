@@ -257,7 +257,7 @@ console.log('Other games:', allGames.value)
 .below {
   display: flex;
   justify-content: space-between;
-  padding: 0 50px;
+  padding: 0 100px;
 }
 
 /* 平板样式 (例如：宽度 <= 1024px) */

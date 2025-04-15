@@ -68,6 +68,11 @@
             <label for="text">评论内容:</label>
             <textarea id="text" v-model="newCommentData.text" required></textarea>
           </div>
+          <div class="form-group">
+            <label for="timestamp">时间 (可选, 默认当前时间):</label>
+            <input type="datetime-local" id="timestamp" v-model="newCommentData.timestamp">
+            <small>格式: YYYY-MM-DD HH:mm</small>
+          </div>
           <div class="form-actions">
             <button type="submit" class="submit-btn" :disabled="submitting">{{ submitting ? '提交中...' : '提交评论' }}</button>
             <button type="button" class="cancel-btn" @click="closeAddCommentModal" :disabled="submitting">取消</button>
@@ -118,7 +123,7 @@ export default {
     const error = ref('')
     const isModalVisible = ref(false)
     const selectedPageId = ref('')
-    const newCommentData = ref({ name: '', email: '', text: '' })
+    const newCommentData = ref({ name: '', email: '', text: '', timestamp: '' })
     const submitting = ref(false)
     const submitError = ref('')
     const isEditRatingsModalVisible = ref(false)
@@ -202,7 +207,7 @@ export default {
 
     const openAddCommentModal = (pageId) => {
       selectedPageId.value = pageId;
-      newCommentData.value = { name: '', email: '', text: '' };
+      newCommentData.value = { name: '', email: '', text: '', timestamp: '' };
       submitError.value = '';
       isModalVisible.value = true;
     }
@@ -228,19 +233,34 @@ export default {
           return;
       }
 
+      const dataToSend = {
+          pageId: selectedPageId.value,
+          name: newCommentData.value.name,
+          text: newCommentData.value.text,
+          email: newCommentData.value.email || undefined
+      };
+      if (newCommentData.value.timestamp) {
+          try {
+              const localDate = new Date(newCommentData.value.timestamp);
+              if (isNaN(localDate.getTime())) {
+                   throw new Error('Invalid date format from input.');
+              }
+              dataToSend.timestamp = localDate.toISOString(); 
+          } catch (e) {
+               submitError.value = '提供的时间格式无效，请使用 YYYY-MM-DD HH:mm 格式。'
+               submitting.value = false;
+               return;
+          }
+      }
+
       try {
-        const response = await fetch(`${baseUrl}/admin/comments/manual`, {
+        const response = await fetch(`${baseUrl}/admin/comments/manual`, { 
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({
-            pageId: selectedPageId.value, 
-            name: newCommentData.value.name,
-            text: newCommentData.value.text,
-            email: newCommentData.value.email || undefined
-          })
+          body: JSON.stringify(dataToSend)
         });
 
         if (!response.ok) {

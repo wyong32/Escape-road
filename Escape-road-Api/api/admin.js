@@ -2,6 +2,9 @@ import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
 import { kv } from "@vercel/kv"
 import 'dotenv/config'
+import express from 'express'
+
+const router = express.Router()
 
 // JWT 密钥，生产环境应该使用环境变量配置
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key'
@@ -208,6 +211,9 @@ export const getAllGameData = async (req, res) => {
         }
       }).filter(c => c !== null); // 过滤掉解析失败或无效的评论
 
+      // Sort comments by timestamp (newest first)
+      comments.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+
       // Fetch ratings
       const ratings = await kv.hgetall(ratingKey) || {}; // Default to empty object if no ratings
 
@@ -353,4 +359,97 @@ export const deleteCommentById = async (req, res) => {
       res.status(500).json({ message: '服务器错误' })
     }
   }
-} 
+}
+
+// Helper function (reused from index.js logic)
+const validateInput = (input, type, maxLength = Infinity) => {
+    if (typeof input !== 'string' || input.trim() === '') {
+        return `${type} cannot be empty.`;
+    }
+    if (input.trim().length > maxLength) {
+         return `${type} is too long (max ${maxLength} characters).`;
+    }
+    return null; // No error
+};
+
+// --- Handler logic for routes previously defined inline in index.js ---
+
+// Handler for POST /admin/comments/manual
+const addManualComment = async (req, res) => {
+    // Logic moved from app.post('/admin/comments/manual', ...) in index.js
+    const { pageId, name, text, email, timestamp } = req.body;
+
+    // Validation
+    const pageIdError = validateInput(pageId, 'Page ID');
+    if (pageIdError) return res.status(400).json({ message: `Admin Error: ${pageIdError}` });
+    const nameError = validateInput(name, 'Name', 100);
+    if (nameError) return res.status(400).json({ message: `Admin Error: ${nameError}` });
+    const textError = validateInput(text, 'Comment', 500);
+    if (textError) return res.status(400).json({ message: `Admin Error: ${textError}` });
+    if (email && typeof email === 'string' && (!email.includes('@') || email.trim().length > 254)) {
+        return res.status(400).json({ message: 'Admin Error: Please provide a valid email address.' });
+    } else if (email && typeof email !== 'string') {
+        return res.status(400).json({ message: 'Admin Error: Email must be a string.' });
+    }
+
+    let finalTimestamp = new Date().toISOString(); 
+    if (timestamp) {
+        if (typeof timestamp === 'string' && !isNaN(Date.parse(timestamp))) {
+            try {
+                finalTimestamp = new Date(timestamp).toISOString();
+            } catch (dateError) {
+                return res.status(400).json({ message: 'Admin Error: Invalid timestamp format. Please use ISO 8601 format (e.g., YYYY-MM-DDTHH:mm:ss.sssZ).' });
+            }
+        } else {
+            return res.status(400).json({ message: 'Admin Error: Invalid timestamp format. Please use ISO 8601 format (e.g., YYYY-MM-DDTHH:mm:ss.sssZ).' });
+        }
+    }
+
+    const newComment = {
+        id: Date.now().toString() + Math.random().toString(16).slice(2),
+        name: name.trim(),
+        text: text.trim(),
+        ...(email && typeof email === 'string' && email.trim() && { email: email.trim() }),
+        timestamp: finalTimestamp,
+        addedByAdmin: true
+    };
+
+    try {
+        const commentJsonString = JSON.stringify(newComment);
+        await kv.lpush(`comments:${pageId}`, commentJsonString);
+        console.log(`[API][Admin Route] Admin manually added comment for pageId ${pageId} (Timestamp: ${finalTimestamp}) by user: ${req.user?.username || 'Unknown Admin'}`);
+        res.status(201).json(newComment);
+    } catch (error) {
+        console.error(`[API][Admin Route] Error manually saving comment for pageId ${pageId} by admin:`, error);
+        res.status(500).json({ message: 'Internal server error saving comment manually.' });
+    }
+};
+
+// Handler for GET /admin/protected
+const getProtectedData = (req, res) => {
+    // Logic moved from app.get('/admin/protected', ...) in index.js
+    res.json({ message: 'Verified admin route', user: req.user }); // Include user info from token
+};
+
+// --- Define routes on the admin router --- 
+// Note: Paths are relative to the '/admin' prefix that will be added in index.js
+
+router.post('/login', adminLogin); // Public within /admin
+
+// Apply verifyAdminToken middleware to all subsequent routes in this router
+router.use(verifyAdminToken); 
+
+router.post('/change-password', changeAdminPassword);
+router.get('/comments', getAllGameData); // Now gets comments and ratings
+router.delete('/comments/:pageId/:commentId', deleteCommentById);
+router.post('/comments/manual', addManualComment); // Use the new handler
+router.put('/ratings/:pageId', updateRatingsByPageId);
+router.get('/protected', getProtectedData); // Use the new handler
+
+// Export the admin router as the default export
+export default router;
+
+// We might still need to export verifyAdminToken if other non-admin modules needed it,
+// but based on current structure, likely only the router needs exporting.
+// Keep verifyAdminToken exported just in case, or remove if certain it's unused elsewhere.
+// export { verifyAdminToken }; // Keep this export for clarity or potential reuse 

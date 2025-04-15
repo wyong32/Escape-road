@@ -83,7 +83,7 @@ watch(() => props.gameId, () => {
 
 <style scoped>
 .about {
-    width: 47%;
+    width: 48%;
     border: 5px solid #00d9ff;
     border-radius: 20px;
     background-color: #fff;

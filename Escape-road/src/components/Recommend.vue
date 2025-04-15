@@ -53,7 +53,7 @@ const allGames = computed(() => {
 
 <style scoped>
 .recommend {
-    width: 47%; /* 保持宽度 */
+    width: 48%; /* 保持宽度 */
     background-color: #ffffff; /* 清爽的白色背景 */
     border-radius: 20px; /* 更柔和的圆角 */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07); /* 添加更自然的阴影 */
