@@ -12,11 +12,6 @@
       "destination": "/api/index.js"
     }
   ],
-  "functions": {
-    "api/index.js": {
-      "memory": 1024
-    }
-  },
   "headers": [
     {
       "source": "/(.*)",
