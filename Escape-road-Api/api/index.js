@@ -11,8 +11,6 @@ import {
   deleteCommentById
 } from './admin.js'; // Assuming admin.js is in the same api/ directory
 
-console.log("[API] index.js full code attempting to load.");
-
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -22,16 +20,14 @@ app.use(express.urlencoded({ extended: true }));
 
 // CORS Configuration
 const corsOptions = {
-  // origin: [
-  //   'http://localhost:5173', // Local frontend dev server
-  //   'https://escape-road-eta.vercel.app' // Deployed frontend URL
-  //  ],
-  origin: '*', // TEMPORARY: Allow all origins for debugging
+  origin: [
+    'http://localhost:5173', // Local frontend dev server
+    'https://escape-road-eta.vercel.app' // Deployed frontend URL
+   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 };
 app.use(cors(corsOptions));
-console.log("[API] CORS configured for: TEMPORARILY ALLOWING ALL ORIGINS (*) - Credentials removed");
 
 // --- Rate Limiters ---
 const keyGenerator = (req /*, res */) => {
@@ -55,8 +51,8 @@ const createLimiter = (message, max = 1) => rateLimit({
     legacyHeaders: false,
 });
 
-const commentLimiter = createLimiter('You can only post one comment per game every minute. Please try again later.', 5); // Allow slightly more comments
-const ratingLimiter = createLimiter('You can only submit one rating per game every minute. Please try again later.', 5); // Allow slightly more ratings
+const commentLimiter = createLimiter('You can only post one comment per game every minute. Please try again later.', 1); // Allow only one comment
+const ratingLimiter = createLimiter('You can only submit one rating per game every minute. Please try again later.', 1); // Allow only one rating
 const getLimiter = createLimiter('Too many requests, please try again later.', 60); // Generous limit for GET requests
 
 // --- Helper Functions ---
@@ -144,8 +140,6 @@ app.post('/comments', commentLimiter, async (req, res) => {
     try {
         const commentJsonString = JSON.stringify(newComment);
         await kv.lpush(`comments:${pageId}`, commentJsonString);
-        // Optional: Trim list if it grows too large
-        // await kv.ltrim(`comments:${pageId}`, 0, 99);
         res.status(201).json(newComment);
     } catch (error) {
         console.error(`[API] Error saving comment for pageId ${pageId}:`, error);
@@ -166,7 +160,6 @@ app.get('/ratings', getLimiter, async (req, res) => {
     } catch (error) {
         console.error(`[API] Error fetching ratings for pageId ${pageId}:`, error);
         res.status(500).json({ message: 'Internal server error fetching ratings.' });
-        console.log('Attempting new build...');
     }
 });
 
@@ -206,8 +199,8 @@ export default app;
 
 // --- Listener for Local Development ---
 // Optional: Check if running locally before listening
-// if (!process.env.VERCEL) { // VERCEL is a common env var on the platform
+if (!process.env.VERCEL) { // VERCEL is a common env var on the platform
     app.listen(PORT, () => {
         console.log(`[API] Server is running locally on port ${PORT}`);
     });
-// } 
+} 
