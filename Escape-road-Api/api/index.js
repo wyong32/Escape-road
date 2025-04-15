@@ -22,16 +22,17 @@ app.use(express.urlencoded({ extended: true }));
 
 // CORS Configuration
 const corsOptions = {
-  origin: [
-    'http://localhost:5173', // Local frontend dev server
-    'https://escape-road-eta.vercel.app' // Deployed frontend URL
-   ],
-  credentials: true,
+  // origin: [
+  //   'http://localhost:5173', // Local frontend dev server
+  //   'https://escape-road-eta.vercel.app' // Deployed frontend URL
+  //  ],
+  origin: '*', // TEMPORARY: Allow all origins for debugging
+  credentials: true, // Keep credentials if needed, but origin '*' might have issues with credentials
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 };
 app.use(cors(corsOptions));
-console.log("[API] CORS configured for:", corsOptions.origin);
+console.log("[API] CORS configured for: TEMPORARILY ALLOWING ALL ORIGINS (*)");
 
 // --- Rate Limiters ---
 const keyGenerator = (req /*, res */) => {
