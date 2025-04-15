@@ -27,12 +27,11 @@ const corsOptions = {
   //   'https://escape-road-eta.vercel.app' // Deployed frontend URL
   //  ],
   origin: '*', // TEMPORARY: Allow all origins for debugging
-  credentials: true, // Keep credentials if needed, but origin '*' might have issues with credentials
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 };
 app.use(cors(corsOptions));
-console.log("[API] CORS configured for: TEMPORARILY ALLOWING ALL ORIGINS (*)");
+console.log("[API] CORS configured for: TEMPORARILY ALLOWING ALL ORIGINS (*) - Credentials removed");
 
 // --- Rate Limiters ---
 const keyGenerator = (req /*, res */) => {
