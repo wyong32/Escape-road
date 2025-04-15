@@ -1,6 +1,6 @@
 {
   "functions": {
-    "Escape-road-Api/index.js": {
+    "api/index.js": {
       "memory": 1024
     }
   }
