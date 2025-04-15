@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow:
 
-Sitemap: https://escape-road-eta.vercel.app/sitemap.xml 
+Sitemap: https://escape-road-online.com/sitemap.xml 

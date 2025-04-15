@@ -7,8 +7,9 @@ import {
   adminLogin,
   verifyAdminToken,
   changeAdminPassword,
-  getAllComments,
-  deleteCommentById
+  getAllGameData,
+  deleteCommentById,
+  updateRatingsByPageId
 } from './admin.js'; // Assuming admin.js is in the same api/ directory
 
 const app = express();
@@ -22,7 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 const corsOptions = {
   origin: [
     'http://localhost:5173', // Local frontend dev server
-    'https://escape-road-eta.vercel.app' // Deployed frontend URL
+    'https://escape-road-online.com' // Updated Deployed frontend URL
    ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
@@ -188,8 +189,49 @@ app.post('/ratings', ratingLimiter, async (req, res) => {
 // --- Admin Routes (No /api prefix) ---
 app.post('/admin/login', adminLogin);
 app.post('/admin/change-password', verifyAdminToken, changeAdminPassword);
-app.get('/admin/comments', verifyAdminToken, getAllComments);
+app.get('/admin/comments', verifyAdminToken, getAllGameData);
 app.delete('/admin/comments/:pageId/:commentId', verifyAdminToken, deleteCommentById);
+
+// NEW ROUTE: Manually add a comment as admin
+app.post('/admin/comments/manual', verifyAdminToken, async (req, res) => {
+    const { pageId, name, text, email } = req.body;
+
+    // Reuse validation, but adapt error messages if needed for admin context
+    const pageIdError = validateInput(pageId, 'Page ID');
+    if (pageIdError) return res.status(400).json({ message: `Admin Error: ${pageIdError}` });
+    const nameError = validateInput(name, 'Name', 100);
+    if (nameError) return res.status(400).json({ message: `Admin Error: ${nameError}` });
+    const textError = validateInput(text, 'Comment', 500); // Consider allowing longer admin comments?
+    if (textError) return res.status(400).json({ message: `Admin Error: ${textError}` });
+    if (email && typeof email === 'string' && (!email.includes('@') || email.trim().length > 254)) {
+        return res.status(400).json({ message: 'Admin Error: Please provide a valid email address.' });
+    } else if (email && typeof email !== 'string') {
+         return res.status(400).json({ message: 'Admin Error: Email must be a string.' });
+    }
+
+    const newComment = {
+        id: Date.now().toString() + Math.random().toString(16).slice(2), // Same ID generation for now
+        name: name.trim(),
+        text: text.trim(),
+        ...(email && typeof email === 'string' && email.trim() && { email: email.trim() }),
+        timestamp: new Date().toISOString(),
+        addedByAdmin: true // Add a flag to indicate manual addition
+    };
+
+    try {
+        const commentJsonString = JSON.stringify(newComment);
+        await kv.lpush(`comments:${pageId}`, commentJsonString); 
+        console.log(`[API] Admin manually added comment for pageId ${pageId} by user: ${req.admin?.username || 'Unknown Admin'}`); // Log admin action
+        res.status(201).json(newComment);
+    } catch (error) {
+        console.error(`[API] Error manually saving comment for pageId ${pageId} by admin:`, error);
+        res.status(500).json({ message: 'Internal server error saving comment manually.' });
+    }
+});
+
+// NEW ROUTE: Manually update ratings for a game
+app.put('/admin/ratings/:pageId', verifyAdminToken, updateRatingsByPageId);
+
 app.get('/admin/protected', verifyAdminToken, (req, res) => {
   res.json({ message: 'Verified admin route' });
 });

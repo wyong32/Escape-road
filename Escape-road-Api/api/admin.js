@@ -156,16 +156,19 @@ export const verifyAdminToken = async (req, res, next) => {
   }
 }
 
-// 获取所有评论
-export const getAllComments = async (req, res) => {
+// 获取所有游戏数据（评论和评分）
+export const getAllGameData = async (req, res) => {
   try {
-    const commentKeys = await kv.keys('comments:*')
-    const allComments = {}
+    const gameKeys = await kv.keys('comments:*') // Assume comment keys represent all games
+    const allGameData = {}
 
-    for (const key of commentKeys) {
-      const pageId = key.replace('comments:', '')
-      const rawDataList = await kv.lrange(key, 0, -1)
-      allComments[pageId] = rawDataList.map((rawData, index) => {
+    for (const commentKey of gameKeys) {
+      const pageId = commentKey.replace('comments:', '')
+      const ratingKey = `ratings:${pageId}`
+      
+      // Fetch comments
+      const rawDataList = await kv.lrange(commentKey, 0, -1)
+      const comments = rawDataList.map((rawData, index) => {
         try {
           // 检查 rawData 是否已经是对象 (可能由 @vercel/kv 预解析)
           if (typeof rawData === 'object' && rawData !== null) {
@@ -173,7 +176,7 @@ export const getAllComments = async (req, res) => {
             if (typeof rawData.id !== 'undefined' && typeof rawData.text !== 'undefined') {
               return rawData;
             } else {
-              console.warn(`[Admin] getAllComments: 预解析的对象缺少必要字段 (${key}, index ${index}):`, rawData);
+              console.warn(`[Admin] getAllGameData: 预解析的对象缺少必要字段 (${commentKey}, index ${index}):`, rawData);
               return null;
             }
           } 
@@ -186,31 +189,92 @@ export const getAllComments = async (req, res) => {
               if (typeof parsedComment.id !== 'undefined' && typeof parsedComment.text !== 'undefined') {
                 return parsedComment;
               } else {
-                 console.warn(`[Admin] getAllComments: 解析后的对象缺少必要字段 (${key}, index ${index}):`, parsedComment);
+                 console.warn(`[Admin] getAllGameData: 解析后的对象缺少必要字段 (${commentKey}, index ${index}):`, parsedComment);
                  return null;
               }
             } else {
-              console.warn(`[Admin] getAllComments: 空字符串 (${key}, index ${index})`);
+              console.warn(`[Admin] getAllGameData: 空字符串 (${commentKey}, index ${index})`);
               return null;
             }
           } 
           // 处理其他意外类型
           else {
-            console.warn(`[Admin] getAllComments: 意外的数据类型 (${typeof rawData}) (${key}, index ${index}):`, rawData);
+            console.warn(`[Admin] getAllGameData: 意外的数据类型 (${typeof rawData}) (${commentKey}, index ${index}):`, rawData);
             return null;
           }
         } catch (e) {
-          console.error(`[Admin] getAllComments: 解析评论失败 (${key}, index ${index}):`, rawData, e)
+          console.error(`[Admin] getAllGameData: 解析评论失败 (${commentKey}, index ${index}):`, rawData, e)
           return null // 返回 null 表示解析失败
         }
       }).filter(c => c !== null); // 过滤掉解析失败或无效的评论
+
+      // Fetch ratings
+      const ratings = await kv.hgetall(ratingKey) || {}; // Default to empty object if no ratings
+
+      allGameData[pageId] = {
+        comments: comments,
+        ratings: ratings
+      };
     }
-    res.status(200).json(allComments)
+    res.status(200).json(allGameData);
   } catch (error) {
-    console.error('获取所有评论出错:', error)
-    res.status(500).json({ message: '服务器错误' })
+    console.error('[Admin] 获取所有游戏数据出错:', error);
+    res.status(500).json({ message: '服务器错误' });
   }
-}
+};
+
+// 更新指定游戏的评分计数
+export const updateRatingsByPageId = async (req, res) => {
+  const { pageId } = req.params;
+  const newCounts = req.body; // Expecting { "1": count1, "2": count2, ... "5": count5 }
+
+  if (!pageId || typeof pageId !== 'string') {
+    return res.status(400).json({ message: 'Admin Error: Valid pageId path parameter is required.' });
+  }
+
+  // Validate newCounts format and values
+  const validatedCounts = {};
+  let validationError = null;
+  for (let i = 1; i <= 5; i++) {
+    const key = String(i);
+    const count = newCounts[key];
+    if (count === undefined || count === null || typeof count !== 'number' || !Number.isInteger(count) || count < 0) {
+        validationError = `Admin Error: Rating count for \'${key}\' must be a non-negative integer. Received: ${count}`;
+        break;
+    }
+    validatedCounts[key] = count;
+  }
+
+  if (validationError) {
+      return res.status(400).json({ message: validationError });
+  }
+
+  try {
+    const key = `ratings:${pageId}`;
+    // Overwrite the entire hash with new values.
+    // First, delete the old key to ensure clean state (optional but safer)
+    await kv.del(key);
+    // Then set the new values if there are any counts > 0
+    const fieldsToSet = Object.entries(validatedCounts).filter(([_, count]) => count > 0);
+    if (fieldsToSet.length > 0) {
+        // Use hset multiple times as hmset might not be directly available or straightforward
+        // Convert array of [key, value] pairs back to an object for hset
+        await kv.hset(key, Object.fromEntries(fieldsToSet)); 
+        // Note: If using an older ioredis or similar client, you might need:
+        // const args = fieldsToSet.flat(); 
+        // if (args.length) await kv.hmset(key, ...args);
+    }
+
+    const finalCounts = await kv.hgetall(key) || {}; // Get the final state
+
+    console.log(`[API] Admin updated ratings for pageId ${pageId} by user: ${req.admin?.username || 'Unknown Admin'}`);
+    res.status(200).json({ message: 'Ratings updated successfully.', ratings: finalCounts });
+
+  } catch (error) {
+    console.error(`[API] Error updating ratings for pageId ${pageId} by admin:`, error);
+    res.status(500).json({ message: 'Internal server error updating ratings.' });
+  }
+};
 
 // 按 ID 删除评论 (使用基于索引的方法)
 export const deleteCommentById = async (req, res) => {

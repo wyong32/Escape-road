@@ -19,7 +19,7 @@ export default defineConfig({
     vueJsx(),
     vueDevTools(),
     sitemap({
-      hostname: 'https://escape-road-eta.vercel.app', // Your website base URL
+      hostname: 'https://escape-road-online.com', // Updated Your website base URL
       dynamicRoutes: dynamicRoutes, // Add dynamic game routes
       robots: [
         { userAgent: '*', allow: '/' } // Optional: Configure robots directly here

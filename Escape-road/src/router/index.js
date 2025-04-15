@@ -140,7 +140,7 @@ const router = createRouter({
 
 // 全局前置守卫，用于设置页面标题和路由保护
 router.beforeEach((to, from, next) => {
-  const baseUrl = 'https://escape-road-eta.vercel.app'; 
+  const baseUrl = 'https://escape-road-online.com'; // Updated base URL
   const defaultTitle = 'Escape Road';
   const defaultDescription = 'Play exciting car chase adventure games like Escape Road, Escape Road 2, and more! Dodge obstacles and escape the police.';
   const defaultImagePath = '/images/og-default.png'; // Path relative to /public
