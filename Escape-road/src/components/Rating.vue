@@ -60,52 +60,61 @@ const isLoading = ref(false); // 用于初始加载
 
 // 获取当前评分信息
 const fetchRating = async () => {
-  if (!props.pageId) return;
-  isLoading.value = true;
+  loading.value = true;
+  error.value = null;
   try {
-    const response = await axios.get(API_URL, { params: { pageId: props.pageId } });
-    averageRating.value = response.data.average;
-    ratingCount.value = response.data.count;
-    // 可以在这里从 localStorage 读取用户是否已评分，以持久化 hasRated 状态
-    // hasRated.value = localStorage.getItem(`rated_${props.pageId}`) === 'true';
-  } catch (error) {
-    console.error('Error fetching rating:', error);
-    // 不显示获取错误，以免干扰用户
+    // const response = await axios.get(API_URL, { params: { pageId: props.pageId } });
+    // currentRating.value = response.data.average;
+    // ratingCount.value = response.data.count;
+    console.warn(`API call fetchRating(${props.pageId}) commented out. Returning default values.`);
+    currentRating.value = 0; // Return default value
+    ratingCount.value = 0; // Return default value
+  } catch (err) {
+    console.error('Error fetching rating:', err);
+    error.value = 'Failed to load rating.';
+    currentRating.value = 0; // Reset on error
+    ratingCount.value = 0;
   } finally {
-    isLoading.value = false;
+    loading.value = false;
   }
 };
 
 // 提交用户评分
 const submitRating = async (ratingValue) => {
-  if (isSubmitting.value || hasRated.value) return;
-
-  isSubmitting.value = true;
-  submitError.value = null;
-  currentSelection.value = ratingValue;
-
+  if (submitting.value) return; // Prevent double submission
+  submitting.value = true;
+  error.value = null;
   try {
-    const response = await axios.post(API_URL, {
-      pageId: props.pageId,
-      rating: ratingValue
-    });
-    averageRating.value = response.data.average;
-    ratingCount.value = response.data.count;
-    hasRated.value = true;
-    // localStorage.setItem(`rated_${props.pageId}`, 'true');
+    // const response = await axios.post(API_URL, {
+    //   pageId: props.pageId,
+    //   rating: ratingValue
+    // });
+    // // Optimistically update the UI based on the expected response structure
+    // currentRating.value = response.data.average;
+    // ratingCount.value = response.data.count;
+    // // Optionally, provide user feedback, e.g., a success message
+    // // alert('Rating submitted successfully!');
 
-  } catch (error) {
-    console.error('Error submitting rating:', error);
+    console.warn(`API call submitRating(${props.pageId}, ${ratingValue}) commented out. Simulating submission.`);
+    // Simulate rating submission locally for UI feedback
+    // This is a very basic simulation, real logic might be more complex
+    ratingCount.value += 1;
+    // A more realistic simulation would recalculate average, but we'll just set it for now
+    currentRating.value = ratingValue; // Or recalculate based on a mock total
+    // alert('Rating submitted (simulated)!');
+
+  } catch (err) {
+    console.error('Error submitting rating:', err);
     // 修改：检查是否为速率限制错误 (429)
-    if (error.response && error.response.status === 429) {
-      submitError.value = error.response.data.message || 'Request limit reached. Please try again later.';
+    if (err.response && err.response.status === 429) {
+      submitError.value = err.response.data.message || 'Request limit reached. Please try again later.';
     } else {
-      submitError.value = error.response?.data?.message || 'Failed to submit rating.';
+      submitError.value = err.response?.data?.message || 'Failed to submit rating.';
     }
     currentSelection.value = 0; // 提交失败，清除选择状态
     setTimeout(() => { submitError.value = null; }, 3000);
   } finally {
-    isSubmitting.value = false;
+    submitting.value = false;
   }
 };
 

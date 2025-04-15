@@ -49,53 +49,72 @@ export default {
 
     // 获取所有评论
     const fetchComments = async () => {
+      loading.value = true;
+      error.value = null;
+      const token = localStorage.getItem('adminToken');
+      if (!token) {
+        error.value = '用户未认证';
+        loading.value = false;
+        return;
+      }
       try {
-        loading.value = true
-        error.value = ''
-        const response = await fetch('/api/admin/comments', {
-          headers: {
-            'Authorization': `Bearer ${adminToken}`
-          }
-        })
-
-        if (!response.ok) {
-          if (response.status === 401) {
-             router.push('/admin/login') // Token 无效或过期，跳转登录
-             return
-          }
-          const data = await response.json()
-          throw new Error(data.message || '获取评论失败')
-        }
-        comments.value = await response.json()
+        // const response = await fetch('/api/admin/comments', {
+        //   headers: {
+        //     'Authorization': `Bearer ${token}`
+        //   }
+        // });
+        // if (!response.ok) {
+        //   if (response.status === 401 || response.status === 403) {
+        //     localStorage.removeItem('adminToken'); // Remove invalid token
+        //     router.push('/admin/login'); // Redirect to login
+        //   } else {
+        //     const errorData = await response.json();
+        //     throw new Error(errorData.message || 'Failed to fetch comments');
+        //   }
+        // }
+        // const data = await response.json();
+        // comments.value = data;
+        console.warn("API call fetchComments commented out. Returning empty array.");
+        comments.value = []; // Return empty array
       } catch (err) {
-        console.error('获取评论时出错:', err)
-        error.value = err.message || '加载评论时出错'
+        console.error('Error fetching comments:', err);
+        error.value = err.message || '获取评论失败';
       } finally {
-        loading.value = false
+        loading.value = false;
       }
     }
 
     // 删除评论
     const handleDeleteComment = async (pageId, commentId) => {
       console.log(`[删除请求] Page ID: ${pageId}, Comment ID: ${commentId}`);
-      if (!confirm('确定要删除这条评论吗？')) {
-        return
+      if (!confirm('确定要删除这条评论吗?')) return;
+      const token = localStorage.getItem('adminToken');
+      if (!token) {
+        error.value = '用户未认证';
+        return;
       }
       try {
-        const response = await fetch(`/api/admin/comments/${pageId}/${commentId}`, {
-          method: 'DELETE',
-          headers: {
-            'Authorization': `Bearer ${adminToken}`
-          }
-        })
-        const data = await response.json()
-        console.log('[删除响应] Status:', response.status, 'Data:', data);
-        if (!response.ok) {
-          throw new Error(data.message || '删除评论失败')
-        }
-        alert(data.message || '评论删除成功')
-        // 刷新评论列表
-        await fetchComments()
+        // const response = await fetch(`/api/admin/comments/${pageId}/${commentId}`, {
+        //   method: 'DELETE',
+        //   headers: {
+        //     'Authorization': `Bearer ${token}`
+        //   }
+        // });
+        // if (!response.ok) {
+        //   const errorData = await response.json();
+        //    if (response.status === 401 || response.status === 403) {
+        //     localStorage.removeItem('adminToken');
+        //     router.push('/admin/login');
+        //   } else {
+        //     throw new Error(errorData.message || 'Failed to delete comment');
+        //   }
+        // }
+        // // Refresh comments after deletion
+        // fetchComments();
+        console.warn(`API call deleteComment(${pageId}, ${commentId}) commented out. Simulating deletion.`);
+        // Simulate deletion locally for UI feedback
+        comments.value = comments.value.filter(c => !(c.pageId === pageId && c.id === commentId));
+
       } catch (err) {
         console.error('删除评论时出错:', err)
         alert(err.message || '删除评论时出错')

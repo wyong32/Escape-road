@@ -92,55 +92,72 @@ const submitError = ref(null);
 
 // 获取评论的函数
 const fetchComments = async () => {
-  if (!props.pageId) return; // 确保 pageId 有效
-  isLoading.value = true;
-  fetchError.value = null;
-  comments.value = []; // 每次获取前清空
+  loading.value = true;
+  error.value = null;
   try {
-    // 注意这里使用 params 来传递查询参数
-    const response = await axios.get(API_URL, {
-      params: { pageId: props.pageId }
-    });
-    comments.value = response.data;
-  } catch (error) {
-    console.error('Error fetching comments:', error);
-    fetchError.value = 'Could not load comments. Please try again later.';
+    // const response = await axios.get(API_URL, {
+    //   params: { pageId: props.pageId }
+    // });
+    // comments.value = response.data;
+    console.warn(`API call fetchComments(${props.pageId}) commented out. Returning empty array.`);
+    comments.value = []; // Return empty array
+  } catch (err) {
+    console.error('Error fetching comments:', err);
+    error.value = 'Failed to load comments. Please try again later.';
   } finally {
-    isLoading.value = false;
+    loading.value = false;
   }
 };
 
 // 提交评论的函数
 const submitComment = async () => {
-  if (!newCommentName.value.trim() || !newCommentEmail.value.trim() || !newCommentText.value.trim()) return;
-
-  isSubmitting.value = true;
-  submitError.value = null;
+  if (newComment.value.trim() === '' || newName.value.trim() === '') {
+    error.value = 'Name and comment cannot be empty.';
+    return;
+  }
+  submitting.value = true;
+  error.value = null;
   try {
-    const response = await axios.post(API_URL, {
-      pageId: props.pageId,
-      name: newCommentName.value,
-      email: newCommentEmail.value,
-      text: newCommentText.value
-    });
-    comments.value.unshift(response.data);
-    newCommentName.value = '';
-    newCommentEmail.value = '';
-    newCommentText.value = '';
-  } catch (error) {
-    console.error('Error submitting comment:', error);
+    // const response = await axios.post(API_URL, {
+    //   pageId: props.pageId,
+    //   name: newName.value,
+    //   text: newComment.value,
+    //   email: newEmail.value // Include email in the POST request
+    // });
+    // // Add the new comment to the top of the list
+    // comments.value.unshift(response.data);
+    // newComment.value = '';
+    // newName.value = '';
+    // newEmail.value = ''; // Clear email field after submission
+
+    console.warn(`API call submitComment(${props.pageId}) commented out. Simulating submission.`);
+    // Simulate adding comment locally for UI feedback
+    const mockComment = {
+      id: Date.now().toString(),
+      name: newName.value,
+      text: newComment.value,
+      email: newEmail.value,
+      timestamp: new Date().toISOString()
+    };
+    comments.value.unshift(mockComment);
+    newComment.value = '';
+    newName.value = '';
+    newEmail.value = '';
+
+  } catch (err) {
+    console.error('Error submitting comment:', err);
     // 修改：检查是否为速率限制错误 (429)
-    if (error.response && error.response.status === 429) {
+    if (err.response && err.response.status === 429) {
         // 优先显示后端返回的速率限制消息
-        submitError.value = error.response.data.message || 'Request limit reached. Please try again later.';
+        submitError.value = err.response.data.message || 'Request limit reached. Please try again later.';
     } else {
         // 其他错误，显示通用消息或后端提供的其他错误消息
-        submitError.value = error.response?.data?.message || 'Failed to post comment. Please try again later.';
+        submitError.value = err.response?.data?.message || 'Failed to post comment. Please try again later.';
     }
     // 短暂显示错误后清除
     setTimeout(() => { submitError.value = null; }, 5000);
   } finally {
-    isSubmitting.value = false;
+    submitting.value = false;
   }
 };
 
