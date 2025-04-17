@@ -25,6 +25,10 @@
     width: 100%;
 }
 
+.footer a{
+    color: #ecf0f1;
+}
+
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
