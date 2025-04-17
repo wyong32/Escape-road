@@ -4,10 +4,10 @@
     <section class="content-wrap">
       <div class="privacy-container">
         <h1>Privacy Policy</h1>
-        <p>Last updated: [Date]</p>
+        <p>Last updated: April 11, 2025</p>
 
         <p>
-          [Your Website Name] ("us", "we", or "our") operates the [Your Website URL] website (the "Service").
+          Escape-Road ("us", "we", or "our") operates the https://escape-road-online.com website (the "Service").
         </p>
         <p>
           This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.
@@ -53,7 +53,7 @@
 
         <h2>Use of Data</h2>
         <p>
-          [Your Website Name] uses the collected data for various purposes:
+          https://escape-road-online.com uses the collected data for various purposes:
         </p>
         <ul>
             <li>To provide and maintain the Service</li>
@@ -76,13 +76,13 @@
           Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.
         </p>
         <p>
-          [Your Website Name] will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of your data and other personal information.
+          https://escape-road-online.com will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of your data and other personal information.
         </p>
 
         <h2>Disclosure Of Data</h2>
         <h3>Legal Requirements</h3>
         <p>
-          [Your Website Name] may disclose your Personal Data in the good faith belief that such action is necessary to:
+          https://escape-road-online.com may disclose your Personal Data in the good faith belief that such action is necessary to:
         </p>
         <ul>
             <li>To comply with a legal obligation</li>
@@ -140,7 +140,7 @@
           If you have any questions about this Privacy Policy, please contact us:
         </p>
         <ul>
-            <li>By email: [Your Contact Email]</li>
+            <li>By email: [maieldilmie223321@gmail.com]</li>
             <!-- Add other contact methods if applicable -->
         </ul>
       </div>

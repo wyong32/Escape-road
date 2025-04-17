@@ -4,10 +4,10 @@
     <section class="content-wrap">
       <div class="terms-container">
         <h1>Terms of Service</h1>
-        <p>Last updated: [Date]</p>
+        <p>Last updated: April 11, 2025</p>
 
         <p>
-          Welcome to [Your Website Name]! These Terms of Service ("Terms") govern your access to and use of the [Your Website URL] website and the games and services offered thereon (collectively, the "Service"), operated by [Your Website Name] ("us", "we", or "our").
+          Welcome to https://escape-road-online.com! These Terms of Service ("Terms") govern your access to and use of the [Your Website URL] website and the games and services offered thereon (collectively, the "Service"), operated by https://escape-road-online.com ("us", "we", or "our").
         </p>
         <p>
           Please read these Terms carefully before using our Service. Your access to and use of the Service is conditioned upon your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who wish to access or use the Service.
@@ -26,7 +26,7 @@
 
         <h2>Intellectual Property</h2>
         <p>
-          The Service and its original content (excluding Content provided by users), features and functionality are and will remain the exclusive property of [Your Website Name] and its licensors. The Service is protected by copyright, trademark, and other laws of both [Your Country] and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of [Your Website Name].
+          The Service and its original content (excluding Content provided by users), features and functionality are and will remain the exclusive property of https://escape-road-online.com and its licensors. The Service is protected by copyright, trademark, and other laws of both [Your Country] and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of https://escape-road-online.com.
         </p>
         <p>
           The games available on the Service are the property of their respective owners or licensors and are protected by copyright laws. You are granted a limited, non-exclusive, non-transferable license to access and play the games solely for your personal, non-commercial use through the Service.
@@ -40,8 +40,8 @@
           <li>In any way that violates any applicable national or international law or regulation.</li>
           <li>For the purpose of exploiting, harming, or attempting to exploit or harm minors in any way by exposing them to inappropriate content or otherwise.</li>
           <li>To transmit, or procure the sending of, any advertising or promotional material, including any "junk mail", "chain letter," "spam," or any other similar solicitation.</li>
-          <li>To impersonate or attempt to impersonate [Your Website Name], a [Your Website Name] employee, another user, or any other person or entity.</li>
-          <li>To engage in any other conduct that restricts or inhibits anyone's use or enjoyment of the Service, or which, as determined by us, may harm [Your Website Name] or users of the Service or expose them to liability.</li>
+          <li>To impersonate or attempt to impersonate https://escape-road-online.com, a https://escape-road-online.com employee, another user, or any other person or entity.</li>
+          <li>To engage in any other conduct that restricts or inhibits anyone's use or enjoyment of the Service, or which, as determined by us, may harm https://escape-road-online.com or users of the Service or expose them to liability.</li>
           <li>Use any robot, spider, or other automatic device, process, or means to access the Service for any purpose, including monitoring or copying any of the material on the Service.</li>
           <li>Introduce any viruses, trojan horses, worms, logic bombs, or other material which is malicious or technologically harmful.</li>
           <li>Attempt to gain unauthorized access to, interfere with, damage, or disrupt any parts of the Service, the server on which the Service is stored, or any server, computer, or database connected to the Service.</li>
@@ -60,16 +60,16 @@
 
         <h2>Disclaimer Of Warranties; Limitation Of Liability</h2>
         <p>
-          The Service is provided on an "AS IS" and "AS AVAILABLE" basis. [Your Website Name] makes no representations or warranties of any kind, express or implied, as to the operation of their services, or the information, content or materials included therein. You expressly agree that your use of these services, their content, and any services or items obtained from us is at your sole risk.
+          The Service is provided on an "AS IS" and "AS AVAILABLE" basis. https://escape-road-online.com makes no representations or warranties of any kind, express or implied, as to the operation of their services, or the information, content or materials included therein. You expressly agree that your use of these services, their content, and any services or items obtained from us is at your sole risk.
         </p>
         <p>
-          Neither [Your Website Name] nor any person associated with [Your Website Name] makes any warranty or representation with respect to the completeness, security, reliability, quality, accuracy, or availability of the services. Without limiting the foregoing, neither [Your Website Name] nor anyone associated with [Your Website Name] represents or warrants that the services, their content, or any services or items obtained through the services will be accurate, reliable, error-free, or uninterrupted, that defects will be corrected, that the services or the server that makes it available are free of viruses or other harmful components or that the services or any services or items obtained through the services will otherwise meet your needs or expectations.
+          Neither https://escape-road-online.com nor any person associated with https://escape-road-online.com makes any warranty or representation with respect to the completeness, security, reliability, quality, accuracy, or availability of the services. Without limiting the foregoing, neither https://escape-road-online.com nor anyone associated with https://escape-road-online.com represents or warrants that the services, their content, or any services or items obtained through the services will be accurate, reliable, error-free, or uninterrupted, that defects will be corrected, that the services or the server that makes it available are free of viruses or other harmful components or that the services or any services or items obtained through the services will otherwise meet your needs or expectations.
         </p>
         <p>
-          [Your Website Name] hereby disclaims all warranties of any kind, whether express or implied, statutory, or otherwise, including but not limited to any warranties of merchantability, non-infringement, and fitness for particular purpose.
+          https://escape-road-online.com hereby disclaims all warranties of any kind, whether express or implied, statutory, or otherwise, including but not limited to any warranties of merchantability, non-infringement, and fitness for particular purpose.
         </p>
         <p>
-          In no event will [Your Website Name], its affiliates or their licensors, service providers, employees, agents, officers or directors be liable for damages of any kind, under any legal theory, arising out of or in connection with your use, or inability to use, the service, any websites linked to it, any content on the service or such other websites or any services or items obtained through the service or such other websites, including any direct, indirect, special, incidental, consequential, or punitive damages.
+          In no event will https://escape-road-online.com, its affiliates or their licensors, service providers, employees, agents, officers or directors be liable for damages of any kind, under any legal theory, arising out of or in connection with your use, or inability to use, the service, any websites linked to it, any content on the service or such other websites or any services or items obtained through the service or such other websites, including any direct, indirect, special, incidental, consequential, or punitive damages.
         </p>
 
         <h2>Governing Law</h2>

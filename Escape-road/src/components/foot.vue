@@ -11,7 +11,7 @@
                 </ul>
             </div>
             <div class="footer-copyright">
-                &copy; 2025 Azgames.io. All rights reserved.
+                &copy; 2025 www.escape-road-online.com. All rights reserved.
             </div>
         </div>
     </footer>
