@@ -11,7 +11,7 @@
                 </ul>
             </div>
             <div class="footer-copyright">
-                &copy; 2025 www.escape-road-online.com. All rights reserved.
+                &copy; 2025 <router-link to="/">https://escape-road-online.com</router-link> All rights reserved.
             </div>
         </div>
     </footer>

@@ -7,7 +7,7 @@
         <p>Last updated: April 11, 2025</p>
 
         <p>
-          Escape-Road ("us", "we", or "our") operates the https://escape-road-online.com website (the "Service").
+          Escape-Road ("us", "we", or "our") operates the <router-link to="/">https://escape-road-online.com</router-link> website (the "Service").
         </p>
         <p>
           This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.
@@ -53,7 +53,7 @@
 
         <h2>Use of Data</h2>
         <p>
-          https://escape-road-online.com uses the collected data for various purposes:
+          <router-link to="/">https://escape-road-online.com</router-link> uses the collected data for various purposes:
         </p>
         <ul>
             <li>To provide and maintain the Service</li>
@@ -76,13 +76,13 @@
           Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.
         </p>
         <p>
-          https://escape-road-online.com will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of your data and other personal information.
+          <router-link to="/">https://escape-road-online.com</router-link> will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of your data and other personal information.
         </p>
 
         <h2>Disclosure Of Data</h2>
         <h3>Legal Requirements</h3>
         <p>
-          https://escape-road-online.com may disclose your Personal Data in the good faith belief that such action is necessary to:
+          <router-link to="/">https://escape-road-online.com</router-link> may disclose your Personal Data in the good faith belief that such action is necessary to:
         </p>
         <ul>
             <li>To comply with a legal obligation</li>
