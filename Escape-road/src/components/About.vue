@@ -52,7 +52,7 @@ const isExpanded = ref(false)
 // 内容区域的 DOM 引用
 const contentRef = ref(null)
 // 动态计算的 max-height 样式
-const contentMaxHeightStyle = ref({ maxHeight: '800px' }) // 初始折叠高度
+const contentMaxHeightStyle = ref({ maxHeight: '1600px' }) // 初始折叠高度
 
 // 切换展开/收起状态的函数
 const toggleExpand = () => {
@@ -68,7 +68,7 @@ watch(isExpanded, async (newValue) => {
       contentMaxHeightStyle.value = { maxHeight: `${contentRef.value.scrollHeight}px` };
     } else {
       // 收起时，恢复初始高度
-      contentMaxHeightStyle.value = { maxHeight: '800px' }; // 确保与 CSS 初始值一致
+      contentMaxHeightStyle.value = { maxHeight: '1600px' }; // 确保与 CSS 初始值一致
     }
   }
 }, { immediate: false }) // immediate: false 避免初始计算问题
@@ -76,7 +76,7 @@ watch(isExpanded, async (newValue) => {
 // 监听 gameId 变化，重置展开状态和高度
 watch(() => props.gameId, () => {
   isExpanded.value = false; // 切换游戏时总是折叠
-  contentMaxHeightStyle.value = { maxHeight: '800px' }; // 重置高度
+  contentMaxHeightStyle.value = { maxHeight: '1600px' }; // 重置高度
 }, { immediate: true })
 
 </script>

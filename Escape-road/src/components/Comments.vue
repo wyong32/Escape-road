@@ -54,18 +54,26 @@
       <p v-else-if="fetchError" class="error-message">{{ fetchError }}</p>
       <p v-else-if="comments.length === 0" class="no-comments">No comments yet. Be the first to comment!</p>
       <div v-else>
-        <div v-for="comment in comments" :key="comment.id" class="comment-item">
+        <div v-for="comment in displayedComments" :key="comment.id" class="comment-item">
           <p class="comment-author">{{ comment.name || 'Anonymous' }}:</p>
           <p class="comment-text">{{ comment.text }}</p>
           <p class="comment-meta">{{ formatTimestamp(comment.timestamp) }}</p>
         </div>
+
+        <button 
+          v-if="comments.length > initialCommentCount" 
+          @click="toggleShowAllComments" 
+          class="toggle-button"
+        >
+          {{ showAllComments ? 'Show Less' : 'Show More' }}
+        </button>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from 'vue';
+import { ref, onMounted, watch, computed } from 'vue';
 import axios from 'axios'; // 稍后需要安装 axios
 
 // 定义 props，接收来自父组件的页面标识
@@ -86,19 +94,34 @@ const isSubmitting = ref(false);
 const fetchError = ref(null);
 const submitError = ref(null);
 
+// 添加 Show More/Less 状态
+const showAllComments = ref(false); 
+const initialCommentCount = 4; // 初始显示的评论数量
+
+// 计算显示的评论
+const displayedComments = computed(() => {
+  if (showAllComments.value) {
+    return comments.value;
+  }
+  return comments.value.slice(0, initialCommentCount);
+});
+
+// 切换显示状态的函数
+const toggleShowAllComments = () => {
+  showAllComments.value = !showAllComments.value;
+};
+
 // 获取评论的函数
 const fetchComments = async () => {
   isLoading.value = true;
   fetchError.value = null;
-  const baseUrl = import.meta.env.VITE_API_BASE_URL || ''; // Get base URL
+  showAllComments.value = false; // 获取新评论时总是折叠
+  const baseUrl = import.meta.env.VITE_API_BASE_URL || '';
   try {
-    const response = await axios.get(`${baseUrl}/comments`, { // Use base URL
+    const response = await axios.get(`${baseUrl}/comments`, {
       params: { pageId: props.pageId }
     });
     comments.value = response.data;
-    // Remove simulation logic
-    // console.warn(`API call fetchComments(${props.pageId}) commented out. Returning empty array.`);
-    // comments.value = []; // Already removed
   } catch (err) {
     console.error('Error fetching comments:', err);
     fetchError.value = 'Failed to load comments. Please try again later.';
@@ -123,27 +146,10 @@ const submitComment = async () => {
       text: newCommentText.value,
       email: newCommentEmail.value
     });
-    // Add the new comment to the top of the list
     comments.value.unshift(response.data);
     newCommentText.value = '';
     newCommentName.value = '';
     newCommentEmail.value = '';
-
-    // Remove simulation logic
-    // console.warn(`API call submitComment(${props.pageId}) commented out. Simulating submission.`);
-    // // Simulate adding comment locally for UI feedback
-    // const mockComment = {
-    //   id: Date.now().toString(),
-    //   name: newCommentName.value,
-    //   text: newCommentText.value,
-    //   email: newCommentEmail.value,
-    //   timestamp: new Date().toISOString()
-    // };
-    // comments.value.unshift(mockComment);
-    // newCommentText.value = '';
-    // newCommentName.value = '';
-    // newCommentEmail.value = ''; // Already removed
-
   } catch (err) {
     console.error('Error submitting comment:', err);
     // 修改：检查是否为速率限制错误 (429)
@@ -189,7 +195,7 @@ onMounted(fetchComments);
 // 监听 pageId 变化，如果页面切换了，重新获取评论
 watch(() => props.pageId, (newPageId, oldPageId) => {
   if (newPageId && newPageId !== oldPageId) {
-    fetchComments(); // 不需要手动清空，fetchComments 内部会清空
+    fetchComments(); // fetchComments 内部会重置 showAllComments
   }
 }, { immediate: false }); // 初始加载由 onMounted 处理，不需要立即执行 watch
 
@@ -321,7 +327,9 @@ watch(() => props.pageId, (newPageId, oldPageId) => {
 
 /* === 评论列表样式 (基本不变) === */
 .comments-list {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
+  border-top: 1px solid #eee;
+  padding-top: 1.5rem;
 }
 
 .comments-list > p { 
@@ -332,33 +340,68 @@ watch(() => props.pageId, (newPageId, oldPageId) => {
 }
 
 .comment-item {
-  background-color: #fdfdfd;
-  border: 1px solid #f0f0f0;
-  border-radius: 8px;
-  padding: 1rem 1.2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.comment-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
 }
 
 .comment-author {
-    font-weight: bold;
-    color: #333;
-    margin: 0 0 0.4rem 0;
-    font-size: 0.95rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+  color: #555;
 }
 
 .comment-text {
-  margin: 0 0 0.6rem 0;
+  margin-bottom: 0.5rem;
   line-height: 1.6;
-  color: #555;
-  white-space: pre-wrap;
-  word-wrap: break-word;
+  color: #333;
+  white-space: pre-wrap; /* 保留换行 */
 }
 
 .comment-meta {
   font-size: 0.8rem;
-  color: #999;
-  text-align: right;
-  margin-top: 0.5rem;
+  color: #888;
+}
+
+.no-comments {
+    text-align: center;
+    color: #777;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    text-align: center; /* 居中显示错误信息 */
+}
+.comment-form .error-message {
+    /* 表单内的错误信息靠左 */
+    text-align: left; 
+}
+
+/* Show More / Less 按钮样式 (借鉴 About.vue) */
+.toggle-button {
+    display: block; 
+    margin: 20px auto 0; /* 与评论列表保持间距，水平居中 */
+    padding: 8px 16px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.toggle-button:hover {
+    background-color: #2980b9;
 }
 
 /* === 响应式布局 === */

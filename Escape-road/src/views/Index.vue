@@ -32,6 +32,7 @@
         </div>
       </div>
     </section>
+    <ShareLink />
     <Foot />
   </main>
 </template>
@@ -45,6 +46,7 @@ import About from '../components/About.vue'
 import Recommend from '../components/Recommend.vue'
 import GameMain from '../components/GameMain.vue'
 import Foot from '../components/foot.vue'
+import ShareLink from '../components/ShareLink.vue'
 
 // 获取当前路由实例
 const route = useRoute()
@@ -327,4 +329,6 @@ console.log('Other games:', allGames.value)
   /* 例如： */
   /* .index-specific-text { font-size: 14px; } */
 }
+
+/* .index-specific-text { font-size: 14px; } */
 </style> 
