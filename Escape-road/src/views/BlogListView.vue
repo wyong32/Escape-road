@@ -28,7 +28,8 @@
               </h2>
               <!-- 使用 post.publishedAt 并指定英文格式 -->
               <p class="post-meta">Published on: {{ post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : 'Unknown Date' }}</p>
-              <p class="post-summary">{{ post.summary }}</p>
+              <!-- Conditionally render summary paragraph -->
+              <p class="post-summary" v-if="post.summary?.trim()">{{ post.summary }}</p>
               <router-link :to="`/blog/${post.slug}`" class="read-more">Read More</router-link>
             </div>
           </div>
@@ -158,6 +159,11 @@ const blogPosts_mock = ref([
   text-decoration: none;
   color: #3a7c8a; /* 使用主题色 */
   transition: color 0.2s ease;
+  font-size: 0.9em;
+  line-height: 25px;
+  height: 100px;
+  display: block;
+  overflow: hidden;
 }
 
 .post-content h2 a:hover {

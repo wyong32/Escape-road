@@ -15,7 +15,7 @@
 
         <!-- 数据加载成功 -->
         <div v-else-if="post" class="post-card">
-          <h1>{{ post.title }}</h1>
+          <h2>{{ post.title }}</h2>
           <p class="post-meta">Published on: {{ post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true }) : 'Unknown Date' }}</p>
           <hr>
           <div class="post-content" v-html="sanitizedContent"></div>
@@ -34,8 +34,9 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from 'vue';
+import { ref, onMounted, computed, watchEffect } from 'vue';
 import { useRoute } from 'vue-router';
+import { useHead } from '@vueuse/head';
 import DOMPurify from 'dompurify';
 // 导入 API 服务 (getBlogPostBySlug)
 import { getBlogPostBySlug } from '../services/blogService'; 
@@ -60,43 +61,83 @@ const sanitizedContent = computed(() => {
   return '';
 });
 
+// Use watchEffect to update head tags when post data is available
+watchEffect(() => {
+  if (post.value) {
+    const siteUrl = 'https://escape-road-online.com'; // Your base URL
+    const postUrl = `${siteUrl}/blog/${post.value.slug}`;
+    const postImage = post.value.image ? (post.value.image.startsWith('http') ? post.value.image : `${siteUrl}${post.value.image}`) : `${siteUrl}/images/og-default.png`;
+    const pageTitle = post.value.metaTitle || post.value.title || 'Blog Article';
+    const pageDescription = post.value.metaDescription || post.value.summary || 'Read the blog article details.';
+    const pageKeywords = post.value.metaKeywords || '';
+
+    useHead({
+      title: pageTitle, // Set page title directly from variable
+      link: [
+        { rel: 'canonical', href: postUrl } // Set canonical URL
+      ],
+      meta: [
+        // Basic meta tags
+        { name: 'description', content: pageDescription },
+        { name: 'keywords', content: pageKeywords },
+        // Open Graph (Facebook, etc.)
+        { property: 'og:title', content: pageTitle },
+        { property: 'og:description', content: pageDescription },
+        { property: 'og:type', content: 'article' },
+        { property: 'og:url', content: postUrl },
+        { property: 'og:image', content: postImage },
+        // Twitter Card
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:title', content: pageTitle },
+        { name: 'twitter:description', content: pageDescription },
+        { name: 'twitter:image', content: postImage },
+      ],
+    });
+  } else {
+      // Optionally set default head tags when post is null or loading
+      // useHead({ title: 'Loading Blog Article... - Escape Road Blog' });
+  }
+});
+
 // 组件挂载后获取数据 (use slug)
 onMounted(async () => {
-  if (postSlug.value) {
+  if (postSlug.value) { 
     console.log(`[BlogDetailView] Component mounted. Fetching post with slug: ${postSlug.value}`);
     try {
       isLoading.value = true;
       error.value = null;
       post.value = await getBlogPostBySlug(postSlug.value);
       
+      // Remove the direct document.title update from here, handled by watchEffect
+      /*
       if (post.value) {
-         const pageTitle = post.value.metaTitle || post.value.title || 'Blog Article';
-         const pageDescription = post.value.metaDescription || post.value.summary || 'Read the blog article details.';
-         // Assuming updateMetaTag is available globally or imported if needed
+         const pageTitle = post.value.metaTitle || post.value.title || '博客文章';
+         const pageDescription = post.value.metaDescription || post.value.summary || '阅读博客文章详情。';
          document.title = pageTitle + ' - Escape Road Blog'; 
-         // Example for updating description meta tag (adapt as needed)
-         // updateMetaTag('meta[name="description"]', 'content', pageDescription); 
-         // updateMetaTag('meta[property="og:title"]', 'content', pageTitle);
-         // updateMetaTag('meta[property="og:description"]', 'content', pageDescription);
-         // ... update other relevant meta tags (image, keywords etc.) ...
       } else {
            console.error(`[BlogDetailView] Fetched post for slug ${postSlug.value} but received null data.`);
-           error.value = 'Could not load article data.';
+           error.value = 'Could not load article data.'; 
+      }
+      */
+     // Basic error handling if post data is unexpectedly null after success
+      if (!post.value && !error.value) {
+          console.error(`[BlogDetailView] Fetched post for slug ${postSlug.value} but received null data.`);
+           error.value = 'Could not load article data.'; 
       }
 
     } catch (err) {
       console.error(`[BlogDetailView] Failed to load blog post with slug ${postSlug.value}:`, err);
       if (err.response && err.response.status === 404) {
-        error.value = 'The requested blog article was not found (slug might be invalid).';
+        error.value = 'The requested blog article was not found (slug might be invalid).'; 
       } else {
-        error.value = 'Failed to load blog article. Please try again later.';
+        error.value = 'Failed to load blog article. Please try again later.'; 
       }
       post.value = null;
     } finally {
       isLoading.value = false;
     }
   } else {
-    error.value = 'Invalid article slug.';
+    error.value = 'Invalid article slug.'; 
     isLoading.value = false;
     console.error('[BlogDetailView] Invalid post slug from route params:', route.params.slug);
   }
@@ -121,7 +162,7 @@ const blogPosts = ref([
 
 /* 博客详情内容区域居中 */
 .blog-detail-view {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 

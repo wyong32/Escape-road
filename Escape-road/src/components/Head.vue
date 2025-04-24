@@ -41,8 +41,16 @@ const logoImage = computed(() => {
   }
 })
 
+// Define a constant for the default site name
+const DEFAULT_SITE_NAME = 'Escape Road Online.com'; // You can change this value
+
 const logoText = computed(() => {
-  return currentGameData.value?.logoText || games.game1?.logoText || 'AZGames';
+  // Check if a specific gameId is provided and if that game has a logoText
+  if (props.gameId && games[props.gameId]?.logoText) {
+    return games[props.gameId].logoText;
+  }
+  // Otherwise, return the default site name
+  return DEFAULT_SITE_NAME;
 })
 
 const headerGames = computed(() => {
