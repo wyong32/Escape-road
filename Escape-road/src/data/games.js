@@ -821,13 +821,7 @@ export const games = {
                 However, not all GitHub-hosted versions are official, so players should ensure they’re accessing safe and verified pages.<br/>
                </p>
 
-           <h3>📚 Math Playground Drift Boss/h3>
-            <p>Math Playground Drift Boss is one of the most popular versions of the game hosted on the educational gaming site MathPlayground.com. It combines fun with quick reflex challenges, making it a great option for school-based entertainment.  ​<br/>
-                Since Math Playground Drift Boss is featured on an educational platform, it's also widely accessible on school networks, offering students a fun break without bypassing any internet restrictions.<br/>
-               </p>
-
-
-            <h3>Play <a href="https://escape-road-online.com/Drift-Boss">Drift Boss unblocked</a> now！</h3>
+            <p>Play <a href="https://escape-road-online.com/Drift-Boss">Drift Boss unblocked</a> now！</p>
      
             <p>Drift Boss Unblocked is more than just a casual game; it's a test of precision, timing, and strategy. Its easy-to-learn mechanics combined with challenging gameplay make it a must-try for fans of drifting games. Whether you're a seasoned gamer or new to the genre, Drift Boss Unblocked promises hours of drifting fun.​<br/>
                Experience the thrill of drifting—play Drift Boss Unblocked 📱 

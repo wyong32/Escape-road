@@ -1,6 +1,5 @@
 <template>
     <div class="about">
-        <h2 class="below-title">{{ gameData.aboutTitle1 }}</h2>
         <div 
           class="about-content"
           :class="{ 'is-collapsed': !isExpanded }"
