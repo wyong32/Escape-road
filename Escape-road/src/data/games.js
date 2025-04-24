@@ -53,7 +53,7 @@ export const games = {
     game2: {
         id: 'game2',
         title: 'Escape Road 2 -road escape 2​ game -escape road 2 unblocked',
-        description: 'Escape Road 2 unblocked is an exciting car chase adventure game,In escape-road-online Drive car dodge obstacles and escape the relentless police pursuit during the chase.', // 游戏描述
+        description: 'Escape Road 2 unblocked is an exciting car chase adventure game,In Drive car dodge obstacles and escape the relentless police pursuit during the chase.', // 游戏描述
         keywords: 'escape road 2,Road Escape 2 game,escape road 2 unblocked,escape road 2 az games,escape road 2 online', // 新增关键词
         addressBar: "Escape-Road-2",
         logoText: "Escape Road 2",
@@ -85,7 +85,7 @@ export const games = {
     game3: {
         id: 'game3',
         title: 'Escape Road city -escape city road-escape road city unblocked',
-        description: 'Escape Road City unblocked is the city version of Escape Road. Drive car through the city to avoid obstacles,escape the ruthless pursuit of the police during the chase.', // 游戏描述
+        description: 'Escape Road City unblocked is the city version of Escape Road. Drive car through the city to avoid obstacles,escape the ruthless pursuit of the police during.', // 游戏描述
         keywords: 'escape road city,escape city road ,road escape city game,escape road unblocked,escape road online', // 新增关键词
         addressBar: "Escape-Road-City",
         logoText: "Escape Road City",
@@ -172,7 +172,7 @@ export const games = {
     },
     game5: {
         id: 'game5',
-        title: 'Escape Road Winter game-escape Winter road-Winter escape road',
+        title: 'Escape Road Winter-escape Winter road-Winter escape road',
         description: 'Escape Road winter game is the winter version of Escape Road, adding winter scene elements, giving you a rich visual experience while chasing excitement!', // 游戏描述
         keywords: 'Escape Road Winter ,escape Winter road,Winter escape road,Escape Road Winter game', // 新增关键词
         addressBar: "Escape-Road-Winter",
@@ -575,7 +575,7 @@ export const games = {
     game11: {
         id: 'game11',
         title: 'Chill Guy Clicker-chill guy clicker cheats-galactic chill guy',
-        description: "Chill Guy Clicker Just click, chill, and let your empire grow. In Chill Guy Clicker, you'll guide a laid-back hero on a journey to unlock cosmic relaxation through endless clicks.", // 游戏描述
+        description: "Chill Guy Clicker Just click, chill, and let your empire grow. You'll guide a laid-back hero on a journey to unlock cosmic relaxation through endless clicks.", // 游戏描述
         keywords: 'Chill Guy Clicker,chill guy clicker cheats, galactic chill guy', // 新增关键词
         addressBar: "Chill-Guy-Clicker",
         logoText: "Chill Guy Clicker",
@@ -828,5 +828,124 @@ export const games = {
             ​</p>
         `
     },
-// 可以继续添加更多游戏
+    game18: {
+        id: 'game18',
+        title: 'google doodle baseball​ unblocked-baseball doodles​​',
+        description: 'Google Doodle Baseball is an exciting, fun and engaging sports game that baseball fans and American fast food lovers will be looking forward to encountering. ', // 游戏描述
+        keywords: 'doodle baseball​,doodle baseball​ unblocked,baseball doodles​,Google Doodle Baseball​', // 新增关键词
+        addressBar: "doodle-baseball",
+        logoText: "Doodle Baseball",
+        image: 'game18.png',
+        iframeUrl: 'https://1games.io/game/doodle-baseball/',
+        // location: "right",
+        showHeader: false,
+        // background: 'linear-gradient(135deg, #2c3e50 0%, #3498db 100%)',
+        aboutContent: `
+            <h2>Play Google Doodle Baseball Unblocked: The Ultimate Food-Fueled Sports Game</h2>
+            <p>Google Doodle Baseball is an exciting and nostalgic browser-based sports game that fuses the spirit of American baseball with the playful charm of cartoon-style food characters. Originally released by Google as a celebratory doodle for Independence Day, Doodle Baseball has since become a fan favorite. Whether you're a casual gamer or a die-hard baseball enthusiast, Doodle Baseball offers a uniquely engaging experience that’s both fun and surprisingly challenging.​​<br/>
+                </p>
+            <h3>🎮What is Doodle Baseball? </h3>
+            <p>Doodle Baseball is a straightforward yet addictive baseball game. The twist? All the players, fans, and opponents are represented by iconic American foods—hot dogs, hamburgers, ketchup bottles, and even peanuts. With its charming graphics, responsive gameplay, and celebratory Fourth of July theme, Doodle Baseball has cemented its place in browser game history..​​​<br/>
+               Players take on the role of the batter and must time their swings perfectly to hit pitches thrown by peanut-shaped pitchers. A well-timed hit results in singles, doubles, triples, or home runs, while missed swings add strikes. Three strikes, and it’s game over!
+            </p>
+            <h3>​🚗Why is Doodle Baseball So Popular?​</h3>
+            <p>What makes Doodle Baseball stand out is its combination of humor, challenge, and simplicity. The mechanics are easy to learn but hard to master, and each pitch adds a new layer of excitement. The game uses colored cues to show pitch speed and difficulty—green and blue for slowballs, purple and yellow for faster throws, and red for ultra-speed pitches.<br/>
+               Players love the sound effects, the cheering food fans, and the fireworks that light up the screen after a successful home run. These elements give Doodle Baseball a festive and immersive atmosphere that keeps people coming back for more.​<br/>
+              </p>
+            <h3>​🚗How to Play Doodle Baseball​</h3>
+            <p>Simply go to Google and search for Doodle Baseball.<br/>
+               Click the doodle image and wait for the game to load.<br/>
+               Press the spacebar or click to swing when the ball enters the hit zone.<br/>
+               Time your swings accurately to avoid strikes and earn runs.<br/>
+               Aim for consistent hits to beat your high score.<br/>
+               No downloads or installations are necessary, making Doodle Baseball unblocked and accessible on most devices with an internet connection.<br/>
+               Doodle Baseball Unblocked: Access Anytime, Anywhere​<br/>
+               Whether you're taking a short break or trying to beat your friend’s high score, having Doodle Baseball unblocked gives you unlimited access to the game’s joyful chaos and competitive edge.<br/>
+            ​</p>
+ <p>Free <a href="https://escape-road-online.com/doodle-baseball">doodle baseball unblocked</a> Games Play Online</p>
+            <img src="/images/game18-img.jpg" alt="Ragdoll Archers" class="game-content-image" />
+            <h3>🌟 Fun Features of Doodle Baseball​​</h3>
+            <p> ✅Food-Based Characters: Play as baseball-loving foods like "Power Pop," "H-Dog," and "Big Red."​<br/>
+                ✅Increasing Difficulty: Color-coded pitches get progressively faster and harder to hit.<br/>
+                ✅Engaging Visuals: The bright, cartoon-style graphics appeal to players of all ages.<br/>
+                ✅Fourth of July Theme: Fireworks, the Liberty Bell, and bald eagles add to the celebration.<br/>
+                ✅Dynamic Sound Design: Get hyped with crowd cheers, “Strike!” calls, and home run sounds.​<br/>
+            </p>
+
+            <h3>🌟 Tips for Mastering Doodle Baseball​</h3>
+            <p>
+                ✅ Practice timing: The key to success in Doodle Baseball is precise timing. Learn the rhythm of the pitcher's throw and swing just as the ball crosses the plate.<br/>
+                ✅ Watch the pitch color: Green and blue are easiest. Be cautious when you see yellow, purple, or red.<br/>
+                ✅ Aim for triples and home runs: These boost your score dramatically and add to the visual fun.​<br/>
+            </p>
+           <p>Play Online <a href="https://escape-road-online.com/doodle-baseball">doodle baseball unblocked</a> on the Go​<br/>
+           With modern mobile browsers, players can now enjoy Doodle Baseball unblocked on smartphones and tablets. The​<br/>
+           Simply type "Doodle Baseball" in your mobile browser and start swinging!​<br/>
+           </p>
+
+            <h3>🚀 Final Thoughts on Doodle Baseball​</h3>
+            <p>Whether you're in it for the fun, the challenge, or the quirky characters, Doodle Baseball is one of the most entertaining web games available today. It combines the spirit of baseball with playful creativity and is ideal for both solo play and friendly competition.<br/>
+               </p>
+
+           <h3>💻 Who Will Love Doodle Baseball?​</h3>
+            <p>Doodle Baseball is suitable for players of all ages. Kids love the food-themed visuals, adults enjoy the nostalgic baseball feel, and everyone appreciates the lighthearted gameplay. It’s a perfect pick for families, students, and even office workers looking for a quick mental refresh.​<br/>
+               </p>
+
+            <p>Play <a href="https://escape-road-online.com/doodle-baseball">doodle baseball unblocked</a> now！</p>
+     
+            <p>Make sure you try Doodle Baseball unblocked versions for uninterrupted fun across all your devices. Grab your bat, aim for the fences, and hit that home run in the most delicious baseball game ever made! 📱 
+            ​</p>
+        `
+    },
+    game19: {
+        id: 'game19',
+        title: 'Crazy Sheep-Sheep Crazy-Crazy Sheep 3D game​​',
+        description: 'Crazy Sheep 3D game is a physics-based multiplayer game where you control hyperactive sheep battling it out in crazy arenas.the wackiest 3D battle royale game.', // 游戏描述
+        keywords: 'Crazy Sheep,Sheep Crazy,Crazy Sheep 3D game ,crazy sheep game solution​,Crazy sheep cartoon​​', // 新增关键词
+        addressBar: "Crazy-Sheep-3D",
+        logoText: "Crazy Sheep 3D",
+        image: 'game19.jpg',
+        iframeUrl: 'https://crazy-cattle3d.org/game/crazycattle3d/',
+        // location: "right",
+        showHeader: false,
+        // background: 'linear-gradient(135deg, #2c3e50 0%, #3498db 100%)',
+        aboutContent: `
+            <h2>Unleash the Madness in Crazy Sheep 3D – The Most Explosive Sheep Showdown!</h2>
+            <p>Get ready to dive headfirst into a chaotic world of fluffy destruction with Crazy Sheep, the wackiest 3D Sheep Crazy battle royale game that blends explosive action, hilarious physics, and strategic gameplay. Whether you're a casual gamer or a competitive challenger, Crazy Sheep delivers pure adrenaline-fueled fun that’s unlike anything you’ve played before. Welcome to Crazy Sheep 3D, where sheep don’t just graze—they go boom.​<br/>
+                </p>
+            <h3>🐏 What Is Crazy Sheep 3D ? </h3>
+            <p>Crazy Sheep 3D cartoon​is a physics-based multiplayer game where you control hyperactive sheep Crazy battling it out in crazy arenas. These aren’t ordinary farm animals—they're unpredictable, explosive, and driven by the thrill of victory. In Crazy Sheep 3D, every match is a frenzy of movement, strategy, and chaos, where you roll, jump, and blast your way to becoming the last sheep standing.​<br/>
+              With no guns or traditional weapons, Crazy Sheep challenges players to master momentum, timing, and environmental awareness. It's sheep-on-sheep Crazy warfare in the most unexpected, comedic way possible. Expect wild flips, surprise attacks, and the joy of outmaneuvering your wool-covered enemies.
+            </p>
+            <h3>​🌍 Explore Diverse Maps in Crazy Sheep 3D ?​</h3>
+            <p>In Crazy Sheep, each Crazy Sheep cartoon map brings a new twist to your fluffy warfare:<br/>
+                Icy Slopes of Iceland – Watch your footing as you slide into victory.<br/>
+                Emerald Hills of Ireland – Bounce off clover-covered cliffs.<br/>
+                Rugged Ridges of New Zealand – High-altitude drama with volcanic surprises.<br/>
+                Whether you're launching from hay bales or bouncing off trampolines, Crazy Sheep 3D ensures that no two matches are ever the same.​<br/>
+            </p>
+            <h3>🎮 How to Play Crazy Sheep​</h3>
+            <p>Getting started with Crazy Sheep is simple:<br/>
+                in <a href="https://escape-road-online.com/Crazy-Sheep-3D">Crazy Sheep 3D</a> <br/>
+                Choose a wild and woolly map.<br/>
+                Use keyboard controls to steer your sheep.<br/>
+                Build momentum by rolling down slopes and use it to smash opponents or escape danger.<br/>
+                Stay in the zone—because one wrong move and your sheep might become roast mutton.<br/>
+                Timing, anticipation, and creativity are your best friends in Crazy Sheep. Learn how to read the terrain, dodge opponents, and land perfectly placed jumps to dominate the field.<br/>
+            </p>
+ <p>Free <a href="https://escape-road-online.com/Crazy-Sheep-3D">Crazy Sheep 3D</a> Game Play Online</p>
+            <img src="/images/game19-img1.webp" alt="Ragdoll Archers" class="game-content-image" />
+            <h3>💥 Why You’ll Love Crazy Sheep​​</h3>
+            <p> ✅Originality: There’s no game quite like Crazy Sheep. Its sheep-centric battle royale twist makes it stand out.​<br/>
+                ✅Pure Fun: Silly physics meets serious strategy. Every match in  Crazy Sheep 3D is full of unexpected laughs.<br/>
+                ✅With no two matches ever feeling the same, Crazy Sheep keeps things fresh, fun, and unpredictable.<br/>
+            </p>
+
+            <h3> 🎯 Crazy Sheep 3D game solution:Final Thoughts​</h3>
+            <p>If you're looking for a wildly original, endlessly fun, and unexpectedly strategic experience, look no further than Crazy Sheep. Crazy Sheep 3D brings explosive wool warfare to life with charm, chaos, and competition. <br/>
+               Whether you're tumbling down hills or launching yourself at enemies, every second in Crazy Sheep is a blast—literally.</p>
+            <p>Play <a href="https://escape-road-online.com/Crazy-Sheep-3D">Crazy Sheep 3D</a></a> now！
+            </p> 
+        `
+    },// 可以继续添加更多游戏
 }

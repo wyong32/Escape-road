@@ -5,7 +5,12 @@ import DmcaView from '../views/DmcaView.vue'
 import PrivacyPolicyView from '../views/PrivacyPolicyView.vue'
 import TermsOfServiceView from '../views/TermsOfServiceView.vue'
 // import AdminPanel from '../views/AdminPanel.vue'
+import BlogListView from '../views/BlogListView.vue'
+import BlogDetailView from '../views/BlogDetailView.vue'
 import { games } from '../data/games'
+import AdminDashboard from '../views/admin/Dashboard.vue'
+import CommentRatingManagement from '../views/admin/CommentRatingManagement.vue'
+import BlogManagement from '../views/admin/BlogManagement.vue'
 
 /**
  * 根据 addressBar 查找游戏ID
@@ -47,35 +52,53 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: Index,
-      props: { id: 'game1' }, // 首页默认显示 game1
+      props: { id: 'game1' },
       meta: { 
         title: games.game1.title, 
-        description: games.game1.description, // Add description from game data
-        image: games.game1.image // Add image from game data
+        description: games.game1.description,
+        image: games.game1.image
       }
     },
     {
-      // 路径参数现在是 :addressBar
+      path: '/blog',
+      name: 'blog-list',
+      component: BlogListView,
+      meta: {
+        title: 'Blog - Escape Road',
+        description: 'Read the latest news and articles from Escape Road.',
+        image: 'og-default.png'
+      }
+    },
+    {
+      path: '/blog/:slug',
+      name: 'blog-detail',
+      component: BlogDetailView,
+      props: true,
+      meta: { 
+        title: 'Blog Article',
+        description: 'Read the blog article details.',
+        image: 'og-default.png' 
+      }
+    },
+    {
       path: '/:addressBar',
       name: 'game',
       component: Index,
-      // props 函数根据 addressBar 参数查找并传递 gameId
       props: (route) => ({
         id: findGameIdByAddressBar(route.params.addressBar)
       }),
-      // meta.title 函数也根据 addressBar 查找对应的游戏标题
       meta: { 
         title: (route) => {
           const gameId = findGameIdByAddressBar(route.params.addressBar)
           return games[gameId]?.title || games.game1.title
         },
-        description: (route) => { // Add description function
+        description: (route) => { 
           const gameId = findGameIdByAddressBar(route.params.addressBar)
-          return games[gameId]?.description || 'Play exciting car chase adventure games! Dodge obstacles and escape the police.' // Default description
+          return games[gameId]?.description || 'Play exciting car chase adventure games! Dodge obstacles and escape the police.' 
         },
-        image: (route) => { // Add image function
+        image: (route) => { 
           const gameId = findGameIdByAddressBar(route.params.addressBar)
-          return games[gameId]?.image || 'og-default.png' // Default image path (relative to /public)
+          return games[gameId]?.image || 'og-default.png' 
         }
       }
     },
@@ -85,8 +108,8 @@ const router = createRouter({
       component: AboutView,
       meta: { 
         title: '关于我们', 
-        description: 'Learn more about Escape Road and the team.', // Default description
-        image: 'og-default.png' // Default image path
+        description: 'Learn more about Escape Road and the team.', 
+        image: 'og-default.png' 
       }
     },
     {
@@ -127,8 +150,23 @@ const router = createRouter({
     {
       path: '/admin/dashboard',
       name: 'AdminDashboard',
-      component: () => import('../views/admin/Dashboard.vue'),
-      meta: { requiresAuth: true }
+      component: AdminDashboard,
+      meta: { requiresAuth: true },
+      redirect: '/admin/dashboard/comments',
+      children: [
+        {
+          path: 'comments',
+          name: 'AdminComments',
+          component: CommentRatingManagement,
+          meta: { requiresAuth: true }
+        },
+        {
+          path: 'blog',
+          name: 'AdminBlog',
+          component: BlogManagement,
+          meta: { requiresAuth: true }
+        }
+      ]
     },
     // {
     //   path: '/admin-panel',

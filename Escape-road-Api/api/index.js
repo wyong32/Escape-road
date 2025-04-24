@@ -4,6 +4,7 @@ import cors from "cors";
 import express from "express";
 import rateLimit from "express-rate-limit";
 import adminRouter from './admin.js'; // Import the admin router
+import blogRouter from './routes/blogRoutes.js'; // Import the blog router
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -78,11 +79,11 @@ const validateInput = (input, type, maxLength = Infinity) => {
     return null; // No error
 };
 
-// --- Mount Admin Router ---
-// All routes defined in admin.js will be prefixed with /admin
+// --- Mount Routers ---
 app.use('/admin', adminRouter);
+app.use('/api/blog', blogRouter); // Mount blog routes under /api/blog
 
-// --- Public API Routes (No /api prefix) ---
+// --- Public API Routes (No /api prefix for comments/ratings) ---
 
 // GET /comments?pageId=xxx
 app.get('/comments', getLimiter, async (req, res) => {
@@ -198,4 +199,4 @@ if (!process.env.VERCEL) { // VERCEL is a common env var on the platform
     app.listen(PORT, () => {
         console.log(`[API] Server is running locally on port ${PORT}`);
     });
-} 
+}

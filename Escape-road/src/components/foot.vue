@@ -5,6 +5,7 @@
                 <ul>
                     <li><router-link to="/">Games</router-link></li>
                     <li><router-link to="/about">About</router-link></li>
+                    <li><router-link to="/blog">Blog</router-link></li>
                     <li><router-link to="/dmca">DMCA</router-link></li>
                     <li><router-link to="/privacy-policy">Privacy Policy</router-link></li>
                     <li><router-link to="/terms-of-service">Terms of Service</router-link></li>
