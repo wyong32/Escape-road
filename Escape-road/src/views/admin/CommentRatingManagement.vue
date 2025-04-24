@@ -416,9 +416,6 @@ onMounted(() => {
 
 <style scoped>
 /* 这里包含所有评论评分管理相关的样式 */
-.comment-rating-management {
-  /* 可以添加一些顶层容器的样式 */
-}
 
 .loading, .error {
   text-align: center;
