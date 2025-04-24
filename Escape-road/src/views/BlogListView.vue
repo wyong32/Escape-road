@@ -24,12 +24,12 @@
                  class="post-image">
             <div class="post-content">
               <h2>
-                <router-link :to="`/blog/${post.slug}`" @click="logPostId(post.id, post.title, post.slug)">{{ post.title }}</router-link>
+                <router-link :to="`/blog/${post.slug}`">{{ post.title }}</router-link>
               </h2>
-              <!-- 使用 post.createdAt -->
-              <p class="post-meta">Published on: {{ post.createdAt ? new Date(post.createdAt).toLocaleDateString() : 'Unknown Date' }}</p>
+              <!-- 使用 post.publishedAt 并指定英文格式 -->
+              <p class="post-meta">Published on: {{ post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : 'Unknown Date' }}</p>
               <p class="post-summary">{{ post.summary }}</p>
-              <router-link :to="`/blog/${post.slug}`" class="read-more" @click="logPostId(post.id, post.title, post.slug)">Read More</router-link>
+              <router-link :to="`/blog/${post.slug}`" class="read-more">Read More</router-link>
             </div>
           </div>
         </div>
@@ -57,11 +57,6 @@ import { getBlogPosts } from '../services/blogService';
 const blogPosts = ref([]); // 用于存储从 API 获取的文章
 const isLoading = ref(true); // 加载状态
 const error = ref(null);     // 错误状态
-
-// 添加日志函数
-const logPostId = (id, title, slug) => {
-  console.log(`[BlogListView] Navigating for post "${title}" with ID: ${id}, Slug: ${slug}`);
-};
 
 // 组件挂载后执行数据获取
 onMounted(async () => {

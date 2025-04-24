@@ -20,6 +20,14 @@ const createSlug = (text) => {
     .replace(/-+$/, ''); // Trim - from end of text
 };
 
+// Helper function to check if a string is a valid ISO 8601 format
+// Basic check, can be enhanced
+const isValidISODateString = (str) => {
+  if (!str || typeof str !== 'string') return false;
+  const isoRegex = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z|[+-]\d{2}:\d{2})?$/i;
+  return isoRegex.test(str);
+};
+
 // --- GET /api/blog - 获取博客文章列表 ---
 router.get('/', async (req, res) => {
   console.log('[API GET /api/blog] Received request.');
@@ -117,8 +125,8 @@ router.get('/:id', async (req, res) => {
 // --- POST /api/blog - 创建新的博客文章 (需要认证) ---
 router.post('/', verifyAdminToken, async (req, res) => {
   try {
-    // Destructure all expected fields
-    let { title, content, slug, summary, metaTitle, metaDescription, metaKeywords, image, imageAlt } = req.body;
+    // Destructure all expected fields, including publishedAt
+    let { title, content, slug, summary, metaTitle, metaDescription, metaKeywords, image, imageAlt, publishedAt } = req.body;
 
     // 1. Input Validation
     if (!title || typeof title !== 'string' || title.trim() === '') return res.status(400).json({ message: '文章标题不能为空' });
@@ -150,6 +158,22 @@ router.post('/', verifyAdminToken, async (req, res) => {
     const updatedAt = createdAt;
     const createdAtTimestamp = now.getTime();
 
+    // Handle publishedAt: Use provided if valid, otherwise default to now
+    let finalPublishedAt = createdAt; // Default to creation time
+    if (publishedAt) { // Check if publishedAt was provided
+        const parsedDate = new Date(publishedAt);
+        // Check if the parsed date is valid (getTime() returns NaN for invalid dates)
+        if (!isNaN(parsedDate.getTime())) {
+            finalPublishedAt = parsedDate.toISOString(); // Use the valid, parsed date in ISO format
+            console.log(`[API POST /api/blog] Using provided & parsed publishedAt: ${finalPublishedAt}`);
+        } else {
+            console.warn(`[API POST /api/blog] Invalid publishedAt format received: ${publishedAt}. Defaulting to now.`);
+            // Keep finalPublishedAt as default (createdAt)
+        }
+    } else {
+         console.log(`[API POST /api/blog] No publishedAt provided. Using default (now): ${finalPublishedAt}`);
+    }
+
     const postData = {
       title: title.trim(),
       content: content,
@@ -160,6 +184,7 @@ router.post('/', verifyAdminToken, async (req, res) => {
       metaKeywords: metaKeywords?.trim() || '',
       image: image?.trim() || '',
       imageAlt: imageAlt?.trim() || '',
+      publishedAt: finalPublishedAt, // Store the determined publishedAt
       createdAt: createdAt,
       updatedAt: updatedAt,
       author: req.user?.username || 'admin'
@@ -240,7 +265,7 @@ router.put('/:id', verifyAdminToken, async (req, res) => {
     const oldSlug = existingPost.slug;
 
     // 2. Get and validate update data
-    const { title, content, slug, summary, metaTitle, metaDescription, metaKeywords, image, imageAlt } = req.body;
+    const { title, content, slug, summary, metaTitle, metaDescription, metaKeywords, image, imageAlt, publishedAt } = req.body;
     const updatedData = {};
     let newSlug = null; // Track if slug is being updated
 
@@ -299,6 +324,24 @@ router.put('/:id', verifyAdminToken, async (req, res) => {
       } else {
         console.log(`[API PUT /api/blog/${id}] Slug "${oldSlug}" remains unchanged.`);
       }
+    }
+
+    // Handle publishedAt update
+    if (publishedAt !== undefined) {
+        if (publishedAt === null || publishedAt === '') {
+            // If explicitly set to null or empty, use current time as default
+            updatedData.publishedAt = new Date().toISOString();
+            console.log(`[API PUT /api/blog/${id}] publishedAt cleared by user. Setting to now: ${updatedData.publishedAt}`);
+        } else {
+            const parsedDate = new Date(publishedAt);
+            if (!isNaN(parsedDate.getTime())) {
+                updatedData.publishedAt = parsedDate.toISOString(); // Use the valid, parsed date in ISO format
+                console.log(`[API PUT /api/blog/${id}] Setting valid publishedAt to: ${updatedData.publishedAt}`);
+            } else {
+                console.warn(`[API PUT /api/blog/${id}] Invalid publishedAt format received: ${publishedAt}. Ignoring update for this field.`);
+               // Optionally return an error: return res.status(400).json({ message: '无效的发布时间格式' }); 
+            }
+        }
     }
 
     // If no fields were provided for update

@@ -40,7 +40,7 @@
              <!-- Form Group: Image URL -->
             <div class="form-group">
               <label for="image">图片 URL (可选)</label>
-              <input type="url" id="image" v-model="postForm.image">
+              <input type="text" id="image" v-model="postForm.image">
               <small>文章主图的链接地址。</small>
             </div>
              <!-- Form Group: Image Alt -->
@@ -49,6 +49,12 @@
               <input type="text" id="imageAlt" v-model="postForm.imageAlt">
               <small>描述图片内容，用于 SEO 和可访问性。</small>
             </div>
+             <!-- Form Group: Published At -->
+             <div class="form-group">
+                <label for="publishedAt">发布时间 (可选)</label>
+                <input type="datetime-local" id="publishedAt" v-model="postForm.publishedAt">
+                <small>设置文章的发布日期和时间。如果留空，则默认为当前时间。</small>
+             </div>
              <!-- SEO Meta Fields -->
              <h4>SEO Meta 标签 (可选)</h4>
               <div class="form-group">
@@ -97,8 +103,8 @@
       <li v-for="post in adminBlogPosts" :key="post.id" class="post-list-item">
         <div class="post-info">
           <span class="post-title">{{ post.title }}</span>
-          <span class="post-date"> (更新于: {{ post.updatedAt ? new Date(post.updatedAt).toLocaleDateString() : '未知' }})</span>
-           <span class="post-slug" v-if="post.slug">Slug: /blog/{{ post.slug }}</span>
+          <span class="post-date">发布于: {{ post.publishedAt ? new Date(post.publishedAt).toLocaleString() : '未指定' }}</span>
+          <span class="post-slug" v-if="post.slug">Slug: /blog/{{ post.slug }}</span>
         </div>
         <div class="post-actions">
           <button @click="handleEditPost(post.id)" class="action-btn edit-btn">编辑</button>
@@ -130,7 +136,8 @@ const postForm = reactive({
   metaDescription: '',
   metaKeywords: '',
   image: '', // Changed from imageUrl to image
-  imageAlt: ''
+  imageAlt: '',
+  publishedAt: '' // Add publishedAt field
 });
 
 const isSubmitting = ref(false);
@@ -151,7 +158,8 @@ const resetForm = () => {
     Object.assign(postForm, {
         id: null, title: '', content: '', slug: '', summary: '',
         metaTitle: '', metaDescription: '', metaKeywords: '',
-        image: '', imageAlt: ''
+        image: '', imageAlt: '',
+        publishedAt: '' // Reset publishedAt
     });
     isEditing.value = false;
     submitError.value = null;
@@ -231,6 +239,8 @@ const handleSubmit = async () => {
   if (!isEditing.value) {
       delete payload.id;
   }
+
+  console.log('[AdminBlog] Payload being sent:', JSON.stringify(payload, null, 2));
 
   try {
     let resultPost;

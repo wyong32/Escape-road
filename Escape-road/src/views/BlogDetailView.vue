@@ -16,7 +16,7 @@
         <!-- 数据加载成功 -->
         <div v-else-if="post" class="post-card">
           <h1>{{ post.title }}</h1>
-          <p class="post-meta">Published on: {{ formatDate(post.createdAt) }}</p>
+          <p class="post-meta">Published on: {{ post.publishedAt ? new Date(post.publishedAt).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' }) : 'Unknown Date' }}</p>
           <hr>
           <img v-if="post.image" :src="post.image" :alt="post.imageAlt || post.title" class="post-main-image">
           <div class="post-content" v-html="sanitizedContent"></div>
@@ -52,13 +52,6 @@ const error = ref(null);
 const postSlug = computed(() => {
   return route.params?.slug || null;
 });
-
-// 日期格式化函数
-const formatDate = (dateString) => {
-  if (!dateString) return '';
-  const options = { year: 'numeric', month: 'long', day: 'numeric' };
-  return new Date(dateString).toLocaleDateString(undefined, options);
-};
 
 // 清理 HTML 的计算属性
 const sanitizedContent = computed(() => {

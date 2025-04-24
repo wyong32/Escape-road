@@ -30,6 +30,17 @@ const getBlogSlugs = async () => {
 // Make defineConfig async to await slug fetching
 export default defineConfig(async () => {
 
+  // Define necessary static routes manually
+  const staticRoutes = [
+    '/',
+    '/blog',
+    '/about',
+    '/dmca',
+    '/privacy-policy',
+    '/terms-of-service'
+  ];
+  console.log('[Sitemap] Manually defined static routes:', staticRoutes);
+
   // Extract dynamic game routes
   const dynamicGameRoutes = Object.values(games)
     .map(game => game.addressBar ? `/${game.addressBar}` : null)
@@ -38,9 +49,15 @@ export default defineConfig(async () => {
   // Fetch dynamic blog routes
   const dynamicBlogRoutes = await getBlogSlugs();
 
-  // Combine all dynamic routes
-  const allDynamicRoutes = [...dynamicGameRoutes, ...dynamicBlogRoutes];
-  console.log('[Sitemap] Total dynamic routes for sitemap:', allDynamicRoutes.length);
+  // Combine ALL routes: static (manual), dynamic games, dynamic blogs
+  const allRoutes = [
+      ...staticRoutes, 
+      ...dynamicGameRoutes,
+      ...dynamicBlogRoutes
+  ];
+  // Remove duplicates just in case
+  const uniqueRoutes = [...new Set(allRoutes)];
+  console.log('[Sitemap] Total unique routes for sitemap:', uniqueRoutes.length);
 
   return {
     plugins: [
@@ -49,11 +66,12 @@ export default defineConfig(async () => {
       vueDevTools(),
       sitemap({
         hostname: 'https://escape-road-online.com', 
-        dynamicRoutes: allDynamicRoutes, // Use combined list
+        // Provide the final combined list of unique routes
+        dynamicRoutes: uniqueRoutes, 
         robots: [
           { userAgent: '*' }
         ],
-        // Ensure admin routes are excluded if necessary
+        // Keep exclusion for admin paths
         exclude: ['/admin/**', '/admin/login'], 
       })
     ],

@@ -12,13 +12,13 @@
             <li>
               <!-- 链接到评论评分管理子路由 -->
               <router-link to="/admin/dashboard/comments">评论评分管理</router-link>
-            </li>
+              </li>
             <li>
               <!-- 链接到博客管理子路由 -->
               <router-link to="/admin/dashboard/blog">博客管理</router-link>
-            </li>
+              </li>
             <!-- 可以添加更多管理项 -->
-          </ul>
+            </ul>
         </nav>
       </aside>
 
@@ -104,8 +104,8 @@ export default {
 }
 
 .sidebar nav ul {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
   margin: 0;
 }
 
