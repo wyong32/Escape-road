@@ -16,7 +16,7 @@
         <!-- 数据加载成功 -->
         <div v-else-if="post" class="post-card">
           <h1>{{ post.title }}</h1>
-          <p class="post-meta">Published on: {{ post.publishedAt ? new Date(post.publishedAt).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' }) : 'Unknown Date' }}</p>
+          <p class="post-meta">Published on: {{ post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true }) : 'Unknown Date' }}</p>
           <hr>
           <div class="post-content" v-html="sanitizedContent"></div>
         </div>
