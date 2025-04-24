@@ -34,7 +34,7 @@
             </div>
             <!-- Form Group: Content -->
             <div class="form-group">
-              <label for="content">内容</label>
+              <label for="content">内容（请帮我生成html格式内容，不要包含样式和class，只需要保留原有标签：）</label>
               <textarea id="content" v-model="postForm.content" required></textarea>
             </div>
              <!-- Form Group: Image URL -->

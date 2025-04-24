@@ -18,7 +18,6 @@
           <h1>{{ post.title }}</h1>
           <p class="post-meta">Published on: {{ post.publishedAt ? new Date(post.publishedAt).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' }) : 'Unknown Date' }}</p>
           <hr>
-          <img v-if="post.image" :src="post.image" :alt="post.imageAlt || post.title" class="post-main-image">
           <div class="post-content" v-html="sanitizedContent"></div>
         </div>
 
