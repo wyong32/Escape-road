@@ -824,7 +824,7 @@ export const games = {
                 ​​As you progress in Drift Boss Unblocked, you can unlock a variety of vehicles, each with unique handling characteristics. From compact cars to larger trucks, choosing the right vehicle can enhance your drifting performance.​<br/>
                  ​</p>
  <p>Free <a href="https://escape-road-online.com/Drift-Boss">Drift Boss unblocked</a> Games Play Online</p>
-            <img src="/images/game17-img1.jpg" alt="Ragdoll Archers" class="game-content-image" />
+            <img src="/images/game17-img1.png" alt="Ragdoll Archers" class="game-content-image" />
             <h3>🌟 Drift Boss Unblocked Boosters​​</h3>
             <p>To aid in your drifting endeavors, Drift Boss Unblocked offers several boosters:​<br/>
                 ✅Double Score: Doubles the points earned during a run.<br/>
