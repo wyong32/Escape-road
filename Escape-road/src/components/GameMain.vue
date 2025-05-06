@@ -516,13 +516,17 @@ onUnmounted(() => {
   .game {
     padding: 10px;
   }
+  .game-start-img{
+    margin-bottom: 8px;
+    font-size: 0;
+  }
   .game-start-img img{
     width: 100px;
     height: 100px;
     border-radius: 10px;
   }
   .load-button{
-    padding: 10px 20px;
+    padding: 5px 20px;
     font-size: 14px;
   }
   .game-title{
