@@ -206,7 +206,7 @@ console.log('Other games:', allGames.value)
   max-width: 1620px; /* Adjusted for 1120px center and 2 columns on each side */
   margin: 0 auto;
   padding: 0 20px;
-  /* overflow: hidden; */ /* Removed if present, allow content to determine size */
+  overflow: hidden;
   /* border: 1px solid green; */ /* Removed */
 }
 
@@ -214,8 +214,7 @@ console.log('Other games:', allGames.value)
   display: flex;
   align-items: flex-start; /* Align columns at the top */
   gap: 15px; /* Gap BETWEEN COLUMNS */
-  /* flex-shrink: 0; */ /* Removed to allow shrinking */
-  flex: 0 1 auto; /* flex-grow: 0, flex-shrink: 1, flex-basis: auto */
+  flex-shrink: 0; /* Prevent sidebars from shrinking */
   /* border: 1px solid blue; */ /* Removed */
   /* flex-basis: auto; */ /* Removed */
 }
@@ -233,14 +232,12 @@ console.log('Other games:', allGames.value)
   flex-direction: column;
   gap: 10px; /* Gap BETWEEN ITEMS in a column */
   width: 100px; /* Explicitly set column width to match cr-item */
-  flex-shrink: 0; /* Prevent columns themselves from shrinking internally */
 }
 
 .content-center {
-  /* width: 1120px; */ /* Removed fixed width */
+  width: 1120px; /* Restored to original specified width */
   margin: 0 20px;
-  /* flex-shrink: 0; */ /* Removed to allow shrinking */
-  flex: 0 1 1120px; /* flex-grow: 0, flex-shrink: 1, flex-basis: 1120px */
+  flex-shrink: 0; /* Also prevent center from shrinking below its defined width */
 }
 
 .cr-item {
@@ -396,8 +393,8 @@ console.log('Other games:', allGames.value)
     /* Properties like width, gap, flex-direction are no longer needed here for mobile */
   }
   .cr-item {
-    width: 90px; /* 进一步减小图标尺寸 */
-    height: 90px;
+    width: 80px; /* 进一步减小图标尺寸 */
+    height: 80px;
   }
   .below {
     flex-direction: column; /* 垂直堆叠 About 和 Recommend */
