@@ -115,4 +115,15 @@ const facebookShareUrl = computed(() => {
 
 /* 移除之前的 span 和多余的 margin */
 .share-links span { display: none; } /* 隐藏"分享到"文字 */
+
+@media (max-width: 768px) {
+  .share-links{
+    left: 5px;
+    padding: 5px 10px;
+  }
+  .share-links a{
+    width: 20px;
+    height: 20px;
+  }
+}
 </style>
