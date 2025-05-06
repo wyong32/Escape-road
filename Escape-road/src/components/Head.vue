@@ -177,11 +177,14 @@ const headerGames = computed(() => {
 
 /* 可以添加响应式设计 */
 @media (max-width: 768px) {
+  .header{
+    padding: 0 10px;
+  }
   .header-nav {
     display: none;
   }
   .header-content {
-    justify-content: center;
+    justify-content: left;
   }
 }
 </style>

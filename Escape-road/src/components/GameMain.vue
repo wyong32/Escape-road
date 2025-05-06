@@ -494,21 +494,39 @@ onUnmounted(() => {
     align-items: center; /* 居中对齐 */
     gap: 10px; /* 添加一些间距 */
     margin-bottom: 10px;
+    padding-left: 0;
   }
+  .top-bar-image{
+      width: 60px;
+      height: 60px;
+      border-radius: 10px;
+    }
   .top-bar > :deep(.rating-section) {
     /* 在堆叠时可能需要一些底部边距 */
-    margin-bottom: 5px;
+    margin-bottom: 0;
     border-bottom: 1px solid #eee; /* 在堆叠时重新添加分隔线 */
-    padding-bottom: 10px; /* 添加一些内边距 */
+    padding-bottom: 0; /* 添加一些内边距 */
     width: 100%; /* 堆叠时占满宽度 */
   }
   .controls {
     /* 小屏幕上按钮居中可能更好？或者保持靠右 */
-    justify-content: center;
+    justify-content: left;
     width: 100%;
   }
   .game {
     padding: 10px;
+  }
+  .game-start-img img{
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+  }
+  .load-button{
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  .game-title{
+    font-size: 16px;
   }
 }
 

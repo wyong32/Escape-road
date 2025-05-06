@@ -263,16 +263,17 @@ watch(() => props.pageId, (newPageId, oldPageId) => {
 
 /* 响应式调整 */
 @media (max-width: 600px) {
+    
     .rating-section {
-        padding: 6px 0 10px;
-        margin-bottom: 10px;
+        padding: 0;
+        margin-bottom: 0;
     }
     .current-rating {
         gap: 3px 6px;
-        margin-bottom: 6px;
+        margin-bottom: 0;
     }
     .average-score {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
     .stars {
         font-size: 1.4rem;
@@ -285,7 +286,7 @@ watch(() => props.pageId, (newPageId, oldPageId) => {
         gap: 4px;
         font-size: 0.8rem;
         min-height: auto;
-        margin-top: 3px;
+        margin-top: 0;
     }
      .user-rating .star.interactive {
         font-size: 1.3rem;

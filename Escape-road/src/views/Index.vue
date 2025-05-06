@@ -6,22 +6,26 @@
         <div class="game-wrap">
           <div class="game-list">
             <div class="list-left">
-              <div class="cr-item" v-for="game in leftGames" :key="game.id">
-                <router-link :to="'/' + game.addressBar">
-                  <img :src="getImageUrl(game.image)" :title="game.title" :alt="game.title" />
-                  <p class="mask">{{ game.logoText }}</p>
-                </router-link>
+              <div class="game-column" v-for="(column, columnIndex) in leftGameColumns" :key="`left-col-${columnIndex}`">
+                <div class="cr-item" v-for="game in column" :key="game.id">
+                  <router-link :to="'/' + game.addressBar">
+                    <img :src="getImageUrl(game.image)" :title="game.title" :alt="game.title" />
+                    <p class="mask">{{ game.logoText }}</p>
+                  </router-link>
+                </div>
               </div>
             </div>
             <div class="content-center">
               <GameMain :game-id="currentGameId" :key="currentGameId" />
             </div>
             <div class="list-right">
-              <div class="cr-item" v-for="game in rightGames" :key="game.id">
-                <router-link :to="'/' + game.addressBar">
-                  <img :src="getImageUrl(game.image)" :title="game.title" :alt="game.title" />
-                  <p class="mask">{{ game.logoText }}</p>
-                </router-link>
+              <div class="game-column" v-for="(column, columnIndex) in rightGameColumns" :key="`right-col-${columnIndex}`">
+                <div class="cr-item" v-for="game in column" :key="game.id">
+                  <router-link :to="'/' + game.addressBar">
+                    <img :src="getImageUrl(game.image)" :title="game.title" :alt="game.title" />
+                    <p class="mask">{{ game.logoText }}</p>
+                  </router-link>
+                </div>
               </div>
             </div>
           </div>
@@ -50,6 +54,23 @@ import ShareLink from '../components/ShareLink.vue'
 
 // 获取当前路由实例
 const route = useRoute()
+
+const gamesPerColumn = 7; // 每列最多显示的游戏数量
+
+/**
+ * 将游戏数组分块成列
+ * @param {Array} gamesArray - 要分块的游戏数组
+ * @param {number} chunkSize - 每块的大小 (即每列的游戏数)
+ * @returns {Array<Array>} - 分块后的二维数组，每个子数组是一列
+ */
+const chunkGamesIntoColumns = (gamesArray, chunkSize) => {
+  const columns = [];
+  if (!gamesArray || gamesArray.length === 0) return columns;
+  for (let i = 0; i < gamesArray.length; i += chunkSize) {
+    columns.push(gamesArray.slice(i, i + chunkSize));
+  }
+  return columns;
+};
 
 /**
  * 根据 addressBar 查找游戏ID
@@ -99,14 +120,16 @@ const allGames = computed(() => {
   }))
 })
 
-// 修改：根据 location 筛选左侧游戏
-const leftGames = computed(() => {
-  return allGames.value.filter(game => game.location === 'left');
+// 修改：根据 location 筛选左侧游戏，并分列
+const leftGameColumns = computed(() => {
+  const filteredLeftGames = allGames.value.filter(game => game.location === 'left');
+  return chunkGamesIntoColumns(filteredLeftGames, gamesPerColumn);
 })
 
-// 修改：根据 location 筛选右侧游戏
-const rightGames = computed(() => {
-  return allGames.value.filter(game => game.location === 'right');
+// 修改：根据 location 筛选右侧游戏，并分列
+const rightGameColumns = computed(() => {
+  const filteredRightGames = allGames.value.filter(game => game.location === 'right');
+  return chunkGamesIntoColumns(filteredRightGames, gamesPerColumn);
 })
 
 // 获取图片URL
@@ -154,6 +177,8 @@ watchEffect(() => {
 
 console.log('Current game:', gameData.value)
 console.log('Other games:', allGames.value)
+// console.log('Left Game Columns:', leftGameColumns.value); // Keep this commented or remove
+// console.log('Right Game Columns:', rightGameColumns.value); // Keep this commented or remove
 
 </script>
 
@@ -175,23 +200,47 @@ console.log('Other games:', allGames.value)
 
 .game-list {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1620px; /* Adjusted for 1120px center and 2 columns on each side */
   margin: 0 auto;
   padding: 0 20px;
+  /* overflow: hidden; */ /* Removed if present, allow content to determine size */
+  /* border: 1px solid green; */ /* Removed */
 }
 
 .list-left, .list-right {
   display: flex;
+  align-items: flex-start; /* Align columns at the top */
+  gap: 15px; /* Gap BETWEEN COLUMNS */
+  /* flex-shrink: 0; */ /* Removed to allow shrinking */
+  flex: 0 1 auto; /* flex-grow: 0, flex-shrink: 1, flex-basis: auto */
+  /* border: 1px solid blue; */ /* Removed */
+  /* flex-basis: auto; */ /* Removed */
+}
+
+.list-left {
+  flex-direction: row-reverse; /* New columns appear to the left */
+}
+
+.list-right {
+  flex-direction: row; /* New columns appear to the right (default) */
+}
+
+.game-column {
+  display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 10px; /* Gap BETWEEN ITEMS in a column */
+  width: 100px; /* Explicitly set column width to match cr-item */
+  flex-shrink: 0; /* Prevent columns themselves from shrinking internally */
 }
 
 .content-center {
-  width: 1200px;
+  /* width: 1120px; */ /* Removed fixed width */
   margin: 0 20px;
+  /* flex-shrink: 0; */ /* Removed to allow shrinking */
+  flex: 0 1 1120px; /* flex-grow: 0, flex-shrink: 1, flex-basis: 1120px */
 }
 
 .cr-item {
@@ -267,13 +316,30 @@ console.log('Other games:', allGames.value)
   .game-list {
     max-width: 960px; /* 稍微减小最大宽度 */
     padding: 0 15px;
+    justify-content: space-around; /* Allow more flexible spacing */
   }
   .content-center {
-    width: calc(100% - 2 * 100px - 40px); /* 根据列表宽度和间距调整 */
+    /* width: calc(100% - 2 * 100px - 40px); */ /* 根据列表宽度和间距调整 */
+    flex-grow: 1;
+    width: auto; /* Allow it to take available space */
+    min-width: 300px; /* Prevent it from becoming too small */
+    margin: 0 10px; /* Reduce margin slightly */
+    flex-shrink: 1;
+  }
+  .list-left,
+  .list-right {
+    /* Allow sidebars to shrink if necessary, but also take content width */
+    flex-grow: 0;
+    flex-shrink: 1;
+    /* max-width can be used if we want to limit them to e.g. 2 columns */
+    /* max-width: calc(2 * 90px + 15px); */ 
+  }
+  .game-column {
+    width: 90px; /* Match cr-item size for tablet */
   }
   .cr-item {
-    width: 90px; /* 稍微减小图标尺寸 */
-    height: 90px;
+    width: 90px;  /* Adjusted to match .game-column for tablet */
+    height: 90px; /* Adjusted for consistency */
   }
   .below {
      padding: 0 20px;
@@ -293,6 +359,7 @@ console.log('Other games:', allGames.value)
     align-items: center; /* 居中对齐 */
     max-width: 100%;
     padding: 0 10px;
+    gap: 0; /* Remove gap from main list as sections stack */
   }
   .list-left, .list-right {
     flex-direction: row; /* 将图标改为水平排列 */
@@ -301,21 +368,36 @@ console.log('Other games:', allGames.value)
     width: 100%;
     margin-bottom: 20px; /* 在列表和中间内容间添加间距 */
     order: 1; /* 将左右列表默认放在下方 */
+    gap: 10px; /* Add gap for the cr-items */
   }
   .list-left {
-      order: 0; /* 将左列表放在最上方 */
+      order: 1; /* 将左列表放在中间内容的下方 */
       margin-bottom: 15px;
   }
   .content-center {
     width: 100%; /* 中间内容占满宽度 */
     margin: 0 0 20px 0; /* 移除左右外边距，添加下方外边距 */
-    order: 2; /* 将中间内容放在中间 */
+    order: 0; /* 将中间内容放在最上方 */
     height: auto; /* 允许高度自适应 */
     min-height: 400px; /* 设置一个最小高度 */
   }
+  .list-right { /* Ensure list-right also has an order defined if needed */
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    width: 100%;
+    margin-bottom: 20px; 
+    order: 2; /* 将右列表放在左列表的下方 */
+    gap: 10px; 
+  }
+  .game-column {
+    /* Key change for mobile: make .cr-item direct flex children of .list-left/right */
+    display: contents;
+    /* Properties like width, gap, flex-direction are no longer needed here for mobile */
+  }
   .cr-item {
-    width: 70px; /* 进一步减小图标尺寸 */
-    height: 70px;
+    width: 90px; /* 进一步减小图标尺寸 */
+    height: 90px;
   }
   .below {
     flex-direction: column; /* 垂直堆叠 About 和 Recommend */
@@ -323,11 +405,10 @@ console.log('Other games:', allGames.value)
     padding: 0 15px;
     gap: 20px; /* 增加堆叠时的间距 */
   }
-  /* About 和 Recommend 组件在下方单独调整宽度 */
-
-  /* 可以在这里为 Index.vue 特有的文本元素（如果未来添加）设置字体大小 */
-  /* 例如： */
-  /* .index-specific-text { font-size: 14px; } */
+  .cr-item .mask{
+    font-size: 14px;
+    line-height: 1;
+  }
 }
 
 /* .index-specific-text { font-size: 14px; } */
