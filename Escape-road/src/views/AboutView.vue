@@ -18,6 +18,9 @@
         <p>
             If you have any questions, suggestions or cooperation intentions, please feel free to contact us through the contact information in the footer. We look forward to hearing from you!
         </p>
+        <p>
+            You can also reach us directly via email at: maieldilmie223321@gmail.com
+        </p>
       </div>
     </section>
     <Foot />

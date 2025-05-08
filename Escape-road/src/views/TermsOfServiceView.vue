@@ -87,7 +87,7 @@
 
         <h2>Contact Us</h2>
         <p>
-          If you have any questions about these Terms, please contact us at [Your Contact Email].
+          If you have any questions about these Terms, please contact us at [maieldilmie223321@gmail.com].
         </p>
       </div>
     </section>

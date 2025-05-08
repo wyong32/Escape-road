@@ -26,10 +26,7 @@
           Notifications of claimed infringement should be sent to our Designated Copyright Agent at:
         </p>
         <p>
-          <strong>[Your designated agent's name or department]</strong><br>
-          <strong>[Your mailing address]</strong><br>
-          <strong>[Your email address]</strong><br>
-          <strong>[Your phone number (optional)]</strong>
+          <strong>maieldilmie223321@gmail.com</strong><br>
         </p>
         <p>
           Please note that under Section 512(f) of the DMCA, any person who knowingly materially misrepresents that material or activity is infringing may be subject to liability.
