@@ -50,7 +50,12 @@ export const games = {
             </p>
             <h3>Conclusion</h3>
             <p>Escape Road is not only a chase game, it is also an adventure full of drama and challenges. Each turn brings a new and surprising experience that requires driving skills and quick reactions. Fasten your seat belts, start your engine and get ready for a dramatic escape. The game is available to play for free at <a href="https://escape-road-online.com">Escape-Road-online</a> </p>
-        `,
+            <h2>​​​​Love chaos? more games​​: </h2>
+             <p><a href="https://escape-road-online.com/Drift-boss">Drift-boss</a> ​<br/>
+             <a href="https://escape-road-online.com/doodle-baseball">doodle baseball Unblocked</a> ​<br/>
+             <a href="https://escape-road-online.com/​Drive-Mad-Unblocked">​Drive Mad Unblocked</a> ​<br/>
+             </p>
+            `,
   },
   game2: {
     id: 'game2',
@@ -937,7 +942,7 @@ export const games = {
       'Crazy Sheep,Sheep Crazy,Crazy Sheep 3D game ,crazy sheep game solution​,Crazy sheep cartoon​​', // 新增关键词
     addressBar: 'Crazy-Sheep-3D',
     logoText: 'Crazy Sheep 3D',
-    image: 'game19.jpg',
+    image: 'game20.png',
     iframeUrl: 'https://crazy-cattle3d.org/game/crazycattle3d/',
     // location: "right",
     showHeader: false,
@@ -967,7 +972,7 @@ export const games = {
                 Timing, anticipation, and creativity are your best friends in Crazy Sheep. Learn how to read the terrain, dodge opponents, and land perfectly placed jumps to dominate the field.<br/>
             </p>
  <p>Free <a href="https://escape-road-online.com/Crazy-Sheep-3D">Crazy Sheep 3D</a> Game Play Online</p>
-            <img src="/images/game19-img1.webp" alt="Ragdoll Archers" class="game-content-image" />
+            <img src="/images/game20-img1.png" alt="Ragdoll Archers" class="game-content-image" />
             <h3>💥 Why You’ll Love Crazy Sheep​​</h3>
             <p> ✅Originality: There’s no game quite like Crazy Sheep. Its sheep-centric battle royale twist makes it stand out.​<br/>
                 ✅Pure Fun: Silly physics meets serious strategy. Every match in  Crazy Sheep 3D is full of unexpected laughs.<br/>
@@ -980,8 +985,43 @@ export const games = {
             <p>Play <a href="https://escape-road-online.com/Crazy-Sheep-3D">Crazy Sheep 3D</a></a> now！
             </p> 
         `,
+  },
+  game20: {
+    id: 'game20',
+    title: '​​Drive Mad Unblocked-drive mad glitch-drive mad github​​',
+    description:
+      'Drive Mad Unblocked—the ultimate racing thrill where skill meets chaos! Tackle ​​100+ insane levels​​ packed with obstacles, nitro boosts, and heart-pounding tracks. ', // 游戏描述
+    keywords: 'Drive Mad Unblocked,drive mad glitch,drive mad github​,Drive Mad Unblocked game​', // 新增关键词
+    addressBar: '​​Drive-Mad-Unblocked',
+    logoText: '​​Drive Mad Unblocked',
+    image: 'game20.jpg',
+    iframeUrl: 'https://drivemad2.io/game/drivemad/',
+    // location: "right",
+    showHeader: false,
+    // background: 'linear-gradient(135deg, #2c3e50 0%, #3498db 100%)',
+    aboutContent: `
+                  <h2>​​Drive Mad Unblocked: Master the Madness</h2>
+                  <p>Buckle up for Drive Mad Unblocked—the ultimate racing thrill where skill meets chaos! 🏁 Tackle ​​100+ insane levels​​ packed with obstacles, nitro boosts, and heart-pounding tracks. With ​​stunning graphics​​ and ​​realistic physics​​, every drift, jump, and crash feels exhilarating.​<br/>
+                      </p>
+                 <img src="/images/game19-img1.webp" alt="Ragdoll Archers" class="game-content-image" />
+                  <h3>​​How to play Drive Mad Unblocked? </h3>
+                  <p>​​​​Drive Mad Unblocked Controls​​: Accelerate (⬆️/W), Brake (⬇️/S), Steer (⬅️➡️/A/D), and boost with ​​Space/Shift​​!​<br/>
+                    ​​Drive Mad Unblocked Tips​​: Dodge obstacles, memorize tracks, and swap cars to crush the competition.​<br/>
+                    ​​​​Drive Mad Unblocked Glitch Alert​​: Discover sneaky shortcuts 🕵️♂️ (like the Drive Mad glitch on sharp turns) to shave seconds off your time—just don’t flip your car!​<br/>
+                  </p>
+                  <h3>​🌍Drive Mad GitHub and drive mad glitch​  ​​Community Hacks & Mods​</h3>
+                  <p>​​ For tinkerers, dive into Drive Mad GitHub and drive mad glitch repos 🧑💻 where fans share custom tracks, car skins, and physics tweaks.​<br/>
+                  (Psst: Use these mods at your own risk!)​<br/>
+                  </p>
+                  <h3>🎮 ​​Survive in Drive Mad Unblocked ​​</h3>
+                  <p>Collect nitro power-ups, avoid walls like the plague, and unlock ​​ALL 100+ levels​​ to prove you’re the ultimate racer. Ready to go Drive Mad Unblocked? <br/>
+                    Play ​​FREE​​ at <a href="https://escape-road-online.com">www.escape-road-online.com</a> ! 🎮
+                  </p>
+                  <h2>​​​​Love chaos? more games​​: </h2>
+                  <p><a href="https://escape-road-online.com/Drift-boss">Drift-boss</a> ​<br/>
+                  <a href="https://escape-road-online.com/doodle-baseball">doodle baseball Unblocked</a> ​<br/>
+                  <a href="https://escape-road-online.com/Crazy-Sheep-3D">Crazy Sheep 3D</a> ​<br/>
+                  </p>
+              `,
   }, // 可以继续添加更多游戏
-
-  
-  
 }
