@@ -120,6 +120,7 @@ const facebookShareUrl = computed(() => {
   .share-links{
     left: 5px;
     padding: 5px 10px;
+    display: none;
   }
   .share-links a{
     width: 20px;

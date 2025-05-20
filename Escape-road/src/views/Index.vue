@@ -4,7 +4,8 @@
     <section>
       <div class="container" :style="{ background: gameData.background }">
         <div class="game-wrap">
-          <div class="game-list">
+          <!-- 桌面端布局 -->
+          <div class="game-list desktop-only">
             <div class="list-left">
               <div class="game-column" v-for="(column, columnIndex) in leftGameColumns" :key="`left-col-${columnIndex}`">
                 <div class="cr-item" v-for="game in column" :key="game.id">
@@ -24,6 +25,23 @@
                   <router-link :to="'/' + game.addressBar">
                     <img :src="getImageUrl(game.image)" :title="game.title" :alt="game.title" />
                     <p class="mask">{{ game.logoText }}</p>
+                  </router-link>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 移动端布局 -->
+          <div class="mobile-only">
+            <div class="content-center">
+              <GameMain :game-id="currentGameId" :key="currentGameId" />
+            </div>
+            <div class="mobile-game-list">
+              <div class="mobile-game-grid">
+                <div class="mobile-game-item" v-for="game in allGames" :key="game.id">
+                  <router-link :to="'/' + game.addressBar">
+                    <img :src="getImageUrl(game.image)" :title="game.title" :alt="game.title" />
+                    <p class="mobile-mask">{{ game.logoText }}</p>
                   </router-link>
                 </div>
               </div>
@@ -345,66 +363,94 @@ console.log('Other games:', allGames.value)
 
 /* 手机样式 (例如：宽度 <= 768px) */
 @media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+  
+  .mobile-only {
+    display: block;
+    width: 100%;
+  }
+
   .container {
-      padding: 50px 0 20px; /* 调整容器内边距 */
+    padding: 20px 0;
   }
+
   .game-wrap {
-      margin-bottom: 30px;
+    margin-bottom: 20px;
   }
-  .game-list {
-    flex-direction: column; /* 垂直堆叠 */
-    align-items: center; /* 居中对齐 */
-    max-width: 100%;
-    padding: 0 10px;
-    gap: 0; /* Remove gap from main list as sections stack */
-  }
-  .list-left, .list-right {
-    flex-direction: row; /* 将图标改为水平排列 */
-    flex-wrap: wrap; /* 允许换行 */
-    justify-content: center; /* 水平居中 */
-    width: 100%;
-    margin-bottom: 20px; /* 在列表和中间内容间添加间距 */
-    order: 1; /* 将左右列表默认放在下方 */
-    gap: 10px; /* Add gap for the cr-items */
-  }
-  .list-left {
-      order: 1; /* 将左列表放在中间内容的下方 */
-      margin-bottom: 15px;
-  }
+
   .content-center {
-    width: 100%; /* 中间内容占满宽度 */
-    margin: 0 0 20px 0; /* 移除左右外边距，添加下方外边距 */
-    order: 0; /* 将中间内容放在最上方 */
-    height: auto; /* 允许高度自适应 */
-    min-height: 400px; /* 设置一个最小高度 */
-  }
-  .list-right { /* Ensure list-right also has an order defined if needed */
-    flex-direction: row; 
-    flex-wrap: wrap; 
-    justify-content: center; 
     width: 100%;
-    margin-bottom: 20px; 
-    order: 2; /* 将右列表放在左列表的下方 */
-    gap: 10px; 
+    margin: 0 0 20px 0;
+    height: auto;
+    min-height: 400px;
   }
-  .game-column {
-    /* Key change for mobile: make .cr-item direct flex children of .list-left/right */
-    display: contents;
-    /* Properties like width, gap, flex-direction are no longer needed here for mobile */
+
+  .mobile-game-list {
+    width: 100%;
+    padding: 0 10px;
   }
-  .cr-item {
-    width: 80px; /* 进一步减小图标尺寸 */
-    height: 80px;
+
+  .mobile-game-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 100%;
   }
+
+  .mobile-game-item {
+    aspect-ratio: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .mobile-game-item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .mobile-game-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .mobile-mask {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 4px;
+    margin: 0;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+
+  .mobile-game-item:active {
+    transform: scale(0.95);
+  }
+
   .below {
-    flex-direction: column; /* 垂直堆叠 About 和 Recommend */
-    align-items: center; /* 居中 */
+    flex-direction: column;
+    align-items: center;
     padding: 0 15px;
-    gap: 20px; /* 增加堆叠时的间距 */
+    gap: 20px;
   }
-  .cr-item .mask{
-    font-size: 14px;
-    line-height: 1;
+}
+
+/* 桌面端样式 */
+@media (min-width: 769px) {
+  .mobile-only {
+    display: none;
   }
 }
 

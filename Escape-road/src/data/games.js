@@ -1023,5 +1023,834 @@ export const games = {
                   <a href="https://escape-road-online.com/Crazy-Sheep-3D">Crazy Sheep 3D</a> ​<br/>
                   </p>
               `,
-  }, // 可以继续添加更多游戏
+  },
+
+  game21: {
+    id: 'game21',
+    title: 'Spear Warzone - spear warzone unblocked - spear warzone game',
+    description:
+      'Spear Warzone Unblocked — Engage in epic spear battles online! Test your reflexes and accuracy in this thrilling stickman arena showdown!',
+    keywords: 'Spear Warzone, spear warzone unblocked, spear warzone game, spear battle online, stickman spear fight',
+    addressBar: 'Spear-Warzone',
+    logoText: 'Spear Warzone',
+    image: 'game21.webp',
+    iframeUrl: 'https://game.azgame.io/spear-warzone/',
+    showHeader: false,
+    aboutContent: `
+      <h2>⚔️ Spear Warzone Unblocked: Stickman Spear Showdown!</h2>
+      <p>Welcome to <strong>Spear Warzone Unblocked</strong> — the ultimate test of precision, timing, and survival! Step into the arena as a fierce stickman warrior and hurl spears at your enemies before they get you first! 💥<br/>
+      With simple controls and intense gameplay, each match is a pulse-pounding fight to the finish.</p>
+      
+      <img src="/images/game21-img1.webp" alt="Spear Warzone gameplay" class="game-content-image" />
+      
+      <h3>🎯 How to Play Spear Warzone?</h3>
+      <p>
+        <strong>Controls:</strong> Aim with your mouse, tap/click to throw your spear.<br/>
+        <strong>Tip:</strong> Headshots deal more damage — perfect your throw timing to dominate the arena!<br/>
+        <strong>Pro Move:</strong> Jump and shoot mid-air for a tactical advantage!<br/>
+      </p>
+  
+      <h3>🔥 Game Features</h3>
+      <ul>
+        <li>Fast-paced spear duels</li>
+        <li>Single & multiplayer action</li>
+        <li>Unlock skins and arena themes</li>
+        <li>Realistic ragdoll physics</li>
+      </ul>
+  
+      <h3>🌍 Spear Warzone Community & Mods</h3>
+      <p>Join a growing fan base of spear warriors. Compete in custom lobbies or discover cool mods from the online community. Customize your stickman or download new spear styles for added flair!</p>
+  
+      <h3>🎮 Play Spear Warzone Unblocked Now!</h3>
+      <p>No downloads. No signup. Just instant fun! Play <strong>FREE</strong> now at <a href="https://escape-road-online.com">www.escape-road-online.com</a> and dominate the Spear Warzone arena!</p>
+  
+      <h2>💥 More Action-Packed Games:</h2>
+      <p>
+        <a href="https://escape-road-online.com/Drift-boss">Drift Boss</a><br/>
+        <a href="https://escape-road-online.com/Stickman-Annihilation">Stickman Annihilation</a><br/>
+        <a href="https://escape-road-online.com/Crazy-Sheep-3D">Crazy Sheep 3D</a><br/>
+      </p>
+    `,
+  },
+
+  game22: {
+    id: 'game22',
+    title: 'Stellar Burner - stellar burner unblocked - space shooting game',
+    description:
+      'Stellar Burner Unblocked — Navigate intense galactic battles in this high-speed space shooter! Blast enemies, dodge asteroids, and upgrade your ship for survival.',
+    keywords: 'Stellar Burner, stellar burner unblocked, stellar burner game, space shooter game, galactic battle game',
+    addressBar: 'Stellar-Burner',
+    logoText: 'Stellar Burner',
+    image: 'game22.webp',
+    iframeUrl: 'https://game.azgame.io/stellar-burner/',
+    showHeader: false,
+    aboutContent: `
+      <h2>🚀 Stellar Burner Unblocked: Rule the Galaxy</h2>
+      <p>Gear up for interstellar chaos in <strong>Stellar Burner Unblocked</strong> — a fast-paced space shooter where only the fastest reflexes survive. Control a high-tech starship through endless waves of enemies and meteor showers in an epic fight for galactic dominance.</p>
+  
+      <h3>🛸 How to Play Stellar Burner?</h3>
+      <p>
+        <strong>Controls:</strong> Use arrow keys or WASD to navigate. Press Space to fire lasers.<br/>
+        <strong>Gameplay Tip:</strong> Stay on the move — enemies come from all sides and obstacles can appear suddenly!<br/>
+        <strong>Upgrade Tip:</strong> Collect power cores to enhance your weapons, shields, and ship speed.
+      </p>
+  
+      <h3>🌌 Features of Stellar Burner</h3>
+      <ul>
+        <li>Dynamic space battles with increasing difficulty</li>
+        <li>Responsive controls and smooth ship movement</li>
+        <li>Power-ups and ship upgrades</li>
+        <li>Minimalist yet immersive space graphics</li>
+      </ul>
+  
+      <h3>🧠 Strategy & Survival</h3>
+      <p>Balance your offense and defense. Destroy enemy ships to earn points, dodge incoming fire, and use collected boosts wisely. How far can you travel through the stellar chaos?</p>
+  
+      <h3>🎮 Experience Stellar Burner Unblocked</h3>
+      <p>Enjoy seamless, browser-based gameplay without any installs. Whether you're aiming to beat your high score or master the art of space warfare, Stellar Burner delivers endless arcade-style fun.</p>
+  
+      <h2>🔥 Looking for more fast-paced games?</h2>
+      <p>Try out other action-packed titles like Drift Boss, Stickman Annihilation, or Crazy Sheep 3D — each offering a unique challenge and addictive gameplay.</p>
+    `,
+  },
+
+  game23: {
+    id: 'game23',
+    title: 'Tung Sahur Clicker - tung sahur unblocked - sahur clicker game',
+    description:
+      'Tung Sahur Clicker Unblocked — Wake up the neighborhood for Sahur in this hilarious clicker game! Tap fast, ring the bell, and upgrade your gear to become the ultimate Sahur hero.',
+    keywords: 'Tung Sahur Clicker, tung sahur unblocked, sahur clicker game, sahur wake-up game, muslim clicker game',
+    addressBar: 'Tung-Sahur-Clicker',
+    logoText: 'Tung Sahur Clicker',
+    image: 'game23.webp',
+    iframeUrl: 'https://game.azgame.io/tung-sahur-clicker/',
+    showHeader: false,
+    aboutContent: `
+      <h2>🔔 Tung Sahur Clicker Unblocked: Wake 'Em All Up!</h2>
+      <p>In <strong>Tung Sahur Clicker Unblocked</strong>, you're the local Sahur hero with one mission — wake everyone up before dawn! Tap like crazy, bang your pot, and make sure the whole neighborhood hears you loud and clear before sunrise!</p>
+  
+      <h3>🕹️ How to Play Tung Sahur Clicker?</h3>
+      <p>
+        <strong>Controls:</strong> Click or tap to make noise. The faster you tap, the louder your Sahur call!<br/>
+        <strong>Goal:</strong> Wake as many people as possible before the Sahur time ends.<br/>
+        <strong>Upgrade:</strong> Use coins to upgrade your bell, pot, speaker, and even unlock hilarious noise-makers.
+      </p>
+  
+      <h3>🎉 Why You'll Love Tung Sahur Clicker</h3>
+      <ul>
+        <li>Unique Ramadan-themed clicker gameplay</li>
+        <li>Funny animations and quirky sound effects</li>
+        <li>Unlockable upgrades and new characters</li>
+        <li>Simple mechanics, perfect for casual fun</li>
+      </ul>
+  
+      <h3>💡 Pro Tips</h3>
+      <p>Max out your speaker early for the biggest impact, and don’t forget to claim your bonuses between rounds. Timing is everything!</p>
+  
+      <h3>🎮 Play Tung Sahur Clicker Unblocked Now</h3>
+      <p>No installs. No login. Just open and tap away. Whether you're killing time or getting into the festive spirit, this game will keep you laughing and clicking!</p>
+  
+      <h2>✨ More Fun Clicker & Humor Games</h2>
+      <p>Try other unique games like Stickman Annihilation, Crazy Sheep 3D, or Doodle Baseball — fast, funny, and absolutely free to play!</p>
+    `,
+  },
+
+  game24: {
+    id: 'game24',
+    title: 'Jetski Race - jetski race unblocked - water racing game',
+    description:
+      'Jetski Race Unblocked — Ride the waves and dominate the water tracks in this high-speed jetski racing game! Drift through tight corners, dodge obstacles, and boost your way to victory.',
+    keywords: 'Jetski Race, jetski race unblocked, water racing game, jetski drift game, high-speed water sports game',
+    addressBar: 'Jetski-Race',
+    logoText: 'Jetski Race',
+    image: 'game24.webp',
+    iframeUrl: 'https://game.azgame.io/jetski-race/',
+    showHeader: false,
+    aboutContent: `
+      <h2>🌊 Jetski Race Unblocked: Ride the Waves</h2>
+      <p>Get ready to feel the spray in <strong>Jetski Race Unblocked</strong> — the ultimate aquatic speed challenge! Take control of a high-powered jetski, tear through water circuits, and show your opponents who's the king of the waves!</p>
+  
+      <h3>🕹️ How to Play Jetski Race?</h3>
+      <p>
+        <strong>Controls:</strong> Use arrow keys or WASD to steer, accelerate, and brake.<br/>
+        <strong>Boost:</strong> Hit Space to activate turbo and leave your rivals in your wake.<br/>
+        <strong>Goal:</strong> Finish first by mastering sharp turns, ramps, and water hazards.
+      </p>
+  
+      <h3>🚤 Game Features</h3>
+      <ul>
+        <li>Dynamic water physics and realistic wave handling</li>
+        <li>Time trial and competitive race modes</li>
+        <li>Multiple jetski models to unlock and race with</li>
+        <li>Challenging AI and tight track design</li>
+      </ul>
+  
+      <h3>💡 Jetski Tips & Tricks</h3>
+      <p>Lean into turns for tighter cornering, save your boost for long straightaways, and avoid drifting too close to ramps unless you want to flip!</p>
+  
+      <h3>🎮 Play Jetski Race Unblocked Now</h3>
+      <p>Instant browser racing fun with no download required. Whether you're a speedster or a stunt fanatic, Jetski Race delivers fast-paced action on every wave.</p>
+  
+      <h2>🏁 More High-Speed Titles to Try</h2>
+      <p>Don’t miss other top picks like Drive Mad Unblocked, Drift Boss, and Crazy Sheep 3D — all ready to play now, no installs needed.</p>
+    `,
+  },
+
+  game25: {
+    id: 'game25',
+    title: 'Wacky Flip - wacky flip unblocked - flip stunt game',
+    description:
+      'Wacky Flip Unblocked — Launch into the air, pull off insane flips, and stick the landing in this chaotic physics-based stunt game. Timing is everything!',
+    keywords: 'Wacky Flip, wacky flip unblocked, flip stunt game, ragdoll flip game, physics jumping game',
+    addressBar: 'Wacky-Flip',
+    logoText: 'Wacky Flip',
+    image: 'game25.webp',
+    iframeUrl: 'https://game.azgame.io/wacky-flip/',
+    showHeader: false,
+    aboutContent: `
+      <h2>🤸 Wacky Flip Unblocked: Flip or Fail!</h2>
+      <p>Ready to defy gravity? <strong>Wacky Flip Unblocked</strong> lets you launch ragdoll characters into the air for high-flying, hilarious flips. Stick the landing and become the flip master — or crash and burn in epic slow-mo fails!</p>
+  
+      <h3>🕹️ How to Play Wacky Flip?</h3>
+      <p>
+        <strong>Controls:</strong> Tap or click to jump, and hold to flip mid-air.<br/>
+        <strong>Goal:</strong> Land perfectly after each stunt. Miss the angle and your ragdoll’s going down!<br/>
+        <strong>Style Points:</strong> The more flips you do, the more points you score — but overdo it and you’ll wipe out.
+      </p>
+  
+      <h3>🎯 Wacky Features</h3>
+      <ul>
+        <li>Funny ragdoll physics and unpredictable landings</li>
+        <li>Simple tap controls with high skill ceiling</li>
+        <li>Multiple backgrounds and flip challenges</li>
+        <li>Perfect for quick, hilarious play sessions</li>
+      </ul>
+  
+      <h3>💡 Pro Tips for Maximum Air Time</h3>
+      <p>Jump late for more height, flip fast in the air, and aim to land squarely on your feet. Practice makes perfect!</p>
+  
+      <h3>🎮 Try Wacky Flip Unblocked Now</h3>
+      <p>Instant browser gameplay with no downloads. Whether you're looking to laugh at physics fails or show off your acrobatics, Wacky Flip brings endless entertainment.</p>
+  
+      <h2>🎉 More Fun Physics & Stunt Games</h2>
+      <p>Also try out Stickman Annihilation, Crazy Sheep 3D, or Drift Boss — all addictive, funny, and free to play right now.</p>
+    `,
+  },
+
+  game26: {
+    id: 'game26',
+    title: 'Curve Rush - curve rush unblocked - reflex racing game',
+    description:
+      'Curve Rush Unblocked — Dash along a twisting track in this reflex-based speed challenge! Survive endless curves and set a new high score.',
+    keywords: 'Curve Rush, curve rush unblocked, reflex racing game, endless runner, curve dash game',
+    addressBar: 'Curve-Rush',
+    logoText: 'Curve Rush',
+    image: 'game26.webp',
+    iframeUrl: 'https://game.azgame.io/curve-rush/',
+    showHeader: false,
+    aboutContent: `
+      <h2>⚡ Curve Rush Unblocked: Twist and Survive</h2>
+      <p><strong>Curve Rush Unblocked</strong> is a lightning-fast reflex game where one wrong turn means game over! Navigate a constantly bending track, keep your momentum, and try not to fall off the edge.</p>
+  
+      <h3>🕹️ How to Play Curve Rush?</h3>
+      <p>
+        <strong>Controls:</strong> Tap or click to change direction at the right moment.<br/>
+        <strong>Objective:</strong> Stay on the path and keep dodging those tight turns as long as you can.<br/>
+        <strong>Speed Up:</strong> The longer you survive, the faster it gets!
+      </p>
+  
+      <h3>🎮 Why Play Curve Rush?</h3>
+      <ul>
+        <li>Endless gameplay — perfect for quick reflex training</li>
+        <li>Simple one-button control, highly addictive</li>
+        <li>Fast-paced rhythm and visual intensity</li>
+        <li>Compete against your own best score</li>
+      </ul>
+  
+      <h3>💡 Curve Rush Tips</h3>
+      <p>Anticipate the curve direction early, and don’t wait too long to tap! The track shifts quickly, so quick reflexes are key.</p>
+  
+      <h3>🚀 Play Curve Rush Unblocked Instantly</h3>
+      <p>No downloads, no login — just pure skill-based action. How long can you stay on track before it throws you off?</p>
+  
+      <h2>🌀 More Addictive Reflex Games</h2>
+      <p>If you love Curve Rush, try out Wacky Flip, Drift Boss, or Drive Mad Unblocked — all designed to test your timing and nerves of steel.</p>
+    `,
+  },
+
+  game27: {
+    id: 'game27',
+    title: 'Wing Smash - wing smash unblocked - tap fly game',
+    description:
+      'Wing Smash Unblocked — Tap to flap and soar through gaps in this fast-paced reflex game! Can you guide the bird through an endless sky maze?',
+    keywords: 'Wing Smash, wing smash unblocked, flying bird game, tap to fly, reflex flappy game',
+    addressBar: 'Wing-Smash',
+    logoText: 'Wing Smash',
+    image: 'game27.webp',
+    iframeUrl: 'https://game.azgame.io/wing-smash/',
+    showHeader: false,
+    aboutContent: `
+      <h2>🐦 Wing Smash Unblocked: Tap, Fly, Survive</h2>
+      <p><strong>Wing Smash Unblocked</strong> is an ultra-fast flying challenge that will put your reflexes to the test. Tap to flap your bird’s wings and soar through tight openings at blazing speed. One crash and it’s game over!</p>
+  
+      <h3>🕹️ How to Play Wing Smash?</h3>
+      <p>
+        <strong>Controls:</strong> Tap or click to make the bird flap upward.<br/>
+        <strong>Goal:</strong> Keep flying and avoid smashing into walls or obstacles.<br/>
+        <strong>Challenge:</strong> The game gets faster — and harder — the longer you survive.
+      </p>
+  
+      <h3>⚙️ Game Features</h3>
+      <ul>
+        <li>Simple one-tap gameplay with high difficulty</li>
+        <li>Colorful visuals and fluid animation</li>
+        <li>Endless mode for competitive high-score chasing</li>
+        <li>Quick restarts keep the action nonstop</li>
+      </ul>
+  
+      <h3>💡 Pro Tips for Wing Smash</h3>
+      <p>Tap lightly and rhythmically — don’t over-flap! Stay centered between gaps and learn the speed rhythm to avoid panicking as the game accelerates.</p>
+  
+      <h3>🎮 Play Wing Smash Unblocked Now</h3>
+      <p>No downloads or installs needed. Test your skills and try to beat your best score in this endless aerial sprint!</p>
+  
+      <h2>🚁 More Addictive Reflex Games</h2>
+      <p>If Wing Smash got you hooked, check out Curve Rush, Wacky Flip, or Stickman Hook for even more lightning-fast fun!</p>
+    `,
+  },
+  
+
+  game28: {
+    id: 'game28',
+    title: 'Stickman Hook - stickman hook unblocked - swing physics game',
+    description:
+      'Stickman Hook Unblocked — Swing through levels with perfect timing in this fast-paced physics game! Master momentum and fly to victory.',
+    keywords: 'Stickman Hook, stickman hook unblocked, stickman swing game, rope physics game, stickman parkour',
+    addressBar: 'Stickman-Hook',
+    logoText: 'Stickman Hook',
+    image: 'game28.webp',
+    iframeUrl: 'https://azgames.io/stickman-hook.embed',
+    showHeader: false,
+    aboutContent: `
+      <h2>🕸️ Stickman Hook Unblocked: Swing Like a Pro</h2>
+      <p><strong>Stickman Hook Unblocked</strong> lets you leap, swing, and soar through crazy levels using rope physics. Time your swings perfectly, avoid crashing, and land like a hero. One wrong move and it’s a splat!</p>
+  
+      <h3>🕹️ How to Play Stickman Hook?</h3>
+      <p>
+        <strong>Controls:</strong> Tap or click to shoot your hook and swing.<br/>
+        <strong>Goal:</strong> Use momentum to reach the finish line while avoiding obstacles.<br/>
+        <strong>Trick:</strong> Let go at the perfect time to launch yourself forward — and don’t forget about wall bounces!
+      </p>
+  
+      <h3>🌀 Game Features</h3>
+      <ul>
+        <li>Fast-paced grappling hook physics gameplay</li>
+        <li>Minimalist yet vibrant graphics</li>
+        <li>Hundreds of levels with increasing difficulty</li>
+        <li>Responsive and satisfying controls</li>
+      </ul>
+  
+      <h3>💡 Stickman Swing Tips</h3>
+      <p>Use shorter swings for quick turns, and time your detach just before the arc peaks. Advanced players can chain wall jumps with swings for stylish speedruns!</p>
+  
+      <h3>🎮 Play Stickman Hook Unblocked Instantly</h3>
+      <p>No setup, just swing! Stickman Hook is the perfect reflex game to test your timing and physics mastery. Can you make it through all the levels without crashing?</p>
+  
+      <h2>🎯 More Action-Packed Physics Games</h2>
+      <p>If you enjoy Stickman Hook, don’t miss Wacky Flip, Curve Rush, or Drive Mad for more skill-based thrills!</p>
+    `,
+  },
+
+  game29: {
+    id: 'game29',
+    title: 'WyrmDash - wyrmdash unblocked - snake runner game',
+    description:
+      'WyrmDash Unblocked — Dash through dungeons as a magical wyrm in this high-speed snake runner! Dodge traps, collect gems, and evolve!',
+    keywords: 'WyrmDash, wyrmdash unblocked, snake runner, dungeon dash, reflex arcade game',
+    addressBar: 'WyrmDash',
+    logoText: 'WyrmDash',
+    image: 'game29.webp',
+    iframeUrl: 'https://game.azgame.io/wyrmdash/',
+    showHeader: false,
+    aboutContent: `
+      <h2>🐉 WyrmDash Unblocked: Dungeon Dash Like a Dragon</h2>
+      <p><strong>WyrmDash Unblocked</strong> is a thrilling arcade runner where you control a mystical wyrm slithering at top speed through dangerous dungeons. Avoid spikes, crash walls, and magical traps while collecting gems to power up!</p>
+  
+      <h3>🕹️ How to Play WyrmDash?</h3>
+      <p>
+        <strong>Controls:</strong> Use arrow keys or swipe to move your wyrm left/right.<br/>
+        <strong>Objective:</strong> Survive as long as possible while dodging obstacles and grabbing power-ups.<br/>
+        <strong>Speed:</strong> The game gets faster the longer you survive — stay sharp!
+      </p>
+  
+      <h3>⚔️ Game Features</h3>
+      <ul>
+        <li>Endless dungeon survival gameplay</li>
+        <li>Smooth controls with precise swiping or keyboard input</li>
+        <li>Gems and boosters that enhance your dash</li>
+        <li>Dark fantasy pixel art aesthetic</li>
+      </ul>
+  
+      <h3>💡 Wyrm Survival Tips</h3>
+      <p>Memorize obstacle patterns, stay in the middle lane when unsure, and collect gems early for better upgrades. One slip means restarting from scratch!</p>
+  
+      <h3>🎮 Play WyrmDash Unblocked Now</h3>
+      <p>Quick to start, hard to master! Jump into this magical dash with zero setup — and see how deep into the dungeon you can go.</p>
+  
+      <h2>🔥 Try More Reflex Runners</h2>
+      <p>Love WyrmDash? You’ll also enjoy Curve Rush, Wing Smash, and Crazy Sheep 3D — all fast-paced and unforgiving!</p>
+    `,
+  },
+
+  game30: {
+    id: 'game30',
+    title: 'Scary Wheels - scary wheels unblocked - horror racing game',
+    description:
+      'Scary Wheels Unblocked — Race through eerie haunted tracks with spooky obstacles and intense speed. Can you survive the nightmare ride?',
+    keywords: 'Scary Wheels, scary wheels unblocked, horror racing game, spooky driving, haunted race',
+    addressBar: 'Scary-Wheels',
+    logoText: 'Scary Wheels',
+    image: 'game30.webp',
+    iframeUrl: 'https://game.azgame.io/scary-wheels/',
+    showHeader: false,
+    aboutContent: `
+      <h2>🚗 Scary Wheels Unblocked: Haunted Racing Thrills</h2>
+      <p><strong>Scary Wheels Unblocked</strong> throws you into chilling race tracks filled with creepy obstacles and dark surprises. Drive fast, dodge traps, and stay alive in this spooky racing game.</p>
+  
+      <h3>🕹️ How to Play Scary Wheels?</h3>
+      <p>
+        <strong>Controls:</strong> Use arrow keys or WASD to steer, accelerate, and brake.<br/>
+        <strong>Objective:</strong> Complete laps without crashing into haunted traps or obstacles.<br/>
+        <strong>Challenge:</strong> Tracks are filled with jumps, twists, and terrifying moments to test your driving skills.
+      </p>
+  
+      <h3>🎃 Game Features</h3>
+      <ul>
+        <li>Spooky, atmospheric racing environments</li>
+        <li>Fast-paced gameplay with tight controls</li>
+        <li>Multiple challenging tracks with increasing difficulty</li>
+        <li>Atmospheric sound effects to enhance the horror vibe</li>
+      </ul>
+  
+      <h3>💡 Scary Wheels Tips</h3>
+      <p>Stay focused on the track, anticipate sharp turns, and use brakes wisely on tricky sections. Don’t let the scares distract you!</p>
+  
+      <h3>🎮 Play Scary Wheels Unblocked Now</h3>
+      <p>Ready for a spooky ride? Jump into Scary Wheels Unblocked and see if you can master the haunted tracks without crashing.</p>
+  
+      <h2>👻 More Spooky and Fun Games</h2>
+      <p>If you enjoy Scary Wheels, try Wacky Flip, Wing Smash, or Drive Mad for more adrenaline-pumping challenges!</p>
+    `,
+  },
+
+  game31: {
+    id: 'game31',
+    title: 'Golf Hit - golf hit unblocked - precision golf game',
+    description:
+      'Golf Hit Unblocked — Test your precision and timing in this challenging golf game. Aim carefully and sink the ball through tricky obstacles!',
+    keywords: 'Golf Hit, golf hit unblocked, precision golf game, casual golf, skill golf',
+    addressBar: 'Golf-Hit',
+    logoText: 'Golf Hit',
+    image: 'game31.webp',
+    iframeUrl: 'https://game.azgame.io/golf-hit/',
+    showHeader: false,
+    aboutContent: `
+      <h2>⛳ Golf Hit Unblocked: Precision Golf Challenge</h2>
+      <p><strong>Golf Hit Unblocked</strong> is a relaxing yet challenging golf game where you aim your shots through obstacles and narrow courses. Perfect your timing to get the ball in the hole!</p>
+  
+      <h3>🕹️ How to Play Golf Hit?</h3>
+      <p>
+        <strong>Controls:</strong> Click and drag to adjust power and angle, then release to hit the ball.<br/>
+        <strong>Goal:</strong> Complete each hole in as few shots as possible.<br/>
+        <strong>Tips:</strong> Consider obstacles and wind to make the perfect shot.
+      </p>
+  
+      <h3>🎯 Game Features</h3>
+      <ul>
+        <li>Simple drag-and-release controls</li>
+        <li>Challenging levels with increasing difficulty</li>
+        <li>Beautiful course designs and smooth animations</li>
+        <li>Relaxing gameplay suitable for all ages</li>
+      </ul>
+  
+      <h3>💡 Golf Hit Tips</h3>
+      <p>Take your time to line up shots precisely and adjust your power carefully. Watch how the ball bounces to better anticipate tricky shots.</p>
+  
+      <h3>🎮 Play Golf Hit Unblocked Now</h3>
+      <p>Ready to sink the perfect shot? Play Golf Hit Unblocked instantly and improve your golfing skills!</p>
+  
+      <h2>🏌️‍♂️ More Casual Sports Games</h2>
+      <p>If you enjoy Golf Hit, check out games like Crazy Sheep 3D, Drift Boss, or Curve Rush for more fun challenges.</p>
+    `,
+  },
+
+  game32: {
+    id: 'game32',
+    title: 'Temple Run 2 - temple run 2 unblocked - endless runner game',
+    description:
+      'Temple Run 2 Unblocked — Dash, jump, and slide through ancient ruins in this fast-paced endless runner. How far can you escape?',
+    keywords: 'Temple Run 2, temple run 2 unblocked, endless runner, temple run, arcade running game',
+    addressBar: 'Temple-Run-2',
+    logoText: 'Temple Run 2',
+    image: 'game32.webp',
+    iframeUrl: 'https://azgames.io/temple-run-2.embed',
+    showHeader: false,
+    aboutContent: `
+      <h2>🏃‍♂️ Temple Run 2 Unblocked: Run for Your Life</h2>
+      <p><strong>Temple Run 2 Unblocked</strong> puts you on an endless dash through dangerous temple ruins filled with obstacles, sharp turns, and deadly traps. Collect coins and power-ups while running for survival!</p>
+  
+      <h3>🕹️ How to Play Temple Run 2?</h3>
+      <p>
+        <strong>Controls:</strong> Swipe left/right to turn, swipe up to jump, swipe down to slide.<br/>
+        <strong>Objective:</strong> Run as far as possible avoiding obstacles and collecting coins.<br/>
+        <strong>Tips:</strong> Use power-ups wisely and learn the terrain to maximize your distance.
+      </p>
+  
+      <h3>🎮 Game Features</h3>
+      <ul>
+        <li>Fast-paced endless running gameplay</li>
+        <li>Varied obstacles and dynamic levels</li>
+        <li>Collect coins to unlock new characters and abilities</li>
+        <li>Intuitive swipe controls for smooth gameplay</li>
+      </ul>
+  
+      <h3>💡 Temple Run 2 Tips</h3>
+      <p>Stay focused on the path, anticipate sharp turns, and use power-ups strategically to survive longer.</p>
+  
+      <h3>🎮 Play Temple Run 2 Unblocked Now</h3>
+      <p>No downloads needed! Jump into Temple Run 2 and test your reflexes in this thrilling endless runner.</p>
+  
+      <h2>🔥 More Exciting Endless Runners</h2>
+      <p>If you like Temple Run 2, check out Wing Smash, WyrmDash, or Stickman Hook for more fast-paced challenges!</p>
+    `,
+  },
+
+  game33: {
+    id: 'game33',
+    title: 'Highway Heat - highway heat unblocked - action driving game',
+    description:
+      'Highway Heat Unblocked — Speed through busy highways in this thrilling driving game. Dodge traffic, evade cops, and complete intense missions!',
+    keywords: 'Highway Heat, highway heat unblocked, action driving game, car chase, arcade racing',
+    addressBar: 'Highway-Heat',
+    logoText: 'Highway Heat',
+    image: 'game33.webp',
+    iframeUrl: 'https://game.azgame.io/highway-heat/',
+    showHeader: false,
+    aboutContent: `
+      <h2>🚓 Highway Heat Unblocked: High-Speed Chase Action</h2>
+      <p><strong>Highway Heat Unblocked</strong> puts you behind the wheel for high-octane chases across busy highways. Dodge traffic, outrun cops, and complete missions with style and speed.</p>
+  
+      <h3>🕹️ How to Play Highway Heat?</h3>
+      <p>
+        <strong>Controls:</strong> Use arrow keys or WASD to steer, accelerate, and brake.<br/>
+        <strong>Objective:</strong> Complete chase missions without crashing or getting caught.<br/>
+        <strong>Tips:</strong> Use boosts wisely and anticipate traffic patterns to stay ahead.
+      </p>
+  
+      <h3>🔥 Game Features</h3>
+      <ul>
+        <li>Exciting car chase gameplay with police pursuit</li>
+        <li>Multiple vehicles and upgrade options</li>
+        <li>Dynamic highway environments with realistic traffic</li>
+        <li>Challenging missions and time-based objectives</li>
+      </ul>
+  
+      <h3>💡 Highway Heat Tips</h3>
+      <p>Master tight turns and use nitro boosts strategically. Keep an eye on police cars and avoid traffic collisions for higher scores.</p>
+  
+      <h3>🎮 Play Highway Heat Unblocked Now</h3>
+      <p>Ready for adrenaline-pumping action? Jump into Highway Heat Unblocked and prove your driving skills!</p>
+  
+      <h2>🚦 More Driving Thrills</h2>
+      <p>If you enjoy Highway Heat, try Drive Mad, Scary Wheels, or Drift Boss for more intense racing challenges.</p>
+    `,
+  },
+
+  game34: {
+    id: 'game34',
+    title: 'Flying Kong - flying kong unblocked - jungle launch game',
+    description:
+      'Flying Kong Unblocked — Launch through the jungle, swing from ropes, and dodge obstacles in this fast-paced action game!',
+    keywords: 'Flying Kong, flying kong unblocked, jungle game, rope swing, kong launcher, arcade jungle run',
+    addressBar: 'Flying-Kong',
+    logoText: 'Flying Kong',
+    image: 'game34.webp',
+    iframeUrl: 'https://game.azgame.io/flying-kong/',
+    showHeader: false,
+    aboutContent: `
+      <h2>🦍 Flying Kong Unblocked: Swing Into Action</h2>
+      <p><strong>Flying Kong Unblocked</strong> is a thrilling jungle launch game where you catapult your Kong forward, swing from vines, and avoid deadly traps. Perfect for fans of reflex and physics-based games!</p>
+  
+      <h3>🕹️ How to Play Flying Kong?</h3>
+      <p>
+        <strong>Controls:</strong> Tap or click to release and latch onto vines.<br/>
+        <strong>Goal:</strong> Fly as far as you can, collecting coins and avoiding hazards like spikes and gaps.<br/>
+        <strong>Tips:</strong> Timing is everything—release at the peak of your swing to maximize distance.
+      </p>
+  
+      <h3>🌴 Game Features</h3>
+      <ul>
+        <li>Fast-paced rope-swinging action</li>
+        <li>Jungle-themed environments and vibrant animations</li>
+        <li>Collect coins and unlock new characters</li>
+        <li>Endless levels with increasing difficulty</li>
+      </ul>
+  
+      <h3>💡 Flying Kong Strategy Tips</h3>
+      <p>Watch rope patterns closely and avoid tapping too early or late. Aim to grab ropes at their farthest reach for max momentum.</p>
+  
+      <h3>🎮 Play Flying Kong Unblocked Now</h3>
+      <p>Join the jungle frenzy! Launch into fun with Flying Kong Unblocked and test your timing skills today.</p>
+  
+      <h2>🔥 More Jungle & Swing Games</h2>
+      <p>If you enjoyed Flying Kong, try out games like Wing Smash, Stickman Hook, or Wacky Flip for more airborne adventures!</p>
+    `,
+  },
+
+  game35: {
+    id: 'game35',
+    title: 'Overtake X - overtake x unblocked - highway racing game',
+    description:
+      'Overtake X Unblocked — Race through heavy traffic, overtake rivals, and dominate the road in this high-speed highway racer!',
+    keywords: 'Overtake X, overtake x unblocked, racing game, highway race, arcade driving, car overtake game',
+    addressBar: 'Overtake-X',
+    logoText: 'Overtake X',
+    image: 'game35.webp',
+    iframeUrl: 'https://game.azgame.io/overtake-x/',
+    showHeader: false,
+    aboutContent: `
+      <h2>🚗 Overtake X Unblocked: Conquer the Fast Lane</h2>
+      <p><strong>Overtake X Unblocked</strong> is an intense arcade-style racing game where your goal is to zoom past traffic, avoid collisions, and reach top speeds. It’s all about quick reflexes and clean overtakes!</p>
+  
+      <h3>🕹️ How to Play Overtake X?</h3>
+      <p>
+        <strong>Controls:</strong> Arrow keys or WASD to steer, accelerate, and brake.<br/>
+        <strong>Objective:</strong> Overtake as many cars as possible without crashing.<br/>
+        <strong>Tips:</strong> Stay in the fast lane but watch for sudden lane shifts and traffic jams.
+      </p>
+  
+      <h3>🔥 Game Features</h3>
+      <ul>
+        <li>Fast-paced highway racing action</li>
+        <li>Multiple car options and upgrades</li>
+        <li>Dynamic traffic and realistic physics</li>
+        <li>Endless mode and mission challenges</li>
+      </ul>
+  
+      <h3>💡 Overtake X Racing Tips</h3>
+      <p>Keep your eyes ahead and always anticipate the movement of nearby vehicles. Use nitro boosts wisely to escape tight situations.</p>
+  
+      <h3>🎮 Play Overtake X Unblocked Now</h3>
+      <p>No downloads required! Step into the driver’s seat and prove your overtaking skills in Overtake X Unblocked.</p>
+  
+      <h2>🏁 More Racing & Action Games</h2>
+      <p>If you enjoy Overtake X, don’t miss Drive Mad, Highway Heat, and Scary Wheels for more driving adrenaline!</p>
+    `,
+  },
+
+  game36: {
+    id: 'game36',
+    title: 'Bottle Jump - bottle jump unblocked - flip bottle game',
+    description:
+      'Bottle Jump Unblocked — Flip the bottle perfectly to land on platforms! A fun skill game with precision, timing, and challenge!',
+    keywords: 'Bottle Jump, bottle jump unblocked, bottle flip game, skill platformer, flipping challenge',
+    addressBar: 'Bottle-Jump',
+    logoText: 'Bottle Jump',
+    image: 'game36.webp',
+    iframeUrl: 'https://game.azgame.io/bottle-jump/',
+    showHeader: false,
+    aboutContent: `
+      <h2>🥤 Bottle Jump Unblocked: Flip Your Way to Victory</h2>
+      <p><strong>Bottle Jump Unblocked</strong> is a highly addictive flip game where your mission is to launch a plastic bottle through the air and land it perfectly on floating platforms. Timing and precision are everything!</p>
+  
+      <h3>🕹️ How to Play Bottle Jump?</h3>
+      <p>
+        <strong>Controls:</strong> Click or tap to flip the bottle. Hold longer for stronger flips.<br/>
+        <strong>Goal:</strong> Land the bottle upright on each platform to progress.<br/>
+        <strong>Tips:</strong> Judge the distance and time your flips with accuracy. Too short or too strong and it’s game over!
+      </p>
+  
+      <h3>✨ Game Features</h3>
+      <ul>
+        <li>Satisfying flip physics</li>
+        <li>Challenging platform layouts</li>
+        <li>Progressive difficulty</li>
+        <li>Endless fun for reflex and timing lovers</li>
+      </ul>
+  
+      <h3>💡 Bottle Jump Tips</h3>
+      <p>Practice makes perfect! Use small taps for close jumps and longer holds for farther gaps. Adjust your strength carefully with each attempt.</p>
+  
+      <h3>🎮 Play Bottle Jump Unblocked Now</h3>
+      <p>Challenge your reflexes and aim for the perfect flip in <strong>Bottle Jump Unblocked</strong>. Can you land every jump?</p>
+  
+      <h2>🧩 More Skill-Based Games</h2>
+      <p>If you enjoyed Bottle Jump, try <a href="/Wacky-Flip">Wacky Flip</a>, <a href="/Stickman-Hook">Stickman Hook</a>, or <a href="/Wing-Smash">Wing Smash</a> for more timing-based fun!</p>
+    `,
+  },
+
+  game37: {
+    id: 'game37',
+    title: 'Shooter Hero - shooter hero unblocked - action shooting game',
+    description:
+      'Shooter Hero Unblocked — Jump, aim, and shoot in this thrilling action game! Take down enemies with epic stunts and precision.',
+    keywords: 'Shooter Hero, shooter hero unblocked, shooting game, stunt shooter, action hero game, gun battle',
+    addressBar: 'Shooter-Hero',
+    logoText: 'Shooter Hero',
+    image: 'game37.webp',
+    iframeUrl: 'https://azgames.io/shooter-hero.embed',
+    showHeader: false,
+    aboutContent: `
+      <h2>🔫 Shooter Hero Unblocked: Jump, Flip & Shoot!</h2>
+      <p><strong>Shooter Hero Unblocked</strong> is a fast-paced stunt shooting game where style and precision matter. Leap through the air, flip in slow motion, and take out enemies before they get to you!</p>
+  
+      <h3>🕹️ How to Play Shooter Hero?</h3>
+      <p>
+        <strong>Controls:</strong> Tap/click to jump and shoot. Aim while airborne.<br/>
+        <strong>Goal:</strong> Eliminate all enemies in each level while performing stylish jumps and flips.<br/>
+        <strong>Pro Tip:</strong> Time your shots mid-air to hit enemies before landing.
+      </p>
+  
+      <h3>🎯 Game Features</h3>
+      <ul>
+        <li>Bullet-time slow motion mechanics</li>
+        <li>Challenging enemy layouts</li>
+        <li>Satisfying stunt animations</li>
+        <li>Easy to play, hard to master</li>
+      </ul>
+  
+      <h3>💡 Shooter Hero Tips</h3>
+      <p>Use the environment—bounce off walls, shoot enemies mid-flip, and chain attacks for higher scores. Don’t let them shoot first!</p>
+  
+      <h3>🎮 Play Shooter Hero Unblocked Now</h3>
+      <p>Think you have what it takes to be the ultimate action hero? Play <strong>Shooter Hero Unblocked</strong> for free and show off your stunts and aim!</p>
+  
+      <h2>💥 More Action-Packed Games</h2>
+      <p>Love adrenaline? Try <a href="/WyrmDash">WyrmDash</a>, <a href="/Scary-Wheels">Scary Wheels</a>, or <a href="/Overtake-X">Overtake X</a> for more intense fun!</p>
+    `,
+  },
+
+  game38: {
+    id: 'game38',
+    title: 'Head Soccer 2024 - head soccer unblocked - funny football game',
+    description:
+      'Head Soccer 2024 Unblocked — Hilarious 1v1 football battles with big-headed players and crazy power shots! Score goals, block shots, and become the champion!',
+    keywords: 'Head Soccer 2024, head soccer unblocked, funny soccer game, 1v1 football, soccer battle game, big head football',
+    addressBar: 'Head-Soccer-2024',
+    logoText: 'Head Soccer 2024',
+    image: 'game38.webp',
+    iframeUrl: 'https://azgames.io/head-soccer-2024.embed',
+    showHeader: false,
+    aboutContent: `
+      <h2>⚽ Head Soccer 2024 Unblocked: Big Heads, Big Goals!</h2>
+      <p><strong>Head Soccer 2024 Unblocked</strong> brings wild, fast-paced soccer action to your screen! Play 1v1 matches using oversized-headed characters, unleash powerful kicks, and dodge crazy attacks in this fun twist on classic football.</p>
+  
+      <h3>🕹️ How to Play Head Soccer 2024?</h3>
+      <p>
+        <strong>Controls:</strong> Arrow keys to move, Spacebar to kick or head the ball.<br/>
+        <strong>Objective:</strong> Outscore your opponent before time runs out!<br/>
+        <strong>Pro Tip:</strong> Time your jump kicks for devastating power shots and block incoming headers with perfect positioning!
+      </p>
+  
+      <h3>⚡ Game Features</h3>
+      <ul>
+        <li>Comical big-head characters</li>
+        <li>Intense 1v1 soccer battles</li>
+        <li>Special moves and effects</li>
+        <li>Multiplayer and tournament modes</li>
+      </ul>
+  
+      <h3>💡 Head Soccer 2024 Tips</h3>
+      <p>Jump early to intercept the ball mid-air, and don’t spam kicks—aim and time for max power! Use character abilities wisely when charged.</p>
+  
+      <h3>🎮 Play Head Soccer 2024 Unblocked Now</h3>
+      <p>Can you dominate the pitch with a giant head and killer reflexes? Play <strong>Head Soccer 2024 Unblocked</strong> now and take home the trophy!</p>
+  
+      <h2>🏆 More Sports Fun</h2>
+      <p>Want more action? Try <a href="/Golf-Hit">Golf Hit</a>, <a href="/Curve-Rush">Curve Rush</a>, or <a href="/Temple-Run-2">Temple Run 2</a> for more thrilling gameplay!</p>
+    `,
+  },
+  
+  game39: {
+    id: 'game39',
+    title: 'Titans Clicker - titans clicker unblocked - idle titan fight game',
+    description:
+      'Titans Clicker Unblocked — Tap your way to victory! Defeat colossal titans, level up your power, and become the ultimate clicker hero.',
+    keywords: 'Titans Clicker, titans clicker unblocked, idle clicker game, titan battle, tapping game, clicker hero',
+    addressBar: 'Titans-Clicker',
+    logoText: 'Titans Clicker',
+    image: 'game39.webp',
+    iframeUrl: 'https://game.azgame.io/titans-clicker/',
+    showHeader: false,
+    aboutContent: `
+      <h2>🗿 Titans Clicker Unblocked: Tap to Crush Giants!</h2>
+      <p><strong>Titans Clicker Unblocked</strong> is an addictive idle clicker game where you face off against towering titans. Tap rapidly to deal damage, upgrade your attack power, and summon allies to aid your fight!</p>
+  
+      <h3>🕹️ How to Play Titans Clicker?</h3>
+      <p>
+        <strong>Controls:</strong> Click/tap to attack titans.<br/>
+        <strong>Objective:</strong> Defeat as many titans as possible and collect coins to upgrade your strength.<br/>
+        <strong>Tip:</strong> Hire helpers to deal passive damage even while you're away!
+      </p>
+  
+      <h3>💪 Game Features</h3>
+      <ul>
+        <li>Endless titan battles</li>
+        <li>Progressive upgrades and power boosts</li>
+        <li>Idle mechanics for passive play</li>
+        <li>Satisfying tap-feedback and epic visuals</li>
+      </ul>
+  
+      <h3>⚔️ Titans Clicker Strategy Tips</h3>
+      <p>Focus on upgrading click damage early, then invest in passive DPS units. Don’t forget to use temporary boosts for boss fights!</p>
+  
+      <h3>🎮 Play Titans Clicker Unblocked Now</h3>
+      <p>Unleash your tapping fury and defeat massive titans in <strong>Titans Clicker Unblocked</strong>. Can you conquer them all?</p>
+  
+      <h2>🔥 More Idle & Click Games</h2>
+      <p>If you like Titans Clicker, check out <a href="/Tung-Sahur-Clicker">Tung Sahur Clicker</a>, <a href="/Shooter-Hero">Shooter Hero</a>, or <a href="/Flying-Kong">Flying Kong</a> for more tap-driven fun!</p>
+    `,
+  },
+
+  game40: {
+    id: 'game40',
+    title: 'Chicken Jockey Combat - chicken jockey unblocked - crazy chicken fighting game',
+    description:
+      'Chicken Jockey Combat Unblocked — Ride into hilarious chaos! Battle bizarre enemies while riding chickens in this wild and wacky action game.',
+    keywords: 'Chicken Jockey Combat, chicken jockey unblocked, funny fighting game, chicken combat, action animal game, riding battle',
+    addressBar: 'Chicken-Jockey-Combat',
+    logoText: 'Chicken Jockey Combat',
+    image: 'game40.webp',
+    iframeUrl: 'https://game.azgame.io/chicken-jockey-combat/',
+    showHeader: false,
+    aboutContent: `
+      <h2>🐔 Chicken Jockey Combat Unblocked: Cluckin’ Mayhem!</h2>
+      <p><strong>Chicken Jockey Combat Unblocked</strong> is a ridiculous and action-packed fighting game where you mount fearless chickens and engage in over-the-top battles. It’s part racing, part combat — all chaos!</p>
+  
+      <h3>🕹️ How to Play Chicken Jockey Combat?</h3>
+      <p>
+        <strong>Controls:</strong> Arrow keys to move, space to attack, and special keys for chicken powers.<br/>
+        <strong>Goal:</strong> Defeat your enemies, avoid traps, and survive the madness on chicken-back!<br/>
+        <strong>Tips:</strong> Time your attacks and power-ups wisely, and don’t underestimate the speed of your poultry steed.
+      </p>
+  
+      <h3>🔥 Game Features</h3>
+      <ul>
+        <li>Fast-paced chicken combat action</li>
+        <li>Unique enemies and absurd battles</li>
+        <li>Power-ups, traps, and secret levels</li>
+        <li>Laugh-out-loud physics and gameplay</li>
+      </ul>
+  
+      <h3>💡 Chicken Jockey Tips</h3>
+      <p>Use terrain and momentum to your advantage. Don’t waste your special attack—save it for the boss chickens!</p>
+  
+      <h3>🎮 Play Chicken Jockey Combat Unblocked Now</h3>
+      <p>Get ready for feather-fueled fighting fun in <strong>Chicken Jockey Combat Unblocked</strong>. It’s weird, wild, and wonderfully fun!</p>
+  
+      <h2>🎉 More Hilarious Action Games</h2>
+      <p>Want more quirky chaos? Try <a href="/Wacky-Flip">Wacky Flip</a>, <a href="/Bottle-Jump">Bottle Jump</a>, or <a href="/Scary-Wheels">Scary Wheels</a> for non-stop fun!</p>
+    `,
+  },
+  
 }

@@ -516,6 +516,12 @@ onUnmounted(() => {
   .game {
     padding: 10px;
   }
+
+  .game-main{
+    aspect-ratio: auto;
+    height: 440px;
+  }
+
   .game-start-img{
     margin-bottom: 8px;
     font-size: 0;
@@ -531,6 +537,56 @@ onUnmounted(() => {
   }
   .game-title{
     font-size: 16px;
+  }
+
+  /* 移动端 Theater 模式样式 */
+  .game.theater-mode {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    background: #000;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .game.theater-mode .game-main {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    border-radius: 0;
+    margin: 0;
+  }
+
+  .game.theater-mode .top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 10000;
+  }
+
+  .game.theater-mode .controls {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 10001;
+  }
+
+  .game.theater-mode .iframehtml1 {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* 确保在 Theater 模式下隐藏其他内容 */
+  .game.theater-mode ~ * {
+    display: none;
   }
 }
 
