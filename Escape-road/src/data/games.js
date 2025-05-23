@@ -808,7 +808,7 @@ export const games = {
     addressBar: 'Drift-boss',
     logoText: 'Drift boss',
     image: 'game-17.png',
-    iframeUrl: 'https://1games.io/embed/drift-boss',
+    iframeUrl: 'https://azgames.io/drift-boss.embed',
     // location: "right",
     showHeader: false,
     // background: 'linear-gradient(135deg, #2c3e50 0%, #3498db 100%)',

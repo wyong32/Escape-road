@@ -29,15 +29,27 @@
 
     <!-- 游戏区域 -->
     <div class="game-main" ref="gameContainerRef">
-      <div v-if="!iframeSrc" class="iframe-overlay">
+      <div v-if="!iframeSrc || (iframeSrc && !isIframeLoaded)" class="iframe-overlay">
+        <!-- Common background elements for the overlay -->
         <img :src="getImageUrl(gameData.image)" :alt="gameData.title" class="overlay-image" />
         <div class="blur-layer"></div>
-        <div class="game-start">
-          <div class="game-start-img">
-            <img :src="getImageUrl(gameData.image)" :alt="gameData.title" />
+
+        <!-- Case 1: Game not started yet -->
+        <template v-if="!iframeSrc">
+          <div class="game-start">
+            <div class="game-start-img">
+              <img :src="getImageUrl(gameData.image)" :alt="gameData.title" />
+            </div>
+            <button @click="loadGame" class="load-button">Start Game</button>
           </div>
-          <button @click="loadGame" class="load-button">Start Game</button>
-        </div>
+        </template>
+        <!-- Case 2: Game is loading -->
+        <template v-else-if="iframeSrc && !isIframeLoaded">
+          <div class="loading-spinner-container">
+            <div class="loading-spinner"></div>
+            <p class="loading-text">Loading Game...</p>
+          </div>
+        </template>
       </div>
       <iframe
         v-if="iframeSrc"
@@ -45,6 +57,7 @@
         :src="iframeSrc"
         frameborder="0"
         allowfullscreen
+        sandbox="allow-scripts allow-same-origin"
         @load="onIframeLoad"
       ></iframe>
       <!-- 添加 @load="onIframeLoad" -->
@@ -595,4 +608,40 @@ onUnmounted(() => {
 
 /* Adjust controls if using flex-start on top-bar - Keep this if needed */
 /* .controls { ... } */
+
+/* Loading Spinner Styles */
+.loading-spinner-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 15; /* Ensure it's above other overlay elements if any */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* background-color: rgba(0, 0, 0, 0.7); */ /* Removed dark background */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.loading-spinner {
+  border: 6px solid #f3f3f3; /* Light grey */
+  border-top: 6px solid #48b8c9; /* Blue */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+.loading-text {
+  margin-top: 15px;
+  color: #fff;
+  font-size: 16px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 </style>

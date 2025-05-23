@@ -38,8 +38,8 @@
             </div>
             <div class="mobile-game-list">
               <div class="mobile-game-grid">
-                <div class="mobile-game-item" v-for="game in allGames" :key="game.id">
-                  <router-link :to="'/' + game.addressBar">
+                <div class="mobile-game-item" v-for="game in gamesForMobileLayout" :key="game.id">
+                  <router-link :to="'/' + game.addressBar" @click="scrollToTop">
                     <img :src="getImageUrl(game.image)" :title="game.title" :alt="game.title" />
                     <p class="mobile-mask">{{ game.logoText }}</p>
                   </router-link>
@@ -149,6 +149,16 @@ const rightGameColumns = computed(() => {
   const filteredRightGames = allGames.value.filter(game => game.location === 'right');
   return chunkGamesIntoColumns(filteredRightGames, gamesPerColumn);
 })
+
+// 新增：为移动端布局筛选游戏，只显示 location 为 'left' 或 'right' 的游戏
+const gamesForMobileLayout = computed(() => {
+  return allGames.value.filter(game => game.location === 'left' || game.location === 'right');
+})
+
+// 新增：滚动到页面顶部的方法
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
 
 // 获取图片URL
 const getImageUrl = (imageName) => {

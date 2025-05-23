@@ -3,7 +3,7 @@
         <h2 class="recommend-title">Recommend For You</h2>
         <ul class="recommend-list">
             <li class="recommend-item" v-for="game in allGames" :key="game.id">
-                <router-link :to="'/' + game.addressBar">
+                <router-link :to="'/' + game.addressBar" @click="scrollToTop">
                      <img :src="getImageUrl(game.image)" :alt="game.title" />
                 </router-link>
             </li>
@@ -37,6 +37,11 @@ const allGames = computed(() => {
     image: game.image
   }))
 })
+
+// 新增：滚动到页面顶部的方法
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
 
   const getImageUrl = (imageName) => {
   if (!imageName) return ''
