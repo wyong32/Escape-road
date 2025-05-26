@@ -110,6 +110,9 @@ const scrollToTop = () => {
     /* 阴影移到父元素 .recommend-item */
     /* box-shadow: 0 6px 12px 0 rgb(0 0 0 / 24%); */
     transition: transform 0.3s ease; /* 只给图片添加缩放过渡 */
+    /* 防止图片加载时的布局偏移 */
+    aspect-ratio: 1 / 1;
+    background-color: #f0f0f0;
 }
 
 .recommend-item:hover {

@@ -327,6 +327,9 @@ onUnmounted(() => {
   background-color: #000;
   transition: all 0.3s ease;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+  /* 防止容器大小变化导致的布局偏移 */
+  contain: layout style;
+  min-height: 400px; /* 确保最小高度 */
 }
 
 .iframehtml1 {
@@ -390,6 +393,9 @@ onUnmounted(() => {
   border-radius: 20px;
   overflow: hidden;
   object-fit: cover;
+  /* 防止图片加载时的布局偏移 */
+  aspect-ratio: 1 / 1;
+  background-color: #f0f0f0;
 }
 
 .blur-layer {

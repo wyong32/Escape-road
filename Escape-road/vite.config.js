@@ -13,7 +13,7 @@ const getBlogSlugs = async () => {
   try {
     // Use the same base URL logic as your app, assuming build runs where backend is accessible
     // If backend runs on a different port during build, adjust URL
-    const apiBaseUrl = process.env.VITE_API_BASE_URL || 'http://localhost:3000'; 
+    const apiBaseUrl = process.env.VITE_API_BASE_URL || 'http://localhost:3000';
     console.log(`[Sitemap] Fetching blog slugs from ${apiBaseUrl}/api/blog`);
     const response = await axios.get(`${apiBaseUrl}/api/blog`);
     const posts = response.data || [];
@@ -51,7 +51,7 @@ export default defineConfig(async () => {
 
   // Combine ALL routes: static (manual), dynamic games, dynamic blogs
   const allRoutes = [
-      ...staticRoutes, 
+      ...staticRoutes,
       ...dynamicGameRoutes,
       ...dynamicBlogRoutes
   ];
@@ -65,14 +65,14 @@ export default defineConfig(async () => {
       vueJsx(),
       vueDevTools(),
       sitemap({
-        hostname: 'https://escape-road-online.com', 
+        hostname: 'https://escape-road-online.com',
         // Provide the final combined list of unique routes
-        dynamicRoutes: uniqueRoutes, 
+        dynamicRoutes: uniqueRoutes,
         robots: [
           { userAgent: '*' }
         ],
         // Keep exclusion for admin paths
-        exclude: ['/admin/**', '/admin/login'], 
+        exclude: ['/admin/**', '/admin/login'],
       })
     ],
     resolve: {
@@ -85,7 +85,7 @@ export default defineConfig(async () => {
       proxy: {
         '/api': {
           // Ensure this points to your running backend API during dev
-          target: process.env.VITE_API_BASE_URL || 'http://localhost:3000', 
+          target: process.env.VITE_API_BASE_URL || 'http://localhost:3000',
           changeOrigin: true,
         }
       }
@@ -93,7 +93,30 @@ export default defineConfig(async () => {
     build: {
       outDir: 'dist',
       emptyOutDir: true,
-      sourcemap: false
+      sourcemap: false,
+      // 性能优化配置
+      rollupOptions: {
+        output: {
+          // 代码分割优化
+          manualChunks: {
+            vendor: ['vue', 'vue-router', 'pinia'],
+            ui: ['@fortawesome/fontawesome-free'],
+            utils: ['axios', '@vueuse/head']
+          }
+        }
+      },
+      // 压缩优化
+      minify: 'terser',
+      terserOptions: {
+        compress: {
+          drop_console: true,
+          drop_debugger: true
+        }
+      },
+      // 资源内联阈值
+      assetsInlineLimit: 4096,
+      // CSS 代码分割
+      cssCodeSplit: true
     }
   }
 });

@@ -10,7 +10,13 @@
               <div class="game-column" v-for="(column, columnIndex) in leftGameColumns" :key="`left-col-${columnIndex}`">
                 <div class="cr-item" v-for="game in column" :key="game.id">
                   <router-link :to="'/' + game.addressBar">
-                    <img :src="getImageUrl(game.image)" :title="game.title" :alt="game.title" />
+                    <img
+                      :src="getImageUrl(game.image)"
+                      :title="game.title"
+                      :alt="game.title"
+                      loading="lazy"
+                      decoding="async"
+                    />
                     <p class="mask">{{ game.logoText }}</p>
                   </router-link>
                 </div>
@@ -23,7 +29,13 @@
               <div class="game-column" v-for="(column, columnIndex) in rightGameColumns" :key="`right-col-${columnIndex}`">
                 <div class="cr-item" v-for="game in column" :key="game.id">
                   <router-link :to="'/' + game.addressBar">
-                    <img :src="getImageUrl(game.image)" :title="game.title" :alt="game.title" />
+                    <img
+                      :src="getImageUrl(game.image)"
+                      :title="game.title"
+                      :alt="game.title"
+                      loading="lazy"
+                      decoding="async"
+                    />
                     <p class="mask">{{ game.logoText }}</p>
                   </router-link>
                 </div>
@@ -40,7 +52,13 @@
               <div class="mobile-game-grid">
                 <div class="mobile-game-item" v-for="game in gamesForMobileLayout" :key="game.id">
                   <router-link :to="'/' + game.addressBar" @click="scrollToTop">
-                    <img :src="getImageUrl(game.image)" :title="game.title" :alt="game.title" />
+                    <img
+                      :src="getImageUrl(game.image)"
+                      :title="game.title"
+                      :alt="game.title"
+                      loading="lazy"
+                      decoding="async"
+                    />
                     <p class="mobile-mask">{{ game.logoText }}</p>
                   </router-link>
                 </div>
@@ -98,7 +116,7 @@ const chunkGamesIntoColumns = (gamesArray, chunkSize) => {
 const findGameIdByAddressBar = (addressBarParam) => {
   const lowerAddressBarParam = addressBarParam?.toLowerCase();
   if (!lowerAddressBarParam) return 'game1';
-  return Object.keys(games).find(id => 
+  return Object.keys(games).find(id =>
     games[id].addressBar?.toLowerCase() === lowerAddressBarParam
   ) || 'game1'
 }
@@ -132,7 +150,7 @@ const allGames = computed(() => {
     id: game.id,
     title: game.title,
     logoText: game.logoText,
-    addressBar: game.addressBar, 
+    addressBar: game.addressBar,
     image: game.image,
     location: game.location // 确保包含 location
   }))
@@ -288,8 +306,11 @@ console.log('Other games:', allGames.value)
 .cr-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
   transition: all 0.5s ease;
+  /* 防止图片加载时的布局偏移 */
+  aspect-ratio: 1 / 1;
+  background-color: #f0f0f0;
 }
 
 .cr-item .mask{
@@ -357,7 +378,7 @@ console.log('Other games:', allGames.value)
     flex-grow: 0;
     flex-shrink: 1;
     /* max-width can be used if we want to limit them to e.g. 2 columns */
-    /* max-width: calc(2 * 90px + 15px); */ 
+    /* max-width: calc(2 * 90px + 15px); */
   }
   .game-column {
     width: 90px; /* Match cr-item size for tablet */
@@ -376,7 +397,7 @@ console.log('Other games:', allGames.value)
   .desktop-only {
     display: none;
   }
-  
+
   .mobile-only {
     display: block;
     width: 100%;
@@ -429,6 +450,9 @@ console.log('Other games:', allGames.value)
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* 防止移动端图片加载时的布局偏移 */
+    aspect-ratio: 1 / 1;
+    background-color: #f0f0f0;
   }
 
   .mobile-mask {
@@ -465,4 +489,4 @@ console.log('Other games:', allGames.value)
 }
 
 /* .index-specific-text { font-size: 14px; } */
-</style> 
+</style>

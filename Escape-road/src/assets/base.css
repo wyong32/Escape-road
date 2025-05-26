@@ -83,4 +83,6 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* 字体显示优化，减少布局偏移 */
+  font-display: swap;
 }
