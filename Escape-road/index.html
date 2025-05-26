@@ -19,8 +19,19 @@
 
     <!-- 预加载关键字体 -->
     <link rel="preload" href="/node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5437957765171705"
-     crossorigin="anonymous"></script>
+    <!-- 延迟加载广告脚本 -->
+    <script>
+      // 延迟加载 AdSense
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          const script = document.createElement('script');
+          script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5437957765171705';
+          script.async = true;
+          script.crossOrigin = 'anonymous';
+          document.head.appendChild(script);
+        }, 2000); // 延迟2秒加载
+      });
+    </script>
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -36,14 +47,25 @@
     <meta name="twitter:description" content="Play exciting car chase adventure games like Escape Road, Escape Road 2, and more! Dodge obstacles and escape the police." />
     <meta name="twitter:image" content="https://escape-road-online.com/images/og-default.png" />
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4WE4HV6121"></script>
+<!-- 优化的 Google Analytics -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  // 延迟加载 Google Analytics
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      // 创建 gtag 函数
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', 'G-4WE4HV6121');
 
-  gtag('config', 'G-4WE4HV6121');
+      // 动态加载 GA 脚本
+      const script = document.createElement('script');
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-4WE4HV6121';
+      script.async = true;
+      document.head.appendChild(script);
+    }, 1000); // 延迟1秒加载
+  });
 </script>
   </head>
 

@@ -81,6 +81,7 @@
 import { computed, watchEffect } from 'vue'
 import { useRoute } from 'vue-router'
 import { games } from '../data/games'
+import { scriptOptimizer } from '../utils/scriptOptimizer.js'
 import Headers from '../components/Head.vue'
 import About from '../components/About.vue'
 import Recommend from '../components/Recommend.vue'
@@ -212,13 +213,11 @@ watchEffect(() => {
   const currentDescription = gameData.value.description;
   const currentKeywords = gameData.value.keywords;
 
-  // 更新 description meta 标签
-  updateMetaTag('description', currentDescription);
-  // 更新 keywords meta 标签
-  updateMetaTag('keywords', currentKeywords);
-
-  // (可选) 同时更新页面标题，可以替代 router.js 中的逻辑
-  // document.title = gameData.value.title || 'Default Title';
+  // 延迟更新 meta 标签以避免阻塞主线程
+  scriptOptimizer.defer(() => {
+    updateMetaTag('description', currentDescription);
+    updateMetaTag('keywords', currentKeywords);
+  }, 'normal');
 });
 
 console.log('Current game:', gameData.value)

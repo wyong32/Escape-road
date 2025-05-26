@@ -1,5 +1,7 @@
 <template>
-  <!-- 这个组件不渲染任何内容，只负责预加载资源 -->
+  <div style="display: none;">
+    <!-- 这个组件不渲染任何内容，只负责预加载资源 -->
+  </div>
 </template>
 
 <script setup>
@@ -10,7 +12,7 @@ import { games } from '../data/games'
 const preloadCriticalImages = () => {
   // 预加载首页显示的游戏图片（前6个游戏）
   const criticalGames = Object.values(games).slice(0, 6)
-  
+
   criticalGames.forEach(game => {
     if (game.image) {
       const link = document.createElement('link')
@@ -47,7 +49,7 @@ const preconnectExternalDomains = () => {
     'https://turbowarp.org',
     'https://shellshock.io'
   ]
-  
+
   domains.forEach(domain => {
     const link = document.createElement('link')
     link.rel = 'preconnect'
@@ -61,16 +63,17 @@ onMounted(() => {
   if ('requestIdleCallback' in window) {
     requestIdleCallback(() => {
       preloadCriticalImages()
-      preloadFonts()
-      preconnectExternalDomains()
     })
-  } else {
-    // 降级方案：使用 setTimeout
-    setTimeout(() => {
-      preloadCriticalImages()
+    // 进一步延迟非关键资源
+    requestIdleCallback(() => {
       preloadFonts()
       preconnectExternalDomains()
-    }, 100)
+    }, { timeout: 2000 })
+  } else {
+    // 降级方案：分批加载
+    setTimeout(preloadCriticalImages, 100)
+    setTimeout(preloadFonts, 500)
+    setTimeout(preconnectExternalDomains, 1000)
   }
 })
 </script>
