@@ -23,19 +23,36 @@ export class ScriptOptimizer {
   }
 
   onDOMReady() {
-    console.log('DOM Ready - Starting deferred tasks')
+    if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
+      console.log('DOM Ready - Starting deferred tasks')
+    }
     this.processDeferredTasks()
   }
 
   onPageLoad() {
-    console.log('Page Load Complete')
+    if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
+      console.log('Page Load Complete')
+    }
     this.isIdle = true
     this.scheduleIdleTasks()
   }
 
   // 延迟执行非关键任务
   defer(task, priority = 'normal') {
-    this.deferredTasks.push({ task, priority })
+    // 包装任务以添加执行时间监控
+    const wrappedTask = () => {
+      const start = performance.now()
+      try {
+        task()
+      } finally {
+        const duration = performance.now() - start
+        if (duration > 16) { // 超过一帧的时间
+          console.warn(`Task took ${duration.toFixed(2)}ms (priority: ${priority})`)
+        }
+      }
+    }
+
+    this.deferredTasks.push({ task: wrappedTask, priority })
     if (this.isIdle) {
       this.processDeferredTasks()
     }
@@ -56,19 +73,76 @@ export class ScriptOptimizer {
   }
 
   scheduleIdleTasks() {
-    if ('requestIdleCallback' in window) {
+    // 优先使用 Scheduler API (Chrome 94+)
+    if ('scheduler' in window && 'postTask' in window.scheduler) {
+      this.processTasksWithScheduler()
+    } else if ('MessageChannel' in window) {
+      this.processTasksWithMessageChannel()
+    } else if ('requestIdleCallback' in window) {
       this.processTasksWithIdleCallback()
     } else {
       this.processTasksWithTimeout()
     }
   }
 
-  processTasksWithIdleCallback() {
-    const processChunk = (deadline) => {
-      while (deadline.timeRemaining() > 0 && this.deferredTasks.length > 0) {
+  processTasksWithScheduler() {
+    const processChunk = async () => {
+      // 每次只处理1个任务，确保不会产生长任务
+      if (this.deferredTasks.length > 0) {
         const { task } = this.deferredTasks.shift()
         try {
           task()
+        } catch (error) {
+          console.error('Deferred task error:', error)
+        }
+
+        // 如果还有任务，使用 scheduler.postTask 继续处理
+        if (this.deferredTasks.length > 0) {
+          window.scheduler.postTask(processChunk, { priority: 'background' })
+        }
+      }
+    }
+
+    window.scheduler.postTask(processChunk, { priority: 'background' })
+  }
+
+  processTasksWithMessageChannel() {
+    const channel = new MessageChannel()
+    const port1 = channel.port1
+    const port2 = channel.port2
+
+    port1.onmessage = () => {
+      // 每次只处理一个任务，确保不产生长任务
+      if (this.deferredTasks.length > 0) {
+        const { task } = this.deferredTasks.shift()
+        try {
+          task()
+        } catch (error) {
+          console.error('Deferred task error:', error)
+        }
+
+        // 如果还有任务，继续调度
+        if (this.deferredTasks.length > 0) {
+          port2.postMessage(null)
+        }
+      }
+    }
+
+    // 开始处理
+    port2.postMessage(null)
+  }
+
+  processTasksWithIdleCallback() {
+    const processChunk = (deadline) => {
+      // 限制每次处理的任务数量，避免长时间阻塞
+      let taskCount = 0
+      const maxTasks = 1 // 每次只处理1个任务，确保不产生长任务
+
+      while (deadline.timeRemaining() > 2 && this.deferredTasks.length > 0 && taskCount < maxTasks) {
+        const { task } = this.deferredTasks.shift()
+        try {
+          task()
+          taskCount++
         } catch (error) {
           console.error('Deferred task error:', error)
         }
@@ -84,18 +158,19 @@ export class ScriptOptimizer {
 
   processTasksWithTimeout() {
     const processChunk = () => {
-      const start = performance.now()
-      while (performance.now() - start < 5 && this.deferredTasks.length > 0) {
+      // 每次只处理一个任务，确保不产生长任务
+      if (this.deferredTasks.length > 0) {
         const { task } = this.deferredTasks.shift()
         try {
           task()
         } catch (error) {
           console.error('Deferred task error:', error)
         }
-      }
 
-      if (this.deferredTasks.length > 0) {
-        setTimeout(processChunk, 0)
+        // 如果还有任务，继续调度
+        if (this.deferredTasks.length > 0) {
+          setTimeout(processChunk, 0) // 立即让出控制权
+        }
       }
     }
 

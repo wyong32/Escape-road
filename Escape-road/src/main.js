@@ -28,7 +28,9 @@ const initializeApp = () => {
   // 延迟非关键功能的初始化
   scriptOptimizer.defer(() => {
     // 这里可以放置非关键的初始化代码
-    console.log('Non-critical features initialized')
+    if (import.meta.env.DEV) {
+      console.log('Non-critical features initialized')
+    }
   }, 'low')
 
   app.mount('#app')

@@ -28,8 +28,7 @@ import { computed } from 'vue';
 const props = defineProps({
   url: {
     type: String,
-    required: true,
-    default: () => window.location.href // 默认使用当前页面 URL
+    required: true
   },
   title: {
     type: String,
@@ -74,7 +73,7 @@ const facebookShareUrl = computed(() => {
 
   /* 垂直排列图标 */
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center; /* 水平居中图标 */
   gap: 15px; /* 图标之间的垂直间距 */
 
@@ -89,7 +88,7 @@ const facebookShareUrl = computed(() => {
 /* .share-links span { ... } */
 
 .share-links a {
-  display: inline-flex; 
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;

@@ -10,12 +10,13 @@
               <div class="game-column" v-for="(column, columnIndex) in leftGameColumns" :key="`left-col-${columnIndex}`">
                 <div class="cr-item" v-for="game in column" :key="game.id">
                   <router-link :to="'/' + game.addressBar">
-                    <img
-                      :src="getImageUrl(game.image)"
+                    <SimpleImage
+                      :src="game.image"
                       :title="game.title"
                       :alt="game.title"
-                      loading="lazy"
-                      decoding="async"
+                      :priority="getImagePriority(game)"
+                      width="100%"
+                      height="100%"
                     />
                     <p class="mask">{{ game.logoText }}</p>
                   </router-link>
@@ -29,12 +30,13 @@
               <div class="game-column" v-for="(column, columnIndex) in rightGameColumns" :key="`right-col-${columnIndex}`">
                 <div class="cr-item" v-for="game in column" :key="game.id">
                   <router-link :to="'/' + game.addressBar">
-                    <img
-                      :src="getImageUrl(game.image)"
+                    <SimpleImage
+                      :src="game.image"
                       :title="game.title"
                       :alt="game.title"
-                      loading="lazy"
-                      decoding="async"
+                      :priority="getImagePriority(game)"
+                      width="100%"
+                      height="100%"
                     />
                     <p class="mask">{{ game.logoText }}</p>
                   </router-link>
@@ -52,12 +54,13 @@
               <div class="mobile-game-grid">
                 <div class="mobile-game-item" v-for="game in gamesForMobileLayout" :key="game.id">
                   <router-link :to="'/' + game.addressBar" @click="scrollToTop">
-                    <img
-                      :src="getImageUrl(game.image)"
+                    <SimpleImage
+                      :src="game.image"
                       :title="game.title"
                       :alt="game.title"
-                      loading="lazy"
-                      decoding="async"
+                      :priority="getImagePriority(game)"
+                      width="100%"
+                      height="100%"
                     />
                     <p class="mobile-mask">{{ game.logoText }}</p>
                   </router-link>
@@ -72,7 +75,7 @@
         </div>
       </div>
     </section>
-    <ShareLink />
+    <ShareLink :url="currentPageUrl" :title="gameData.title" />
     <Foot />
   </main>
 </template>
@@ -82,6 +85,8 @@ import { computed, watchEffect } from 'vue'
 import { useRoute } from 'vue-router'
 import { games } from '../data/games'
 import { scriptOptimizer } from '../utils/scriptOptimizer.js'
+import SmartImage from '../components/SmartImage.vue'
+import SimpleImage from '../components/SimpleImage.vue'
 import Headers from '../components/Head.vue'
 import About from '../components/About.vue'
 import Recommend from '../components/Recommend.vue'
@@ -126,6 +131,14 @@ const findGameIdByAddressBar = (addressBarParam) => {
 const currentGameId = computed(() => {
   const addressBarParam = route.params.addressBar
   return addressBarParam ? findGameIdByAddressBar(addressBarParam) : 'game1'
+})
+
+// 获取当前页面URL
+const currentPageUrl = computed(() => {
+  if (typeof window !== 'undefined') {
+    return window.location.href
+  }
+  return 'https://escape-road-online.com'
 })
 
 // 获取当前游戏数据 - 确保包含 addressBar
@@ -179,18 +192,21 @@ const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
-// 获取图片URL
-const getImageUrl = (imageName) => {
-  if (!imageName) return ''
-  // 使用 new URL() 来让 Vite 处理资源路径
-  // 第一个参数是相对于当前文件(Index.vue)的路径 ../assets/images/
-  // 第二个参数是当前文件的 URL 基准 import.meta.url
-  try {
-    return new URL(`../assets/images/${imageName}`, import.meta.url).href
-  } catch (error) {
-    console.error(`Error creating URL for image: ${imageName}`, error);
-    return ''; // 返回空字符串或默认图片路径
+// 获取图片加载优先级
+const getImagePriority = (game) => {
+  // 首屏显示的游戏图片设为高优先级
+  const highPriorityGames = ['game1', 'game2', 'game3']
+  if (highPriorityGames.includes(game.id)) {
+    return 'high'
   }
+
+  // 大文件设为低优先级
+  const largeImages = ['game18.png', 'game19.jpg', 'game20.png']
+  if (largeImages.includes(game.image)) {
+    return 'low'
+  }
+
+  return 'normal'
 }
 
 /**
@@ -217,13 +233,14 @@ watchEffect(() => {
   scriptOptimizer.defer(() => {
     updateMetaTag('description', currentDescription);
     updateMetaTag('keywords', currentKeywords);
-  }, 'normal');
+  }, 'low'); // 降低优先级
 });
 
-console.log('Current game:', gameData.value)
-console.log('Other games:', allGames.value)
-// console.log('Left Game Columns:', leftGameColumns.value); // Keep this commented or remove
-// console.log('Right Game Columns:', rightGameColumns.value); // Keep this commented or remove
+// 开发环境下的调试信息
+if (import.meta.env.DEV) {
+  console.log('Current game:', gameData.value)
+  console.log('Other games:', allGames.value)
+}
 
 </script>
 

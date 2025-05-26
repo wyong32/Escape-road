@@ -10,22 +10,27 @@ import { games } from '../data/games'
 
 // 预加载关键图片资源
 const preloadCriticalImages = () => {
-  // 预加载首页显示的游戏图片（前6个游戏）
-  const criticalGames = Object.values(games).slice(0, 6)
+  // 只预加载首屏必需的图片（前3个游戏，排除大文件）
+  const criticalGames = Object.values(games).slice(0, 3)
 
   criticalGames.forEach(game => {
-    if (game.image) {
-      const link = document.createElement('link')
-      link.rel = 'preload'
-      link.as = 'image'
+    if (game.image && !isLargeImage(game.image)) {
+      // 使用 Image 对象预加载，避免 link preload 警告
+      const img = new Image()
       try {
-        link.href = new URL(`../assets/images/${game.image}`, import.meta.url).href
-        document.head.appendChild(link)
+        img.src = new URL(`../assets/images/${game.image}`, import.meta.url).href
+        // 不需要添加到 DOM，只是预加载到缓存
       } catch (error) {
         console.warn(`Failed to preload image: ${game.image}`, error)
       }
     }
   })
+}
+
+// 检查是否为大文件（需要延迟加载）
+const isLargeImage = (imageName) => {
+  const largeImages = ['game18.png', 'game19.jpg', 'game20.png'] // 大于1MB的图片
+  return largeImages.includes(imageName)
 }
 
 // 预加载字体资源

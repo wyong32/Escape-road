@@ -69,7 +69,10 @@ export class PerformanceMonitor {
     if ('PerformanceObserver' in window) {
       const longTaskObserver = new PerformanceObserver((entryList) => {
         for (const entry of entryList.getEntries()) {
-          console.warn(`Long task detected: ${entry.duration}ms`)
+          // 只在开发环境或长任务超过阈值时警告
+          if (entry.duration > 50 || (typeof window !== 'undefined' && window.location.hostname === 'localhost')) {
+            console.warn(`Long task detected: ${entry.duration}ms`)
+          }
         }
       })
       longTaskObserver.observe({ entryTypes: ['longtask'] })
@@ -116,7 +119,7 @@ export class PerformanceMonitor {
   reportMetrics() {
     const metrics = this.getMetrics()
     console.log('Performance Metrics:', metrics)
-    
+
     // 这里可以发送到 Google Analytics 或其他分析服务
     if (typeof gtag !== 'undefined') {
       gtag('event', 'web_vitals', {
@@ -125,7 +128,7 @@ export class PerformanceMonitor {
         custom_parameter_cls: metrics.cls
       })
     }
-    
+
     return metrics
   }
 }

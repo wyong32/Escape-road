@@ -123,7 +123,9 @@ const getImageUrl = (imageName) => {
 const loadGame = () => {
   iframeSrc.value = gameData.value.iframeUrl
   isIframeLoaded.value = false // Reset loading state when starting a new game
-  console.log('Loading game, iframe source set, isIframeLoaded reset to false.')
+  if (import.meta.env.DEV) {
+    console.log('Loading game, iframe source set, isIframeLoaded reset to false.')
+  }
 }
 
 /**
@@ -131,7 +133,9 @@ const loadGame = () => {
  */
 const onIframeLoad = () => {
   isIframeLoaded.value = true
-  console.log('iframe content loaded.')
+  if (import.meta.env.DEV) {
+    console.log('iframe content loaded.')
+  }
 }
 
 /**
@@ -211,7 +215,9 @@ const exitFullscreen = async () => {
  */
 const handleFullscreenChange = () => {
   isFullscreen.value = !!document.fullscreenElement || !!document.webkitFullscreenElement // 更新状态
-  console.log('Fullscreen change event. Is fullscreen:', isFullscreen.value)
+  if (import.meta.env.DEV) {
+    console.log('Fullscreen change event. Is fullscreen:', isFullscreen.value)
+  }
 }
 
 // 监听全屏变化事件
@@ -223,7 +229,9 @@ onMounted(() => {
 // 组件卸载时清空 iframeSrc 并移除监听器
 onUnmounted(() => {
   iframeSrc.value = null
-  console.log(`GameMain for ${props.gameId} unmounted, iframeSrc reset.`)
+  if (import.meta.env.DEV) {
+    console.log(`GameMain for ${props.gameId} unmounted, iframeSrc reset.`)
+  }
   document.removeEventListener('fullscreenchange', handleFullscreenChange)
   document.removeEventListener('webkitfullscreenchange', handleFullscreenChange)
 })

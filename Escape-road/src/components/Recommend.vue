@@ -4,7 +4,14 @@
         <ul class="recommend-list">
             <li class="recommend-item" v-for="game in allGames" :key="game.id">
                 <router-link :to="'/' + game.addressBar" @click="scrollToTop">
-                     <img :src="getImageUrl(game.image)" :alt="game.title" />
+                     <SmartImage
+                       :src="game.image"
+                       :alt="game.title"
+                       :priority="getImagePriority(game)"
+                       :lazy="true"
+                       width="100%"
+                       height="100%"
+                     />
                 </router-link>
             </li>
         </ul>
@@ -19,6 +26,7 @@
 import { computed } from 'vue'
 import { games } from '../data/games'
 import Comments from './Comments.vue' // 2. 导入 Comments 组件
+import SmartImage from './SmartImage.vue'
 
 // 1. 定义 props 来接收 gameId
 const props = defineProps({
@@ -43,15 +51,14 @@ const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
-  const getImageUrl = (imageName) => {
-  if (!imageName) return ''
-  // Relative path from Recommend.vue (in src/components) to src/assets/images
-  try {
-    return new URL(`../assets/images/${imageName}`, import.meta.url).href
-  } catch (error) {
-    console.error(`Error creating URL for image in Recommend.vue: ${imageName}`, error);
-    return ''; // Return empty or a default placeholder
+// 获取图片加载优先级
+const getImagePriority = (game) => {
+  // 推荐区域的图片设为低优先级，因为不在首屏
+  const largeImages = ['game18.png', 'game19.jpg', 'game20.png']
+  if (largeImages.includes(game.image)) {
+    return 'low'
   }
+  return 'low' // 推荐区域默认低优先级
 }
 
 </script>
