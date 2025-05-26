@@ -236,11 +236,7 @@ watchEffect(() => {
   }, 'low'); // 降低优先级
 });
 
-// 开发环境下的调试信息
-if (import.meta.env.DEV) {
-  console.log('Current game:', gameData.value)
-  console.log('Other games:', allGames.value)
-}
+// 调试代码已移除
 
 </script>
 

@@ -1,6 +1,6 @@
 <template>
   <main class="dmca-page">
-    <Headers /> 
+    <Headers />
     <section class="content-wrap">
       <div class="dmca-container">
         <h1>DMCA Policy</h1>
@@ -52,9 +52,45 @@
 </template>
 
 <script setup>
-// 导入 Header 和 Footer 组件
-import Headers from '../components/Head.vue' 
-import Footer from '../components/foot.vue' 
+import { onMounted } from 'vue'
+import { useHead } from '@unhead/vue'
+import Headers from '../components/Head.vue'
+import Footer from '../components/foot.vue'
+import { scriptOptimizer } from '../utils/scriptOptimizer'
+
+// 设置页面 SEO
+useHead({
+  title: 'DMCA Policy - Escape Road Online',
+  meta: [
+    {
+      name: 'description',
+      content: 'DMCA copyright policy for Escape Road Online. Learn about our copyright protection procedures and how to report infringement.'
+    },
+    {
+      name: 'keywords',
+      content: 'DMCA policy, copyright protection, intellectual property, takedown notice, escape road'
+    },
+    {
+      property: 'og:title',
+      content: 'DMCA Policy - Escape Road Online'
+    },
+    {
+      property: 'og:description',
+      content: 'DMCA copyright policy for Escape Road Online. Learn about our copyright protection procedures and how to report infringement.'
+    },
+    {
+      property: 'og:type',
+      content: 'website'
+    }
+  ]
+})
+
+// 页面加载优化
+onMounted(() => {
+  scriptOptimizer.defer(() => {
+    // 非关键功能初始化
+  }, 'low')
+})
 </script>
 
 <style scoped>
@@ -62,22 +98,22 @@ import Footer from '../components/foot.vue'
 .dmca-page {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; 
+  min-height: 100vh;
 }
 
 .content-wrap {
-  flex-grow: 1; 
-  padding: 40px 20px; 
-  background-color: #f4f7f6; 
+  flex-grow: 1;
+  padding: 40px 20px;
+  background-color: #f4f7f6;
 }
 
 .dmca-container {
-  max-width: 900px; 
-  margin: 0 auto; 
-  background-color: #fff; 
-  padding: 30px 40px; 
-  border-radius: 8px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .dmca-container h1 {
@@ -90,12 +126,12 @@ import Footer from '../components/foot.vue'
   color: #34495e;
   margin-top: 30px;
   margin-bottom: 15px;
-  border-bottom: 2px solid #3498db; 
+  border-bottom: 2px solid #3498db;
   padding-bottom: 5px;
 }
 
 .dmca-container p, .dmca-container ul {
-  line-height: 1.8; 
+  line-height: 1.8;
   color: #555;
   margin-bottom: 15px;
 }
@@ -107,4 +143,4 @@ import Footer from '../components/foot.vue'
 .dmca-container li {
   margin-bottom: 10px; /* 列表项之间的间距 */
 }
-</style> 
+</style>

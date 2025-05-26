@@ -22,7 +22,7 @@ export class PerformanceMonitor {
         const entries = entryList.getEntries()
         const lastEntry = entries[entries.length - 1]
         this.metrics.lcp = lastEntry.startTime
-        console.log('LCP:', lastEntry.startTime)
+        // LCP 记录完成
       })
       lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] })
 
@@ -30,7 +30,7 @@ export class PerformanceMonitor {
       const fidObserver = new PerformanceObserver((entryList) => {
         for (const entry of entryList.getEntries()) {
           this.metrics.fid = entry.processingStart - entry.startTime
-          console.log('FID:', entry.processingStart - entry.startTime)
+          // FID 记录完成
         }
       })
       fidObserver.observe({ entryTypes: ['first-input'] })
@@ -44,7 +44,7 @@ export class PerformanceMonitor {
           }
         }
         this.metrics.cls = clsValue
-        console.log('CLS:', clsValue)
+        // CLS 记录完成
       })
       clsObserver.observe({ entryTypes: ['layout-shift'] })
     }
@@ -57,7 +57,13 @@ export class PerformanceMonitor {
           // 监控图片加载时间
           if (entry.initiatorType === 'img') {
             const loadTime = entry.responseEnd - entry.startTime
-            console.log(`Image loaded: ${entry.name} in ${loadTime}ms`)
+            // 记录图片加载性能但不输出到控制台
+            this.metrics.imageLoads = this.metrics.imageLoads || []
+            this.metrics.imageLoads.push({
+              name: entry.name,
+              duration: loadTime,
+              size: entry.transferSize
+            })
           }
         }
       })
@@ -69,10 +75,12 @@ export class PerformanceMonitor {
     if ('PerformanceObserver' in window) {
       const longTaskObserver = new PerformanceObserver((entryList) => {
         for (const entry of entryList.getEntries()) {
-          // 只在开发环境或长任务超过阈值时警告
-          if (entry.duration > 50 || (typeof window !== 'undefined' && window.location.hostname === 'localhost')) {
-            console.warn(`Long task detected: ${entry.duration}ms`)
-          }
+          // 记录长任务但不在生产环境输出警告
+          this.metrics.longTasks = this.metrics.longTasks || []
+          this.metrics.longTasks.push({
+            duration: entry.duration,
+            startTime: entry.startTime
+          })
         }
       })
       longTaskObserver.observe({ entryTypes: ['longtask'] })
@@ -118,7 +126,7 @@ export class PerformanceMonitor {
   // 报告性能数据（可以发送到分析服务）
   reportMetrics() {
     const metrics = this.getMetrics()
-    console.log('Performance Metrics:', metrics)
+    // 性能数据已收集，可发送到分析服务
 
     // 这里可以发送到 Google Analytics 或其他分析服务
     if (typeof gtag !== 'undefined') {

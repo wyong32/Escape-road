@@ -1,6 +1,6 @@
 <template>
   <main class="terms-page">
-    <Headers /> 
+    <Headers />
     <section class="content-wrap">
       <div class="terms-container">
         <h1>Terms of Service</h1>
@@ -49,7 +49,7 @@
         <p>
           (If comments or user-generated content are allowed): You are solely responsible for any content you submit or post to the Service. You agree not to post content that is unlawful, defamatory, obscene, threatening, invasive of privacy, infringing of intellectual property rights, or otherwise injurious to third parties.
         </p>
-        
+
         <h2>Termination</h2>
         <p>
           We may terminate or suspend your access to the Service immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever and without limitation, including but not limited to a breach of the Terms.
@@ -96,9 +96,45 @@
 </template>
 
 <script setup>
-// 导入 Header 和 Footer 组件
-import Headers from '../components/Head.vue' 
-import Footer from '../components/foot.vue' 
+import { onMounted } from 'vue'
+import { useHead } from '@unhead/vue'
+import Headers from '../components/Head.vue'
+import Footer from '../components/foot.vue'
+import { scriptOptimizer } from '../utils/scriptOptimizer'
+
+// 设置页面 SEO
+useHead({
+  title: 'Terms of Service - Escape Road Online',
+  meta: [
+    {
+      name: 'description',
+      content: 'Terms of Service for Escape Road Online. Read our terms and conditions for using our gaming platform and services.'
+    },
+    {
+      name: 'keywords',
+      content: 'terms of service, terms and conditions, user agreement, legal terms, escape road online'
+    },
+    {
+      property: 'og:title',
+      content: 'Terms of Service - Escape Road Online'
+    },
+    {
+      property: 'og:description',
+      content: 'Terms of Service for Escape Road Online. Read our terms and conditions for using our gaming platform and services.'
+    },
+    {
+      property: 'og:type',
+      content: 'website'
+    }
+  ]
+})
+
+// 页面加载优化
+onMounted(() => {
+  scriptOptimizer.defer(() => {
+    // 非关键功能初始化
+  }, 'low')
+})
 </script>
 
 <style scoped>
@@ -106,22 +142,22 @@ import Footer from '../components/foot.vue'
 .terms-page {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; 
+  min-height: 100vh;
 }
 
 .content-wrap {
-  flex-grow: 1; 
-  padding: 40px 20px; 
-  background-color: #f4f7f6; 
+  flex-grow: 1;
+  padding: 40px 20px;
+  background-color: #f4f7f6;
 }
 
 .terms-container {
-  max-width: 900px; 
-  margin: 0 auto; 
-  background-color: #fff; 
-  padding: 30px 40px; 
-  border-radius: 8px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .terms-container h1 {
@@ -134,21 +170,21 @@ import Footer from '../components/foot.vue'
   color: #34495e;
   margin-top: 30px;
   margin-bottom: 15px;
-  border-bottom: 2px solid #3498db; 
+  border-bottom: 2px solid #3498db;
   padding-bottom: 5px;
 }
 
 .terms-container p, .terms-container ul {
-  line-height: 1.8; 
+  line-height: 1.8;
   color: #555;
   margin-bottom: 15px;
 }
 
 .terms-container ul {
-  padding-left: 40px; 
+  padding-left: 40px;
 }
 
 .terms-container li {
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
 }
-</style> 
+</style>

@@ -23,36 +23,17 @@ export class ScriptOptimizer {
   }
 
   onDOMReady() {
-    if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
-      console.log('DOM Ready - Starting deferred tasks')
-    }
     this.processDeferredTasks()
   }
 
   onPageLoad() {
-    if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
-      console.log('Page Load Complete')
-    }
     this.isIdle = true
     this.scheduleIdleTasks()
   }
 
   // 延迟执行非关键任务
   defer(task, priority = 'normal') {
-    // 包装任务以添加执行时间监控
-    const wrappedTask = () => {
-      const start = performance.now()
-      try {
-        task()
-      } finally {
-        const duration = performance.now() - start
-        if (duration > 16) { // 超过一帧的时间
-          console.warn(`Task took ${duration.toFixed(2)}ms (priority: ${priority})`)
-        }
-      }
-    }
-
-    this.deferredTasks.push({ task: wrappedTask, priority })
+    this.deferredTasks.push({ task, priority })
     if (this.isIdle) {
       this.processDeferredTasks()
     }

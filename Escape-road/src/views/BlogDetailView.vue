@@ -38,10 +38,10 @@ import { ref, onMounted, computed, watchEffect } from 'vue';
 import { useRoute } from 'vue-router';
 import { useHead } from '@vueuse/head';
 import DOMPurify from 'dompurify';
-// 导入 API 服务 (getBlogPostBySlug)
-import { getBlogPostBySlug } from '../services/blogService'; 
+import { getBlogPostBySlug } from '../services/blogService';
 import Headers from '../components/Head.vue';
 import Foot from '../components/foot.vue';
+import { scriptOptimizer } from '../utils/scriptOptimizer';
 
 const route = useRoute();
 const post = ref(null);
@@ -99,47 +99,36 @@ watchEffect(() => {
   }
 });
 
-// 组件挂载后获取数据 (use slug)
+// 组件挂载后获取数据
 onMounted(async () => {
-  if (postSlug.value) { 
-    console.log(`[BlogDetailView] Component mounted. Fetching post with slug: ${postSlug.value}`);
+  if (postSlug.value) {
     try {
       isLoading.value = true;
       error.value = null;
       post.value = await getBlogPostBySlug(postSlug.value);
-      
-      // Remove the direct document.title update from here, handled by watchEffect
-      /*
-      if (post.value) {
-         const pageTitle = post.value.metaTitle || post.value.title || '博客文章';
-         const pageDescription = post.value.metaDescription || post.value.summary || '阅读博客文章详情。';
-         document.title = pageTitle + ' - Escape Road Blog'; 
-      } else {
-           console.error(`[BlogDetailView] Fetched post for slug ${postSlug.value} but received null data.`);
-           error.value = 'Could not load article data.'; 
-      }
-      */
-     // Basic error handling if post data is unexpectedly null after success
+
       if (!post.value && !error.value) {
-          console.error(`[BlogDetailView] Fetched post for slug ${postSlug.value} but received null data.`);
-           error.value = 'Could not load article data.'; 
+        error.value = 'Could not load article data.';
       }
 
+      // 延迟执行非关键任务
+      scriptOptimizer.defer(() => {
+        // 非关键功能初始化
+      }, 'low');
+
     } catch (err) {
-      console.error(`[BlogDetailView] Failed to load blog post with slug ${postSlug.value}:`, err);
       if (err.response && err.response.status === 404) {
-        error.value = 'The requested blog article was not found (slug might be invalid).'; 
+        error.value = 'The requested blog article was not found (slug might be invalid).';
       } else {
-        error.value = 'Failed to load blog article. Please try again later.'; 
+        error.value = 'Failed to load blog article. Please try again later.';
       }
       post.value = null;
     } finally {
       isLoading.value = false;
     }
   } else {
-    error.value = 'Invalid article slug.'; 
+    error.value = 'Invalid article slug.';
     isLoading.value = false;
-    console.error('[BlogDetailView] Invalid post slug from route params:', route.params.slug);
   }
 });
 
@@ -260,6 +249,9 @@ hr {
   margin: 1.5em auto; /* 图片居中 */
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 图片阴影 */
+  /* 性能优化 */
+  background-color: #f0f0f0; /* 加载占位 */
+  image-rendering: auto;
 }
 
 .post-content :deep(blockquote) {
@@ -323,4 +315,4 @@ hr {
     border-radius: 6px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
-</style> 
+</style>

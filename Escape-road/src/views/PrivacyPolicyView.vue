@@ -1,6 +1,6 @@
 <template>
   <main class="privacy-page">
-    <Headers /> 
+    <Headers />
     <section class="content-wrap">
       <div class="privacy-container">
         <h1>Privacy Policy</h1>
@@ -150,9 +150,45 @@
 </template>
 
 <script setup>
-// 导入 Header 和 Footer 组件
-import Headers from '../components/Head.vue' 
-import Footer from '../components/foot.vue' 
+import { onMounted } from 'vue'
+import { useHead } from '@unhead/vue'
+import Headers from '../components/Head.vue'
+import Footer from '../components/foot.vue'
+import { scriptOptimizer } from '../utils/scriptOptimizer'
+
+// 设置页面 SEO
+useHead({
+  title: 'Privacy Policy - Escape Road Online',
+  meta: [
+    {
+      name: 'description',
+      content: 'Privacy policy for Escape Road Online. Learn how we collect, use, and protect your personal information when using our gaming platform.'
+    },
+    {
+      name: 'keywords',
+      content: 'privacy policy, data protection, personal information, cookies, escape road online'
+    },
+    {
+      property: 'og:title',
+      content: 'Privacy Policy - Escape Road Online'
+    },
+    {
+      property: 'og:description',
+      content: 'Privacy policy for Escape Road Online. Learn how we collect, use, and protect your personal information when using our gaming platform.'
+    },
+    {
+      property: 'og:type',
+      content: 'website'
+    }
+  ]
+})
+
+// 页面加载优化
+onMounted(() => {
+  scriptOptimizer.defer(() => {
+    // 非关键功能初始化
+  }, 'low')
+})
 </script>
 
 <style scoped>
@@ -160,22 +196,22 @@ import Footer from '../components/foot.vue'
 .privacy-page {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; 
+  min-height: 100vh;
 }
 
 .content-wrap {
-  flex-grow: 1; 
-  padding: 40px 20px; 
-  background-color: #f4f7f6; 
+  flex-grow: 1;
+  padding: 40px 20px;
+  background-color: #f4f7f6;
 }
 
 .privacy-container {
-  max-width: 900px; 
-  margin: 0 auto; 
-  background-color: #fff; 
-  padding: 30px 40px; 
-  border-radius: 8px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .privacy-container h1 {
@@ -188,7 +224,7 @@ import Footer from '../components/foot.vue'
   color: #34495e;
   margin-top: 30px;
   margin-bottom: 15px;
-  border-bottom: 2px solid #3498db; 
+  border-bottom: 2px solid #3498db;
   padding-bottom: 5px;
 }
 
@@ -206,20 +242,20 @@ import Footer from '../components/foot.vue'
 }
 
 .privacy-container p, .privacy-container ul {
-  line-height: 1.8; 
+  line-height: 1.8;
   color: #555;
   margin-bottom: 15px;
 }
 
 .privacy-container ul {
-  padding-left: 40px; 
+  padding-left: 40px;
 }
 
 .privacy-container li {
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
 }
 
 .privacy-container strong {
     font-weight: bold;
 }
-</style> 
+</style>

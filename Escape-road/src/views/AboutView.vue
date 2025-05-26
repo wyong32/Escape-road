@@ -1,6 +1,6 @@
 <template>
   <main class="about-page">
-    <Headers /> 
+    <Headers />
     <section class="content-wrap">
       <div class="about-container">
         <h1>About Us Escape Road</h1>
@@ -28,12 +28,48 @@
 </template>
 
 <script setup>
-// 导入 Header 和 Footer 组件
-// 假设 Header 组件路径为 ../components/Head.vue
-// 假设 Footer 组件路径为 ../components/foot.vue
-import Headers from '../components/Head.vue' 
+import { onMounted } from 'vue'
+import Headers from '../components/Head.vue'
 import Foot from '../components/foot.vue'
+import { scriptOptimizer } from '../utils/scriptOptimizer'
 
+// 页面加载完成后的优化
+onMounted(() => {
+  // 延迟执行非关键任务
+  scriptOptimizer.defer(() => {
+    // 非关键功能初始化
+    // 可以在这里添加分析代码或其他非关键功能
+  }, 'low')
+})
+
+// 设置页面 meta 信息
+import { useHead } from '@unhead/vue'
+
+useHead({
+  title: 'About Us - Escape Road Online',
+  meta: [
+    {
+      name: 'description',
+      content: 'Learn about Escape Road Online gaming platform. We provide exciting car chase games and thrilling adventures for players worldwide.'
+    },
+    {
+      name: 'keywords',
+      content: 'about escape road, gaming platform, car chase games, online games, about us'
+    },
+    {
+      property: 'og:title',
+      content: 'About Us - Escape Road Online'
+    },
+    {
+      property: 'og:description',
+      content: 'Learn about Escape Road Online gaming platform. We provide exciting car chase games and thrilling adventures for players worldwide.'
+    },
+    {
+      property: 'og:type',
+      content: 'website'
+    }
+  ]
+})
 </script>
 
 <style scoped>
@@ -56,6 +92,10 @@ import Foot from '../components/foot.vue'
   padding: 30px 40px; /* 内边距 */
   border-radius: 8px; /* 轻微圆角 */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+  /* 性能优化 */
+  will-change: auto;
+  transform: translateZ(0); /* 启用硬件加速 */
+  contain: layout style paint; /* CSS 包含优化 */
 }
 
 .about-container h1 {
@@ -87,4 +127,4 @@ import Foot from '../components/foot.vue'
     padding: 20px; /* 减小内容容器内边距 */
   }
 }
-</style> 
+</style>

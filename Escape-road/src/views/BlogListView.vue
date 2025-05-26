@@ -19,9 +19,11 @@
         <div v-else-if="blogPosts.length > 0" class="blog-list">
           <!-- 确保迭代 blogPosts ref -->
           <div v-for="post in blogPosts" :key="post.id" class="blog-post-card">
-            <img :src="post.image || 'https://via.placeholder.com/300x200/cccccc/FFFFFF?text=No+Image'" 
-                 :alt="post.imageAlt || post.title" 
-                 class="post-image">
+            <img :src="post.image || 'https://via.placeholder.com/300x200/cccccc/FFFFFF?text=No+Image'"
+                 :alt="post.imageAlt || post.title"
+                 class="post-image"
+                 loading="lazy"
+                 decoding="async">
             <div class="post-content">
               <h2>
                 <router-link :to="`/blog/${post.slug}`">{{ post.title }}</router-link>
@@ -48,33 +50,61 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-// 导入头部和底部组件
+import { useHead } from '@unhead/vue';
 import Headers from '../components/Head.vue';
 import Foot from '../components/foot.vue';
-// 导入 API 服务
 import { getBlogPosts } from '../services/blogService';
+import { scriptOptimizer } from '../utils/scriptOptimizer';
 
 // --- 定义状态 ref ---
 const blogPosts = ref([]); // 用于存储从 API 获取的文章
 const isLoading = ref(true); // 加载状态
 const error = ref(null);     // 错误状态
 
+// 设置页面 SEO
+useHead({
+  title: 'Blog Articles - Escape Road Online',
+  meta: [
+    {
+      name: 'description',
+      content: 'Read the latest blog articles about Escape Road games, gaming tips, and exciting car chase adventures.'
+    },
+    {
+      name: 'keywords',
+      content: 'escape road blog, gaming articles, car chase games, gaming tips, online games blog'
+    },
+    {
+      property: 'og:title',
+      content: 'Blog Articles - Escape Road Online'
+    },
+    {
+      property: 'og:description',
+      content: 'Read the latest blog articles about Escape Road games, gaming tips, and exciting car chase adventures.'
+    },
+    {
+      property: 'og:type',
+      content: 'website'
+    }
+  ]
+});
+
 // 组件挂载后执行数据获取
 onMounted(async () => {
-  console.log('[BlogListView] Component mounted. Fetching posts...');
   try {
     isLoading.value = true;
     error.value = null;
     const fetchedPosts = await getBlogPosts();
-    console.log('[BlogListView] Received posts from API:', fetchedPosts);
     blogPosts.value = fetchedPosts;
-    console.log('[BlogListView] Assigned posts to ref:', blogPosts.value);
+
+    // 延迟执行非关键任务
+    scriptOptimizer.defer(() => {
+      // 非关键功能初始化
+    }, 'low');
+
   } catch (err) {
-    console.error("[BlogListView] Failed to load blog posts:", err);
     error.value = 'Failed to load blog articles. Please try again later.';
   } finally {
     isLoading.value = false;
-    console.log('[BlogListView] Fetching finished.');
   }
 });
 
@@ -252,4 +282,4 @@ const blogPosts_mock = ref([
 .post-image {
   background-color: #eee; /* 图片背景色 */
 }
-</style> 
+</style>

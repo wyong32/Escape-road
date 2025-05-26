@@ -1,6 +1,6 @@
 <template>
     <div class="about">
-        <div 
+        <div
           class="about-content"
           :class="{ 'is-collapsed': !isExpanded }"
           ref="contentRef"
@@ -37,13 +37,22 @@ const gameData = computed(() => {
   return games[props.gameId] || games.game1
 })
 
-// 处理内容中的图片路径
+// 处理内容中的图片路径并添加懒加载
 const processedContent = computed(() => {
   if (!gameData.value.aboutContent) return ''
-  return gameData.value.aboutContent.replace(
+
+  let content = gameData.value.aboutContent.replace(
     /@\/assets\/images\//g,
     '/images/'
   )
+
+  // 为图片添加懒加载属性
+  content = content.replace(
+    /<img([^>]*?)src="([^"]*?)"([^>]*?)>/g,
+    '<img$1src="$2"$3 loading="lazy" decoding="async">'
+  )
+
+  return content
 })
 
 // 控制展开/收起的状态
@@ -160,6 +169,13 @@ watch(() => props.gameId, () => {
 .about-content :deep(img) {
     margin-bottom: 15px;
     max-width: 100%;
+    height: auto;
+    /* 性能优化：防止布局偏移 */
+    aspect-ratio: attr(width) / attr(height);
+    /* 优化图片渲染 */
+    image-rendering: auto;
+    /* 防止图片加载时的闪烁 */
+    background-color: #f0f0f0;
 }
 
 .about-content :deep(img.game-content-image) {
@@ -173,8 +189,8 @@ watch(() => props.gameId, () => {
 /* 添加手机端样式 */
 @media (max-width: 768px) {
   .about {
-    width: 100%; 
-    max-width: 500px; 
+    width: 100%;
+    max-width: 500px;
     padding: 15px; /* 减小内边距 */
   }
   .about .below-title {
