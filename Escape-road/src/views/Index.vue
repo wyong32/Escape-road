@@ -5,74 +5,87 @@
       <div class="container" :style="{ background: gameData.background }">
         <div class="game-wrap">
           <!-- 桌面端布局 -->
-          <div class="game-list desktop-only">
-            <div class="list-left">
+          <div class="game-list desktop-only" role="main" aria-label="Game collection">
+            <aside class="list-left" aria-label="Related car chase games">
               <div class="game-column" v-for="(column, columnIndex) in leftGameColumns" :key="`left-col-${columnIndex}`">
-                <div class="cr-item" v-for="game in column" :key="game.id">
-                  <router-link :to="'/' + game.addressBar">
+                <article class="cr-item" v-for="game in column" :key="game.id">
+                  <router-link
+                    :to="'/' + game.addressBar"
+                    :aria-label="`Play ${game.title} - Free car chase game`"
+                    :title="`Play ${game.title} online for free`"
+                  >
                     <SimpleImage
                       :src="game.image"
-                      :title="game.title"
-                      :alt="game.title"
+                      :title="`${game.title} - Car chase game thumbnail`"
+                      :alt="`${game.title} - Free online car chase game`"
                       :priority="getImagePriority(game)"
                       width="100%"
                       height="100%"
                     />
                     <p class="mask">{{ game.logoText }}</p>
                   </router-link>
-                </div>
+                </article>
               </div>
-            </div>
-            <div class="content-center">
+            </aside>
+            <main class="content-center" role="main" aria-label="Main game area">
               <GameMain :game-id="currentGameId" :key="currentGameId" />
-            </div>
-            <div class="list-right">
+            </main>
+            <aside class="list-right" aria-label="More car chase games">
               <div class="game-column" v-for="(column, columnIndex) in rightGameColumns" :key="`right-col-${columnIndex}`">
-                <div class="cr-item" v-for="game in column" :key="game.id">
-                  <router-link :to="'/' + game.addressBar">
+                <article class="cr-item" v-for="game in column" :key="game.id">
+                  <router-link
+                    :to="'/' + game.addressBar"
+                    :aria-label="`Play ${game.title} - Free car chase game`"
+                    :title="`Play ${game.title} online for free`"
+                  >
                     <SimpleImage
                       :src="game.image"
-                      :title="game.title"
-                      :alt="game.title"
+                      :title="`${game.title} - Car chase game thumbnail`"
+                      :alt="`${game.title} - Free online car chase game`"
                       :priority="getImagePriority(game)"
                       width="100%"
                       height="100%"
                     />
                     <p class="mask">{{ game.logoText }}</p>
                   </router-link>
-                </div>
+                </article>
               </div>
-            </div>
+            </aside>
           </div>
 
           <!-- 移动端布局 -->
-          <div class="mobile-only">
-            <div class="content-center">
+          <div class="mobile-only" role="main" aria-label="Mobile game interface">
+            <main class="content-center" aria-label="Main game area">
               <GameMain :game-id="currentGameId" :key="currentGameId" />
-            </div>
-            <div class="mobile-game-list">
-              <div class="mobile-game-grid">
-                <div class="mobile-game-item" v-for="game in gamesForMobileLayout" :key="game.id">
-                  <router-link :to="'/' + game.addressBar" @click="scrollToTop">
+            </main>
+            <section class="mobile-game-list" aria-label="Related games collection">
+              <div class="mobile-game-grid" role="grid" aria-label="Game selection grid">
+                <article class="mobile-game-item" v-for="game in gamesForMobileLayout" :key="game.id" role="gridcell">
+                  <router-link
+                    :to="'/' + game.addressBar"
+                    @click="scrollToTop"
+                    :aria-label="`Play ${game.title} - Free car chase game`"
+                    :title="`Play ${game.title} online for free`"
+                  >
                     <SimpleImage
                       :src="game.image"
-                      :title="game.title"
-                      :alt="game.title"
+                      :title="`${game.title} - Car chase game thumbnail`"
+                      :alt="`${game.title} - Free online car chase game`"
                       :priority="getImagePriority(game)"
                       width="100%"
                       height="100%"
                     />
                     <p class="mobile-mask">{{ game.logoText }}</p>
                   </router-link>
-                </div>
+                </article>
               </div>
-            </div>
+            </section>
           </div>
         </div>
-        <div class="below">
+        <footer class="below" role="contentinfo" aria-label="Game information and recommendations">
           <About :game-id="currentGameId" />
           <Recommend :game-id="currentGameId" />
-        </div>
+        </footer>
       </div>
     </section>
     <ShareLink :url="currentPageUrl" :title="gameData.title" />
@@ -83,9 +96,9 @@
 <script setup>
 import { computed, watchEffect } from 'vue'
 import { useRoute } from 'vue-router'
+import { useHead } from '@unhead/vue'
 import { games } from '../data/games'
 import { scriptOptimizer } from '../utils/scriptOptimizer.js'
-import SmartImage from '../components/SmartImage.vue'
 import SimpleImage from '../components/SimpleImage.vue'
 import Headers from '../components/Head.vue'
 import About from '../components/About.vue'
@@ -224,7 +237,129 @@ const updateMetaTag = (name, content) => {
   element.setAttribute('content', content || ''); // 如果 content 为空则设置空字符串
 }
 
-// 使用 watchEffect 监听 gameData 的变化，并更新 meta 标签
+// 动态 SEO 管理
+const seoData = computed(() => {
+  const game = gameData.value
+  const isHomePage = !route.params.addressBar
+
+  if (isHomePage) {
+    return {
+      title: 'Escape Road Online - Free Car Chase Games | Play Instantly',
+      description: 'Play Escape Road Online for free! Experience thrilling police chase games, high-speed driving adventures, and endless car escape challenges. No download required - play instantly in your browser with 100+ free games.',
+      keywords: 'escape road online, car chase games, police chase, driving games, free online games, browser games, racing games, action games, car escape, high speed chase, unblocked games',
+      ogTitle: 'Escape Road Online - Ultimate Car Chase Gaming Experience',
+      ogDescription: 'Experience the ultimate car chase adventure! Play Escape Road and 100+ free car chase games online. Police pursuits, high-speed driving, and endless excitement await.',
+      ogImage: 'https://escape-road-online.com/images/escape-road-og.jpg',
+      canonicalUrl: 'https://escape-road-online.com/'
+    }
+  } else {
+    return {
+      title: `${game.title} - Play Free Online | Escape Road`,
+      description: game.description || `Play ${game.title} online for free. Experience exciting car chase gameplay with police pursuits and high-speed action.`,
+      keywords: game.keywords || `${game.title}, car chase, police chase, driving games, online games, free games`,
+      ogTitle: `${game.title} - Free Online Game`,
+      ogDescription: game.description || `Play ${game.title} online for free. Experience exciting car chase gameplay.`,
+      ogImage: `https://escape-road-online.com/images/${game.image}`,
+      canonicalUrl: `https://escape-road-online.com/${game.addressBar}`
+    }
+  }
+})
+
+// 使用 useHead 进行 SEO 优化
+useHead(() => ({
+  title: seoData.value.title,
+  meta: [
+    // 基础 SEO
+    { name: 'description', content: seoData.value.description },
+    { name: 'keywords', content: seoData.value.keywords },
+    { name: 'author', content: 'Escape Road Online' },
+    { name: 'robots', content: 'index, follow' },
+
+    // Open Graph (Facebook, LinkedIn)
+    { property: 'og:type', content: 'website' },
+    { property: 'og:title', content: seoData.value.ogTitle },
+    { property: 'og:description', content: seoData.value.ogDescription },
+    { property: 'og:image', content: seoData.value.ogImage },
+    { property: 'og:url', content: seoData.value.canonicalUrl },
+    { property: 'og:site_name', content: 'Escape Road Online' },
+    { property: 'og:locale', content: 'en_US' },
+
+    // Twitter Cards
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:title', content: seoData.value.ogTitle },
+    { name: 'twitter:description', content: seoData.value.ogDescription },
+    { name: 'twitter:image', content: seoData.value.ogImage },
+
+    // 移动端优化
+    { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
+    { name: 'theme-color', content: '#3498db' },
+    { name: 'apple-mobile-web-app-capable', content: 'yes' },
+    { name: 'apple-mobile-web-app-status-bar-style', content: 'default' },
+
+    // 游戏相关
+    { name: 'category', content: 'games' },
+    { name: 'classification', content: 'car chase games, driving games' },
+    { name: 'rating', content: 'general' }
+  ],
+  link: [
+    // 规范链接
+    { rel: 'canonical', href: seoData.value.canonicalUrl },
+
+    // 预连接优化
+    { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+
+    // 图标
+    { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+    { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }
+  ],
+  script: [
+    // 结构化数据 - 游戏
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'VideoGame',
+        'name': seoData.value.ogTitle,
+        'description': seoData.value.ogDescription,
+        'url': seoData.value.canonicalUrl,
+        'image': seoData.value.ogImage,
+        'genre': ['Action', 'Racing', 'Chase'],
+        'gamePlatform': 'Web Browser',
+        'operatingSystem': 'Any',
+        'applicationCategory': 'Game',
+        'offers': {
+          '@type': 'Offer',
+          'price': '0',
+          'priceCurrency': 'USD'
+        },
+        'publisher': {
+          '@type': 'Organization',
+          'name': 'Escape Road Online'
+        }
+      })
+    },
+
+    // 结构化数据 - 网站
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        'name': 'Escape Road Online',
+        'url': 'https://escape-road-online.com',
+        'description': 'Free online car chase games and driving adventures',
+        'potentialAction': {
+          '@type': 'SearchAction',
+          'target': 'https://escape-road-online.com/search?q={search_term_string}',
+          'query-input': 'required name=search_term_string'
+        }
+      })
+    }
+  ]
+}))
+
+// 保留原有的 meta 标签更新逻辑作为降级方案
 watchEffect(() => {
   const currentDescription = gameData.value.description;
   const currentKeywords = gameData.value.keywords;
@@ -233,7 +368,7 @@ watchEffect(() => {
   scriptOptimizer.defer(() => {
     updateMetaTag('description', currentDescription);
     updateMetaTag('keywords', currentKeywords);
-  }, 'low'); // 降低优先级
+  }, 'low');
 });
 
 // 调试代码已移除
@@ -413,6 +548,39 @@ watchEffect(() => {
   .mobile-only {
     display: block;
     width: 100%;
+  }
+
+  /* 面包屑导航移动端样式 */
+  .breadcrumb-container {
+    padding: 0 15px;
+  }
+
+  .breadcrumb {
+    font-size: 13px;
+  }
+
+  /* 页面标题移动端样式 */
+  .page-header {
+    padding: 30px 15px;
+    margin: 0 15px 30px 15px;
+  }
+
+  .main-title {
+    font-size: 1.8rem;
+  }
+
+  .main-description {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .features {
+    gap: 10px;
+  }
+
+  .feature {
+    font-size: 0.8rem;
+    padding: 6px 12px;
   }
 
   .container {
