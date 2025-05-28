@@ -12,22 +12,22 @@
                 </ul>
             </div>
             <div class="link-list">
-                <a href="https://www.indiehackers.com/weny3124/history">
+                <a href="https://www.indiehackers.com/weny3124/history" target="_blank">
                     <img src="/images/icon/indiehackers-icon.webp" alt="indiehackers" />
                 </a>
-                <a href="https://ko-fi.com/post/Escape-road-online-B0B01FG79E">
+                <a href="https://ko-fi.com/post/Escape-road-online-B0B01FG79E" target="_blank">
                     <img src="/images/icon/ko-fi-icon.webp" alt="ko-fi" />
                 </a>
-                <a href="https://wenyong3.gumroad.com/l/escaperoadonline">
+                <a href="https://wenyong3.gumroad.com/l/escaperoadonline" target="_blank">
                     <img src="/images/icon/gumroad-icon.webp" alt="gumroad" />
                 </a>
-                <a href="https://cookingdom.podia.com/blog/escape-road-online">
+                <a href="https://cookingdom.podia.com/blog/escape-road-online" target="_blank">
                     <img src="/images/icon/podia-icon.ico" alt="podia" />
                 </a>
-                <a href="https://linktr.ee/escaperoadonline">
+                <a href="https://linktr.ee/escaperoadonline" target="_blank">
                     <img src="/images/icon/linktr-icon.png" alt="escaperoadonline" />
                 </a>
-                <a href="https://jmmiy.micro.blog/2025/04/14/httpsescaperoadonlinecom.html">
+                <a href="https://jmmiy.micro.blog/2025/04/14/httpsescaperoadonlinecom.html" target="_blank">
                     <img src="/images/icon/micro-icon.png" alt="jmmiy" />
                 </a>
             </div>
