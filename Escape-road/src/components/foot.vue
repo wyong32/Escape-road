@@ -11,6 +11,26 @@
                     <li><router-link to="/terms-of-service">Terms of Service</router-link></li>
                 </ul>
             </div>
+            <div class="link-list">
+                <a href="https://www.indiehackers.com/weny3124/history">
+                    <img src="/images/icon/indiehackers-icon.webp" alt="indiehackers" />
+                </a>
+                <a href="https://ko-fi.com/post/Escape-road-online-B0B01FG79E">
+                    <img src="/images/icon/ko-fi-icon.webp" alt="ko-fi" />
+                </a>
+                <a href="https://wenyong3.gumroad.com/l/escaperoadonline">
+                    <img src="/images/icon/gumroad-icon.webp" alt="gumroad" />
+                </a>
+                <a href="https://cookingdom.podia.com/blog/escape-road-online">
+                    <img src="/images/icon/podia-icon.ico" alt="podia" />
+                </a>
+                <a href="https://linktr.ee/escaperoadonline">
+                    <img src="/images/icon/linktr-icon.png" alt="escaperoadonline" />
+                </a>
+                <a href="https://jmmiy.micro.blog/2025/04/14/httpsescaperoadonlinecom.html">
+                    <img src="/images/icon/micro-icon.png" alt="jmmiy" />
+                </a>
+            </div>
             <div class="footer-copyright">
                 &copy; 2025 <router-link to="/">https://escape-road-online.com</router-link> All rights reserved.
             </div>
@@ -39,6 +59,34 @@
     text-align: center; /* 文本居中 */
     padding: 0 20px;
     gap: 10px; /* 设置项目之间的垂直间距 */
+}
+
+.link-list{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.link-list a{
+    display: block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #fff;
+    overflow: hidden;
+    position: relative;
+}
+.link-list img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 
 .footer-nav ul {
