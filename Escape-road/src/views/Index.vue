@@ -199,11 +199,26 @@ const loadAdSenseScript3 = () => {
   }
 }
 
+//  广告4
+const loadAdSenseScript4 = () => {
+  try {
+    // 插入 Google AdSense 脚本
+    const script = document.createElement('script')
+    script.async = true
+    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5437957765171705'
+    script.crossOrigin = 'anonymous'
+    document.head.appendChild(script)
+  } catch (error) {
+    console.error('Failed to load AdSense script:', error)
+  }
+}
+
 // 在组件挂载时加载广告脚本
 onMounted(() => {
   loadAdSenseScript1()
   loadAdSenseScript2()
   loadAdSenseScript3()
+  loadAdSenseScript4()
 })
 
 // 获取当前路由实例
