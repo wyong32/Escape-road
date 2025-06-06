@@ -11,6 +11,7 @@ import { games } from '../data/games'
 import AdminDashboard from '../views/admin/Dashboard.vue'
 import CommentRatingManagement from '../views/admin/CommentRatingManagement.vue'
 import BlogManagement from '../views/admin/BlogManagement.vue'
+import TestAd from '../views/TestAd.vue'
 
 /**
  * 根据 addressBar 查找游戏ID
@@ -48,6 +49,11 @@ const updateMetaTag = (selector, attribute, content) => {
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    {
+      path: '/test-ad',
+      name: 'test-ad',
+      component: TestAd,
+    },
     {
       path: '/',
       name: 'home',
