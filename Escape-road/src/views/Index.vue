@@ -201,13 +201,7 @@ const refreshAds = () => {
 
 // 在组件挂载时进行首次广告加载
 onMounted(() => {
-  // 使用 nextTick 和 setTimeout 来确保在浏览器空闲时再加载广告脚本
-  // 这可以避免在强制刷新（Ctrl+F5）时与其他资源加载产生竞速问题
-  nextTick(() => {
-    setTimeout(() => {
-      loadAdSenseScript()
-    }, 2000) 
-  })
+  loadAdSenseScript()
 })
 
 // 监听路由变化，以便在 SPA 导航时刷新广告
@@ -789,6 +783,7 @@ watchEffect(() => {
   left: 10px;
   transform: translateY(-50%);
   width: 160px; /* Fixed width for sidebar ad */
+  min-height: 600px; /* Crucial for AdSense to calculate ad size */
   z-index: 999; /* Ensure ads are on top */
 }
 
@@ -798,6 +793,7 @@ watchEffect(() => {
   top: 50%;
   right: 10px;
   transform: translateY(-50%);
+  min-height: 600px; /* Crucial for AdSense to calculate ad size */
   z-index: 999; /* Ensure ads are on top */
 }
 
