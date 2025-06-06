@@ -22,7 +22,7 @@
                  data-ad-slot="9497191380"
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
-        </div>
+          </div>
 
 
           <!-- 桌面端布局 -->
@@ -102,6 +102,16 @@
               </div>
             </section>
           </div>
+
+          <!-- 广告3 -->
+          <div class="ads-container ads-pc ads-right">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-5437957765171705"
+                 data-ad-slot="1414982389"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+          </div>
         </div>
         <footer class="below" role="contentinfo" aria-label="Game information and recommendations">
           <About :game-id="currentGameId" />
@@ -170,10 +180,30 @@ const loadAdSenseScript2 = () => {
   }
 }
 
+//  广告3
+const loadAdSenseScript3 = () => {
+  try {
+    // 插入 Google AdSense 脚本
+    const script = document.createElement('script')
+    script.async = true
+    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5437957765171705'
+    script.crossOrigin = 'anonymous'
+    document.head.appendChild(script)
+
+    // 推送广告请求
+    script.onload = () => {
+      (window.adsbygoogle = window.adsbygoogle || []).push({})
+    }
+  } catch (error) {
+    console.error('Failed to load AdSense script:', error)
+  }
+}
+
 // 在组件挂载时加载广告脚本
 onMounted(() => {
   loadAdSenseScript1()
   loadAdSenseScript2()
+  loadAdSenseScript3()
 })
 
 // 获取当前路由实例
@@ -740,6 +770,7 @@ watchEffect(() => {
 
 .ads-container{
   width: 100%;
+  text-align: center;
 }
 
 .ads-left{
@@ -748,6 +779,16 @@ watchEffect(() => {
   top: 50%;
   left: 10px;
   transform: translateY(-50%);
+  z-index: 99999999;
+}
+
+.ads-right{
+  width: 20%;
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  z-index: 99999999;
 }
 
 .ads-pc{
