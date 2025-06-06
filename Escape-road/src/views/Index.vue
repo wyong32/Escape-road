@@ -129,42 +129,38 @@ import Foot from '../components/foot.vue'
 import ShareLink from '../components/ShareLink.vue'
 
 /**
- * 初始化并加载 Google AdSense 脚本
+ * 初始化并加载 Google AdSense 脚本。
+ * 此函数会检查脚本是否已存在，以防止在单页面应用中重复加载。
  */
-
-//  广告1
-const loadAdSenseScript1 = () => {
-  try {
-    // 插入 Google AdSense 脚本
-    const script = document.createElement('script')
-    script.async = true
-    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5437957765171705'
-    script.crossOrigin = 'anonymous'
-    document.head.appendChild(script)
-
-    // 推送广告请求
-    script.onload = () => {
-      (window.adsbygoogle = window.adsbygoogle || []).push({})
+const loadAdSenseScript = () => {
+  // 检查脚本是否已存在
+  if (document.querySelector('script[src*="adsbygoogle.js"]')) {
+    // 如果脚本已存在，可能是在组件间导航，只需再次触发广告请求
+    try {
+      ;(window.adsbygoogle = window.adsbygoogle || []).push({})
+    } catch (e) {
+      console.error('AdSense push error on subsequent load:', e)
     }
-  } catch (error) {
-    console.error('Failed to load AdSense script:', error)
+    return
   }
-}
 
-//  广告2
-const loadAdSenseScript2 = () => {
+  // 如果脚本不存在，则创建并添加到 head
   try {
-    // 插入 Google AdSense 脚本
     const script = document.createElement('script')
     script.async = true
     script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5437957765171705'
     script.crossOrigin = 'anonymous'
-    document.head.appendChild(script)
 
-    // 推送广告请求
+    // 脚本加载成功后，推送一个空的广告请求来初始化所有广告单元
     script.onload = () => {
-      (window.adsbygoogle = window.adsbygoogle || []).push({})
+      try {
+        ;(window.adsbygoogle = window.adsbygoogle || []).push({})
+      } catch (e) {
+        console.error('AdSense push error on initial script load:', e)
+      }
     }
+
+    document.head.appendChild(script)
   } catch (error) {
     console.error('Failed to load AdSense script:', error)
   }
@@ -172,8 +168,7 @@ const loadAdSenseScript2 = () => {
 
 // 在组件挂载时加载广告脚本
 onMounted(() => {
-  loadAdSenseScript1()
-  loadAdSenseScript2()
+  loadAdSenseScript()
 })
 
 // 获取当前路由实例
@@ -744,23 +739,18 @@ watchEffect(() => {
   top: 50%;
   left: 10px;
   transform: translateY(-50%);
+  width: 20%;
 }
 
-.ads-pc{
-  display: block;
-}
-.ads-ph{
-  display: none;
+.ads-right{
+  width: 20%;
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
 }
 
-@media (max-width: 991px) {
-  .ads-pc {
-    display: none;
-  }
-  .ads-ph{
-  display: block;
-}
-}
+
 
 
 /* .index-specific-text { font-size: 14px; } */
