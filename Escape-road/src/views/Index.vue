@@ -143,7 +143,7 @@ import ShareLink from '../components/ShareLink.vue'
  */
 
 //  广告1
-const loadAdSenseScript = () => {
+const loadAdSenseScript1 = () => {
   try {
     // 插入 Google AdSense 脚本
     const script = document.createElement('script')
@@ -215,7 +215,7 @@ const loadAdSenseScript = () => {
 
 // 在组件挂载时加载广告脚本
 onMounted(() => {
-  loadAdSenseScript
+  loadAdSenseScript1()
   // loadAdSenseScript1()
   // loadAdSenseScript2()
   // loadAdSenseScript3()
