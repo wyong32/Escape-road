@@ -15,14 +15,14 @@
 
         <div class="game-wrap">
           <!-- 广告2 -->
-          <div class="ads-container ads-pc ads-left">
+          <!-- <div class="ads-container ads-pc ads-left">
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-5437957765171705"
                  data-ad-slot="9497191380"
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
-          </div>
+          </div> -->
 
 
           <!-- 桌面端布局 -->
@@ -104,14 +104,14 @@
           </div>
 
           <!-- 广告3 -->
-          <div class="ads-container ads-pc ads-right">
+          <!-- <div class="ads-container ads-pc ads-right">
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-5437957765171705"
                  data-ad-slot="1414982389"
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
-          </div>
+          </div> -->
         </div>
         <footer class="below" role="contentinfo" aria-label="Game information and recommendations">
           <About :game-id="currentGameId" />
