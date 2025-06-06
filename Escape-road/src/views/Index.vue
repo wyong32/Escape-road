@@ -757,6 +757,7 @@ watchEffect(() => {
   transform: translateY(-50%);
   width: 160px; /* Fixed width for sidebar ad */
   z-index: 999; /* Ensure ads are on top */
+  border: 3px dashed red; /* --- DEBUGGING BORDER --- */
 }
 
 .ads-right{
@@ -766,6 +767,7 @@ watchEffect(() => {
   right: 10px;
   transform: translateY(-50%);
   z-index: 999; /* Ensure ads are on top */
+  border: 3px dashed red; /* --- DEBUGGING BORDER --- */
 }
 
 /* Base display rules for PC vs Phone ads */
@@ -778,11 +780,13 @@ watchEffect(() => {
 }
 
 /* Hide sidebar ads on medium screens to prevent content overlap */
+/* --- TEMPORARILY DISABLED FOR DEBUGGING ---
 @media (max-width: 1500px) { 
   .ads-left, .ads-right {
     display: none; 
   }
 }
+*/
 
 /* Switch between PC and Phone ads on small screens */
 @media (max-width: 768px) {
