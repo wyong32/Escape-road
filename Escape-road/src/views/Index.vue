@@ -183,16 +183,43 @@ const loadAdSenseScript = () => {
   }
 }
 
-// 在组件挂载时加载广告脚本
+/**
+ * 重新扫描并填充页面上未处理的广告单元。
+ * 这个函数应该在每次路由切换后调用。
+ */
+const refreshAds = () => {
+  try {
+    // 检查 AdSense 脚本是否已在窗口对象上准备就绪
+    if (window.adsbygoogle) {
+      console.log('[AdSense] Refreshing ads for new route.');
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    }
+  } catch (e) {
+    console.error('AdSense refresh error:', e);
+  }
+};
+
+// 在组件挂载时进行首次广告加载
 onMounted(() => {
   // 使用 nextTick 和 setTimeout 来确保在浏览器空闲时再加载广告脚本
   // 这可以避免在强制刷新（Ctrl+F5）时与其他资源加载产生竞速问题
   nextTick(() => {
     setTimeout(() => {
       loadAdSenseScript()
-    }, 2000) // 延迟200毫秒，给浏览器一点喘息时间
+    }, 2000) 
   })
 })
+
+// 监听路由变化，以便在 SPA 导航时刷新广告
+watchEffect(() => {
+  // 引用 route.path 来确保 watchEffect 能追踪到它的变化
+  const path = route.path; 
+  // 使用 nextTick 确保在 DOM 更新后执行
+  nextTick(() => {
+    console.log(`[Router] Route changed to ${path}, triggering ad refresh.`);
+    refreshAds();
+  });
+});
 
 // 获取当前路由实例
 const route = useRoute()
