@@ -12,6 +12,7 @@
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
         </div>
+        
         <div class="game-wrap">
           <!-- 广告2 -->
           <div class="ads-container ads-pc ads-left" style="width: 100%; margin-bottom: 1rem; text-align: center;">
@@ -741,6 +742,7 @@ watchEffect(() => {
 .ads-left{
   position: fixed;
   top: 50%;
+  left: 10px;
   transform: translateY(-50%);
 }
 
