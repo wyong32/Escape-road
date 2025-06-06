@@ -756,6 +756,7 @@ watchEffect(() => {
   left: 10px;
   transform: translateY(-50%);
   width: 160px; /* Fixed width for sidebar ad */
+  z-index: 999; /* Ensure ads are on top */
 }
 
 .ads-right{
@@ -764,13 +765,26 @@ watchEffect(() => {
   top: 50%;
   right: 10px;
   transform: translateY(-50%);
+  z-index: 999; /* Ensure ads are on top */
 }
 
-
-@media (max-width: 1500px) { /* Adjust breakpoint as needed */
-
+/* Base display rules for PC vs Phone ads */
+.ads-pc {
+  display: block;
 }
 
+.ads-ph {
+  display: none;
+}
+
+/* Hide sidebar ads on medium screens to prevent content overlap */
+@media (max-width: 1500px) { 
+  .ads-left, .ads-right {
+    display: none; 
+  }
+}
+
+/* Switch between PC and Phone ads on small screens */
 @media (max-width: 768px) {
   .ads-pc {
     display: none; /* Hide all PC ads */
