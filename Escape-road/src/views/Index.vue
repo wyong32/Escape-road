@@ -16,7 +16,7 @@
         <div class="game-wrap">
           <!-- 广告2 -->
           <div class="ads-container ads-pc ads-left">
-            <ins class="adsbygoogle2"
+            <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-5437957765171705"
                  data-ad-slot="9497191380"
@@ -740,11 +740,10 @@ watchEffect(() => {
 
 .ads-container{
   width: 100%;
-  background-color: #eee;
 }
 
 .ads-left{
-  width: 30%;
+  width: 20%;
   position: fixed;
   top: 50%;
   left: 10px;
