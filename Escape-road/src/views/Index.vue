@@ -4,7 +4,7 @@
     <section>
       <div class="container" :style="{ background: gameData.background }">
         <!-- Google AdSense Ad Slot -->
-        <div class="ads-container ads-pc">
+        <div class="ads-container ads-pc" style="width: 100%; margin-bottom: 1rem; text-align: center;">
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-5437957765171705"
@@ -15,14 +15,14 @@
 
         <div class="game-wrap">
           <!-- 广告2 -->
-          <div class="ads-container ads-pc ads-left">
+          <div class="ads-container ads-pc ads-left" style="width: 100%; margin-bottom: 1rem; text-align: center;">
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-5437957765171705"
                  data-ad-slot="9497191380"
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
-          </div>
+        </div>
 
 
           <!-- 桌面端布局 -->
@@ -102,16 +102,6 @@
               </div>
             </section>
           </div>
-
-          <!-- 广告3 -->
-          <div class="ads-container ads-pc ads-right">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-5437957765171705"
-                 data-ad-slot="1414982389"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-          </div>
         </div>
         <footer class="below" role="contentinfo" aria-label="Game information and recommendations">
           <About :game-id="currentGameId" />
@@ -143,7 +133,7 @@ import ShareLink from '../components/ShareLink.vue'
  */
 
 //  广告1
-const loadAdSenseScript = () => {
+const loadAdSenseScript1 = () => {
   try {
     // 插入 Google AdSense 脚本
     const script = document.createElement('script')
@@ -161,65 +151,29 @@ const loadAdSenseScript = () => {
   }
 }
 
-// //  广告2
-// const loadAdSenseScript2 = () => {
-//   try {
-//     // 插入 Google AdSense 脚本
-//     const script = document.createElement('script')
-//     script.async = true
-//     script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5437957765171705'
-//     script.crossOrigin = 'anonymous'
-//     document.head.appendChild(script)
+//  广告2
+const loadAdSenseScript2 = () => {
+  try {
+    // 插入 Google AdSense 脚本
+    const script = document.createElement('script')
+    script.async = true
+    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5437957765171705'
+    script.crossOrigin = 'anonymous'
+    document.head.appendChild(script)
 
-//     // 推送广告请求
-//     script.onload = () => {
-//       (window.adsbygoogle = window.adsbygoogle || []).push({})
-//     }
-//   } catch (error) {
-//     console.error('Failed to load AdSense script:', error)
-//   }
-// }
-
-// //  广告3
-// const loadAdSenseScript3 = () => {
-//   try {
-//     // 插入 Google AdSense 脚本
-//     const script = document.createElement('script')
-//     script.async = true
-//     script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5437957765171705'
-//     script.crossOrigin = 'anonymous'
-//     document.head.appendChild(script)
-
-//     // 推送广告请求
-//     script.onload = () => {
-//       (window.adsbygoogle = window.adsbygoogle || []).push({})
-//     }
-//   } catch (error) {
-//     console.error('Failed to load AdSense script:', error)
-//   }
-// }
-
-// //  广告4
-// const loadAdSenseScript4 = () => {
-//   try {
-//     // 插入 Google AdSense 脚本
-//     const script = document.createElement('script')
-//     script.async = true
-//     script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5437957765171705'
-//     script.crossOrigin = 'anonymous'
-//     document.head.appendChild(script)
-//   } catch (error) {
-//     console.error('Failed to load AdSense script:', error)
-//   }
-// }
+    // 推送广告请求
+    script.onload = () => {
+      (window.adsbygoogle = window.adsbygoogle || []).push({})
+    }
+  } catch (error) {
+    console.error('Failed to load AdSense script:', error)
+  }
+}
 
 // 在组件挂载时加载广告脚本
 onMounted(() => {
-  loadAdSenseScript()
-  // loadAdSenseScript1()
-  // loadAdSenseScript2()
-  // loadAdSenseScript3()
-  // loadAdSenseScript4()
+  loadAdSenseScript1()
+  loadAdSenseScript2()
 })
 
 // 获取当前路由实例
@@ -784,27 +738,12 @@ watchEffect(() => {
   }
 }
 
-.ads-container{
-  width: 100%;
-  text-align: center;
-}
 
 .ads-left{
-  width: 20%;
   position: fixed;
   top: 50%;
   left: 10px;
   transform: translateY(-50%);
-  z-index: 99999999;
-}
-
-.ads-right{
-  width: 20%;
-  position: fixed;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  z-index: 99999999;
 }
 
 .ads-pc{
