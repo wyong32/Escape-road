@@ -143,7 +143,7 @@ import ShareLink from '../components/ShareLink.vue'
  */
 
 //  广告1
-const loadAdSenseScript1 = () => {
+const loadAdSenseScript = () => {
   try {
     // 插入 Google AdSense 脚本
     const script = document.createElement('script')
@@ -161,64 +161,65 @@ const loadAdSenseScript1 = () => {
   }
 }
 
-//  广告2
-const loadAdSenseScript2 = () => {
-  try {
-    // 插入 Google AdSense 脚本
-    const script = document.createElement('script')
-    script.async = true
-    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5437957765171705'
-    script.crossOrigin = 'anonymous'
-    document.head.appendChild(script)
+// //  广告2
+// const loadAdSenseScript2 = () => {
+//   try {
+//     // 插入 Google AdSense 脚本
+//     const script = document.createElement('script')
+//     script.async = true
+//     script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5437957765171705'
+//     script.crossOrigin = 'anonymous'
+//     document.head.appendChild(script)
 
-    // 推送广告请求
-    script.onload = () => {
-      (window.adsbygoogle = window.adsbygoogle || []).push({})
-    }
-  } catch (error) {
-    console.error('Failed to load AdSense script:', error)
-  }
-}
+//     // 推送广告请求
+//     script.onload = () => {
+//       (window.adsbygoogle = window.adsbygoogle || []).push({})
+//     }
+//   } catch (error) {
+//     console.error('Failed to load AdSense script:', error)
+//   }
+// }
 
-//  广告3
-const loadAdSenseScript3 = () => {
-  try {
-    // 插入 Google AdSense 脚本
-    const script = document.createElement('script')
-    script.async = true
-    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5437957765171705'
-    script.crossOrigin = 'anonymous'
-    document.head.appendChild(script)
+// //  广告3
+// const loadAdSenseScript3 = () => {
+//   try {
+//     // 插入 Google AdSense 脚本
+//     const script = document.createElement('script')
+//     script.async = true
+//     script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5437957765171705'
+//     script.crossOrigin = 'anonymous'
+//     document.head.appendChild(script)
 
-    // 推送广告请求
-    script.onload = () => {
-      (window.adsbygoogle = window.adsbygoogle || []).push({})
-    }
-  } catch (error) {
-    console.error('Failed to load AdSense script:', error)
-  }
-}
+//     // 推送广告请求
+//     script.onload = () => {
+//       (window.adsbygoogle = window.adsbygoogle || []).push({})
+//     }
+//   } catch (error) {
+//     console.error('Failed to load AdSense script:', error)
+//   }
+// }
 
-//  广告4
-const loadAdSenseScript4 = () => {
-  try {
-    // 插入 Google AdSense 脚本
-    const script = document.createElement('script')
-    script.async = true
-    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5437957765171705'
-    script.crossOrigin = 'anonymous'
-    document.head.appendChild(script)
-  } catch (error) {
-    console.error('Failed to load AdSense script:', error)
-  }
-}
+// //  广告4
+// const loadAdSenseScript4 = () => {
+//   try {
+//     // 插入 Google AdSense 脚本
+//     const script = document.createElement('script')
+//     script.async = true
+//     script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5437957765171705'
+//     script.crossOrigin = 'anonymous'
+//     document.head.appendChild(script)
+//   } catch (error) {
+//     console.error('Failed to load AdSense script:', error)
+//   }
+// }
 
 // 在组件挂载时加载广告脚本
 onMounted(() => {
-  loadAdSenseScript1()
-  loadAdSenseScript2()
-  loadAdSenseScript3()
-  loadAdSenseScript4()
+  loadAdSenseScript
+  // loadAdSenseScript1()
+  // loadAdSenseScript2()
+  // loadAdSenseScript3()
+  // loadAdSenseScript4()
 })
 
 // 获取当前路由实例
