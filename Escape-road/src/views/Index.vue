@@ -4,19 +4,19 @@
     <section>
       <div class="container" :style="{ background: gameData.background }">
         <!-- Google AdSense Ad Slot -->
-        <div class="ads-container ads-pc" style="width: 100%; margin-bottom: 1rem; text-align: center;">
-            <ins class="adsbygoogle"
+        <div class="ads-container ads-pc">
+            <ins class="adsbygoogle1"
                  style="display:block"
                  data-ad-client="ca-pub-5437957765171705"
                  data-ad-slot="2049492927"
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
         </div>
-        
+
         <div class="game-wrap">
           <!-- 广告2 -->
-          <div class="ads-container ads-pc ads-left" style="width: 100%; margin-bottom: 1rem; text-align: center;">
-            <ins class="adsbygoogle"
+          <div class="ads-container ads-pc ads-left">
+            <ins class="adsbygoogle2"
                  style="display:block"
                  data-ad-client="ca-pub-5437957765171705"
                  data-ad-slot="9497191380"
@@ -144,7 +144,7 @@ const loadAdSenseScript1 = () => {
 
     // 推送广告请求
     script.onload = () => {
-      (window.adsbygoogle = window.adsbygoogle || []).push({})
+      (window.adsbygoogle1 = window.adsbygoogle1 || []).push({})
     }
   } catch (error) {
     console.error('Failed to load AdSense script:', error)
@@ -163,7 +163,7 @@ const loadAdSenseScript2 = () => {
 
     // 推送广告请求
     script.onload = () => {
-      (window.adsbygoogle = window.adsbygoogle || []).push({})
+      (window.adsbygoogle2 = window.adsbygoogle2 || []).push({})
     }
   } catch (error) {
     console.error('Failed to load AdSense script:', error)
@@ -738,8 +738,13 @@ watchEffect(() => {
   }
 }
 
+.ads-container{
+  width: 100%;
+  background-color: #eee;
+}
 
 .ads-left{
+  width: 20%;
   position: fixed;
   top: 50%;
   left: 10px;
