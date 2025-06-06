@@ -420,7 +420,7 @@ watchEffect(() => {
   background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
   /* background: url('../assets/images/game-01.webp') no-repeat center center; */
   background-size: cover;
-  padding: 100px 0;
+  padding: 1rem 0;
   overflow-x: hidden; /* 防止绝对定位的广告在小屏幕上导致水平滚动条 */
 }
 

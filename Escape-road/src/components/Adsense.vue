@@ -1,5 +1,6 @@
 <template>
   <ins
+    :key="adKey"
     class="adsbygoogle"
     style="display: block"
     :data-ad-client="adClient"
@@ -10,7 +11,7 @@
 </template>
 
 <script setup>
-import { onMounted, nextTick, watch } from 'vue';
+import { ref, watch, nextTick, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 
 const props = defineProps({
@@ -33,60 +34,35 @@ const props = defineProps({
 });
 
 const route = useRoute();
+const adKey = ref(0);
 
-const loadAd = () => {
+const pushAd = () => {
   nextTick(() => {
     try {
-      // 检查 adsbygoogle 是否可用
-      if (window.adsbygoogle) {
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-      } else {
-        // 如果脚本还未加载，则进行加载
-        loadAdsenseScript();
-      }
+      // Push an empty object to let AdSense know to process a new ad slot.
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch (e) {
       console.error('AdSense push error:', e);
     }
   });
 };
 
-const loadAdsenseScript = () => {
-  // 防止重复加载
-  if (document.querySelector('script[src*="adsbygoogle.js"]')) {
-    // 如果脚本已经存在，但adsbygoogle对象还没准备好，稍后再试
-    if (!window.adsbygoogle) {
-        const interval = setInterval(() => {
-            if (window.adsbygoogle) {
-                clearInterval(interval);
-                (window.adsbygoogle = window.adsbygoogle || []).push({});
-            }
-        }, 50);
-    }
-    return;
-  }
-  
-  const script = document.createElement('script');
-  script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${props.adClient}`;
-  script.async = true;
-  script.crossOrigin = 'anonymous';
-  script.onload = () => {
-    (window.adsbygoogle = window.adsbygoogle || []).push({});
-  };
-  script.onerror = () => {
-    console.error('Failed to load AdSense script.');
-  };
-  document.head.appendChild(script);
-};
-
-onMounted(() => {
-  loadAd();
-});
-
-// 监听路由变化，因为在SPA中切换页面内容时，需要重新加载广告
+// Watch for route changes. When the path changes, update the key of the <ins> element.
+// This forces Vue to destroy the old ad slot and create a new, "clean" one.
+// AdSense will see this new <ins> as an unfilled slot and load a new ad.
 watch(
   () => route.path,
   () => {
-    loadAd();
+    // A small delay can sometimes help ensure everything is ready for the new ad.
+    setTimeout(() => {
+      adKey.value += 1; // Force re-render of the <ins> element
+      pushAd();         // Push the ad to the newly created slot
+    }, 100);
   }
 );
+
+// This handles the very first ad load when the component is mounted.
+onMounted(() => {
+  pushAd();
+});
 </script> 
