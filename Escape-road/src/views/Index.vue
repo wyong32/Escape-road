@@ -5,33 +5,27 @@
       <div class="container" :style="{ background: gameData.background }">
         <!-- Google AdSense Ad Slot -->
         <div class="ads-container ads-pc" style="width: 100%; margin-bottom: 1rem; text-align: center;">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-5437957765171705"
-                 data-ad-slot="2049492927"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+            <Adsense
+              ad-client="ca-pub-5437957765171705"
+              ad-slot="2049492927"
+            />
         </div>
 
         <div class="game-wrap">
           <!-- 广告2 -->
           <div class="ads-container ads-pc ads-left">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-5437957765171705"
-                 data-ad-slot="9497191380"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+            <Adsense
+              ad-client="ca-pub-5437957765171705"
+              ad-slot="9497191380"
+            />
           </div>
 
           <!-- 广告3 -->
           <div class="ads-container ads-pc ads-right">
-              <ins class="adsbygoogle"
-                  style="display:block"
-                  data-ad-client="ca-pub-5437957765171705"
-                  data-ad-slot="1414982389"
-                  data-ad-format="auto"
-                  data-full-width-responsive="true"></ins>
+             <Adsense
+                ad-client="ca-pub-5437957765171705"
+                ad-slot="1414982389"
+              />
           </div>
 
 
@@ -137,93 +131,20 @@ import Recommend from '../components/Recommend.vue'
 import GameMain from '../components/GameMain.vue'
 import Foot from '../components/foot.vue'
 import ShareLink from '../components/ShareLink.vue'
+import Adsense from '../components/Adsense.vue'
 
 /**
  * 初始化并加载 Google AdSense 脚本
  */
 
 //  广告1
-const loadAdSenseScript1 = () => {
-  try {
-    // 插入 Google AdSense 脚本
-    const script = document.createElement('script')
-    script.async = true
-    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5437957765171705'
-    script.crossOrigin = 'anonymous'
-    document.head.appendChild(script)
-
-    // 推送广告请求
-    script.onload = () => {
-      (window.adsbygoogle = window.adsbygoogle || []).push({})
-    }
-  } catch (error) {
-    console.error('Failed to load AdSense script:', error)
-  }
-}
-
 //  广告2
-const loadAdSenseScript2 = () => {
-  try {
-    // 插入 Google AdSense 脚本
-    const script = document.createElement('script')
-    script.async = true
-    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5437957765171705'
-    script.crossOrigin = 'anonymous'
-    document.head.appendChild(script)
-
-    // 推送广告请求
-    script.onload = () => {
-      (window.adsbygoogle = window.adsbygoogle || []).push({})
-    }
-  } catch (error) {
-    console.error('Failed to load AdSense script:', error)
-  }
-}
-
 //  广告3
-const loadAdSenseScript3 = () => {
-  try {
-    // 插入 Google AdSense 脚本
-    const script = document.createElement('script')
-    script.async = true
-    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5437957765171705'
-    script.crossOrigin = 'anonymous'
-    document.head.appendChild(script)
-
-    // 推送广告请求
-    script.onload = () => {
-      (window.adsbygoogle = window.adsbygoogle || []).push({})
-    }
-  } catch (error) {
-    console.error('Failed to load AdSense script:', error)
-  }
-}
-
 //  广告4
-const loadAdSenseScript4 = () => {
-  try {
-    // 插入 Google AdSense 脚本
-    const script = document.createElement('script')
-    script.async = true
-    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5437957765171705'
-    script.crossOrigin = 'anonymous'
-    document.head.appendChild(script)
-
-    // 推送广告请求
-    script.onload = () => {
-      (window.adsbygoogle = window.adsbygoogle || []).push({})
-    }
-  } catch (error) {
-    console.error('Failed to load AdSense script:', error)
-  }
-}
-
 // 在组件挂载时加载广告脚本
 onMounted(() => {
-  loadAdSenseScript1()
-  loadAdSenseScript2()
-  loadAdSenseScript3()
-  loadAdSenseScript4()
+  // The ad loading is now handled by the Adsense.vue component.
+  // No need to call loading functions here.
 })
 
 // 获取当前路由实例
