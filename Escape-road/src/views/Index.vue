@@ -125,7 +125,7 @@
 </template>
 
 <script setup>
-import { computed, watchEffect, onMounted } from 'vue'
+import { computed, watchEffect, onMounted, nextTick } from 'vue'
 import { useRoute } from 'vue-router'
 import { useHead } from '@unhead/vue'
 import { games } from '../data/games'
@@ -139,91 +139,40 @@ import Foot from '../components/foot.vue'
 import ShareLink from '../components/ShareLink.vue'
 
 /**
- * 初始化并加载 Google AdSense 脚本
+ * 初始化并加载 Google AdSense 脚本。
+ * 此函数会检查脚本是否已加载，确保只执行一次。
  */
+const loadAdSenseScript = () => {
+  // 检查脚本是否已存在，如果存在则不重复加载
+  if (document.querySelector('script[src*="adsbygoogle"]')) {
+    return
+  }
 
-//  广告1
-const loadAdSenseScript1 = () => {
   try {
-    // 插入 Google AdSense 脚本
     const script = document.createElement('script')
     script.async = true
     script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5437957765171705'
     script.crossOrigin = 'anonymous'
     document.head.appendChild(script)
-
-    // 推送广告请求
-    script.onload = () => {
-      (window.adsbygoogle = window.adsbygoogle || []).push({})
-    }
   } catch (error) {
     console.error('Failed to load AdSense script:', error)
   }
 }
 
-//  广告2
-const loadAdSenseScript2 = () => {
-  try {
-    // 插入 Google AdSense 脚本
-    const script = document.createElement('script')
-    script.async = true
-    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5437957765171705'
-    script.crossOrigin = 'anonymous'
-    document.head.appendChild(script)
-
-    // 推送广告请求
-    script.onload = () => {
-      (window.adsbygoogle = window.adsbygoogle || []).push({})
-    }
-  } catch (error) {
-    console.error('Failed to load AdSense script:', error)
-  }
-}
-
-//  广告3
-const loadAdSenseScript3 = () => {
-  try {
-    // 插入 Google AdSense 脚本
-    const script = document.createElement('script')
-    script.async = true
-    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5437957765171705'
-    script.crossOrigin = 'anonymous'
-    document.head.appendChild(script)
-
-    // 推送广告请求
-    script.onload = () => {
-      (window.adsbygoogle = window.adsbygoogle || []).push({})
-    }
-  } catch (error) {
-    console.error('Failed to load AdSense script:', error)
-  }
-}
-
-//  广告4
-const loadAdSenseScript4 = () => {
-  try {
-    // 插入 Google AdSense 脚本
-    const script = document.createElement('script')
-    script.async = true
-    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5437957765171705'
-    script.crossOrigin = 'anonymous'
-    document.head.appendChild(script)
-
-    // 推送广告请求
-    script.onload = () => {
-      (window.adsbygoogle = window.adsbygoogle || []).push({})
-    }
-  } catch (error) {
-    console.error('Failed to load AdSense script:', error)
-  }
-}
-
-// 在组件挂载时加载广告脚本
+// 在组件挂载时加载广告脚本并请求广告
 onMounted(() => {
-  loadAdSenseScript1()
-  loadAdSenseScript2()
-  loadAdSenseScript3()
-  loadAdSenseScript4()
+  // 首先，确保AdSense主脚本已加载
+  loadAdSenseScript()
+
+  // 使用 nextTick 确保 DOM 已经更新
+  nextTick(() => {
+    try {
+      // 调用一次 push() 来填充页面上所有未填充的广告单元
+      ;(window.adsbygoogle = window.adsbygoogle || []).push({})
+    } catch (e) {
+      console.error('AdSense push error:', e)
+    }
+  })
 })
 
 // 获取当前路由实例
