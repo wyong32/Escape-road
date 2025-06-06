@@ -421,6 +421,7 @@ watchEffect(() => {
   /* background: url('../assets/images/game-01.webp') no-repeat center center; */
   background-size: cover;
   padding: 100px 0;
+  overflow-x: hidden; /* 防止绝对定位的广告在小屏幕上导致水平滚动条 */
 }
 
 .game-wrap {
@@ -715,8 +716,8 @@ watchEffect(() => {
   position: absolute;
   top: 0;
   /* Position ad to the left of the main content area, anchored to game-wrap */
-  left: calc(50% - 1620px / 2 - 160px - 20px);
-  z-index: 9; /* Lower z-index than hover effects */
+  left: 20px;
+  z-index: 999999999; /* Lower z-index than hover effects */
 }
 
 .ads-right{
@@ -725,8 +726,8 @@ watchEffect(() => {
   position: absolute;
   top: 0;
   /* Position ad to the right of the main content area, anchored to game-wrap */
-  right: calc(50% - 1620px / 2 - 160px - 20px);
-  z-index: 9; /* Lower z-index than hover effects */
+  right: 20px;
+  z-index: 999999999; /* Lower z-index than hover effects */
 }
 .ads-pc{
   display: block;
