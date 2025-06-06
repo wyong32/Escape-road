@@ -37,32 +37,37 @@ const route = useRoute();
 const adKey = ref(0);
 
 const pushAd = () => {
-  nextTick(() => {
-    try {
-      // Push an empty object to let AdSense know to process a new ad slot.
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    } catch (e) {
-      console.error('AdSense push error:', e);
-    }
-  });
+  try {
+    // This is the command that tells AdSense to find and fill an ad slot.
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
+  } catch (e) {
+    console.error('AdSense push error:', e);
+  }
 };
 
-// Watch for route changes. When the path changes, update the key of the <ins> element.
-// This forces Vue to destroy the old ad slot and create a new, "clean" one.
-// AdSense will see this new <ins> as an unfilled slot and load a new ad.
+// This watcher handles ad refreshing when navigating between pages in the SPA.
 watch(
   () => route.path,
-  () => {
-    // A small delay can sometimes help ensure everything is ready for the new ad.
-    setTimeout(() => {
-      adKey.value += 1; // Force re-render of the <ins> element
-      pushAd();         // Push the ad to the newly created slot
-    }, 100);
+  (newPath, oldPath) => {
+    if (newPath === oldPath) {
+      return;
+    }
+    // Changing the key forces Vue to unmount the old <ins> and mount a new one.
+    // This ensures AdSense always sees a "fresh" slot to fill.
+    adKey.value += 1;
+    // We wait for the DOM to update with the new <ins> element before pushing the ad.
+    nextTick(() => {
+      pushAd();
+    });
   }
 );
 
-// This handles the very first ad load when the component is mounted.
+// This handles the very first ad load when the component is initially mounted.
 onMounted(() => {
-  pushAd();
+  // We use a timeout here as a safeguard to ensure the global AdSense script
+  // loaded in App.vue has had enough time to initialize before we push the first ad.
+  setTimeout(() => {
+    pushAd();
+  }, 200);
 });
 </script> 
