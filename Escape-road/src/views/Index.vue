@@ -190,7 +190,7 @@ onMounted(() => {
   nextTick(() => {
     setTimeout(() => {
       loadAdSenseScript()
-    }, 200) // 延迟200毫秒，给浏览器一点喘息时间
+    }, 2000) // 延迟200毫秒，给浏览器一点喘息时间
   })
 })
 
