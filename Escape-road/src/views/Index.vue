@@ -5,7 +5,7 @@
       <div class="container" :style="{ background: gameData.background }">
         <!-- Google AdSense Ad Slot -->
         <div class="ads-container ads-pc">
-            <ins class="adsbygoogle1"
+            <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-5437957765171705"
                  data-ad-slot="2049492927"
@@ -144,7 +144,7 @@ const loadAdSenseScript1 = () => {
 
     // 推送广告请求
     script.onload = () => {
-      (window.adsbygoogle1 = window.adsbygoogle1 || []).push({})
+      (window.adsbygoogle = window.adsbygoogle || []).push({})
     }
   } catch (error) {
     console.error('Failed to load AdSense script:', error)
@@ -163,7 +163,7 @@ const loadAdSenseScript2 = () => {
 
     // 推送广告请求
     script.onload = () => {
-      (window.adsbygoogle2 = window.adsbygoogle2 || []).push({})
+      (window.adsbygoogle = window.adsbygoogle || []).push({})
     }
   } catch (error) {
     console.error('Failed to load AdSense script:', error)
@@ -744,7 +744,7 @@ watchEffect(() => {
 }
 
 .ads-left{
-  width: 20%;
+  width: 30%;
   position: fixed;
   top: 50%;
   left: 10px;
