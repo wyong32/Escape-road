@@ -12,16 +12,25 @@
         </div>
 
         <div class="game-wrap">
+          <!-- 广告2 -->
+          <div class="ads-container ads-pc ads-left">
+            <Adsense
+              ad-client="ca-pub-5437957765171705"
+              ad-slot="9497191380"
+            />
+          </div>
+
+          <!-- 广告3 -->
+          <div class="ads-container ads-pc ads-right">
+             <Adsense
+                ad-client="ca-pub-5437957765171705"
+                ad-slot="1414982389"
+              />
+          </div>
+
           <!-- 桌面端布局 -->
           <div class="game-list desktop-only" role="main" aria-label="Game collection">
             <aside class="list-left" aria-label="Related car chase games">
-              <!-- 广告2 -->
-              <div class="ads-container ads-pc ads-left">
-                <Adsense
-                  ad-client="ca-pub-5437957765171705"
-                  ad-slot="9497191380"
-                />
-              </div>
               <div class="game-column" v-for="(column, columnIndex) in leftGameColumns" :key="`left-col-${columnIndex}`">
                 <article class="cr-item" v-for="game in column" :key="game.id">
                   <router-link
@@ -46,13 +55,6 @@
               <GameMain :game-id="currentGameId" :key="currentGameId" />
             </main>
             <aside class="list-right" aria-label="More car chase games">
-              <!-- 广告3 -->
-              <div class="ads-container ads-pc ads-right">
-                 <Adsense
-                    ad-client="ca-pub-5437957765171705"
-                    ad-slot="1414982389"
-                  />
-              </div>
               <div class="game-column" v-for="(column, columnIndex) in rightGameColumns" :key="`right-col-${columnIndex}`">
                 <article class="cr-item" v-for="game in column" :key="game.id">
                   <router-link
@@ -710,21 +712,21 @@ watchEffect(() => {
 .ads-left{
   width: 160px;
   min-height: 500px;
-  /* position: fixed; */
-  /* top: 50%; */
-  /* left: 10px; */
-  /* transform: translateY(-50%); */
-  /* z-index: 99999999; */
+  position: absolute;
+  top: 0;
+  /* Position ad to the left of the main content area, anchored to game-wrap */
+  left: calc(50% - 1620px / 2 - 160px - 20px);
+  z-index: 9; /* Lower z-index than hover effects */
 }
 
 .ads-right{
   width: 160px;
   min-height: 500px;
-  /* position: fixed; */
-  /* top: 50%; */
-  /* right: 10px; */
-  /* transform: translateY(-50%); */
-  /* z-index: 99999999; */
+  position: absolute;
+  top: 0;
+  /* Position ad to the right of the main content area, anchored to game-wrap */
+  right: calc(50% - 1620px / 2 - 160px - 20px);
+  z-index: 9; /* Lower z-index than hover effects */
 }
 .ads-pc{
   display: block;
