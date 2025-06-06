@@ -36,38 +36,45 @@ const props = defineProps({
 const route = useRoute();
 const adKey = ref(0);
 
+// This "smart" function requests an ad. It will automatically wait and retry
+// if the global AdSense script isn't ready yet.
 const pushAd = () => {
-  try {
-    // This is the command that tells AdSense to find and fill an ad slot.
-    (window.adsbygoogle = window.adsbygoogle || []).push({});
-  } catch (e) {
-    console.error('AdSense push error:', e);
+  // Check if the adsbygoogle script is loaded and ready.
+  if (window.adsbygoogle) {
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (e) {
+      console.error('AdSense push error:', e);
+    }
+  } else {
+    // If not ready, wait a short moment and try again.
+    // This handles the race condition on initial page load.
+    setTimeout(pushAd, 50);
   }
 };
 
-// This watcher handles ad refreshing when navigating between pages in the SPA.
+// Watch for route changes to refresh the ad.
 watch(
   () => route.path,
   (newPath, oldPath) => {
+    // Do nothing if the path hasn't actually changed.
     if (newPath === oldPath) {
       return;
     }
-    // Changing the key forces Vue to unmount the old <ins> and mount a new one.
-    // This ensures AdSense always sees a "fresh" slot to fill.
+    // Force the <ins> element to re-render by changing its key.
     adKey.value += 1;
-    // We wait for the DOM to update with the new <ins> element before pushing the ad.
+    // Wait for the DOM to update, then push the ad to the new slot.
     nextTick(() => {
       pushAd();
     });
   }
 );
 
-// This handles the very first ad load when the component is initially mounted.
+// This handles the very first ad load when the component is mounted.
 onMounted(() => {
-  // We use a timeout here as a safeguard to ensure the global AdSense script
-  // loaded in App.vue has had enough time to initialize before we push the first ad.
-  setTimeout(() => {
-    pushAd();
-  }, 200);
+  // Wait for the initial DOM to be ready before starting the ad push sequence.
+  nextTick(() => {
+      pushAd();
+  });
 });
 </script> 
