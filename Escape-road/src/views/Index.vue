@@ -4,15 +4,26 @@
     <section>
       <div class="container" :style="{ background: gameData.background }">
         <!-- Google AdSense Ad Slot -->
-        <div class="ads-container" style="width: 100%; margin-bottom: 1rem; text-align: center;">
+        <div class="ads-container ads-pc" style="width: 100%; margin-bottom: 1rem; text-align: center;">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-5437957765171705"
+                 data-ad-slot="2049492927"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+        <div class="game-wrap">
+          <!-- 广告2 -->
+          <div class="ads-container ads-pc ads-left" style="width: 100%; margin-bottom: 1rem; text-align: center;">
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-5437957765171705"
                  data-ad-slot="9497191380"
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
-          </div>
-        <div class="game-wrap">
+        </div>
+
+
           <!-- 桌面端布局 -->
           <div class="game-list desktop-only" role="main" aria-label="Game collection">
             <aside class="list-left" aria-label="Related car chase games">
@@ -119,7 +130,28 @@ import ShareLink from '../components/ShareLink.vue'
 /**
  * 初始化并加载 Google AdSense 脚本
  */
-const loadAdSenseScript = () => {
+
+//  广告1
+const loadAdSenseScript1 = () => {
+  try {
+    // 插入 Google AdSense 脚本
+    const script = document.createElement('script')
+    script.async = true
+    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5437957765171705'
+    script.crossOrigin = 'anonymous'
+    document.head.appendChild(script)
+
+    // 推送广告请求
+    script.onload = () => {
+      (window.adsbygoogle = window.adsbygoogle || []).push({})
+    }
+  } catch (error) {
+    console.error('Failed to load AdSense script:', error)
+  }
+}
+
+//  广告2
+const loadAdSenseScript2 = () => {
   try {
     // 插入 Google AdSense 脚本
     const script = document.createElement('script')
@@ -139,7 +171,8 @@ const loadAdSenseScript = () => {
 
 // 在组件挂载时加载广告脚本
 onMounted(() => {
-  loadAdSenseScript()
+  loadAdSenseScript1()
+  loadAdSenseScript2()
 })
 
 // 获取当前路由实例
@@ -424,6 +457,7 @@ watchEffect(() => {
   justify-content: center;
   width: 100%;
   margin-bottom: 100px;
+  position: relative;
 }
 
 .game-list {
@@ -702,6 +736,30 @@ watchEffect(() => {
     display: none;
   }
 }
+
+
+.ads-left{
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.ads-pc{
+  display: block;
+}
+.ads-ph{
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .ads-pc {
+    display: none;
+  }
+  .ads-ph{
+  display: block;
+}
+}
+
 
 /* .index-specific-text { font-size: 14px; } */
 </style>
