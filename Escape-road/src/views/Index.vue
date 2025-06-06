@@ -13,27 +13,28 @@
                  data-full-width-responsive="true"></ins>
         </div>
 
-        <!-- Left Sidebar Ad -->
-        <div class="ads-container ads-left ads-pc">
-          <ins class="adsbygoogle"
-               style="display:block"
-               data-ad-client="ca-pub-5437957765171705"
-               data-ad-slot="9497191380"
-               data-ad-format="auto"
-               data-full-width-responsive="true"></ins>
-        </div>
-
-        <!-- Right Sidebar Ad -->
-        <div class="ads-container ads-right ads-pc">
-          <ins class="adsbygoogle"
-               style="display:block"
-               data-ad-client="ca-pub-5437957765171705"
-               data-ad-slot="1414982389" 
-               data-ad-format="auto"
-               data-full-width-responsive="true"></ins>
-        </div>
-
         <div class="game-wrap">
+          <!-- 广告2 -->
+          <div class="ads-container ads-pc ads-left">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-5437957765171705"
+                 data-ad-slot="9497191380"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+
+        <!-- 广告3 -->
+        <div class="ads-container ads-pc ads-right">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-5437957765171705"
+                 data-ad-slot="1414982389"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+
+
           <!-- 桌面端布局 -->
           <div class="game-list desktop-only" role="main" aria-label="Game collection">
             <aside class="list-left" aria-label="Related car chase games">
@@ -85,14 +86,6 @@
 
           <!-- 移动端布局 -->
           <div class="mobile-only" role="main" aria-label="Mobile game interface">
-            <div class="ads-container ads-ph" style="width: 100%; margin: 1rem 0; text-align: center;">
-              <ins class="adsbygoogle"
-                   style="display:block"
-                   data-ad-client="ca-pub-5437957765171705"
-                   data-ad-slot="YOUR_MOBILE_AD_SLOT_ID"
-                   data-ad-format="auto"
-                   data-full-width-responsive="true"></ins>
-            </div>
             <main class="content-center" aria-label="Main game area">
               <GameMain :game-id="currentGameId" :key="currentGameId" />
             </main>
@@ -132,7 +125,7 @@
 </template>
 
 <script setup>
-import { computed, watchEffect, onMounted, nextTick } from 'vue'
+import { computed, watchEffect, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { useHead } from '@unhead/vue'
 import { games } from '../data/games'
@@ -146,74 +139,92 @@ import Foot from '../components/foot.vue'
 import ShareLink from '../components/ShareLink.vue'
 
 /**
- * 初始化并加载 Google AdSense 脚本。
- * 此函数会检查脚本是否已存在，以防止在单页面应用中重复加载。
+ * 初始化并加载 Google AdSense 脚本
  */
-const loadAdSenseScript = () => {
-  // 检查脚本是否已存在
-  if (document.querySelector('script[src*="adsbygoogle.js"]')) {
-    // 如果脚本已存在，可能是在组件间导航，只需再次触发广告请求
-    try {
-      ;(window.adsbygoogle = window.adsbygoogle || []).push({})
-    } catch (e) {
-      console.error('AdSense push error on subsequent load:', e)
-    }
-    return
-  }
 
-  // 如果脚本不存在，则创建并添加到 head
+//  广告1
+const loadAdSenseScript1 = () => {
   try {
+    // 插入 Google AdSense 脚本
     const script = document.createElement('script')
     script.async = true
     script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5437957765171705'
     script.crossOrigin = 'anonymous'
-
-    // 脚本加载成功后，推送一个空的广告请求来初始化所有广告单元
-    script.onload = () => {
-      try {
-        ;(window.adsbygoogle = window.adsbygoogle || []).push({})
-      } catch (e) {
-        console.error('AdSense push error on initial script load:', e)
-      }
-    }
-
     document.head.appendChild(script)
+
+    // 推送广告请求
+    script.onload = () => {
+      (window.adsbygoogle = window.adsbygoogle || []).push({})
+    }
   } catch (error) {
     console.error('Failed to load AdSense script:', error)
   }
 }
 
-/**
- * 重新扫描并填充页面上未处理的广告单元。
- * 这个函数应该在每次路由切换后调用。
- */
-const refreshAds = () => {
+//  广告2
+const loadAdSenseScript2 = () => {
   try {
-    // 检查 AdSense 脚本是否已在窗口对象上准备就绪
-    if (window.adsbygoogle) {
-      console.log('[AdSense] Refreshing ads for new route.');
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    // 插入 Google AdSense 脚本
+    const script = document.createElement('script')
+    script.async = true
+    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5437957765171705'
+    script.crossOrigin = 'anonymous'
+    document.head.appendChild(script)
+
+    // 推送广告请求
+    script.onload = () => {
+      (window.adsbygoogle = window.adsbygoogle || []).push({})
     }
-  } catch (e) {
-    console.error('AdSense refresh error:', e);
+  } catch (error) {
+    console.error('Failed to load AdSense script:', error)
   }
-};
+}
 
-// 在组件挂载时进行首次广告加载
+//  广告3
+const loadAdSenseScript3 = () => {
+  try {
+    // 插入 Google AdSense 脚本
+    const script = document.createElement('script')
+    script.async = true
+    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5437957765171705'
+    script.crossOrigin = 'anonymous'
+    document.head.appendChild(script)
+
+    // 推送广告请求
+    script.onload = () => {
+      (window.adsbygoogle = window.adsbygoogle || []).push({})
+    }
+  } catch (error) {
+    console.error('Failed to load AdSense script:', error)
+  }
+}
+
+//  广告4
+const loadAdSenseScript4 = () => {
+  try {
+    // 插入 Google AdSense 脚本
+    const script = document.createElement('script')
+    script.async = true
+    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5437957765171705'
+    script.crossOrigin = 'anonymous'
+    document.head.appendChild(script)
+
+    // 推送广告请求
+    script.onload = () => {
+      (window.adsbygoogle = window.adsbygoogle || []).push({})
+    }
+  } catch (error) {
+    console.error('Failed to load AdSense script:', error)
+  }
+}
+
+// 在组件挂载时加载广告脚本
 onMounted(() => {
-  loadAdSenseScript()
+  loadAdSenseScript1()
+  loadAdSenseScript2()
+  loadAdSenseScript3()
+  loadAdSenseScript4()
 })
-
-// 监听路由变化，以便在 SPA 导航时刷新广告
-watchEffect(() => {
-  // 引用 route.path 来确保 watchEffect 能追踪到它的变化
-  const path = route.path; 
-  // 使用 nextTick 确保在 DOM 更新后执行
-  nextTick(() => {
-    console.log(`[Router] Route changed to ${path}, triggering ad refresh.`);
-    refreshAds();
-  });
-});
 
 // 获取当前路由实例
 const route = useRoute()
@@ -777,51 +788,42 @@ watchEffect(() => {
   }
 }
 
+
 .ads-left{
+  width: 160px;
+  min-height: 500px;
   position: fixed;
   top: 50%;
   left: 10px;
   transform: translateY(-50%);
-  width: 160px; /* Fixed width for sidebar ad */
-  min-height: 600px; /* Crucial for AdSense to calculate ad size */
-  z-index: 999; /* Ensure ads are on top */
+  z-index: 99999999;
 }
 
 .ads-right{
-  width: 160px; /* Fixed width for sidebar ad */
+  width: 160px;
+  min-height: 500px;
   position: fixed;
   top: 50%;
   right: 10px;
   transform: translateY(-50%);
-  min-height: 600px; /* Crucial for AdSense to calculate ad size */
-  z-index: 999; /* Ensure ads are on top */
+  z-index: 99999999;
 }
-
-/* Base display rules for PC vs Phone ads */
-.ads-pc {
+.ads-pc{
   display: block;
 }
-
-.ads-ph {
+.ads-ph{
   display: none;
 }
 
-/* Hide sidebar ads on medium screens to prevent content overlap */
-@media (max-width: 1500px) { 
-  .ads-left, .ads-right {
-    display: none; 
+@media (max-width: 991px) {
+  .ads-pc {
+    display: none;
   }
+  .ads-ph{
+  display: block;
+}
 }
 
-/* Switch between PC and Phone ads on small screens */
-@media (max-width: 768px) {
-  .ads-pc {
-    display: none; /* Hide all PC ads */
-  }
-  .ads-ph {
-    display: block; /* Show mobile ads */
-  }
-}
 
 /* .index-specific-text { font-size: 14px; } */
 </style>
