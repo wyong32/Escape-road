@@ -15,14 +15,14 @@
 
         <div class="game-wrap">
           <!-- 广告2 -->
-          <!-- <div class="ads-container ads-pc ads-left">
+          <div class="ads-container ads-pc ads-left">
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-5437957765171705"
                  data-ad-slot="9497191380"
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
-          </div> -->
+          </div>
 
 
           <!-- 桌面端布局 -->
@@ -104,14 +104,14 @@
           </div>
 
           <!-- 广告3 -->
-          <!-- <div class="ads-container ads-pc ads-right">
+          <div class="ads-container ads-pc ads-right">
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-5437957765171705"
                  data-ad-slot="1414982389"
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
-          </div> -->
+          </div>
         </div>
         <footer class="below" role="contentinfo" aria-label="Game information and recommendations">
           <About :game-id="currentGameId" />
@@ -143,7 +143,7 @@ import ShareLink from '../components/ShareLink.vue'
  */
 
 //  广告1
-const loadAdSenseScript1 = () => {
+const loadAdSenseScript = () => {
   try {
     // 插入 Google AdSense 脚本
     const script = document.createElement('script')
@@ -215,7 +215,7 @@ const loadAdSenseScript1 = () => {
 
 // 在组件挂载时加载广告脚本
 onMounted(() => {
-  loadAdSenseScript1()
+  loadAdSenseScript()
   // loadAdSenseScript1()
   // loadAdSenseScript2()
   // loadAdSenseScript3()
@@ -790,7 +790,7 @@ watchEffect(() => {
 }
 
 .ads-left{
-  width: 20%;
+  /* width: 20%; */
   position: fixed;
   top: 50%;
   left: 10px;
@@ -799,7 +799,7 @@ watchEffect(() => {
 }
 
 .ads-right{
-  width: 20%;
+  /* width: 20%; */
   position: fixed;
   top: 50%;
   right: 10px;
