@@ -132,7 +132,7 @@
 </template>
 
 <script setup>
-import { computed, watchEffect, onMounted } from 'vue'
+import { computed, watchEffect, onMounted, nextTick } from 'vue'
 import { useRoute } from 'vue-router'
 import { useHead } from '@unhead/vue'
 import { games } from '../data/games'
@@ -185,7 +185,13 @@ const loadAdSenseScript = () => {
 
 // 在组件挂载时加载广告脚本
 onMounted(() => {
-  loadAdSenseScript()
+  // 使用 nextTick 和 setTimeout 来确保在浏览器空闲时再加载广告脚本
+  // 这可以避免在强制刷新（Ctrl+F5）时与其他资源加载产生竞速问题
+  nextTick(() => {
+    setTimeout(() => {
+      loadAdSenseScript()
+    }, 200) // 延迟200毫秒，给浏览器一点喘息时间
+  })
 })
 
 // 获取当前路由实例
