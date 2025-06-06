@@ -13,18 +13,27 @@
                  data-full-width-responsive="true"></ins>
         </div>
 
-        <div class="game-wrap">
-          <!-- 广告2 -->
-          <div class="ads-container ads-pc ads-left" style="width: 100%; margin-bottom: 1rem; text-align: center;">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-5437957765171705"
-                 data-ad-slot="9497191380"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+        <!-- Left Sidebar Ad -->
+        <div class="ads-container ads-left ads-pc">
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-5437957765171705"
+               data-ad-slot="9497191380"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
         </div>
 
+        <!-- Right Sidebar Ad -->
+        <div class="ads-container ads-right ads-pc">
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-5437957765171705"
+               data-ad-slot="1414982389" 
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+        </div>
 
+        <div class="game-wrap">
           <!-- 桌面端布局 -->
           <div class="game-list desktop-only" role="main" aria-label="Game collection">
             <aside class="list-left" aria-label="Related car chase games">
@@ -76,6 +85,14 @@
 
           <!-- 移动端布局 -->
           <div class="mobile-only" role="main" aria-label="Mobile game interface">
+            <div class="ads-container ads-ph" style="width: 100%; margin: 1rem 0; text-align: center;">
+              <ins class="adsbygoogle"
+                   style="display:block"
+                   data-ad-client="ca-pub-5437957765171705"
+                   data-ad-slot="YOUR_MOBILE_AD_SLOT_ID"
+                   data-ad-format="auto"
+                   data-full-width-responsive="true"></ins>
+            </div>
             <main class="content-center" aria-label="Main game area">
               <GameMain :game-id="currentGameId" :key="currentGameId" />
             </main>
@@ -733,17 +750,16 @@ watchEffect(() => {
   }
 }
 
-
 .ads-left{
   position: fixed;
   top: 50%;
   left: 10px;
   transform: translateY(-50%);
-  width: 20%;
+  width: 160px; /* Fixed width for sidebar ad */
 }
 
 .ads-right{
-  width: 20%;
+  width: 160px; /* Fixed width for sidebar ad */
   position: fixed;
   top: 50%;
   right: 10px;
@@ -751,7 +767,18 @@ watchEffect(() => {
 }
 
 
+@media (max-width: 1500px) { /* Adjust breakpoint as needed */
 
+}
+
+@media (max-width: 768px) {
+  .ads-pc {
+    display: none; /* Hide all PC ads */
+  }
+  .ads-ph {
+    display: block; /* Show mobile ads */
+  }
+}
 
 /* .index-specific-text { font-size: 14px; } */
 </style>
