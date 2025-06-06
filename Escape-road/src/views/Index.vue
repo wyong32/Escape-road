@@ -790,7 +790,7 @@ watchEffect(() => {
 }
 
 .ads-left{
-  /* width: 20%; */
+  width: 20%;
   position: fixed;
   top: 50%;
   left: 10px;
@@ -799,7 +799,7 @@ watchEffect(() => {
 }
 
 .ads-right{
-  /* width: 20%; */
+  width: 20%;
   position: fixed;
   top: 50%;
   right: 10px;
