@@ -3,15 +3,18 @@
         <h2 class="recommend-title">Recommend For You</h2>
         <ul class="recommend-list">
             <li class="recommend-item" v-for="game in allGames" :key="game.id">
-                <router-link :to="'/' + game.addressBar" @click="scrollToTop">
-                     <SmartImage
-                       :src="game.image"
-                       :alt="game.title"
-                       :priority="getImagePriority(game)"
-                       :lazy="true"
-                       width="100%"
-                       height="100%"
-                     />
+                <router-link :to="'/' + game.addressBar" @click="scrollToTop" class="recommend-link">
+                    <div class="recommend-image-container">
+                        <SmartImage
+                          :src="game.image"
+                          :alt="game.title"
+                          :priority="getImagePriority(game)"
+                          :lazy="true"
+                          width="100%"
+                          height="100%"
+                        />
+                    </div>
+                    <div class="recommend-game-name">{{ game.logoText || game.title }}</div>
                 </router-link>
             </li>
         </ul>
@@ -36,11 +39,12 @@ const props = defineProps({
   }
 })
 
-// 获取所有游戏列表，确保包含 addressBar
+// 获取所有游戏列表，确保包含 addressBar 和 logoText
 const allGames = computed(() => {
   return Object.values(games).map(game => ({
     id: game.id,
     title: game.title,
+    logoText: game.logoText,
     addressBar: game.addressBar, // 确保包含 addressBar
     image: game.image
   }))
@@ -96,39 +100,62 @@ const getImagePriority = (game) => {
 }
 
 .recommend-item {
-    display: block;
-    /* 移除固定宽高，让图片决定 */
-    /* width: 130px; */
-    /* height: 130px; */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 平滑过渡 */
+}
+
+.recommend-link {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+}
+
+.recommend-image-container {
     aspect-ratio: 1 / 1; /* 保持 1:1 的宽高比 */
     overflow: hidden; /* 确保图片圆角生效 */
     border-radius: 10px; /* 图片容器圆角 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 更细微的阴影 */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 平滑过渡 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 8px;
 }
 
-.recommend-item img {
+.recommend-image-container img {
     display: block; /* 消除图片底部空隙 */
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* 移除图片圆角，让容器的圆角生效 */
-    /* border-radius: 10px; */
-    /* 阴影移到父元素 .recommend-item */
-    /* box-shadow: 0 6px 12px 0 rgb(0 0 0 / 24%); */
     transition: transform 0.3s ease; /* 只给图片添加缩放过渡 */
     /* 防止图片加载时的布局偏移 */
     aspect-ratio: 1 / 1;
     background-color: #f0f0f0;
 }
 
-.recommend-item:hover {
+.recommend-game-name {
+    font-size: 12px;
+    font-weight: 500;
+    color: #333;
+    text-align: center;
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 4px;
+}
+
+.recommend-item:hover .recommend-image-container {
     transform: translateY(-4px); /* 轻微上移效果 */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* 悬停时阴影加深 */
 }
 
-.recommend-item:hover img {
+.recommend-item:hover .recommend-image-container img {
     transform: scale(1.05); /* 图片放大效果 */
+}
+
+.recommend-item:hover .recommend-game-name {
+    color: #007bff; /* 悬停时名称变色 */
 }
 
 /* 评论区样式 */
@@ -159,6 +186,13 @@ const getImagePriority = (game) => {
       grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
       gap: 10px;
       margin-bottom: 25px;
+  }
+  .recommend-game-name {
+      font-size: 11px;
+      padding: 0 2px;
+  }
+  .recommend-image-container {
+      margin-bottom: 6px;
   }
    .recommend > :deep(.comments-section) {
         margin-top: 1.5rem;

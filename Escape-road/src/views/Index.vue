@@ -53,6 +53,8 @@
             </aside>
             <main class="content-center" role="main" aria-label="Main game area">
               <GameMain :game-id="currentGameId" :key="currentGameId" />
+              <!-- 新游戏模块 -->
+              <NewGames />
             </main>
             <aside class="list-right" aria-label="More car chase games">
               <div class="game-column" v-for="(column, columnIndex) in rightGameColumns" :key="`right-col-${columnIndex}`">
@@ -81,6 +83,8 @@
           <div class="mobile-only" role="main" aria-label="Mobile game interface">
             <main class="content-center" aria-label="Main game area">
               <GameMain :game-id="currentGameId" :key="currentGameId" />
+              <!-- 新游戏模块 -->
+              <NewGames />
             </main>
             <section class="mobile-game-list" aria-label="Related games collection">
               <div class="mobile-game-grid" role="grid" aria-label="Game selection grid">
@@ -128,6 +132,7 @@ import Headers from '../components/Head.vue'
 import About from '../components/About.vue'
 import Recommend from '../components/Recommend.vue'
 import GameMain from '../components/GameMain.vue'
+import NewGames from '../components/NewGames.vue'
 import Foot from '../components/foot.vue'
 import ShareLink from '../components/ShareLink.vue'
 import Adsense from '../components/Adsense.vue'
