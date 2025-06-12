@@ -28,87 +28,90 @@
               />
           </div>
 
-          <!-- 桌面端布局 -->
-          <div class="game-list desktop-only" role="main" aria-label="Game collection">
-            <aside class="list-left" aria-label="Related car chase games">
-              <div class="game-column" v-for="(column, columnIndex) in leftGameColumns" :key="`left-col-${columnIndex}`">
-                <article class="cr-item" v-for="game in column" :key="game.id">
-                  <router-link
-                    :to="'/' + game.addressBar"
-                    :aria-label="`Play ${game.title} - Free car chase game`"
-                    :title="`Play ${game.title} online for free`"
-                  >
-                    <SimpleImage
-                      :src="game.image"
-                      :title="`${game.title} - Car chase game thumbnail`"
-                      :alt="`${game.title} - Free online car chase game`"
-                      :priority="getImagePriority(game)"
-                      width="100%"
-                      height="100%"
-                    />
-                    <p class="mask">{{ game.logoText }}</p>
-                  </router-link>
-                </article>
-              </div>
-            </aside>
-            <main class="content-center" role="main" aria-label="Main game area">
-              <GameMain :game-id="currentGameId" :key="currentGameId" />
-              <!-- 新游戏模块 -->
+          <!-- 新增：主内容区域外层包裹 -->
+          <div class="game-main-area">
+            <!-- 桌面端布局 -->
+            <div class="game-list desktop-only" role="main" aria-label="Game collection">
+              <aside class="list-left" aria-label="Related car chase games">
+                <div class="game-column" v-for="(column, columnIndex) in leftGameColumns" :key="`left-col-${columnIndex}`">
+                  <article class="cr-item" v-for="game in column" :key="game.id">
+                    <router-link
+                      :to="'/' + game.addressBar"
+                      :aria-label="`Play ${game.title} - Free car chase game`"
+                      :title="`Play ${game.title} online for free`"
+                    >
+                      <SimpleImage
+                        :src="game.image"
+                        :title="`${game.title} - Car chase game thumbnail`"
+                        :alt="`${game.title} - Free online car chase game`"
+                        :priority="getImagePriority(game)"
+                        width="100%"
+                        height="100%"
+                      />
+                      <p class="mask">{{ game.logoText }}</p>
+                    </router-link>
+                  </article>
+                </div>
+              </aside>
+              <main class="content-center" role="main" aria-label="Main game area">
+                <GameMain :game-id="currentGameId" :key="currentGameId" />
+              </main>
+              <aside class="list-right" aria-label="More car chase games">
+                <div class="game-column" v-for="(column, columnIndex) in rightGameColumns" :key="`right-col-${columnIndex}`">
+                  <article class="cr-item" v-for="game in column" :key="game.id">
+                    <router-link
+                      :to="'/' + game.addressBar"
+                      :aria-label="`Play ${game.title} - Free car chase game`"
+                      :title="`Play ${game.title} online for free`"
+                    >
+                      <SimpleImage
+                        :src="game.image"
+                        :title="`${game.title} - Car chase game thumbnail`"
+                        :alt="`${game.title} - Free online car chase game`"
+                        :priority="getImagePriority(game)"
+                        width="100%"
+                        height="100%"
+                      />
+                      <p class="mask">{{ game.logoText }}</p>
+                    </router-link>
+                  </article>
+                </div>
+              </aside>
+            </div>
+            <!-- PC端NewGames，桌面端显示 -->
+            <NewGames class="desktop-only" />
+            <!-- 移动端布局 -->
+            <div class="mobile-only" role="main" aria-label="Mobile game interface">
+              <main class="content-center" aria-label="Main game area">
+                <GameMain :game-id="currentGameId" :key="currentGameId" />
+              </main>
+              <section class="mobile-game-list" aria-label="Related games collection">
+                <div class="mobile-game-grid" role="grid" aria-label="Game selection grid">
+                  <article class="mobile-game-item" v-for="game in gamesForMobileLayout" :key="game.id" role="gridcell">
+                    <router-link
+                      :to="'/' + game.addressBar"
+                      @click="scrollToTop"
+                      :aria-label="`Play ${game.title} - Free car chase game`"
+                      :title="`Play ${game.title} online for free`"
+                    >
+                      <SimpleImage
+                        :src="game.image"
+                        :title="`${game.title} - Car chase game thumbnail`"
+                        :alt="`${game.title} - Free online car chase game`"
+                        :priority="getImagePriority(game)"
+                        width="100%"
+                        height="100%"
+                      />
+                      <p class="mobile-mask">{{ game.logoText }}</p>
+                    </router-link>
+                  </article>
+                </div>
+              </section>
+              <!-- 移动端NewGames，只在这里渲染一次 -->
               <NewGames />
-            </main>
-            <aside class="list-right" aria-label="More car chase games">
-              <div class="game-column" v-for="(column, columnIndex) in rightGameColumns" :key="`right-col-${columnIndex}`">
-                <article class="cr-item" v-for="game in column" :key="game.id">
-                  <router-link
-                    :to="'/' + game.addressBar"
-                    :aria-label="`Play ${game.title} - Free car chase game`"
-                    :title="`Play ${game.title} online for free`"
-                  >
-                    <SimpleImage
-                      :src="game.image"
-                      :title="`${game.title} - Car chase game thumbnail`"
-                      :alt="`${game.title} - Free online car chase game`"
-                      :priority="getImagePriority(game)"
-                      width="100%"
-                      height="100%"
-                    />
-                    <p class="mask">{{ game.logoText }}</p>
-                  </router-link>
-                </article>
-              </div>
-            </aside>
+            </div>
           </div>
-
-          <!-- 移动端布局 -->
-          <div class="mobile-only" role="main" aria-label="Mobile game interface">
-            <main class="content-center" aria-label="Main game area">
-              <GameMain :game-id="currentGameId" :key="currentGameId" />
-              <!-- 新游戏模块 -->
-              <NewGames />
-            </main>
-            <section class="mobile-game-list" aria-label="Related games collection">
-              <div class="mobile-game-grid" role="grid" aria-label="Game selection grid">
-                <article class="mobile-game-item" v-for="game in gamesForMobileLayout" :key="game.id" role="gridcell">
-                  <router-link
-                    :to="'/' + game.addressBar"
-                    @click="scrollToTop"
-                    :aria-label="`Play ${game.title} - Free car chase game`"
-                    :title="`Play ${game.title} online for free`"
-                  >
-                    <SimpleImage
-                      :src="game.image"
-                      :title="`${game.title} - Car chase game thumbnail`"
-                      :alt="`${game.title} - Free online car chase game`"
-                      :priority="getImagePriority(game)"
-                      width="100%"
-                      height="100%"
-                    />
-                    <p class="mobile-mask">{{ game.logoText }}</p>
-                  </router-link>
-                </article>
-              </div>
-            </section>
-          </div>
+          <!-- 主内容区域外层包裹结束 -->
         </div>
         <footer class="below" role="contentinfo" aria-label="Game information and recommendations">
           <About :game-id="currentGameId" />
@@ -433,8 +436,18 @@ watchEffect(() => {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-bottom: 100px;
+  margin-bottom: 40px;
   position: relative;
+}
+
+.game-main-area {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  overflow: hidden;
 }
 
 .game-list {
@@ -444,7 +457,7 @@ watchEffect(() => {
   width: 100%;
   max-width: 1620px; /* Adjusted for 1120px center and 2 columns on each side */
   margin: 0 auto;
-  padding: 0 20px;
+  /* padding: 0 20px; */
   overflow: hidden;
   /* border: 1px solid green; */ /* Removed */
 }
@@ -704,6 +717,10 @@ watchEffect(() => {
     align-items: center;
     padding: 0 15px;
     gap: 20px;
+  }
+
+  .game-main-area {
+    padding: 0 8px;
   }
 }
 

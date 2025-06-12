@@ -1,50 +1,16 @@
 <template>
   <section class="new-games-section" v-if="newGames.length > 0" aria-label="New Games Collection">
-    <div class="new-games-container">
-      <h2 class="new-games-title">
-        <i class="fas fa-star"></i>
-        New Games
-        <span class="new-badge">NEW</span>
-      </h2>
-      
-      <!-- 桌面端布局 -->
-      <div class="new-games-grid desktop-only">
-        <article 
-          class="new-game-item" 
-          v-for="game in newGames" 
-          :key="game.id"
-          role="article"
-        >
-          <router-link
-            :to="'/' + game.addressBar"
-            :aria-label="`Play ${game.title} - New game`"
-            :title="`Play ${game.title} online for free - New Release`"
-            class="new-game-link"
-          >
-            <div class="new-game-image-container">
-              <SimpleImage
-                :src="game.image"
-                :title="`${game.title} - New game thumbnail`"
-                :alt="`${game.title} - New online game`"
-                :priority="getImagePriority(game)"
-                width="100%"
-                height="100%"
-              />
-              <div class="new-indicator">NEW</div>
-            </div>
-            <div class="new-game-info">
-              <h3 class="new-game-title">{{ game.logoText }}</h3>
-              <p class="new-game-description">{{ truncateDescription(game.description) }}</p>
-            </div>
-          </router-link>
-        </article>
-      </div>
-
-      <!-- 移动端布局 -->
-      <div class="new-games-mobile mobile-only">
-        <div class="new-games-slider">
+    <div class="new-games-wrapper">
+      <div class="new-games-container">
+        <h2 class="new-games-title">
+          <i class="fas fa-star"></i>
+          New Games
+          <span class="new-badge">NEW</span>
+        </h2>
+        
+        <div class="new-games-grid">
           <article 
-            class="new-game-mobile-item" 
+            class="new-game-item" 
             v-for="game in newGames" 
             :key="game.id"
             role="article"
@@ -53,9 +19,9 @@
               :to="'/' + game.addressBar"
               :aria-label="`Play ${game.title} - New game`"
               :title="`Play ${game.title} online for free - New Release`"
-              class="new-game-mobile-link"
+              class="new-game-link"
             >
-              <div class="new-game-mobile-image">
+              <div class="new-game-image-container">
                 <SimpleImage
                   :src="game.image"
                   :title="`${game.title} - New game thumbnail`"
@@ -64,9 +30,11 @@
                   width="100%"
                   height="100%"
                 />
-                <div class="mobile-new-badge">NEW</div>
+                <div class="new-indicator">NEW</div>
               </div>
-              <h3 class="new-game-mobile-title">{{ game.logoText }}</h3>
+              <div class="new-game-info">
+                <h3 class="new-game-title">{{ game.logoText }}</h3>
+              </div>
             </router-link>
           </article>
         </div>
@@ -92,12 +60,11 @@ const newGames = computed(() => {
       image: game.image,
       description: game.description
     }))
-    .slice(0, 10) // 最多显示5个新游戏（一行5个）
+    .slice(0, 10)
 })
 
 // 获取图片加载优先级
 const getImagePriority = (game) => {
-  // 新游戏模块中的前3个游戏设为高优先级
   const gameIndex = newGames.value.findIndex(g => g.id === game.id)
   if (gameIndex < 3) {
     return 'high'
@@ -118,8 +85,8 @@ const truncateDescription = (description) => {
 /* 新游戏模块主容器 */
 .new-games-section {
   width: 100%;
-  margin: 40px 0;
-  padding: 0 20px;
+  margin: 40px 0 0 0;
+  padding: 0;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -144,8 +111,15 @@ const truncateDescription = (description) => {
   50% { background-position: 100% 50%; }
 }
 
+/* 新增的包装器，用于控制最大宽度 */
+.new-games-wrapper {
+  max-width: 1620px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 .new-games-container {
-  max-width: 1200px;
+  /* max-width: 1120px; */
   margin: 0 auto;
   padding: 30px 0;
 }
@@ -193,14 +167,12 @@ const truncateDescription = (description) => {
   50% { transform: scale(1.05); box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6); }
 }
 
-/* 桌面端网格布局 - 5列固定布局 */
+/* 网格布局 */
 .new-games-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
   padding: 0 10px;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .new-game-item {
@@ -236,8 +208,6 @@ const truncateDescription = (description) => {
   border-radius: 8px 8px 0 0;
 }
 
-
-
 .new-indicator {
   position: absolute;
   top: 8px;
@@ -260,118 +230,20 @@ const truncateDescription = (description) => {
 }
 
 .new-game-title {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
   color: #2c3e50;
-  margin: 0 0 4px 0;
+  margin: 0;
   line-height: 1.2;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.new-game-description {
-  font-size: 11px;
-  color: #6c757d;
-  line-height: 1.3;
-  margin: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  -webkit-box-orient: vertical;
-}
-
-/* 移动端布局 */
-.new-games-mobile {
-  padding: 0 10px;
-}
-
-.new-games-slider {
-  display: flex;
-  gap: 15px;
-  overflow-x: auto;
-  padding: 10px 0;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-}
-
-.new-games-slider::-webkit-scrollbar {
-  height: 6px;
-}
-
-.new-games-slider::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 3px;
-}
-
-.new-games-slider::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border-radius: 3px;
-}
-
-.new-games-slider::-webkit-scrollbar-thumb:hover {
-  background: #a8a8a8;
-}
-
-.new-game-mobile-item {
-  flex: 0 0 140px;
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-.new-game-mobile-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
-}
-
-.new-game-mobile-link {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-}
-
-.new-game-mobile-image {
-  position: relative;
-  width: 100%;
-  height: 100px;
-  overflow: hidden;
-}
-
-
-
-.mobile-new-badge {
-  position: absolute;
-  top: 6px;
-  right: 6px;
-  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-  color: white;
-  padding: 2px 6px;
-  border-radius: 8px;
-  font-size: 8px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.new-game-mobile-title {
-  font-size: 12px;
-  font-weight: 600;
-  color: #2c3e50;
-  margin: 0;
-  padding: 10px 8px;
-  text-align: center;
-  line-height: 1.2;
-}
-
 /* 响应式设计 */
 @media (max-width: 1200px) {
   .new-games-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
   }
 }
@@ -385,9 +257,12 @@ const truncateDescription = (description) => {
 
 @media (max-width: 768px) {
   .new-games-section {
-    margin: 20px 0;
-    padding: 0 15px;
+    margin: 20px 0 0 0;
     border-radius: 15px;
+  }
+
+  .new-games-wrapper {
+    padding: 0 15px;
   }
 
   .new-games-container {
@@ -404,14 +279,17 @@ const truncateDescription = (description) => {
   }
 
   .new-games-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 12px;
   }
 }
 
 @media (max-width: 480px) {
   .new-games-section {
-    margin: 15px 0;
+    margin: 15px 0 0 0;
+  }
+
+  .new-games-wrapper {
     padding: 0 10px;
   }
 
@@ -421,31 +299,9 @@ const truncateDescription = (description) => {
     gap: 8px;
   }
 
-  .new-game-mobile-item {
-    flex: 0 0 120px;
-  }
-
-  .new-game-mobile-image {
-    height: 80px;
-  }
-}
-
-/* 显示/隐藏类 */
-.desktop-only {
-  display: grid;
-}
-
-.mobile-only {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .desktop-only {
-    display: none;
-  }
-
-  .mobile-only {
-    display: block;
+  .new-games-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
   }
 }
 </style>

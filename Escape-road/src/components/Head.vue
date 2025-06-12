@@ -107,7 +107,7 @@ const headerGames = computed(() => {
   font-family: sans-serif;
   /* Standard font */
   color: #ffffff;
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 700;
   /* Bolder weight */
   margin: 0;
