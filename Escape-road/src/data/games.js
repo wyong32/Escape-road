@@ -1148,7 +1148,7 @@ export const games = {
     description:
       'Tung Sahur Clicker Unblocked — Wake up the neighborhood for Sahur in this hilarious clicker game! Tap fast, ring the bell, and upgrade your gear to become the ultimate Sahur hero.',
     keywords: 'Tung Sahur Clicker, tung sahur unblocked, sahur clicker game, sahur wake-up game, muslim clicker game',
-    addressBar: 'Tung-Sahur-Clicker',
+    addressBar: 'tung-sahur-clicker',
     logoText: 'Tung Sahur Clicker',
     image: 'game23.webp',
     iframeUrl: 'https://game.azgame.io/tung-sahur-clicker/',
@@ -1960,7 +1960,7 @@ export const games = {
   logoText: 'Wacky Nursery Unlocked',
   image: 'game-41.webp',
   iframeUrl: 'https://game.azgame.io/wacky-nursery/',
-  showNew: true,
+  // showNew: true,
   aboutContent: `
     <h2>Wacky Nursery Unlocked – A Hilariously Chaotic Babysitting Game</h2>
     <p>Welcome to the wildest daycare on the internet! <strong>Wacky Nursery Unlocked</strong> throws you into the shoes of a rookie babysitter, managing the most chaotic group of babies you've ever encountered. From flying food to explosive diapers and babies crawling into air vents, <strong>Wacky Nursery Unlocked</strong> is no ordinary babysitting game—it's a hilarious challenge of reflexes, patience, and absurdity.</p>
@@ -2022,7 +2022,7 @@ game42: {
   logoText: 'Necro Clicker Unlocked',
   image: 'game-42.webp',
   iframeUrl: 'https://st.8games.net/7/igra-kliker-mertvetsov/',
-  showNew: true,
+  // showNew: true,
   aboutContent: `
     <h2>Necro Clicker Unlocked – Raise the Undead with Every Click</h2>
     <p><strong>Necro Clicker Unlocked</strong> is a sinister yet strangely satisfying idle clicker game where you take on the role of a rising necromancer. Your mission: build a growing army of undead minions—starting from a single skeleton, all the way to an unstoppable army of horror.</p>
@@ -2463,6 +2463,130 @@ game50: {
     <p>If you're a fan of atmospheric horror and survival challenges, then <strong>Tung Sahur Horror Unlocked</strong> is your next must-play. It captures the essence of horror in a quiet, eerie setting, where your courage and attention to detail will determine if you see daylight again. Do you dare to survive Tung Sahur Horror Unlocked?</p>
   `,
 },
+
+game51: {
+  id: 'game51',
+  title: 'Slope 3 - 3D Running Game - Play Slope 3 Online',
+  description: 'Slope 3 is a fast-paced 3D running game where players control a ball and race through a series of ramps, dodging obstacles, and navigating increasingly challenging courses.',
+  keywords: 'slope 3, slope game, slope 3d, running game, 3d ball game, slope game online',
+  addressBar: 'Slope-3',
+  logoText: 'Slope 3',
+  image: 'game-51.webp',
+  iframeUrl: 'https://game.azgame.io/brain-lines/',
+  // location: 'left',
+  showHeader: false,
+  showNew: true,
+  aboutContent: `
+      <h2>Brain Lines game online​​: Game Guide & Key Highlights</h2>
+  <p>Brain Lines is a creative and challenging puzzle game where logic meets physics. Your task is to draw lines to guide colored balls into their matching holes. It sounds simple, but each level introduces new mechanics, requiring precision, timing, and clever thinking. With minimalistic graphics and relaxing music, Brain Lines offers a calming yet brain-teasing experience. Can you complete all levels with perfect accuracy? Play Brain Lines online and put your problem-solving skills to the ultimate test.</p>
+
+  <h3>How to Control Brain Lines game online?</h3>
+  <p>Mouse or Touch: Draw lines on the screen.<br/>
+  R Key or Restart Button: Reset the current level.<br/>
+  Progression is automatic when a level is solved.</p>
+
+  <h3>What is Brain Lines unblocked game?</h3>
+  <p>Brain Lines unblocked is an engaging logic game that can be played freely online at school or work. It doesn't require downloads or installation. In each level, you'll be challenged to draw the correct path that helps balls reach their respective color targets. Some puzzles require just one stroke, others will test your creativity and trial-and-error skills. It's perfect for anyone who enjoys relaxing but smart gameplay.</p>
+
+  <h3>How to play Brain Lines online?</h3>
+  <h4>Draw Your Logic to Win</h4>
+  <p>Observe the layout carefully and plan your drawing. Once you release the mouse, the balls will drop and follow the path you've drawn. Your goal is to match each colored ball with the same colored hole.</p>
+
+  <h4>Challenge Increasing Difficulty</h4>
+  <p>Early levels in Brain Lines start simple, but new elements like ramps, bumpers, and split paths are introduced over time. You’ll have to think multiple steps ahead to solve later puzzles with precision and style.</p>
+
+  <h4>Minimalistic Yet Smart</h4>
+  <p>Brain Lines focuses on simplicity and clarity. There's no timer, no distractions—just you and the puzzle. This makes it ideal for improving cognitive function and concentration.</p>
+
+  <h4>Replay to Perfect Your Score</h4>
+  <p>Did you solve the puzzle with too many lines? Try again! Efficiency is rewarded, and you'll feel great satisfaction from clearing a level with a single, clever stroke.</p>
+
+  <h3>Tips and Tricks to Beat Brain Lines</h3>
+  <h4>Use Gravity Wisely</h4>
+  <p>The game relies on realistic physics. Let gravity do the work by guiding balls through gentle slopes and ramps. Avoid drawing overly complex paths.</p>
+
+  <h4>Color Matters</h4>
+  <p>Remember that balls must land in the hole of the same color. Crossing paths or incorrect order may ruin your solution. Plan carefully before releasing the balls.</p>
+
+  <h4>Test, Fail, Retry</h4>
+  <p>Not every attempt will succeed—and that's okay. Trial and error is part of the fun. Learn from each failure and keep improving your approach.</p>
+
+  <h3>Features</h3>
+  <p>In Brain Lines you can:<br/>
+    ✔ Solve 100+ hand-crafted logic puzzles<br/>
+    ✔ Draw custom paths using realistic physics<br/>
+    ✔ Enjoy minimal UI and smooth music<br/>
+    ✔ Play Brain Lines unblocked without restrictions<br/>
+    ✔ Improve spatial awareness and planning skills
+  </p>
+
+  <h3>Conclusion</h3>
+  <p>Brain Lines is more than a puzzle game—it's a peaceful journey of logic, patience, and experimentation. Whether you're looking for a casual brain teaser or a more intricate puzzle challenge, Brain Lines is the perfect choice. Draw your solution, watch it unfold, and enjoy the satisfaction of mastering each level. Try Brain Lines for free now!</p>
+  `,
+},
+
+game52: {
+  id: 'game52',
+  title: 'Smash Karts - Multiplayer Kart Battle Game - Smash Karts Unblocked',
+  description:
+    'Smash Karts is a fast-paced multiplayer kart battle game. Drive your kart, collect power-ups, and eliminate other players in chaotic real-time battles. Play Smash Karts unblocked online and dominate the arena!',
+  keywords:
+    'smash karts, smash karts game, smash karts unblocked, multiplayer kart game, online battle game, kart shooter',
+  addressBar: 'Smash-Karts',
+  logoText: 'Smash Karts',
+  image: 'game-52.webp',
+  iframeUrl: 'https://games.crazygames.com/en_US/smash-karts/index.html?czyDynamicPriceFloorVariantsCZY_14537=portal&czyEPBPooling_CZY_14716=enabled&enableAdmiral=0&ssrDevice=desktop&v=1.334/',
+  // location: 'left',
+  showHeader: false,
+  showNew: true,
+  aboutContent: `
+    <h2>Smash Karts Game Online: Game Guide & Key Highlights</h2>
+    <p>Smash Karts is a chaotic 3D kart battle game where players race and fight in real-time multiplayer arenas. Jump into your kart, collect random power-ups, and use them to eliminate other players in short, action-packed rounds. With fast driving, explosive weapons, and quirky characters, Smash Karts delivers intense fun and non-stop mayhem.</p>
+
+    <h3>How to Control Smash Karts Game Online?</h3>
+    <p>Arrow keys or WASD: Drive your kart.<br />Spacebar: Fire your weapon.<br />Mouse: Navigate menus and select characters.</p>
+
+    <h3>What is Smash Karts Unblocked Game?</h3>
+    <p>Smash Karts unblocked is the full version of the game that can be played freely at school or work without restrictions. Players compete in 3-minute battles where the goal is to rack up as many eliminations as possible using power-ups and strategy. It’s all about quick reflexes, smart item use, and aggressive driving.</p>
+
+    <h3>How to Play Smash Karts Online?</h3>
+    <h4>Join a Live Arena Match</h4>
+    <p>Start by choosing your kart and character, then enter a live multiplayer match. The goal is simple: survive and take down other players using collected weapons and items.</p>
+
+    <h4>Collect Weapons and Power-Ups</h4>
+    <p>Drive over mystery boxes scattered across the map to collect random power-ups. These can include rockets, grenades, shields, and more. Use them to eliminate opponents or protect yourself from enemy fire.</p>
+
+    <h4>Customize Your Character</h4>
+    <p>Earn experience and level up by playing matches. Unlock funny characters, hats, and kart skins to personalize your look and show off in the arena.</p>
+
+    <h4>Level Up and Unlock Rewards</h4>
+    <p>Progress through levels to unlock exclusive content. Higher levels offer more cosmetics and upgrades to make your kart stand out.</p>
+
+    <h3>Tips and Tricks to Win in Smash Karts</h3>
+    <h4>Learn the Maps</h4>
+    <p>Each arena has its own layout, including ramps, tunnels, and obstacles. Knowing the map can help you ambush opponents and escape tight spots.</p>
+
+    <h4>Master Item Timing</h4>
+    <p>Use power-ups strategically. A well-timed rocket or shield can change the outcome of a match. Don’t waste weapons randomly—wait for the perfect moment.</p>
+
+    <h4>Stay on the Move</h4>
+    <p>Staying still makes you an easy target. Keep moving, drifting, and dodging to survive longer and maintain the advantage.</p>
+
+    <h3>Features</h3>
+    <p>Smash Karts includes:<br />
+    - Real-time multiplayer matches with players around the world.<br />
+    - Fun and chaotic 3-minute battles.<br />
+    - Dozens of weapons and power-ups to use.<br />
+    - Customizable characters, hats, and kart skins.<br />
+    - Easy controls and fast-paced gameplay.<br />
+    - Play Smash Karts unblocked from any device with a browser.</p>
+
+    <h3>Conclusion</h3>
+    <p>Smash Karts is the perfect combination of racing and battling. With short matches, funny characters, and explosive action, it’s an ideal game to enjoy solo or with friends. Whether you want to climb the leaderboards or just have fun shooting rockets from a banana-shaped kart, Smash Karts delivers. Jump in now and start smashing!</p>
+  `,
+}
+
+
 
 
 
