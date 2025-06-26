@@ -193,7 +193,6 @@ import GameMain from '../components/GameMain.vue'
 import NewGames from '../components/NewGames.vue'
 import Foot from '../components/foot.vue'
 import ShareLink from '../components/ShareLink.vue'
-// import Adsense from '../components/Adsense.vue'
 
 /**
  * 初始化并加载 Google AdSense 脚本
