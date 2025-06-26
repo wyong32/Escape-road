@@ -4,11 +4,15 @@
     <section>
       <div class="container" :style="{ background: gameData.background }">
         <!-- Google AdSense Ad Slot -->
-        <div class="ads-container ads-pc" style="width: 100%; margin-bottom: 1rem; text-align: center;">
-            <Adsense
-              ad-client="ca-pub-5437957765171705"
-              ad-slot="2049492927"
-            />
+        <div
+          class="ads-container ads-pc"
+          style="width: 100%; margin-bottom: 1rem; text-align: center"
+        >
+          <Adsense
+            ad-client="ca-pub-5437957765171705"
+            ad-slot="2049492927"
+            :ad-style="{ display: 'block' }"
+          />
         </div>
 
         <div class="game-wrap">
@@ -17,23 +21,38 @@
             <Adsense
               ad-client="ca-pub-5437957765171705"
               ad-slot="9497191380"
+              :ad-style="{ display: 'block' }"
             />
           </div>
 
           <!-- 广告3 -->
           <div class="ads-container ads-pc ads-right">
-             <Adsense
-                ad-client="ca-pub-5437957765171705"
-                ad-slot="1414982389"
-              />
+            <Adsense
+              ad-client="ca-pub-5437957765171705"
+              ad-slot="1414982389"
+              :ad-style="{ display: 'block' }"
+            />
           </div>
 
           <!-- 新增：主内容区域外层包裹 -->
           <div class="game-main-area">
+            <!-- 广告4 移动端广告1 -->
+            <div class="ads-container ads-ph">
+              <Adsense
+                ad-client="ca-pub-5437957765171705"
+                ad-slot="2038341488"
+                :ad-style="{ display: 'inline-block', width: '320px', height: '100px' }"
+              />
+            </div>
+
             <!-- 桌面端布局 -->
             <div class="game-list desktop-only" role="main" aria-label="Game collection">
               <aside class="list-left" aria-label="Related car chase games">
-                <div class="game-column" v-for="(column, columnIndex) in leftGameColumns" :key="`left-col-${columnIndex}`">
+                <div
+                  class="game-column"
+                  v-for="(column, columnIndex) in leftGameColumns"
+                  :key="`left-col-${columnIndex}`"
+                >
                   <article class="cr-item" v-for="game in column" :key="game.id">
                     <router-link
                       :to="'/' + game.addressBar"
@@ -57,7 +76,11 @@
                 <GameMain :game-id="currentGameId" :key="currentGameId" />
               </main>
               <aside class="list-right" aria-label="More car chase games">
-                <div class="game-column" v-for="(column, columnIndex) in rightGameColumns" :key="`right-col-${columnIndex}`">
+                <div
+                  class="game-column"
+                  v-for="(column, columnIndex) in rightGameColumns"
+                  :key="`right-col-${columnIndex}`"
+                >
                   <article class="cr-item" v-for="game in column" :key="game.id">
                     <router-link
                       :to="'/' + game.addressBar"
@@ -87,7 +110,12 @@
               </main>
               <section class="mobile-game-list" aria-label="Related games collection">
                 <div class="mobile-game-grid" role="grid" aria-label="Game selection grid">
-                  <article class="mobile-game-item" v-for="game in gamesForMobileLayout" :key="game.id" role="gridcell">
+                  <article
+                    class="mobile-game-item"
+                    v-for="game in gamesForMobileLayout"
+                    :key="game.id"
+                    role="gridcell"
+                  >
                     <router-link
                       :to="'/' + game.addressBar"
                       @click="scrollToTop"
@@ -107,14 +135,31 @@
                   </article>
                 </div>
               </section>
+              <!-- 广告5 移动端广告2 -->
+              <div class="ads-container ads-ph">
+                <Adsense
+                  ad-client="ca-pub-5437957765171705"
+                  ad-slot="3120053515"
+                  :ad-style="{ display: 'inline-block', width: '320px', height: '100px' }"
+                />
+              </div>
               <!-- 移动端NewGames，只在这里渲染一次 -->
               <NewGames />
+              
             </div>
           </div>
           <!-- 主内容区域外层包裹结束 -->
         </div>
         <footer class="below" role="contentinfo" aria-label="Game information and recommendations">
           <About :game-id="currentGameId" />
+          <!-- 广告5 移动端广告2 -->
+          <div class="ads-container ads-ph">
+                <Adsense
+                  ad-client="ca-pub-5437957765171705"
+                  ad-slot="2118232531"
+                  :ad-style="{ display: 'inline-block', width: '320px', height: '100px' }"
+                />
+              </div>
           <Recommend :game-id="currentGameId" />
         </footer>
       </div>
@@ -157,7 +202,7 @@ onMounted(() => {
 // 获取当前路由实例
 const route = useRoute()
 
-const gamesPerColumn = 7; // 每列最多显示的游戏数量
+const gamesPerColumn = 7 // 每列最多显示的游戏数量
 
 /**
  * 将游戏数组分块成列
@@ -166,13 +211,13 @@ const gamesPerColumn = 7; // 每列最多显示的游戏数量
  * @returns {Array<Array>} - 分块后的二维数组，每个子数组是一列
  */
 const chunkGamesIntoColumns = (gamesArray, chunkSize) => {
-  const columns = [];
-  if (!gamesArray || gamesArray.length === 0) return columns;
+  const columns = []
+  if (!gamesArray || gamesArray.length === 0) return columns
   for (let i = 0; i < gamesArray.length; i += chunkSize) {
-    columns.push(gamesArray.slice(i, i + chunkSize));
+    columns.push(gamesArray.slice(i, i + chunkSize))
   }
-  return columns;
-};
+  return columns
+}
 
 /**
  * 根据 addressBar 查找游戏ID
@@ -180,11 +225,12 @@ const chunkGamesIntoColumns = (gamesArray, chunkSize) => {
  * @returns {string} 游戏ID
  */
 const findGameIdByAddressBar = (addressBarParam) => {
-  const lowerAddressBarParam = addressBarParam?.toLowerCase();
-  if (!lowerAddressBarParam) return 'game1';
-  return Object.keys(games).find(id =>
-    games[id].addressBar?.toLowerCase() === lowerAddressBarParam
-  ) || 'game1'
+  const lowerAddressBarParam = addressBarParam?.toLowerCase()
+  if (!lowerAddressBarParam) return 'game1'
+  return (
+    Object.keys(games).find((id) => games[id].addressBar?.toLowerCase() === lowerAddressBarParam) ||
+    'game1'
+  )
 }
 
 // 获取当前游戏ID - 基于路由的 addressBar 参数
@@ -214,43 +260,43 @@ const gameData = computed(() => {
     description: game.description,
     keywords: game.keywords,
     background: game.background,
-    rightContent: game.rightContent
+    rightContent: game.rightContent,
   }
 })
 
 // 获取所有游戏列表 - 确保包含 location
 const allGames = computed(() => {
-  return Object.values(games).map(game => ({
+  return Object.values(games).map((game) => ({
     id: game.id,
     title: game.title,
     logoText: game.logoText,
     addressBar: game.addressBar,
     image: game.image,
-    location: game.location // 确保包含 location
+    location: game.location, // 确保包含 location
   }))
 })
 
 // 修改：根据 location 筛选左侧游戏，并分列
 const leftGameColumns = computed(() => {
-  const filteredLeftGames = allGames.value.filter(game => game.location === 'left');
-  return chunkGamesIntoColumns(filteredLeftGames, gamesPerColumn);
+  const filteredLeftGames = allGames.value.filter((game) => game.location === 'left')
+  return chunkGamesIntoColumns(filteredLeftGames, gamesPerColumn)
 })
 
 // 修改：根据 location 筛选右侧游戏，并分列
 const rightGameColumns = computed(() => {
-  const filteredRightGames = allGames.value.filter(game => game.location === 'right');
-  return chunkGamesIntoColumns(filteredRightGames, gamesPerColumn);
+  const filteredRightGames = allGames.value.filter((game) => game.location === 'right')
+  return chunkGamesIntoColumns(filteredRightGames, gamesPerColumn)
 })
 
 // 新增：为移动端布局筛选游戏，只显示 location 为 'left' 或 'right' 的游戏
 const gamesForMobileLayout = computed(() => {
-  return allGames.value.filter(game => game.location === 'left' || game.location === 'right');
+  return allGames.value.filter((game) => game.location === 'left' || game.location === 'right')
 })
 
 // 新增：滚动到页面顶部的方法
 const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-};
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}
 
 // 获取图片加载优先级
 const getImagePriority = (game) => {
@@ -275,13 +321,13 @@ const getImagePriority = (game) => {
  * @param {string} content - Meta 标签的 content 属性
  */
 const updateMetaTag = (name, content) => {
-  let element = document.querySelector(`meta[name="${name}"]`);
+  let element = document.querySelector(`meta[name="${name}"]`)
   if (!element) {
-    element = document.createElement('meta');
-    element.setAttribute('name', name);
-    document.head.appendChild(element);
+    element = document.createElement('meta')
+    element.setAttribute('name', name)
+    document.head.appendChild(element)
   }
-  element.setAttribute('content', content || ''); // 如果 content 为空则设置空字符串
+  element.setAttribute('content', content || '') // 如果 content 为空则设置空字符串
 }
 
 // 动态 SEO 管理
@@ -292,22 +338,31 @@ const seoData = computed(() => {
   if (isHomePage) {
     return {
       title: 'Escape Road Online - Free Car Chase Games | Play Instantly',
-      description: 'Play Escape Road Online for free! Experience thrilling police chase games, high-speed driving adventures, and endless car escape challenges. No download required - play instantly in your browser with 100+ free games.',
-      keywords: 'escape road online, car chase games, police chase, driving games, free online games, browser games, racing games, action games, car escape, high speed chase, unblocked games',
+      description:
+        'Play Escape Road Online for free! Experience thrilling police chase games, high-speed driving adventures, and endless car escape challenges. No download required - play instantly in your browser with 100+ free games.',
+      keywords:
+        'escape road online, car chase games, police chase, driving games, free online games, browser games, racing games, action games, car escape, high speed chase, unblocked games',
       ogTitle: 'Escape Road Online - Ultimate Car Chase Gaming Experience',
-      ogDescription: 'Experience the ultimate car chase adventure! Play Escape Road and 100+ free car chase games online. Police pursuits, high-speed driving, and endless excitement await.',
+      ogDescription:
+        'Experience the ultimate car chase adventure! Play Escape Road and 100+ free car chase games online. Police pursuits, high-speed driving, and endless excitement await.',
       ogImage: 'https://escape-road-online.com/images/escape-road-og.jpg',
-      canonicalUrl: 'https://escape-road-online.com/'
+      canonicalUrl: 'https://escape-road-online.com/',
     }
   } else {
     return {
       title: `${game.title} - Play Free Online | Escape Road`,
-      description: game.description || `Play ${game.title} online for free. Experience exciting car chase gameplay with police pursuits and high-speed action.`,
-      keywords: game.keywords || `${game.title}, car chase, police chase, driving games, online games, free games`,
+      description:
+        game.description ||
+        `Play ${game.title} online for free. Experience exciting car chase gameplay with police pursuits and high-speed action.`,
+      keywords:
+        game.keywords ||
+        `${game.title}, car chase, police chase, driving games, online games, free games`,
       ogTitle: `${game.title} - Free Online Game`,
-      ogDescription: game.description || `Play ${game.title} online for free. Experience exciting car chase gameplay.`,
+      ogDescription:
+        game.description ||
+        `Play ${game.title} online for free. Experience exciting car chase gameplay.`,
       ogImage: `https://escape-road-online.com/images/${game.image}`,
-      canonicalUrl: `https://escape-road-online.com/${game.addressBar}`
+      canonicalUrl: `https://escape-road-online.com/${game.addressBar}`,
     }
   }
 })
@@ -346,7 +401,7 @@ useHead(() => ({
     // 游戏相关
     { name: 'category', content: 'games' },
     { name: 'classification', content: 'car chase games, driving games' },
-    { name: 'rating', content: 'general' }
+    { name: 'rating', content: 'general' },
   ],
   link: [
     // 规范链接
@@ -358,7 +413,7 @@ useHead(() => ({
 
     // 图标
     { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-    { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }
+    { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
   ],
   script: [
     // 结构化数据 - 游戏
@@ -367,24 +422,24 @@ useHead(() => ({
       children: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'VideoGame',
-        'name': seoData.value.ogTitle,
-        'description': seoData.value.ogDescription,
-        'url': seoData.value.canonicalUrl,
-        'image': seoData.value.ogImage,
-        'genre': ['Action', 'Racing', 'Chase'],
-        'gamePlatform': 'Web Browser',
-        'operatingSystem': 'Any',
-        'applicationCategory': 'Game',
-        'offers': {
+        name: seoData.value.ogTitle,
+        description: seoData.value.ogDescription,
+        url: seoData.value.canonicalUrl,
+        image: seoData.value.ogImage,
+        genre: ['Action', 'Racing', 'Chase'],
+        gamePlatform: 'Web Browser',
+        operatingSystem: 'Any',
+        applicationCategory: 'Game',
+        offers: {
           '@type': 'Offer',
-          'price': '0',
-          'priceCurrency': 'USD'
+          price: '0',
+          priceCurrency: 'USD',
         },
-        'publisher': {
+        publisher: {
           '@type': 'Organization',
-          'name': 'Escape Road Online'
-        }
-      })
+          name: 'Escape Road Online',
+        },
+      }),
     },
 
     // 结构化数据 - 网站
@@ -393,33 +448,32 @@ useHead(() => ({
       children: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'WebSite',
-        'name': 'Escape Road Online',
-        'url': 'https://escape-road-online.com',
-        'description': 'Free online car chase games and driving adventures',
-        'potentialAction': {
+        name: 'Escape Road Online',
+        url: 'https://escape-road-online.com',
+        description: 'Free online car chase games and driving adventures',
+        potentialAction: {
           '@type': 'SearchAction',
-          'target': 'https://escape-road-online.com/search?q={search_term_string}',
-          'query-input': 'required name=search_term_string'
-        }
-      })
-    }
-  ]
+          target: 'https://escape-road-online.com/search?q={search_term_string}',
+          'query-input': 'required name=search_term_string',
+        },
+      }),
+    },
+  ],
 }))
 
 // 保留原有的 meta 标签更新逻辑作为降级方案
 watchEffect(() => {
-  const currentDescription = gameData.value.description;
-  const currentKeywords = gameData.value.keywords;
+  const currentDescription = gameData.value.description
+  const currentKeywords = gameData.value.keywords
 
   // 延迟更新 meta 标签以避免阻塞主线程
   scriptOptimizer.defer(() => {
-    updateMetaTag('description', currentDescription);
-    updateMetaTag('keywords', currentKeywords);
-  }, 'low');
-});
+    updateMetaTag('description', currentDescription)
+    updateMetaTag('keywords', currentKeywords)
+  }, 'low')
+})
 
 // 调试代码已移除
-
 </script>
 
 <style scoped>
@@ -462,7 +516,8 @@ watchEffect(() => {
   /* border: 1px solid green; */ /* Removed */
 }
 
-.list-left, .list-right {
+.list-left,
+.list-right {
   display: flex;
   align-items: flex-start; /* Align columns at the top */
   gap: 15px; /* Gap BETWEEN COLUMNS */
@@ -519,7 +574,7 @@ watchEffect(() => {
   background-color: #f0f0f0;
 }
 
-.cr-item .mask{
+.cr-item .mask {
   position: absolute;
   left: 0;
   bottom: 5px;
@@ -590,11 +645,11 @@ watchEffect(() => {
     width: 90px; /* Match cr-item size for tablet */
   }
   .cr-item {
-    width: 90px;  /* Adjusted to match .game-column for tablet */
+    width: 90px; /* Adjusted to match .game-column for tablet */
     height: 90px; /* Adjusted for consistency */
   }
   .below {
-     padding: 0 20px;
+    padding: 0 20px;
   }
 }
 
@@ -731,8 +786,7 @@ watchEffect(() => {
   }
 }
 
-
-.ads-left{
+.ads-left {
   width: 160px;
   min-height: 500px;
   position: absolute;
@@ -742,7 +796,7 @@ watchEffect(() => {
   z-index: 999999999; /* Lower z-index than hover effects */
 }
 
-.ads-right{
+.ads-right {
   width: 160px;
   min-height: 500px;
   position: absolute;
@@ -751,10 +805,10 @@ watchEffect(() => {
   right: 20px;
   z-index: 999999999; /* Lower z-index than hover effects */
 }
-.ads-pc{
+.ads-pc {
   display: block;
 }
-.ads-ph{
+.ads-ph {
   display: none;
 }
 
@@ -762,11 +816,10 @@ watchEffect(() => {
   .ads-pc {
     display: none;
   }
-  .ads-ph{
-  display: block;
+  .ads-ph {
+    display: block;
+  }
 }
-}
-
 
 /* .index-specific-text { font-size: 14px; } */
 </style>

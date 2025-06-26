@@ -2,7 +2,7 @@
   <ins
     :key="adKey"
     class="adsbygoogle"
-    style="display: block"
+    :style="adStyle"
     :data-ad-client="adClient"
     :data-ad-slot="adSlot"
     :data-ad-format="adFormat"
@@ -31,6 +31,10 @@ const props = defineProps({
     type: Boolean,
     default: true,
   },
+  adStyle: {
+    type: Object,
+    default: () => ({ display: 'block' })
+  }
 });
 
 const route = useRoute();

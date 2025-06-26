@@ -277,6 +277,7 @@ watch(() => props.pageId, (newPageId, oldPageId) => {
     }
     .stars {
         font-size: 1.4rem;
+        display: none;
     }
     .rating-count {
         font-size: 0.75rem;

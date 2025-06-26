@@ -506,7 +506,7 @@ onUnmounted(() => {
   /* 或更小的断点 */
   .top-bar {
     flex-direction: column; /* 在小屏幕上垂直堆叠 */
-    align-items: center; /* 居中对齐 */
+    align-items: normal; /* 居中对齐 */
     gap: 10px; /* 添加一些间距 */
     margin-bottom: 10px;
     padding-left: 0;
@@ -527,6 +527,7 @@ onUnmounted(() => {
     /* 小屏幕上按钮居中可能更好？或者保持靠右 */
     justify-content: left;
     width: 100%;
+    display: none;
   }
   .game {
     padding: 10px;
