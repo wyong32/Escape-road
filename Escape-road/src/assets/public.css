@@ -49,3 +49,21 @@ h5{
     }
     
 }
+
+
+.ads-wrapper{
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+.adsbygoogle{
+    width: 100%;
+    height: 100%;
+  }

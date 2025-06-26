@@ -3,47 +3,54 @@
     <Headers :game-id="currentGameId" />
     <section>
       <div class="container" :style="{ background: gameData.background }">
-        <!-- Google AdSense Ad Slot -->
-        <div
-          class="ads-container ads-pc"
-          style="width: 100%; margin-bottom: 1rem; text-align: center"
-        >
-          <Adsense
-            ad-client="ca-pub-5437957765171705"
-            ad-slot="2049492927"
-            :ad-style="{ display: 'block' }"
-          />
-        </div>
+        <!-- 头部横幅广告-PC -->
+        <aside class="ads-wrapper" v-if="!isMobile">
+          <ins
+            class="adsbygoogle"
+            style="display: block"
+            data-ad-client="ca-pub-5437957765171705"
+            data-ad-slot="2049492927"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          ></ins>
+        </aside>
 
         <div class="game-wrap">
-          <!-- 广告2 -->
-          <div class="ads-container ads-pc ads-left">
-            <Adsense
-              ad-client="ca-pub-5437957765171705"
-              ad-slot="9497191380"
-              :ad-style="{ display: 'block' }"
-            />
-          </div>
+          <!-- 左侧广告-PC -->
+          <aside class="ads-wrapper ads-left" v-if="!isMobile">
+            <ins
+              class="adsbygoogle"
+              style="display: block"
+              data-ad-client="ca-pub-5437957765171705"
+              data-ad-slot="9497191380"
+              data-ad-format="auto"
+              data-full-width-responsive="true"
+            ></ins>
+          </aside>
 
-          <!-- 广告3 -->
-          <div class="ads-container ads-pc ads-right">
-            <Adsense
-              ad-client="ca-pub-5437957765171705"
-              ad-slot="1414982389"
-              :ad-style="{ display: 'block' }"
-            />
-          </div>
+          <!-- 右侧广告-PC -->
+          <aside class="ads-wrapper ads-right" v-if="!isMobile">
+            <ins
+              class="adsbygoogle"
+              style="display: block"
+              data-ad-client="ca-pub-5437957765171705"
+              data-ad-slot="1414982389"
+              data-ad-format="auto"
+              data-full-width-responsive="true"
+            ></ins>
+          </aside>
 
           <!-- 新增：主内容区域外层包裹 -->
           <div class="game-main-area">
-            <!-- 广告4 移动端广告1 -->
-            <div class="ads-container ads-ph">
-              <Adsense
-                ad-client="ca-pub-5437957765171705"
-                ad-slot="2038341488"
-                :ad-style="{ display: 'inline-block', width: '320px', height: '100px' }"
-              />
-            </div>
+            <!-- 移动端头部广告-PH -->
+            <aside class="ads-wrapper" v-if="isMobile">
+              <ins
+                class="adsbygoogle"
+                style="display: inline-block; width: 320px; height: 100px"
+                data-ad-client="ca-pub-5437957765171705"
+                data-ad-slot="2038341488"
+              ></ins>
+            </aside>
 
             <!-- 桌面端布局 -->
             <div class="game-list desktop-only" role="main" aria-label="Game collection">
@@ -135,31 +142,33 @@
                   </article>
                 </div>
               </section>
-              <!-- 广告5 移动端广告2 -->
-              <div class="ads-container ads-ph">
-                <Adsense
-                  ad-client="ca-pub-5437957765171705"
-                  ad-slot="3120053515"
-                  :ad-style="{ display: 'inline-block', width: '320px', height: '100px' }"
-                />
-              </div>
+              <!-- 移动端中部广告-PH -->
+              <aside class="ads-wrapper" v-if="isMobile">
+                <ins
+                  class="adsbygoogle"
+                  style="display: inline-block; width: 320px; height: 100px"
+                  data-ad-client="ca-pub-5437957765171705"
+                  data-ad-slot="3120053515"
+                ></ins>
+              </aside>
+
               <!-- 移动端NewGames，只在这里渲染一次 -->
               <NewGames />
-              
             </div>
           </div>
           <!-- 主内容区域外层包裹结束 -->
         </div>
         <footer class="below" role="contentinfo" aria-label="Game information and recommendations">
           <About :game-id="currentGameId" />
-          <!-- 广告5 移动端广告2 -->
-          <div class="ads-container ads-ph">
-                <Adsense
-                  ad-client="ca-pub-5437957765171705"
-                  ad-slot="2118232531"
-                  :ad-style="{ display: 'inline-block', width: '320px', height: '100px' }"
-                />
-              </div>
+          <!-- 移动端底部广告-PH -->
+          <aside class="ads-wrapper" v-if="isMobile">
+            <ins
+              class="adsbygoogle"
+              style="display: inline-block; width: 320px; height: 100px"
+              data-ad-client="ca-pub-5437957765171705"
+              data-ad-slot="2118232531"
+            ></ins>
+          </aside>
           <Recommend :game-id="currentGameId" />
         </footer>
       </div>
@@ -175,6 +184,7 @@ import { useRoute } from 'vue-router'
 import { useHead } from '@unhead/vue'
 import { games } from '../data/games'
 import { scriptOptimizer } from '../utils/scriptOptimizer.js'
+import { useDeviceDetection } from '../utils/useDeviceDetection.js'
 import SimpleImage from '../components/SimpleImage.vue'
 import Headers from '../components/Head.vue'
 import About from '../components/About.vue'
@@ -183,26 +193,48 @@ import GameMain from '../components/GameMain.vue'
 import NewGames from '../components/NewGames.vue'
 import Foot from '../components/foot.vue'
 import ShareLink from '../components/ShareLink.vue'
-import Adsense from '../components/Adsense.vue'
+// import Adsense from '../components/Adsense.vue'
 
 /**
  * 初始化并加载 Google AdSense 脚本
  */
 
-//  广告1
-//  广告2
-//  广告3
-//  广告4
-// 在组件挂载时加载广告脚本
+// 获取当前路由实例
+const route = useRoute()
+const gamesPerColumn = 7 // 每列最多显示的游戏数量
+const { isMobile } = useDeviceDetection()
+
+// 手动触发广告加载
+const loadAds = () => {
+  if (window.adsbygoogle && typeof window.adsbygoogle.push === 'function') {
+    try {
+      // 直接处理所有广告元素，但添加错误处理
+      const adElements = document.querySelectorAll('.adsbygoogle')
+      adElements.forEach((el) => {
+        try {
+          ;(window.adsbygoogle = window.adsbygoogle || []).push({})
+        } catch (pushError) {
+          // 忽略重复加载错误
+          if (!pushError.message.includes('already have ads')) {
+            console.error('广告加载失败:', pushError)
+          }
+        }
+      })
+    } catch (e) {
+      console.error('广告加载失败:', e)
+    }
+  } else {
+    // 如果 adsbygoogle 还没加载，延迟重试
+    setTimeout(loadAds, 1000)
+  }
+}
+
 onMounted(() => {
+  // 加载广告
+  setTimeout(loadAds, 1000)
   // The ad loading is now handled by the Adsense.vue component.
   // No need to call loading functions here.
 })
-
-// 获取当前路由实例
-const route = useRoute()
-
-const gamesPerColumn = 7 // 每列最多显示的游戏数量
 
 /**
  * 将游戏数组分块成列
