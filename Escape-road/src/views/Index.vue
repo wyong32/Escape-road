@@ -6,6 +6,7 @@
         <!-- 头部横幅广告-PC -->
         <aside class="ads-wrapper" v-if="!isMobile">
           <ins
+            :key="`pc-top-${adKey}`"
             class="adsbygoogle"
             style="display: block"
             data-ad-client="ca-pub-5437957765171705"
@@ -19,6 +20,7 @@
           <!-- 左侧广告-PC -->
           <aside class="ads-wrapper ads-left" v-if="!isMobile">
             <ins
+              :key="`pc-left-${adKey}`"
               class="adsbygoogle"
               style="display: block"
               data-ad-client="ca-pub-5437957765171705"
@@ -31,6 +33,7 @@
           <!-- 右侧广告-PC -->
           <aside class="ads-wrapper ads-right" v-if="!isMobile">
             <ins
+              :key="`pc-right-${adKey}`"
               class="adsbygoogle"
               style="display: block"
               data-ad-client="ca-pub-5437957765171705"
@@ -45,6 +48,7 @@
             <!-- 移动端头部广告-PH -->
             <aside class="ads-wrapper" v-if="isMobile">
               <ins
+                :key="`mobile-top-${adKey}`"
                 class="adsbygoogle"
                 style="display: inline-block; width: 320px; height: 100px"
                 data-ad-client="ca-pub-5437957765171705"
@@ -145,6 +149,7 @@
               <!-- 移动端中部广告-PH -->
               <aside class="ads-wrapper" v-if="isMobile">
                 <ins
+                  :key="`mobile-middle-${adKey}`"
                   class="adsbygoogle"
                   style="display: inline-block; width: 320px; height: 100px"
                   data-ad-client="ca-pub-5437957765171705"
@@ -163,6 +168,7 @@
           <!-- 移动端底部广告-PH -->
           <aside class="ads-wrapper" v-if="isMobile">
             <ins
+              :key="`mobile-bottom-${adKey}`"
               class="adsbygoogle"
               style="display: inline-block; width: 320px; height: 100px"
               data-ad-client="ca-pub-5437957765171705"
@@ -179,7 +185,7 @@
 </template>
 
 <script setup>
-import { computed, watchEffect, onMounted } from 'vue'
+import { computed, watchEffect, onMounted, ref, watch, nextTick } from 'vue'
 import { useRoute } from 'vue-router'
 import { useHead } from '@unhead/vue'
 import { games } from '../data/games'
@@ -202,6 +208,9 @@ import ShareLink from '../components/ShareLink.vue'
 const route = useRoute()
 const gamesPerColumn = 7 // 每列最多显示的游戏数量
 const { isMobile } = useDeviceDetection()
+
+// 广告刷新的key，用于强制重新渲染广告
+const adKey = ref(0)
 
 // 手动触发广告加载
 const loadAds = () => {
@@ -228,11 +237,31 @@ const loadAds = () => {
   }
 }
 
+// 刷新广告
+const refreshAds = () => {
+  // 增加key值来强制重新渲染广告元素
+  adKey.value += 1
+  // 等待DOM更新后重新加载广告
+  nextTick(() => {
+    setTimeout(loadAds, 500)
+  })
+}
+
+// 监听路由变化，当游戏切换时刷新广告
+watch(
+  () => route.path,
+  (newPath, oldPath) => {
+    // 如果路径确实发生了变化，刷新广告
+    if (newPath !== oldPath) {
+      console.log('路由变化，刷新广告:', newPath)
+      refreshAds()
+    }
+  }
+)
+
 onMounted(() => {
   // 加载广告
   setTimeout(loadAds, 1000)
-  // The ad loading is now handled by the Adsense.vue component.
-  // No need to call loading functions here.
 })
 
 /**
