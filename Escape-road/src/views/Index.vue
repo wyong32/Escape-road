@@ -65,8 +65,8 @@
                   :key="`left-col-${columnIndex}`"
                 >
                   <article class="cr-item" v-for="game in column" :key="game.id">
-                    <router-link
-                      :to="'/' + game.addressBar"
+                    <a
+                      :href="'/' + game.addressBar"
                       :aria-label="`Play ${game.title} - Free car chase game`"
                       :title="`Play ${game.title} online for free`"
                     >
@@ -79,7 +79,7 @@
                         height="100%"
                       />
                       <p class="mask">{{ game.logoText }}</p>
-                    </router-link>
+                    </a>
                   </article>
                 </div>
               </aside>
@@ -93,8 +93,8 @@
                   :key="`right-col-${columnIndex}`"
                 >
                   <article class="cr-item" v-for="game in column" :key="game.id">
-                    <router-link
-                      :to="'/' + game.addressBar"
+                    <a
+                      :href="'/' + game.addressBar"
                       :aria-label="`Play ${game.title} - Free car chase game`"
                       :title="`Play ${game.title} online for free`"
                     >
@@ -107,7 +107,7 @@
                         height="100%"
                       />
                       <p class="mask">{{ game.logoText }}</p>
-                    </router-link>
+                    </a>
                   </article>
                 </div>
               </aside>
@@ -127,8 +127,8 @@
                     :key="game.id"
                     role="gridcell"
                   >
-                    <router-link
-                      :to="'/' + game.addressBar"
+                    <a
+                      :href="'/' + game.addressBar"
                       @click="scrollToTop"
                       :aria-label="`Play ${game.title} - Free car chase game`"
                       :title="`Play ${game.title} online for free`"
@@ -142,7 +142,7 @@
                         height="100%"
                       />
                       <p class="mobile-mask">{{ game.logoText }}</p>
-                    </router-link>
+                    </a>
                   </article>
                 </div>
               </section>
@@ -185,7 +185,7 @@
 </template>
 
 <script setup>
-import { computed, watchEffect, onMounted, ref, watch, nextTick } from 'vue'
+import { computed, watchEffect, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { useHead } from '@unhead/vue'
 import { games } from '../data/games'
@@ -237,27 +237,7 @@ const loadAds = () => {
   }
 }
 
-// 刷新广告
-const refreshAds = () => {
-  // 增加key值来强制重新渲染广告元素
-  adKey.value += 1
-  // 等待DOM更新后重新加载广告
-  nextTick(() => {
-    setTimeout(loadAds, 500)
-  })
-}
 
-// 监听路由变化，当游戏切换时刷新广告
-watch(
-  () => route.path,
-  (newPath, oldPath) => {
-    // 如果路径确实发生了变化，刷新广告
-    if (newPath !== oldPath) {
-      console.log('路由变化，刷新广告:', newPath)
-      refreshAds()
-    }
-  }
-)
   
 onMounted(() => {
   // 加载广告
@@ -353,7 +333,7 @@ const gamesForMobileLayout = computed(() => {
   return allGames.value.filter((game) => game.location === 'left' || game.location === 'right')
 })
 
-// 新增：滚动到页面顶部的方法
+// 滚动到页面顶部的方法
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }

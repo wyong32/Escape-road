@@ -3,7 +3,7 @@
         <h2 class="recommend-title">Recommend For You</h2>
         <ul class="recommend-list">
             <li class="recommend-item" v-for="game in allGames" :key="game.id">
-                <router-link :to="'/' + game.addressBar" @click="scrollToTop" class="recommend-link">
+                <a :href="'/' + game.addressBar" @click="scrollToTop" class="recommend-link">
                     <div class="recommend-image-container">
                         <SmartImage
                           :src="game.image"
@@ -15,7 +15,7 @@
                         />
                     </div>
                     <div class="recommend-game-name">{{ game.logoText || game.title }}</div>
-                </router-link>
+                </a>
             </li>
         </ul>
 

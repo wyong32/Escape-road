@@ -15,8 +15,8 @@
             :key="game.id"
             role="article"
           >
-            <router-link
-              :to="'/' + game.addressBar"
+            <a
+              :href="'/' + game.addressBar"
               :aria-label="`Play ${game.title} - New game`"
               :title="`Play ${game.title} online for free - New Release`"
               class="new-game-link"
@@ -35,7 +35,7 @@
               <div class="new-game-info">
                 <h3 class="new-game-title">{{ game.logoText }}</h3>
               </div>
-            </router-link>
+            </a>
           </article>
         </div>
       </div>

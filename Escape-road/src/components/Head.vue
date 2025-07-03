@@ -8,7 +8,7 @@
       <nav class="header-nav">
         <ul>
           <li v-for="game in headerGames" :key="game.id">
-            <router-link :to="'/' + game.addressBar">{{ game.logoText }}</router-link>
+            <a :href="'/' + game.addressBar">{{ game.logoText }}</a>
           </li>
         </ul>
       </nav>
