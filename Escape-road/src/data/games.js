@@ -2088,7 +2088,7 @@ game43: {
   logoText: 'Noob Basketball Clicker Unlocked',
   image: 'game-43.webp',
   iframeUrl: 'https://st1.8games.net/7/igra-basketbolnyj-kliker-nubika/',
-  showNew: true,
+  // showNew: true,
   aboutContent: `
     <h2>Noob Basketball Clicker Unlocked – Tap Your Way to Victory!</h2>
     <p>Noob Basketball Clicker Unlocked is the ultimate idle basketball tapper for fans of silly fun and fast-clicking action. In Noob Basketball Clicker Unlocked, you're in control of Noob as he aims to become a basketball superstar—one click at a time. With every tap, Noob launches a shot, and each successful basket earns you points and rewards in Noob Basketball Clicker Unlocked.</p>
@@ -2131,7 +2131,7 @@ game44: {
   logoText: 'Red Rush Unlocked',
   image: 'game-44.webp',
   iframeUrl: 'https://game.azgame.io/red-rush/',
-  showNew: true,
+  // showNew: true,
   aboutContent: `
     <h2>Red Rush Unlocked – Speed, Reflexes, and Chaos Await!</h2>
     <p>Red Rush Unlocked is not just another casual game—it's an intense test of your reflexes and timing. In Red Rush Unlocked, you’ll be thrown into a high-pressure environment where danger is always one step behind. With vibrant visuals and pulse-pounding gameplay, Red Rush Unlocked keeps your heart racing and your fingers tapping. Whether you're dodging deadly traps or making perfect leaps, Red Rush Unlocked demands focus and lightning-fast reactions.</p>
@@ -2584,7 +2584,131 @@ game52: {
     <h3>Conclusion</h3>
     <p>Smash Karts is the perfect combination of racing and battling. With short matches, funny characters, and explosive action, it’s an ideal game to enjoy solo or with friends. Whether you want to climb the leaderboards or just have fun shooting rockets from a banana-shaped kart, Smash Karts delivers. Jump in now and start smashing!</p>
   `,
+},
+
+game53: {
+  id: 'mergeBrainrot',
+  title: 'Merge Brainrot - Absurdist Merge Game - Merge Brainrot Unblocked',
+  description:
+    'Merge Brainrot is a wacky and absurd merge game where you combine crazy characters and items to create even more bizarre ones. Engage in chaotic gameplay and experience the madness of brainrot in this unique online puzzle game.',
+  keywords:
+    'merge brainrot, merge brainrot game, brainrot unblocked, absurdist merge game, chaotic puzzle game, merge absurd characters',
+  addressBar: 'Merge-Brainrot',
+  logoText: 'Merge Brainrot',
+  image: 'merge-brainrot.webp',
+  iframeUrl: 'https://game.azgame.io/merge-brainrot/',
+  // location: 'left',
+  showHeader: false,
+  showNew: true,
+  aboutContent: `
+    <h2>Merge Brainrot Game Online: Game Guide & Key Highlights</h2>
+    <p>Merge Brainrot is an offbeat and hilarious merge game that lets players combine oddball characters and bizarre items to create even more outlandish combinations. Dive into a world of absurdity and quick-thinking, where you’ll merge your way through a series of hilarious and chaotic puzzles in this mind-bending, brainrot-inspired game.</p>
+
+    <h3>How to Control Merge Brainrot Game Online?</h3>
+    <p>Mouse: Select and drag characters/items to merge.<br />Click: Confirm merges and interactions.<br />Spacebar: Speed up the merging process.</p>
+
+    <h3>What is Merge Brainrot Unblocked Game?</h3>
+    <p>Merge Brainrot unblocked is the unrestricted version of the game, allowing you to enjoy the game anytime without any limitations. It’s the full experience of merging, creating, and experimenting in a world of wild combinations, all while trying to outwit the chaos around you.</p>
+
+    <h3>How to Play Merge Brainrot Online?</h3>
+    <h4>Start Merging Characters</h4>
+    <p>To begin, drag two similar characters or items into the merge area. Watch as they combine into a new, even more absurd creation. The goal is to find the most ridiculous combinations that fit the brainrot theme.</p>
+
+    <h4>Unlock New Combinations</h4>
+    <p>As you progress, more and more bizarre characters and items become available for merging. Each merge offers a unique result that enhances the insanity of the game.</p>
+
+    <h4>Strategic Merging</h4>
+    <p>It’s not just about random merges. Think about how certain items and characters might work together to create even more comical results. Use your strategy to unlock higher-level combinations that are even more outrageous than the last!</p>
+
+    <h4>Level Up and Unlock More Brainrot</h4>
+    <p>Progress through levels by completing various merge objectives. Each new level unlocks additional mergeable items, higher-tier characters, and greater absurdities to combine.</p>
+
+    <h3>Tips and Tricks to Win in Merge Brainrot</h3>
+    <h4>Think Outside the Box</h4>
+    <p>Merge Brainrot is all about creativity and experimentation. Don’t just go for the obvious merges—try combining strange items or characters and see what happens.</p>
+
+    <h4>Manage Your Resources</h4>
+    <p>You have a limited number of moves, so plan ahead. Time your merges carefully and ensure you don’t waste valuable resources.</p>
+
+    <h4>Keep Up with the Madness</h4>
+    <p>The faster you merge, the better! Merge quickly and stay ahead of the chaos to earn high scores and unlock more insane characters.</p>
+
+    <h3>Features</h3>
+    <p>Merge Brainrot includes:<br />
+    - A vast array of absurd characters and items to combine.<br />
+    - Unpredictable and chaotic results with every merge.<br />
+    - Simple, easy-to-understand controls.<br />
+    - Customizable and quirky characters to experiment with.<br />
+    - A fast-paced, fun, and challenging puzzle experience.<br />
+    - Play Merge Brainrot unblocked from any device with a browser.</p>
+
+    <h3>Conclusion</h3>
+    <p>Merge Brainrot offers a hilarious, unpredictable, and wildly fun experience for fans of merge games and absurdist humor. With its unique gameplay mechanics and strange outcomes, it’s the perfect game to dive into when you need a dose of chaos and laughter. Start merging today, and get ready to experience the weirdest game you’ve ever played!</p>
+  `,
+},
+
+game54: {
+  id: 'italianBrainrot2048',
+  title: '2048 Italian Brainrot - Absurdist Puzzle Merge Game',
+  description:
+    '2048 Italian Brainrot is a quirky and hilarious twist on the classic 2048 puzzle game. Merge absurd Italian-inspired characters and items to reach the highest possible score, with an added layer of brainrot chaos!',
+  keywords:
+    '2048 italian brainrot, italian brainrot game, italian 2048, absurd merge game, brainrot puzzle game, funny merge game',
+  addressBar: 'Italian-Brainrot-2048',
+  logoText: '2048 Italian Brainrot',
+  image: 'italian-brainrot-2048.webp',
+  iframeUrl: 'https://game.azgame.io/2048-italian-brainrot/',
+  // location: 'left',
+  showHeader: false,
+  showNew: true,
+  aboutContent: `
+    <h2>2048 Italian Brainrot: Game Guide & Key Highlights</h2>
+    <p>2048 Italian Brainrot is a humorous and chaotic take on the classic 2048 puzzle game. Merge quirky Italian-inspired characters and items to form the highest-numbered combinations. The game offers both the strategic challenge of 2048 and the wacky, brainrot humor fans love.</p>
+
+    <h3>How to Control 2048 Italian Brainrot?</h3>
+    <p>Arrow keys: Move tiles up, down, left, or right.<br />Spacebar: Undo your last move.<br />Mouse: Navigate menus and select characters.</p>
+
+    <h3>What is 2048 Italian Brainrot?</h3>
+    <p>2048 Italian Brainrot is an unblocked version of the game that brings the 2048 puzzle format to life with a brainrot twist. Instead of numbers, you’ll be merging absurd Italian characters, food items, and bizarre objects into even more ridiculous combinations. The goal? Reach the highest combination you can before the board is full of chaos!</p>
+
+    <h3>How to Play 2048 Italian Brainrot Online?</h3>
+    <h4>Start Merging Tiles</h4>
+    <p>Begin by merging tiles with the same character or item to form new ones. Keep merging until you reach the highest possible Italian Brainrot creation, from pizza slices to pasta power-ups and more.</p>
+
+    <h4>Strategic Merging</h4>
+    <p>The game is all about strategy. Plan your moves carefully to create bigger combinations while keeping the board from getting cluttered. Each move counts, so think ahead!</p>
+
+    <h4>Level Up with Italian Brainrot Items</h4>
+    <p>As you progress, new Italian-themed characters and items will appear. Merge them to unlock more absurd combinations, and earn rewards for your creativity.</p>
+
+    <h4>Complete Challenges</h4>
+    <p>Complete daily challenges to earn special bonuses and unlock unique brainrot characters that add even more fun to the mix. The more challenges you complete, the more absurd the game becomes!</p>
+
+    <h3>Tips and Tricks to Win in 2048 Italian Brainrot</h3>
+    <h4>Focus on Merging Big Combos</h4>
+    <p>Rather than focusing on small merges, aim for big combos to rack up your score. The larger the combination, the more absurd the resulting item, and the higher your points!</p>
+
+    <h4>Don't Let the Board Get Too Cluttered</h4>
+    <p>The key to victory is maintaining a clean board. Try not to block off spaces with too many small items, as it can make it harder to form larger combinations.</p>
+
+    <h4>Experiment with Combinations</h4>
+    <p>2048 Italian Brainrot thrives on creativity. Experiment with different character and item combinations to discover all the hilarious and surprising results!</p>
+
+    <h3>Features</h3>
+    <p>2048 Italian Brainrot includes:<br />
+    - Quirky Italian-themed characters and items.<br />
+    - Classic 2048 mechanics with a chaotic brainrot twist.<br />
+    - Easy-to-learn controls for a fun puzzle experience.<br />
+    - Unlockable characters and daily challenges.<br />
+    - Hilarious and unpredictable combinations with each move.<br />
+    - Play 2048 Italian Brainrot unblocked on any device with a browser.</p>
+
+    <h3>Conclusion</h3>
+    <p>2048 Italian Brainrot offers a hilarious mix of strategy, creativity, and chaotic humor. If you love puzzles and want a new spin on the 2048 formula, this is the game for you. Start merging, get your brainrot on, and see how absurdly high you can go!</p>
+  `,
 }
+
+
 
 
 
