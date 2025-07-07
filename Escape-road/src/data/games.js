@@ -2587,67 +2587,6 @@ game52: {
 },
 
 game53: {
-  id: 'mergeBrainrot',
-  title: 'Merge Brainrot - Absurdist Merge Game - Merge Brainrot Unblocked',
-  description:
-    'Merge Brainrot is a wacky and absurd merge game where you combine crazy characters and items to create even more bizarre ones. Engage in chaotic gameplay and experience the madness of brainrot in this unique online puzzle game.',
-  keywords:
-    'merge brainrot, merge brainrot game, brainrot unblocked, absurdist merge game, chaotic puzzle game, merge absurd characters',
-  addressBar: 'Merge-Brainrot',
-  logoText: 'Merge Brainrot',
-  image: 'game-53.webp',
-  iframeUrl: 'https://game.azgame.io/merge-brainrot/',
-  // location: 'left',
-  showHeader: false,
-  showNew: true,
-  aboutContent: `
-    <h2>Merge Brainrot Game Online: Game Guide & Key Highlights</h2>
-    <p>Merge Brainrot is an offbeat and hilarious merge game that lets players combine oddball characters and bizarre items to create even more outlandish combinations. Dive into a world of absurdity and quick-thinking, where you’ll merge your way through a series of hilarious and chaotic puzzles in this mind-bending, brainrot-inspired game.</p>
-
-    <h3>How to Control Merge Brainrot Game Online?</h3>
-    <p>Mouse: Select and drag characters/items to merge.<br />Click: Confirm merges and interactions.<br />Spacebar: Speed up the merging process.</p>
-
-    <h3>What is Merge Brainrot Unblocked Game?</h3>
-    <p>Merge Brainrot unblocked is the unrestricted version of the game, allowing you to enjoy the game anytime without any limitations. It’s the full experience of merging, creating, and experimenting in a world of wild combinations, all while trying to outwit the chaos around you.</p>
-
-    <h3>How to Play Merge Brainrot Online?</h3>
-    <h4>Start Merging Characters</h4>
-    <p>To begin, drag two similar characters or items into the merge area. Watch as they combine into a new, even more absurd creation. The goal is to find the most ridiculous combinations that fit the brainrot theme.</p>
-
-    <h4>Unlock New Combinations</h4>
-    <p>As you progress, more and more bizarre characters and items become available for merging. Each merge offers a unique result that enhances the insanity of the game.</p>
-
-    <h4>Strategic Merging</h4>
-    <p>It’s not just about random merges. Think about how certain items and characters might work together to create even more comical results. Use your strategy to unlock higher-level combinations that are even more outrageous than the last!</p>
-
-    <h4>Level Up and Unlock More Brainrot</h4>
-    <p>Progress through levels by completing various merge objectives. Each new level unlocks additional mergeable items, higher-tier characters, and greater absurdities to combine.</p>
-
-    <h3>Tips and Tricks to Win in Merge Brainrot</h3>
-    <h4>Think Outside the Box</h4>
-    <p>Merge Brainrot is all about creativity and experimentation. Don’t just go for the obvious merges—try combining strange items or characters and see what happens.</p>
-
-    <h4>Manage Your Resources</h4>
-    <p>You have a limited number of moves, so plan ahead. Time your merges carefully and ensure you don’t waste valuable resources.</p>
-
-    <h4>Keep Up with the Madness</h4>
-    <p>The faster you merge, the better! Merge quickly and stay ahead of the chaos to earn high scores and unlock more insane characters.</p>
-
-    <h3>Features</h3>
-    <p>Merge Brainrot includes:<br />
-    - A vast array of absurd characters and items to combine.<br />
-    - Unpredictable and chaotic results with every merge.<br />
-    - Simple, easy-to-understand controls.<br />
-    - Customizable and quirky characters to experiment with.<br />
-    - A fast-paced, fun, and challenging puzzle experience.<br />
-    - Play Merge Brainrot unblocked from any device with a browser.</p>
-
-    <h3>Conclusion</h3>
-    <p>Merge Brainrot offers a hilarious, unpredictable, and wildly fun experience for fans of merge games and absurdist humor. With its unique gameplay mechanics and strange outcomes, it’s the perfect game to dive into when you need a dose of chaos and laughter. Start merging today, and get ready to experience the weirdest game you’ve ever played!</p>
-  `,
-},
-
-game54: {
   id: 'italianBrainrot2048',
   title: '2048 Italian Brainrot - Absurdist Puzzle Merge Game',
   description:
@@ -2656,7 +2595,7 @@ game54: {
     '2048 italian brainrot, italian brainrot game, italian 2048, absurd merge game, brainrot puzzle game, funny merge game',
   addressBar: 'Italian-Brainrot-2048',
   logoText: '2048 Italian Brainrot',
-  image: 'game-54.webp',
+  image: 'game-53.webp',
   iframeUrl: 'https://game.azgame.io/2048-italian-brainrot/',
   // location: 'left',
   showHeader: false,
@@ -2706,7 +2645,69 @@ game54: {
     <h3>Conclusion</h3>
     <p>2048 Italian Brainrot offers a hilarious mix of strategy, creativity, and chaotic humor. If you love puzzles and want a new spin on the 2048 formula, this is the game for you. Start merging, get your brainrot on, and see how absurdly high you can go!</p>
   `,
+},
+
+game54: {
+  id: 'mergeFellasItalianBrainrot',
+  title: 'Merge Fellas Italian Brainrot - Absurd Merge Game with Italian Chaos',
+  description:
+    'Merge Fellas Italian Brainrot is a hilarious and chaotic merge game where you combine quirky Italian-themed characters and items to create even more absurd creations. Engage in wacky merges with your favorite brainrot-inspired Italian elements in this addictive puzzle game.',
+  keywords:
+    'merge fellas italian brainrot, italian brainrot game, merge fellas, absurd merge game, italian characters merge, chaotic puzzle game',
+  addressBar: 'Merge-Fellas-Italian-Brainrot',
+  logoText: 'Merge Fellas Italian Brainrot',
+  image: 'game-54.webp',
+  iframeUrl: 'https://1games.io/game/merge-fellas-italian-brainrot/',
+  // location: 'left',
+  showHeader: false,
+  showNew: true,
+  aboutContent: `
+    <h2>Merge Fellas Italian Brainrot: Game Guide & Key Highlights</h2>
+    <p>Merge Fellas Italian Brainrot is a quirky and chaotic merge game that brings Italian-themed brainrot characters and items into the fold. The goal is to combine these oddballs into even more absurd creations and experience the madness of Italian brainrot as you progress through hilarious and unpredictable merges.</p>
+
+    <h3>How to Control Merge Fellas Italian Brainrot?</h3>
+    <p>Mouse: Select and drag characters/items to the merge area.<br />Click: Confirm merges and select characters.<br />Spacebar: Speed up the merging process.</p>
+
+    <h3>What is Merge Fellas Italian Brainrot?</h3>
+    <p>Merge Fellas Italian Brainrot is a unique twist on the classic merge puzzle game, featuring a brainrot-inspired Italian theme. Players must combine eccentric Italian characters, foods, and objects to create even crazier combos. The game is a mix of strategy, chaos, and hilarity, all set in a bizarre, brainrot-infused Italian world.</p>
+
+    <h3>How to Play Merge Fellas Italian Brainrot Online?</h3>
+    <h4>Start Merging Italian Characters</h4>
+    <p>Begin by dragging and dropping Italian-themed characters or items into the merge area. For example, merge pasta with pizza to create a ridiculous hybrid! The goal is to unlock all the Italian-themed combinations and make the most absurd creations possible.</p>
+
+    <h4>Unlock and Collect New Combinations</h4>
+    <p>As you merge, new Italian-inspired items and characters will be unlocked. Keep merging to create bigger and crazier combos. Each new merge leads to even more ridiculous outcomes, from talking tomatoes to dancing spaghetti.</p>
+
+    <h4>Master the Art of Strategic Merging</h4>
+    <p>While the game is chaotic, it also requires some strategy. Choose your merges wisely to create the most absurd and high-scoring combinations. The more you play, the more you'll discover about the strange Italian brainrot world.</p>
+
+    <h4>Earn Rewards and Unlock New Features</h4>
+    <p>As you complete merges and challenges, you'll earn rewards that allow you to unlock even crazier Italian items, skins, and characters. The more you play, the more insane the game becomes.</p>
+
+    <h3>Tips and Tricks to Win in Merge Fellas Italian Brainrot</h3>
+    <h4>Keep an Eye on the Merging Possibilities</h4>
+    <p>Merge Fellas Italian Brainrot is all about creating bizarre combinations. Pay attention to all available items and characters to make the most absurd merges possible. The wackier the result, the better!</p>
+
+    <h4>Don't Let the Board Get Cluttered</h4>
+    <p>Keep the game board organized and try not to fill it up with too many small merges. This will make it harder to find and create larger combos. Plan ahead for bigger merges to reach those high-scoring Italian brainrot items.</p>
+
+    <h4>Experiment and Have Fun</h4>
+    <p>One of the best parts of Merge Fellas Italian Brainrot is the absurdity of the merges. Don’t be afraid to experiment with different combinations. The more you play, the more fun and wild the results become!</p>
+
+    <h3>Features</h3>
+    <p>Merge Fellas Italian Brainrot includes:<br />
+    - A quirky Italian brainrot theme with hilarious characters and items.<br />
+    - Classic merge mechanics with a chaotic, brainrot twist.<br />
+    - Hundreds of absurd Italian-themed combinations to unlock.<br />
+    - Simple controls that are easy to learn but hard to master.<br />
+    - Unlockable characters, skins, and power-ups.<br />
+    - Play Merge Fellas Italian Brainrot unblocked on any device with a browser.</p>
+
+    <h3>Conclusion</h3>
+    <p>Merge Fellas Italian Brainrot is a hilarious and chaotic merge game that combines strategic puzzle gameplay with the absurd humor of Italian brainrot. Whether you’re merging pizza, pasta, or the wildest Italian characters you can imagine, this game is a must-play for fans of quirky, offbeat games. Jump in, start merging, and let the Italian brainrot chaos begin!</p>
+  `,
 }
+
 
 
 
