@@ -2706,13 +2706,427 @@ game54: {
     <h3>Conclusion</h3>
     <p>Merge Fellas Italian Brainrot is a hilarious and chaotic merge game that combines strategic puzzle gameplay with the absurd humor of Italian brainrot. Whether you’re merging pizza, pasta, or the wildest Italian characters you can imagine, this game is a must-play for fans of quirky, offbeat games. Jump in, start merging, and let the Italian brainrot chaos begin!</p>
   `,
+},
+
+game55: {
+  id: 'sugarSugar',
+  title: 'Sugar Sugar - Sweet Physics Puzzle Challenge',
+  description:
+    'Sugar Sugar is a relaxing and creative physics puzzle game where you draw lines to guide falling sugar into cups. Solve increasingly complex levels while enjoying soothing gameplay and minimalist visuals.',
+  keywords:
+    'sugar sugar, sugar sugar game, physics puzzle game, draw line puzzle, relaxing puzzle game, creative puzzle challenge',
+  addressBar: 'Sugar-Sugar',
+  logoText: 'Sugar Sugar',
+  image: 'game-55.webp',
+  iframeUrl: 'https://azgames.io/sugar-sugar.embed',
+  // location: 'left',
+  showHeader: false,
+  showNew: true,
+  aboutContent: `
+    <h2>Sugar Sugar: Game Guide & Key Highlights</h2>
+    <p>Sugar Sugar is a relaxing and creative physics-based puzzle game that challenges you to draw lines and guide falling sugar granules into designated cups. This game is both soothing and mentally engaging, making it perfect for puzzle lovers and casual players looking for a relaxing experience.</p>
+
+    <h3>How to Control Sugar Sugar?</h3>
+    <p>Mouse: Click and drag to draw lines that guide the sugar.<br />Right-click: Erase your drawn lines.<br />Spacebar: Reset the level if needed.</p>
+
+    <h3>What is Sugar Sugar?</h3>
+    <p>Sugar Sugar is a minimalist puzzle game focused on guiding particles of sugar into cups by drawing strategic paths. Each level becomes more complex, introducing new obstacles and creative challenges that require careful planning and problem-solving skills.</p>
+
+    <h3>How to Play Sugar Sugar Online?</h3>
+    <h4>Draw Lines to Direct Sugar</h4>
+    <p>The main mechanic of Sugar Sugar is simple: sugar falls from a source at the top of the screen, and your goal is to draw lines that guide it into one or more cups. Use gravity and angles to create efficient paths and prevent sugar from spilling outside.</p>
+
+    <h4>Handle Multiple Cups and Colors</h4>
+    <p>As levels progress, you will encounter cups of different colors that require sugar to be filtered through colored filters before entering the cup. This adds a unique twist, requiring you to create smart pathways for sugar to reach its correct destination.</p>
+
+    <h4>Strategize for Complex Levels</h4>
+    <p>Later levels include obstacles such as moving platforms and inverted gravity, requiring you to think outside the box. Plan your drawings carefully, as a small mistake can prevent sugar from reaching its goal.</p>
+
+    <h4>Experiment and Learn from Mistakes</h4>
+    <p>Sugar Sugar encourages experimentation. If your design doesn’t work the first time, you can erase and redraw without penalty. This keeps the game fun and stress-free while promoting creative problem solving.</p>
+
+    <h3>Tips and Tricks to Win in Sugar Sugar</h3>
+    <h4>Use Gravity to Your Advantage</h4>
+    <p>Always consider how sugar will flow along your drawn lines. Gentle slopes and well-placed curves can make levels much easier to complete.</p>
+
+    <h4>Keep Your Paths Clean</h4>
+    <p>Avoid drawing unnecessary lines that might block sugar flow. Clean and efficient designs often lead to better results.</p>
+
+    <h4>Don’t Be Afraid to Restart</h4>
+    <p>If you make a mistake, use the reset option to start over quickly. Sometimes, the best solution comes from trial and error.</p>
+
+    <h3>Features</h3>
+    <p>Sugar Sugar includes:<br />
+    - Minimalist and relaxing visual style.<br />
+    - Physics-based puzzles with creative solutions.<br />
+    - Increasingly complex levels to keep you challenged.<br />
+    - Easy-to-use controls for drawing and erasing lines.<br />
+    - Unlimited retries for stress-free gameplay.<br />
+    - Play Sugar Sugar unblocked on any device with a browser.</p>
+
+    <h3>Conclusion</h3>
+    <p>Sugar Sugar is a relaxing and highly creative puzzle game that combines simple mechanics with engaging physics challenges. Whether you’re looking to unwind with soothing gameplay or push your problem-solving skills to the limit, Sugar Sugar is the perfect choice. Grab your mouse, start drawing, and watch the sugar flow into perfection!</p>
+  `,
+},
+
+game56: {
+  id: 'geometryLite',
+  title: 'Geometry Lite - Rhythm Platform Challenge',
+  description:
+    'Geometry Lite is a fast-paced rhythm-based platformer where precision and timing are everything. Navigate tricky geometric terrain, dodge spikes, and conquer challenging levels accompanied by dynamic music.',
+  keywords:
+    'geometry lite, rhythm platform game, geometry lite online, cube jumping game, rhythm obstacle challenge, precision platformer',
+  addressBar: 'Geometry-Lite',
+  logoText: 'Geometry Lite',
+  image: 'game-56.webp',
+  iframeUrl: 'https://1games.io/game/geometry-lite/',
+  // location: 'left',
+  showHeader: false,
+  showNew: true,
+  aboutContent: `
+    <h2>Geometry Lite: Rhythm and Precision Platforming</h2>
+    <p><strong>Geometry Lite</strong> takes you into a world of rhythm and precision where one wrong move can end your run. This challenging platformer combines vibrant beats, tricky terrains, and intense obstacle courses. The difficulty ranges from Easy to Demon, but even the starting levels require sharp focus and perfect timing.</p>
+
+    <h3>What is Geometry Lite?</h3>
+    <p>Geometry Lite is a rhythm-based platform game featuring complex geometric worlds filled with spikes, rotating cogs, monstrous obstacles, and transformation portals that change your cube’s shape. Each level’s design synchronizes with its background music, creating a highly immersive experience for players who love precision-based challenges.</p>
+
+    <h3>Unique Gameplay Features</h3>
+    <ul>
+      <li>Choose any level freely without needing to complete them in sequence.</li>
+      <li>Each level has unique background music perfectly synced to cube movements.</li>
+      <li>Two game modes: Practice mode to refine your skills and Main mode to conquer full challenges.</li>
+    </ul>
+
+    <h3>How to Play Geometry Lite?</h3>
+    <p>Navigate your cube through dangerous paths, spikes, and monsters. Timing is key as you jump, fly, and flip through complex terrains while keeping up with the rhythm.</p>
+    
+    <h4>Controls</h4>
+    <p>Use one of these simple controls to jump:<br/>
+    - Left Mouse Button<br/>
+    - Spacebar<br/>
+    - Up Arrow Key</p>
+
+    <h3>Why Play Geometry Lite?</h3>
+    <p>Each level offers a unique rhythm-driven experience that tests your concentration and reaction speed. The transformation portal mechanic adds depth, requiring you to adapt to different cube forms on the fly. Whether you want to train in Practice mode or go all out in Main mode, Geometry Lite keeps you hooked with its addictive gameplay.</p>
+
+    <h3>Features</h3>
+    <p>Geometry Lite includes:<br/>
+    - Vibrant rhythm-based gameplay.<br/>
+    - Multiple difficulty levels, from Easy to Demon.<br/>
+    - Intricate level design with spikes, cogs, and monster obstacles.<br/>
+    - Transformation portals for shape-shifting gameplay.<br/>
+    - Easy one-button controls but high skill requirement.<br/>
+    - Play Geometry Lite unblocked in any browser.</p>
+
+    <h3>Conclusion</h3>
+    <p>Geometry Lite delivers a thrilling experience for fans of rhythm games and hardcore platformers. With music-synced levels and shape-shifting mechanics, it’s a test of both reflexes and patience. Step into the geometric world, embrace the challenge, and see if you have what it takes to beat every level.</p>
+  `,
+},
+
+game57: {
+  id: 'furyChase2',
+  title: 'Fury Chase 2 - Blazing Wheels Return',
+  description:
+    'Fury Chase 2 brings more chaos, weapons, and destruction in a post-apocalyptic driving shooter. Survive high-speed chases, upgrade your ride, and dominate enemy war rigs in this explosive sequel.',
+  keywords:
+    'fury chase 2, driving shooter game, post-apocalyptic car game, vehicle combat game, action racing, car chase destruction',
+  addressBar: 'Fury-Chase-2',
+  logoText: 'Fury Chase 2',
+  image: 'game-57.webp',
+  iframeUrl: 'https://1games.io/game/fury-chase-2/',
+  // location: 'left',
+  showHeader: false,
+  showNew: true,
+  aboutContent: `
+    <h2>Fury Chase 2: Blazing Wheels Return</h2>
+    <p><strong>Fury Chase 2</strong> is back, hotter and meaner than ever before. This explosive sequel thrusts players into a post-apocalyptic wasteland full of hostile scavengers, deadly war rigs, and endless high-speed chaos. Compared to the first game, every element has been upgraded—bigger maps, more weapons, more enemy types, and deeper customization. Buckle up, arm your vehicle, and prepare for a road war like no other.</p>
+
+    <h3>Gameplay Overview</h3>
+    <p>Step into a lawless world where driving means survival and firepower decides who lives another mile. The open roads are littered with traps, oil-thirsty scavengers, and ruthless war machines determined to stop you. Each mission drops you into intense pursuits where quick reflexes and precision shooting are crucial.</p>
+
+    <h4>New Features in Fury Chase 2</h4>
+    <ul>
+      <li>Expanded vehicle arsenal with customizable weapons and boosters.</li>
+      <li>New terrain and maps featuring cliffs, aerial ramps, and high-speed danger zones.</li>
+      <li>Advanced enemy types, including spiked buggies, flamethrower trucks, and heavily armored rigs.</li>
+      <li>Strategic combat mechanics with oil slicks, shockwave rams, and flamethrower bursts.</li>
+    </ul>
+
+    <h3>How to Play Fury Chase 2?</h3>
+    <p>The goal is simple: survive, fight back, and dominate. Collect fuel barrels to upgrade your ride and unlock powerful combat abilities. Choose between fast escapes or aggressive ambushes depending on the situation. Every level increases the intensity with smarter enemies and harsher terrain.</p>
+
+    <h4>Controls</h4>
+    <p>
+      [↑] or [W]: Accelerate<br/>
+      [↓] or [S]: Brake/Reverse<br/>
+      [←] or [A]: Steer Left<br/>
+      [→] or [D]: Steer Right<br/>
+      [Spacebar]: Special Action (weapons/boosters)
+    </p>
+
+    <h3>Tips for Winning the Chase</h3>
+    <ul>
+      <li>Use ramps for vertical escapes or to smash down on enemies from above.</li>
+      <li>Eliminate trucks first—they block paths and deal heavy damage.</li>
+      <li>Constantly strafe left and right to avoid turret lock-ons and focused fire.</li>
+    </ul>
+
+    <h3>Why Play Fury Chase 2?</h3>
+    <p>Fury Chase 2 isn’t just about driving—it’s about surviving a vehicular war. With adrenaline-pumping chases, brutal combat mechanics, and endless upgrade possibilities, this game keeps you on edge every second. Whether you prefer outpacing enemies or blasting them off the road, Fury Chase 2 gives you the freedom to play your way.</p>
+
+    <h3>Features</h3>
+    <p>Fury Chase 2 includes:<br/>
+    - Explosive post-apocalyptic driving combat.<br/>
+    - Deep vehicle upgrade and weapon systems.<br/>
+    - Dynamic maps with aerial ramps and deadly cliffs.<br/>
+    - Diverse enemy vehicles and attack styles.<br/>
+    - Smooth 3D graphics and immersive sound design.<br/>
+    - Play Fury Chase 2 unblocked on any modern browser.</p>
+
+    <h3>Conclusion</h3>
+    <p><strong>Fury Chase 2</strong> delivers non-stop action with its mix of high-speed driving and intense vehicular combat. Jump into your armored ride, hit the accelerator, and embrace the chaos of this wild, post-apocalyptic world. The chase is on—will you survive?</p>
+  `,
+},
+
+game57: {
+  id: 'furyChase2',
+  title: 'Fury Chase 2 - Blazing Wheels Return',
+  description:
+    'Fury Chase 2 brings more chaos, weapons, and destruction in a post-apocalyptic driving shooter. Survive high-speed chases, upgrade your ride, and dominate enemy war rigs in this explosive sequel.',
+  keywords:
+    'fury chase 2, driving shooter game, post-apocalyptic car game, vehicle combat game, action racing, car chase destruction',
+  addressBar: 'Fury-Chase-2',
+  logoText: 'Fury Chase 2',
+  image: 'game-57.webp',
+  iframeUrl: 'https://1games.io/game/fury-chase-2/',
+  // location: 'left',
+  showHeader: false,
+  showNew: true,
+  aboutContent: `
+    <h2>Fury Chase 2: Blazing Wheels Return</h2>
+    <p><strong>Fury Chase 2</strong> is back, hotter and meaner than ever before. This explosive sequel thrusts players into a post-apocalyptic wasteland full of hostile scavengers, deadly war rigs, and endless high-speed chaos. Compared to the first game, every element has been upgraded—bigger maps, more weapons, more enemy types, and deeper customization. Buckle up, arm your vehicle, and prepare for a road war like no other.</p>
+
+    <h3>Gameplay Overview</h3>
+    <p>Step into a lawless world where driving means survival and firepower decides who lives another mile. The open roads are littered with traps, oil-thirsty scavengers, and ruthless war machines determined to stop you. Each mission drops you into intense pursuits where quick reflexes and precision shooting are crucial.</p>
+
+    <h4>New Features in Fury Chase 2</h4>
+    <ul>
+      <li>Expanded vehicle arsenal with customizable weapons and boosters.</li>
+      <li>New terrain and maps featuring cliffs, aerial ramps, and high-speed danger zones.</li>
+      <li>Advanced enemy types, including spiked buggies, flamethrower trucks, and heavily armored rigs.</li>
+      <li>Strategic combat mechanics with oil slicks, shockwave rams, and flamethrower bursts.</li>
+    </ul>
+
+    <h3>How to Play Fury Chase 2?</h3>
+    <p>The goal is simple: survive, fight back, and dominate. Collect fuel barrels to upgrade your ride and unlock powerful combat abilities. Choose between fast escapes or aggressive ambushes depending on the situation. Every level increases the intensity with smarter enemies and harsher terrain.</p>
+
+    <h4>Controls</h4>
+    <p>
+      [↑] or [W]: Accelerate<br/>
+      [↓] or [S]: Brake/Reverse<br/>
+      [←] or [A]: Steer Left<br/>
+      [→] or [D]: Steer Right<br/>
+      [Spacebar]: Special Action (weapons/boosters)
+    </p>
+
+    <h3>Tips for Winning the Chase</h3>
+    <ul>
+      <li>Use ramps for vertical escapes or to smash down on enemies from above.</li>
+      <li>Eliminate trucks first—they block paths and deal heavy damage.</li>
+      <li>Constantly strafe left and right to avoid turret lock-ons and focused fire.</li>
+    </ul>
+
+    <h3>Why Play Fury Chase 2?</h3>
+    <p>Fury Chase 2 isn’t just about driving—it’s about surviving a vehicular war. With adrenaline-pumping chases, brutal combat mechanics, and endless upgrade possibilities, this game keeps you on edge every second. Whether you prefer outpacing enemies or blasting them off the road, Fury Chase 2 gives you the freedom to play your way.</p>
+
+    <h3>Features</h3>
+    <p>Fury Chase 2 includes:<br/>
+    - Explosive post-apocalyptic driving combat.<br/>
+    - Deep vehicle upgrade and weapon systems.<br/>
+    - Dynamic maps with aerial ramps and deadly cliffs.<br/>
+    - Diverse enemy vehicles and attack styles.<br/>
+    - Smooth 3D graphics and immersive sound design.<br/>
+    - Play Fury Chase 2 unblocked on any modern browser.</p>
+
+    <h3>Conclusion</h3>
+    <p><strong>Fury Chase 2</strong> delivers non-stop action with its mix of high-speed driving and intense vehicular combat. Jump into your armored ride, hit the accelerator, and embrace the chaos of this wild, post-apocalyptic world. The chase is on—will you survive?</p>
+  `,
+},
+
+game58: {
+  id: 'ragdollHitStickman',
+  title: 'Ragdoll Hit Stickman - Wild Physics Battle',
+  description:
+    'Ragdoll Hit Stickman is a chaotic action game featuring hilarious ragdoll physics and intense stickman battles. Choose from multiple modes, upgrade your warrior, and unleash wild combat chaos.',
+  keywords:
+    'ragdoll hit stickman, stickman physics game, ragdoll battle game, stickman fighting game, ragdoll chaos, stickman multiplayer',
+  addressBar: 'Ragdoll-Hit-Stickman',
+  logoText: 'Ragdoll Hit Stickman',
+  image: 'game-58.webp',
+  iframeUrl: 'https://1games.io/game/ragdoll-hit-stickman/',
+  // location: 'left',
+  showHeader: false,
+  showNew: true,
+  aboutContent: `
+    <h2>Ragdoll Hit Stickman: Physics-Driven Chaos</h2>
+    <p><strong>Ragdoll Hit Stickman</strong> lets you launch your stickman warrior into fast-paced battles filled with over-the-top ragdoll physics. The harder you hit and the more chaos you cause, the higher your score will be. With hilarious movements, wild physics reactions, and various gameplay modes, every match becomes a unique spectacle of destruction and fun.</p>
+
+    <h3>Game Modes</h3>
+    <p>The game offers three distinct and action-packed modes for endless entertainment:</p>
+    <ul>
+      <li><strong>Single-player Mode:</strong> Face off against advanced AI opponents that get tougher as you progress. Powerful bosses await at higher levels, testing your reflexes and skills.</li>
+      <li><strong>Two-player Mode:</strong> Challenge your friends locally in fierce one-on-one stickman duels. Compete for bragging rights on the same screen.</li>
+      <li><strong>Survival Mode:</strong> Battle against an endless wave of enemies and see how long you can hold out. Survive as long as possible and aim for the highest score.</li>
+    </ul>
+
+    <h3>Customize Your Warrior</h3>
+    <p>In <strong>Ragdoll Hit Stickman</strong>, you can upgrade and customize your warrior. Choose from a variety of weapons and protective gear to enhance your combat abilities. Select the perfect loadout for your playstyle and dominate every battlefield.</p>
+
+    <h3>Diverse Maps</h3>
+    <p>The game features multiple maps, each with unique challenges and designs. Every stage adds new dynamics, forcing you to adapt your tactics to different environments.</p>
+
+    <h3>Controls</h3>
+    <p>
+      <strong>Single-player/Survival Mode:</strong> Use the <kbd>A</kbd> and <kbd>D</kbd> keys to control your stickman.<br/>
+      <strong>Two-player Mode:</strong><br/>
+      Player 1: <kbd>A</kbd> and <kbd>D</kbd><br/>
+      Player 2: Left Arrow and Right Arrow keys
+    </p>
+
+    <h3>Why Play Ragdoll Hit Stickman?</h3>
+    <p><strong>Ragdoll Hit Stickman</strong> combines physics-based hilarity with intense combat gameplay. Whether playing solo, battling friends, or surviving against endless enemies, it delivers a fun and chaotic experience for all players. Its easy-to-learn controls and unpredictable ragdoll physics make it highly replayable and perfect for quick, action-filled sessions.</p>
+
+    <h3>Features</h3>
+    <p>Ragdoll Hit Stickman includes:<br/>
+    - Physics-based ragdoll combat mechanics.<br/>
+    - Three exciting game modes: Single-player, Two-player, and Survival.<br/>
+    - Customizable weapons and armor.<br/>
+    - Unique maps with varied challenges.<br/>
+    - Local multiplayer support for two-player battles.<br/>
+    - Play Ragdoll Hit Stickman unblocked in your browser.</p>
+
+    <h3>Conclusion</h3>
+    <p><strong>Ragdoll Hit Stickman</strong> delivers a hilarious and action-packed experience for fans of ragdoll physics and stickman games. Jump into the chaos, perfect your moves, and become the ultimate stickman warrior. Get ready for wild battles and unforgettable physics-driven moments!</p>
+  `,
+},
+
+game59: {
+  id: 'blockSlide',
+  title: 'Block Slide - Strategic Puzzle Challenge',
+  description:
+    'Block Slide is an engaging puzzle game that tests your spatial reasoning and problem-solving skills. Slide colored blocks to their correct doors, avoid obstacles, and complete hundreds of tricky levels.',
+  keywords:
+    'block slide, block puzzle game, sliding puzzle, color block challenge, block slide online, brain training puzzle',
+  addressBar: 'Block-Slide',
+  logoText: 'Block Slide',
+  image: 'game-59.webp',
+  iframeUrl: 'https://1games.io/game/block-slide/',
+  // location: 'left',
+  showHeader: false,
+  showNew: true,
+  aboutContent: `
+    <h2>Block Slide: Solve Tricky Sliding Puzzles</h2>
+    <p><strong>Block Slide</strong> challenges your mind with colorful and strategic block-sliding puzzles. Your goal is to move each colored block to its corresponding door while overcoming a variety of obstacles. The game gradually increases in difficulty, ensuring a stimulating and satisfying puzzle experience for players of all skill levels.</p>
+
+    <h3>Game Overview</h3>
+    <p>In <strong>Block Slide</strong>, you must plan each move carefully. Sliding blocks seems simple, but obstacles, fixed blocks, and limited moves make every level unique and challenging. The game’s vibrant graphics and smooth animations enhance the overall experience, making it both relaxing and mentally engaging.</p>
+
+    <h3>Key Features</h3>
+    <ul>
+      <li><strong>Eye-catching Visuals:</strong> Smooth, colorful graphics create a lively and engaging atmosphere.</li>
+      <li><strong>Unique Puzzle Mechanics:</strong> Slide colored blocks strategically to clear paths and complete levels.</li>
+      <li><strong>Hundreds of Levels:</strong> Endless variety ensures the challenge never gets old.</li>
+      <li><strong>Dynamic Obstacles:</strong> New mechanics and barriers keep each puzzle fresh and exciting.</li>
+    </ul>
+
+    <h3>How to Play Block Slide?</h3>
+    <p>Your objective is to move each block to the door of the same color. However, there’s a catch: pathways may be blocked, and you must carefully plan the order of moves to avoid getting stuck. Obstacles such as immovable blocks or barriers add extra layers of complexity, and some levels limit the number of moves you can make, requiring smart and efficient strategies.</p>
+
+    <h4>Controls</h4>
+    <p>
+      - Use your mouse to click and hold the block you want to move.<br/>
+      - Drag the block toward the correct colored door.<br/>
+      - Release to complete the move. Avoid blocked paths or obstacles to succeed.
+    </p>
+
+    <h3>Why Play Block Slide?</h3>
+    <p><strong>Block Slide</strong> offers a fresh take on classic sliding block puzzles with modern visuals and innovative mechanics. It is perfect for players who love strategic thinking, spatial reasoning, and brain-teasing challenges. Whether you want to relax or test your problem-solving skills, Block Slide delivers an engaging experience every time.</p>
+
+    <h3>Features</h3>
+    <p>Block Slide includes:<br/>
+    - Hundreds of challenging levels with unique solutions.<br/>
+    - Simple yet intuitive drag-and-drop controls.<br/>
+    - Colorful, smooth animations that make puzzle-solving enjoyable.<br/>
+    - Increasing difficulty to keep players engaged.<br/>
+    - Play Block Slide unblocked in any modern browser.</p>
+
+    <h3>Conclusion</h3>
+    <p><strong>Block Slide</strong> is an addictive puzzle experience that will sharpen your mind and test your problem-solving skills. Move blocks with precision, overcome tricky obstacles, and conquer each level’s unique challenges. If you enjoy clever, visually appealing puzzles, Block Slide is the game for you. Get ready to slide, think, and win!</p>
+  `,
+},
+
+game60: {
+  id: 'colorBlockJam',
+  title: 'Color Block Jam - Slide and Outsmart All Puzzles',
+  description:
+    'Color Block Jam is a colorful and addictive block-sliding puzzle game where you move blocks to their matching doors while avoiding tricky obstacles and tight spaces. Perfect for puzzle lovers!',
+  keywords:
+    'color block jam, block puzzle game, sliding block challenge, colorful puzzle game, brain training block game, block jam online',
+  addressBar: 'Color-Block-Jam',
+  logoText: 'Color Block Jam',
+  image: 'game-60.webp',
+  iframeUrl: 'https://1games.io/game/color-block-jam/',
+  // location: 'left',
+  showHeader: false,
+  showNew: true,
+  aboutContent: `
+    <h2>Color Block Jam: Slide and Outsmart All Puzzles</h2>
+    <p><strong>Color Block Jam</strong> is a colorful brain-teasing puzzle game designed to sharpen your mind and challenge your spatial reasoning skills. Unlike ordinary sliding puzzles, <strong>Color Block Jam</strong> pushes you to think multiple moves ahead, avoid jams, and plan strategically to win each level. Packed with bright visuals and smooth controls, this game is a delightful experience for puzzle lovers of all ages.</p>
+
+    <h3>Gameplay Overview</h3>
+    <p>Your objective is simple yet challenging: move each colored block to its matching door. However, the puzzle board is often packed tight, and you’ll need to shuffle blocks, find smart paths, and avoid obstacles to succeed. As you progress, levels grow increasingly complex and introduce special challenges that will push your logic and timing skills to the limit.</p>
+
+    <h3>Key Features</h3>
+    <ul>
+      <li><strong>Colorful Graphics:</strong> Bright and vibrant visuals make every puzzle feel lively and fun.</li>
+      <li><strong>Hundreds of Levels:</strong> Solve countless unique puzzles with increasing difficulty.</li>
+      <li><strong>Challenging Obstacles:</strong> Fixed blocks and narrow spaces test your creativity and problem-solving skills.</li>
+      <li><strong>Quick, Satisfying Gameplay:</strong> Ideal for short gaming sessions and mental workouts.</li>
+    </ul>
+
+    <h3>How to Play Color Block Jam?</h3>
+    <p>Use your mouse to drag and slide blocks through the puzzle board. Each block must be moved to its corresponding color door while navigating around barriers. Plan your moves carefully because rushing could leave you with no clear path and force you to restart.</p>
+
+    <h4>Controls</h4>
+    <p>
+      - Mouse: Click and drag blocks to slide them.<br/>
+      - Release to drop a block in position.
+    </p>
+
+    <h3>Tips for Success</h3>
+    <ul>
+      <li>Plan your moves before sliding the first block.</li>
+      <li>Clear one color path first to reduce congestion.</li>
+      <li>Use corners and empty spaces strategically to free up movement.</li>
+      <li>Account for fixed blocks early to avoid dead ends.</li>
+      <li>Stay calm and think ahead—speed comes with practice.</li>
+    </ul>
+
+    <h3>Why Play Color Block Jam?</h3>
+    <p><strong>Color Block Jam</strong> is perfect for anyone who enjoys brain-training puzzles and visually pleasing gameplay. With its colorful design, hundreds of levels, and smooth animations, it provides endless fun and mental stimulation. Whether you’re looking for a quick break or a long puzzle-solving session, <strong>Color Block Jam</strong> delivers a satisfying challenge every time.</p>
+
+    <h3>Features</h3>
+    <p>Color Block Jam includes:<br/>
+    - Simple drag-and-drop controls for intuitive gameplay.<br/>
+    - Challenging obstacles and tight spaces for advanced puzzle-solving.<br/>
+    - Hundreds of unique and colorful levels.<br/>
+    - Smooth animations and relaxing yet engaging visuals.<br/>
+    - Play Color Block Jam unblocked in any browser for free.</p>
+
+    <h3>Conclusion</h3>
+    <p><strong>Color Block Jam</strong> is an addictive puzzle game that combines strategic thinking, colorful visuals, and smooth sliding mechanics. Prepare to outsmart every level, perfect your puzzle-solving skills, and enjoy hours of engaging gameplay. Can you handle the jam?</p>
+  `,
 }
-
-
-
-
-
-
 
 
 

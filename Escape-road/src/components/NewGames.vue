@@ -60,7 +60,6 @@ const newGames = computed(() => {
       image: game.image,
       description: game.description
     }))
-    .slice(0, 10)
 })
 
 // 获取图片加载优先级
@@ -170,7 +169,7 @@ const truncateDescription = (description) => {
 /* 网格布局 */
 .new-games-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   gap: 20px;
   padding: 0 10px;
 }
