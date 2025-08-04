@@ -2182,7 +2182,7 @@ game45: {
   logoText: 'Tralalero Tralala Clicker Unlocked',
   image: 'game-45.webp',
   iframeUrl: 'https://1games.io/game/tralalero-tralala-clicker/',
-  showNew: true,
+  showNew: false,
   aboutContent: `
     <h2>Tralalero Tralala Clicker Unlocked – The Funniest Chaos Clicker Game</h2>
     <p>Get ready for the most unpredictable clicker experience in Tralalero Tralala Clicker Unlocked! This is not your ordinary idle game—Tralalero Tralala Clicker Unlocked is pure madness, laughter, and tapping overload. In this game, every click leads to bizarre animations, strange events, and hilarious surprises. With every second you spend in Tralalero Tralala Clicker Unlocked, the game gets weirder and funnier.</p>
@@ -2233,7 +2233,7 @@ game46: {
   logoText: 'Merge Brainrot Unlocked',
   image: 'game-46.webp',
   iframeUrl: 'https://game.azgame.io/merge-brainrot/',
-  showNew: true,
+  showNew: false,
   aboutContent: `
     <h2>Merge Brainrot Unlocked – Welcome to Pure Absurdity</h2>
     <p>If you think you’ve seen it all in merge games, think again. Merge Brainrot Unlocked is a new level of chaos. In Merge Brainrot Unlocked, your task is to merge increasingly brainrotted creatures together and see what kind of hilarious results you get. Every action in Merge Brainrot Unlocked leads to more nonsense, more weird units, and more laugh-out-loud combinations. This is a game for players who love the unexpected.</p>
@@ -3126,7 +3126,107 @@ game60: {
     <h3>Conclusion</h3>
     <p><strong>Color Block Jam</strong> is an addictive puzzle game that combines strategic thinking, colorful visuals, and smooth sliding mechanics. Prepare to outsmart every level, perfect your puzzle-solving skills, and enjoy hours of engaging gameplay. Can you handle the jam?</p>
   `,
+},
+
+game61: {
+  id: 'arcadeVolley',
+  title: 'Arcade Volley - Fast-Paced Volleyball Fun',
+  description:
+    'Arcade Volley is a fast-paced, arcade-style volleyball game where you jump, spike, and outscore opponents in quick matches. Perfect for casual sports fans looking for thrilling summer vibes!',
+  keywords:
+    'arcade volley, volleyball game, fast-paced sports game, beach volleyball, 2D arcade volleyball, quick match volleyball',
+  addressBar: 'Arcade-Volley',
+  logoText: 'Arcade Volley',
+  image: 'game-61.webp',
+  iframeUrl: 'https://game.azgame.io/arcade-volley/',
+  showHeader: false,
+  showNew: true,
+  aboutContent: `
+    <h2>Arcade Volley: Fast-Paced Volleyball Fun</h2>
+    <p><strong>Arcade Volley</strong> delivers quick and thrilling volleyball matches with an arcade twist. Compete in dynamic, fast-paced 2D volleyball battles, perfect for casual players and sports fans looking for a quick gaming session. Jump, spike, and outscore your rivals on a variety of unique courts.</p>
+
+    <h3>Enjoy Quick Volleyball Matches</h3>
+    <p>This isn’t your average volleyball simulator. <strong>Arcade Volley</strong> focuses on fun, quick gameplay rather than complex sports mechanics, making it perfect for quick matches during breaks or extended gaming sessions. Choose from multiple characters, ball skins, and court locations to make each match feel fresh and exciting.</p>
+
+    <h3>How to Play Arcade Volley</h3>
+    <p>Your objective is simple: score points by landing the ball on your opponent’s side. Timing and positioning are crucial. Keep your eyes on the ball and use quick reactions to hit perfect spikes and defensive blocks. Rally until your opponent fails to return the ball—first to the target score wins!</p>
+
+    <h4>Controls</h4>
+    <p>
+      - <strong>A/D:</strong> Move left and right<br/>
+      - <strong>W:</strong> Jump<br/>
+      - <strong>W (in air):</strong> Attack/Spike
+    </p>
+
+    <h3>Key Features</h3>
+    <ul>
+      <li><strong>Fast-Paced Gameplay:</strong> Enjoy short and thrilling matches with easy-to-learn mechanics.</li>
+      <li><strong>Simple Controls:</strong> Focus on timing and positioning without complex commands.</li>
+      <li><strong>Varied Visuals:</strong> Multiple characters, balls, and court designs add variety to every match.</li>
+      <li><strong>Colorful 2D Graphics:</strong> Bright and vibrant visuals that bring the arcade style to life.</li>
+    </ul>
+
+    <h3>Why Play Arcade Volley?</h3>
+    <p><strong>Arcade Volley</strong> is perfect for players who love sports games but want something casual and exciting. With its vibrant art, simple controls, and addictive quick matches, it’s easy to jump in and play anytime. Compete against friends or AI opponents, refine your skills, and dominate the court!</p>
+
+    <h3>Conclusion</h3>
+    <p><strong>Arcade Volley</strong> combines the fun of volleyball with fast-paced arcade action. Whether you’re looking for a quick session or want to master the timing of perfect spikes, this game has something for everyone. Jump in, warm up, and take your best shot at volleyball glory!</p>
+  `,
+},
+
+game62: {
+  id: 'billiardsMaster',
+  title: 'Billiards Master - Realistic Pool Game Experience',
+  description:
+    'Billiards Master offers a realistic pool experience with multiple modes including 8-ball, 9-ball, UK 8-ball, Snooker, Time Trial, Matrix Mode, and Practice Mode. Perfect for pool lovers!',
+  keywords:
+    'billiards master, pool game, 8-ball, 9-ball, snooker, online billiards, realistic pool simulator, 3D pool game',
+  addressBar: 'Billiards-Master',
+  logoText: 'Billiards Master',
+  image: 'game-62.webp',
+  iframeUrl: 'https://1games.io/game/billiards-master/',
+  showHeader: false,
+  showNew: true,
+  aboutContent: `
+    <h2>Billiards Master: An Addictive, Top-Notch Pool Game</h2>
+    <p><strong>Billiards Master</strong> is one of the most realistic and enjoyable pool games available on PC and browser. Whether you want to challenge your friends locally, compete online, or simply relax and play solo, <strong>Billiards Master</strong> offers everything a pool enthusiast needs. With multiple game modes including 8-ball, 9-ball, UK 8-ball, Snooker, Time Trial, Matrix Mode, and Practice Mode, you’ll never run out of challenges.</p>
+
+    <h3>Skill-Based Gameplay</h3>
+    <p>Customize your pool table by selecting colors and cloth patterns that suit your style. <strong>Billiards Master</strong> emphasizes precision and timing, offering a realistic cue ball experience. Play different modes to test your abilities:</p>
+    <ul>
+      <li><strong>Time Trial:</strong> You have 4 minutes to pocket as many balls as possible. Consecutive pocketing boosts your multiplier and score.</li>
+      <li><strong>Matrix Mode:</strong> Pocketing balls changes your score multiplier based on ball sequence. Higher numbers mean big points, while mistakes can cost you dearly.</li>
+      <li><strong>Practice Mode:</strong> A no-pressure way to relax and improve your skills without any rule constraints.</li>
+    </ul>
+
+    <h3>Realistic Physics & Graphics</h3>
+    <p>The realistic graphics and camera angles in <strong>Billiards Master</strong> make it feel like you’re playing on a real table. Learn how to control spin and English for advanced shots, just like on an actual pool table.</p>
+
+    <h3>How to Play Billiards Master</h3>
+    <p>
+      - Hold and drag the mouse to set the cue ball position for curve shots.<br/>
+      - Use the left mouse button to adjust hit power.<br/>
+      - Click on the ball icon to start your turn.
+    </p>
+
+    <h3>Game Features</h3>
+    <ul>
+      <li>Multiple game types: 8-ball, 9-ball, UK 8-ball, and Snooker.</li>
+      <li>Single-player and Pass & Play multiplayer modes.</li>
+      <li>Spin/English control for advanced players.</li>
+      <li>Play against AI opponents with varying difficulty.</li>
+      <li>Realistic physics and stunning 3D visuals.</li>
+    </ul>
+
+    <h3>Why Play Billiards Master?</h3>
+    <p><strong>Billiards Master</strong> is more than just a game—it’s a complete pool experience. From casual relaxing matches to skill-focused training sessions, there’s something for everyone. Whether you’re a beginner wanting to learn the basics or a seasoned player perfecting tricky shots, <strong>Billiards Master</strong> delivers a rewarding experience every time.</p>
+
+    <h3>Conclusion</h3>
+    <p>Join <strong>Billiards Master</strong> today and dive into an addictive pool journey packed with fun, challenge, and stunning visuals. Pocket balls, rack up high scores, and prove yourself as the ultimate pool champion!</p>
+  `,
 }
+
+
 
 
 
