@@ -3230,7 +3230,7 @@ game63: {
     addressBar: 'Vex-3',
     logoText: 'Vex 3',
     image: 'game-63.webp',
-    iframeUrl: 'https://azgames.io/vex-3.embed',
+    iframeUrl: '//html5.gamedistribution.com/rvvASMiM/762c932b4db74c6da0c1d101b2da8be6/index.html?gd_zone_config=eyJwYXJlbnRVUkwiOiJodHRwczovL2F6Z2FtZXMuaW8vIiwicGFyZW50RG9tYWluIjoiYXpnYW1lcy5pbyIsInRvcERvbWFpbiI6ImF6Z2FtZXMuaW8iLCJoYXNJbXByZXNzaW9uIjp0cnVlLCJsb2FkZXJFbmFibGVkIjp0cnVlLCJob3N0IjoiaHRtbDUuZ2FtZWRpc3RyaWJ1dGlvbi5jb20iLCJ2ZXJzaW9uIjoiMS41LjE3In0%253D',
     showHeader: false,
     showNew: true,
     aboutContent: `
