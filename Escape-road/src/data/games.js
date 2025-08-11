@@ -1960,7 +1960,6 @@ export const games = {
   logoText: 'Wacky Nursery Unlocked',
   image: 'game-41.webp',
   iframeUrl: 'https://game.azgame.io/wacky-nursery/',
-  // showNew: true,
   aboutContent: `
     <h2>Wacky Nursery Unlocked – A Hilariously Chaotic Babysitting Game</h2>
     <p>Welcome to the wildest daycare on the internet! <strong>Wacky Nursery Unlocked</strong> throws you into the shoes of a rookie babysitter, managing the most chaotic group of babies you've ever encountered. From flying food to explosive diapers and babies crawling into air vents, <strong>Wacky Nursery Unlocked</strong> is no ordinary babysitting game—it's a hilarious challenge of reflexes, patience, and absurdity.</p>
@@ -2022,7 +2021,6 @@ game42: {
   logoText: 'Necro Clicker Unlocked',
   image: 'game-42.webp',
   iframeUrl: 'https://st.8games.net/7/igra-kliker-mertvetsov/',
-  // showNew: true,
   aboutContent: `
     <h2>Necro Clicker Unlocked – Raise the Undead with Every Click</h2>
     <p><strong>Necro Clicker Unlocked</strong> is a sinister yet strangely satisfying idle clicker game where you take on the role of a rising necromancer. Your mission: build a growing army of undead minions—starting from a single skeleton, all the way to an unstoppable army of horror.</p>
@@ -2088,7 +2086,6 @@ game43: {
   logoText: 'Noob Basketball Clicker Unlocked',
   image: 'game-43.webp',
   iframeUrl: 'https://st1.8games.net/7/igra-basketbolnyj-kliker-nubika/',
-  // showNew: true,
   aboutContent: `
     <h2>Noob Basketball Clicker Unlocked – Tap Your Way to Victory!</h2>
     <p>Noob Basketball Clicker Unlocked is the ultimate idle basketball tapper for fans of silly fun and fast-clicking action. In Noob Basketball Clicker Unlocked, you're in control of Noob as he aims to become a basketball superstar—one click at a time. With every tap, Noob launches a shot, and each successful basket earns you points and rewards in Noob Basketball Clicker Unlocked.</p>
@@ -2131,7 +2128,6 @@ game44: {
   logoText: 'Red Rush Unlocked',
   image: 'game-44.webp',
   iframeUrl: 'https://game.azgame.io/red-rush/',
-  // showNew: true,
   aboutContent: `
     <h2>Red Rush Unlocked – Speed, Reflexes, and Chaos Await!</h2>
     <p>Red Rush Unlocked is not just another casual game—it's an intense test of your reflexes and timing. In Red Rush Unlocked, you’ll be thrown into a high-pressure environment where danger is always one step behind. With vibrant visuals and pulse-pounding gameplay, Red Rush Unlocked keeps your heart racing and your fingers tapping. Whether you're dodging deadly traps or making perfect leaps, Red Rush Unlocked demands focus and lightning-fast reactions.</p>
@@ -2282,7 +2278,6 @@ game47: {
   logoText: 'Tung Sahur Clicker Unlocked',
   image: 'game-47.webp',
   iframeUrl: 'https://game.azgame.io/tung-sahur-clicker/',
-  showNew: true,
   aboutContent: `
     <h2>Tung Sahur Clicker Unlocked – Wake the Neighborhood!</h2>
     <p>Welcome to Tung Sahur Clicker Unlocked, a game unlike any other. In Tung Sahur Clicker Unlocked, your job is to wake people up for sahur — but forget subtlety. This is chaos. This is volume. This is pure clicking madness. In Tung Sahur Clicker Unlocked, every click you make rings louder, hits harder, and spreads the sahur spirit through the entire city block.</p>
@@ -2331,7 +2326,6 @@ game48: {
   logoText: 'Italian Brainrot Obby Parkour Unlocked',
   image: 'game-48.webp',
   iframeUrl: 'https://st.8games.net/7/8g/igra-italyanskij-brejnrot-obbi-parkur/',
-  showNew: true,
   aboutContent: `
     <h2>Italian Brainrot Obby Parkour Unlocked – Meme-Fueled Obby Chaos</h2>
     <p>Welcome to Italian Brainrot Obby Parkour Unlocked, the wildest meme obby game you’ll ever play. In Italian Brainrot Obby Parkour Unlocked, your brain cells will be challenged (and possibly fried) as you try to parkour your way across platforms filled with chaotic energy, Italian flags, meme faces, and utterly nonsensical level design.</p>
@@ -3224,7 +3218,100 @@ game62: {
     <h3>Conclusion</h3>
     <p>Join <strong>Billiards Master</strong> today and dive into an addictive pool journey packed with fun, challenge, and stunning visuals. Pocket balls, rack up high scores, and prove yourself as the ultimate pool champion!</p>
   `,
-}
+},
+
+game63: {
+    id: 'vex3',
+    title: 'Vex 3 - Fast-Paced Stickman Platformer',
+    description:
+      'Vex 3 is a challenging 2D platformer where you guide a stickman through treacherous levels filled with deadly traps. Test your skills and reflexes in this fast-paced game!',
+    keywords:
+      'vex 3, vex game, stickman platformer, 2D platformer, challenging game, obstacle course, action game, skill-based game',
+    addressBar: 'Vex-3',
+    logoText: 'Vex 3',
+    image: 'game-63.webp',
+    iframeUrl: 'https://azgames.io/vex-3.embed',
+    showHeader: false,
+    showNew: true,
+    aboutContent: `
+      <h2>Vex 3: The Ultimate Stickman Challenge</h2>
+      <p><strong>Vex 3</strong> is the exhilarating third installment of the popular Vex series, a platformer that will push your agility and patience to the limit. As a stickman, you must navigate through a series of "Acts," each one a treacherous labyrinth filled with deadly traps, from sharp spikes and spinning saw blades to crushing blocks. Your goal is to run, jump, climb, and slide your way to the end of each level without getting Vex-ed!</p>
+  
+      <h3>Master the Obstacle Course</h3>
+      <p>The game features 10 main Acts and 9 additional Challenge Acts, each one more difficult than the last. With increasingly complex layouts and more dangerous traps, you’ll need quick reflexes and precise movements to survive. As you progress, you'll encounter new hazards that will keep you on your toes.</p>
+  
+      <h3>Essential Gameplay Tips</h3>
+      <p>
+        - Use the arrow keys or WASD to move your stickman.<br/>
+        - Hold down while running to perform a slide, which is useful for tight spots.<br/>
+        - Repeatedly jump to climb walls and reach higher platforms.
+      </p>
+  
+      <h3>How to Survive and Thrive</h3>
+      <ul>
+        <li><strong>Reach Checkpoints:</strong> Look for the red flags scattered throughout each level. Touching them turns them green and creates a save point. If you fail, you'll respawn at the last checkpoint, saving you from restarting the entire Act.</li>
+        <li><strong>Complete the Acts:</strong> The ultimate goal is to find the green portal at the end of each Act. Entering it will unlock the next level and its new set of challenges.</li>
+        <li><strong>Collect Trophies:</strong> For those who love a challenge, you can earn trophies by completing an Act without dying or by collecting all the hidden stars. Each Act also has Bronze, Silver, and Gold time limits—can you beat them all?</li>
+      </ul>
+  
+      <h3>Game Features</h3>
+      <ul>
+        <li>Fast-paced and challenging gameplay.</li>
+        <li>10 regular acts and 9 intense challenge acts.</li>
+        <li>A wide variety of deadly traps and obstacles.</li>
+        <li>Strategic checkpoints for progress saving.</li>
+        <li>Achievements and trophies for skilled players.</li>
+      </ul>
+  
+      <h3>Why Play Vex 3?</h3>
+      <p>If you're a fan of platformers that demand skill, precision, and quick thinking, <strong>Vex 3</strong> is the game for you. It's not just about reaching the end—it's about the journey and the satisfying feeling of overcoming each brutal challenge. Are you ready to prove your skills and become a Vex master?</p>
+     
+      <h3>Conclusion</h3>
+      <p>Step into the world of <strong>Vex 3</strong> and get ready for a fast-paced, addictive, and incredibly rewarding platforming adventure. Navigate the deadly courses, beat the clock, and show everyone that you have what it takes to survive!</p>
+    `,
+  },
+
+  game64: {
+      id: 'icydash',
+      title: 'Icy Dash - Snowboard Racing Adventure',
+      description:
+        'Icy Dash is a fast-paced arcade racing game where you snowboard down treacherous mountain tracks. Compete against others, perform stunts, and unlock upgrades to become the ultimate winter champion!',
+      keywords:
+        'icy dash, snowboard game, racing game, arcade racer, winter sports, extreme sports, stickman game, multiplayer racing',
+      addressBar: 'Icy-Dash',
+      logoText: 'Icy Dash',
+      image: 'game-64.webp',
+      iframeUrl: 'https://1games.io/game/icy-dash/',
+      showHeader: false,
+      showNew: true,
+      aboutContent: `
+        <h2>Icy Dash: A Chilling Racing Challenge</h2>
+        <p><strong>Icy Dash</strong> is a high-octane arcade racing game that throws you into a thrilling mountain adventure. Strap on your snowboard and get ready to carve your way down challenging, snow-packed tracks. You'll compete against skilled players from all over the world, pushing your limits with speed, precision, and jaw-dropping freestyle tricks. The goal is simple: stay on top of the leaderboard and claim your spot as the ultimate winter champion!</p>
+    
+        <h3>Gameplay: Fast-Paced Fun on the Slopes</h3>
+        <p>The snow-covered racetracks of <strong>Icy Dash</strong> are full of unpredictable turns and steep descents. As a stickman snowboarder, you must maintain your position at the front of the pack while dodging treacherous obstacles like pipe trees, snow blocks, and rolling snowballs. Your survival depends on making quick, strategic decisions. Collecting coins scattered along the tracks is key, as they allow you to unlock exciting upgrades and new gear to outsmart your rivals.</p>
+    
+        <h3>Features That Keep You Hooked</h3>
+        <ul>
+          <li><strong>Dynamic Levels:</strong> Experience fresh layouts and complex tracks with new challenges as you progress.</li>
+          <li><strong>Multiplayer Competition:</strong> Challenge real players and climb the leaderboards to prove your dominance.</li>
+          <li><strong>Upgrades and Boosters:</strong> Use coins to enhance your abilities, and grab boosters for temporary speed advantages or better coin collection.</li>
+          <li><strong>Freestyle Tricks:</strong> Perform stylish stunts not just for flair, but to gain tactical advantages and navigate obstacles with precision.</li>
+        </ul>
+    
+        <h3>Master Your Controls</h3>
+        <p>
+          - Use the <strong>Arrow keys</strong> or <strong>WASD</strong> to move and navigate your snowboarder.<br/>
+          - <strong>Hold down the key</strong> to perform flips and tricks in the air.
+        </p>
+    
+        <h3>Why You'll Love Icy Dash</h3>
+        <p><strong>Icy Dash</strong> delivers a constant rush of adrenaline with its fierce competition and ever-changing winter backdrops. The game combines the thrill of racing with the challenge of a survival obstacle course. Whether you're a casual gamer or a competitive racer, the combination of skill-based gameplay and strategic upgrades ensures a rewarding experience. Conquer the icy chaos and race your way to the summit!</p>
+    
+        <h3>Conclusion</h3>
+        <p>Grab your gear and get ready for an epic ride. <strong>Icy Dash</strong> is more than just a racing game—it's a test of skill, a race against rivals, and a wild ride through a frozen wonderland. Can you handle the speed and become the master of the slopes?</p>
+      `,
+    }
 
 
 
