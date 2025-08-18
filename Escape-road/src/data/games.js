@@ -2374,7 +2374,7 @@ game49: {
   logoText: 'Monster Tracks Unlocked',
   image: 'game-49.webp',
   iframeUrl: 'https://monstertracks.github.io/file/ ',
-  showNew: true,
+  showNew: false,
   aboutContent: `
     <h2>Monster Tracks Unlocked – Master the Madness of Balance and Speed</h2>
     <p>Monster Tracks Unlocked is a physics-based monster truck balancing game that puts your driving skills to the ultimate test. In Monster Tracks Unlocked, every slope, every bump, and every downhill descent is a new kind of danger. Drive massive monster trucks across tightrope-thin tracks, avoid tipping over, and maintain your momentum to survive.</p>
@@ -2421,7 +2421,7 @@ game50: {
   logoText: 'Tung Sahur Horror Unlocked',
   image: 'game-50.webp',
   iframeUrl: 'https://game.azgame.io/tung-sahur-horror/',
-  showNew: true,
+  showNew: false,
   aboutContent: `
     <h2>Tung Sahur Horror Unlocked – Survive the Pre-Dawn Terror</h2>
     <p>Prepare to face your worst fears in <strong>Tung Sahur Horror Unlocked</strong>, a nightmarish horror survival game that unfolds during the early hours of sahur. In Tung Sahur Horror Unlocked, you're trapped in a haunted village crawling with ghostly creatures and terrifying sounds. Your mission is to escape before dawn while solving puzzles, avoiding monsters, and uncovering dark secrets hidden in the shadows.</p>
@@ -3311,7 +3311,107 @@ game63: {
         <h3>Conclusion</h3>
         <p>Grab your gear and get ready for an epic ride. <strong>Icy Dash</strong> is more than just a racing game—it's a test of skill, a race against rivals, and a wild ride through a frozen wonderland. Can you handle the speed and become the master of the slopes?</p>
       `,
+    },
+
+    game65: { 
+      id: 'trimerge',
+      title: 'TriMerge - Number Puzzle Challenge',
+      description:
+        'TriMerge is a clever number-merging puzzle game where you slide tiles across a grid to combine numbers and form larger multiples of 3. Start with simple merges like 1 + 2 = 3 and keep going until you reach the biggest numbers possible!',
+      keywords:
+        'trimerge, puzzle game, number merge, sliding puzzle, 2048 alternative, brain game, math puzzle, strategy game',
+      addressBar: 'TriMerge',
+      logoText: 'TriMerge',
+      image: 'game-65.webp',
+      iframeUrl: 'https://game.azgame.io/trimerge/',
+      showHeader: false,
+      showNew: true,
+      aboutContent: `
+        <h2>About TriMerge</h2>
+        <p>TriMerge is a number-based puzzle game that challenges your logic and planning skills. Slide tiles on a 4x4 grid to merge numbers and create bigger values. It starts simple with <strong>1 + 2 = 3</strong>, but soon the challenge grows as you try to chain together merges of larger multiples of 3.</p>
+        
+        <h2>TriMerge: Rules and Objectives</h2>
+        <ul>
+          <li>1 will only combine with 2.</li>
+          <li>2 will only combine with 1.</li>
+          <li>From 3 onward, only identical multiples of 3 can merge.</li>
+          <li>Every move spawns a new tile on the board.</li>
+          <li>The game ends when there are no more possible moves.</li>
+        </ul>
+        <p>Your main objective is simple: keep merging to reach the highest numbers possible! Think carefully about each slide to prevent the board from filling up too quickly.</p>
+        
+        <h2>How to Play TriMerge</h2>
+        <p>You’ll begin with a grid containing 1s, 2s, and 3s. Use the arrow keys on PC or swipe on mobile to slide all tiles in one direction. When two tiles that can merge collide, they combine into a new number. For example:</p>
+        <ul>
+          <li>1 + 2 = 3</li>
+          <li>3 + 3 = 6</li>
+          <li>6 + 6 = 12</li>
+          <li>12 + 12 = 24</li>
+          <li>And so on…</li>
+        </ul>
+        <p>The challenge is balancing space management with strategic planning. Look ahead, anticipate where new tiles will appear, and set up combos that let you merge multiple pairs in one move.</p>
+        
+        <h2>Tips for Success</h2>
+        <p>
+          <strong>Plan Ahead:</strong> Don’t just slide randomly. Every move matters.<br>
+          <strong>Keep Your Grid Open:</strong> Try to leave room for new tiles to spawn.<br>
+          <strong>Think Multiples:</strong> The higher your multiples of 3, the higher your score.<br>
+        </p>
+        
+        <p>Keep merging until you’re stuck, and see how high you can climb on the number ladder. Can you reach 192, 384, or even higher? Test your skills now in TriMerge!</p>
+      `,
+    },
+
+    game66: { 
+      id: 'curve-rush-2',
+      title: 'Curve Rush 2 - Momentum Rolling Adventure',
+      description:
+        'Curve Rush 2 is the exciting sequel to the original Curve Rush, featuring momentum-based rolling ball gameplay with new environments, obstacles, and unique balls. Master slopes, keep your rhythm, and push your score higher than ever!',
+      keywords:
+        'curve rush 2, curve rush game, rolling ball, hill racing, momentum game, arcade game, endless runner, ball racing game',
+      addressBar: 'Curve-Rush-2',
+      logoText: 'Curve Rush 2',
+      image: 'game-66.webp',
+      iframeUrl: 'https://game.azgame.io/curve-rush-2/',
+      showHeader: false,
+      showNew: true,
+      aboutContent: `
+        <h2>About Curve Rush 2</h2>
+        <p><strong>Curve Rush 2</strong> is the long-awaited sequel to the original Curve Rush. It still keeps the addictive formula of timing, rhythm, and momentum, as you guide a rolling ball across endless sandy slopes and new environments. With enhanced visuals and fresh gameplay elements, this sequel delivers an even more thrilling experience for fans of speed and flow-based games.</p>
+        
+        <h2>What’s New in Curve Rush 2?</h2>
+        <p>At its core, the game still focuses on mastering slopes, maintaining smooth momentum, and scoring points through distance and airtime. However, Curve Rush 2 introduces exciting new features that bring more variety and challenge to each run:</p>
+        <ul>
+          <li><strong>Dynamic background and environment transitions</strong> that keep every run visually engaging.</li>
+          <li><strong>New obstacles</strong> added across maps, demanding sharper reactions and better precision.</li>
+          <li><strong>Diverse ball categories</strong>, including legendary ones with special abilities.</li>
+          <li>Two brand-new balls: the <em>Dragoball</em> and a snow-themed ball with icy effects.</li>
+        </ul>
+        
+        <h2>How to Play Curve Rush 2</h2>
+        <p>The controls are simple, but mastering momentum is the key:</p>
+        <ul>
+          <li>Press and hold to push your ball down slopes and build speed.</li>
+          <li>Release at the right moment to soar into the air and gain bonus points for height.</li>
+          <li>Keep your rhythm steady to cover more distance and maximize your score.</li>
+          <li>Avoid obstacles and aim for smooth landings to keep your flow uninterrupted.</li>
+        </ul>
+        
+        <h2>Gameplay Objectives</h2>
+        <p>Your main objective is to survive as long as possible while achieving the highest score. Distance traveled and airtime bonuses both contribute to your final points. The faster and smoother your momentum, the better your performance.</p>
+        
+        <h2>Tips for Success</h2>
+        <p>
+          <strong>Timing is Everything:</strong> Tap and release at the right moments to control your momentum.<br>
+          <strong>Look Ahead:</strong> Anticipate slopes and obstacles to maintain speed.<br>
+          <strong>Experiment with Balls:</strong> Try different categories of balls to discover unique effects and abilities.<br>
+        </p>
+        
+        <p>With its combination of familiar mechanics and exciting new features, <strong>Curve Rush 2</strong> offers both returning players and newcomers a fun, fast-paced arcade challenge. Jump in and see how far you can roll!</p>
+      `,
     }
+    
+    
 
 
 
