@@ -1379,7 +1379,7 @@ export const games = {
       <p>If Wing Smash got you hooked, check out Curve Rush, Wacky Flip, or Stickman Hook for even more lightning-fast fun!</p>
     `,
   },
-  
+
 
   game28: {
     id: 'game28',
@@ -1866,7 +1866,7 @@ export const games = {
       <p>Want more action? Try <a href="/Golf-Hit">Golf Hit</a>, <a href="/Curve-Rush">Curve Rush</a>, or <a href="/Temple-Run-2">Temple Run 2</a> for more thrilling gameplay!</p>
     `,
   },
-  
+
   game39: {
     id: 'game39',
     title: 'Titans Clicker - titans clicker unblocked - idle titan fight game',
@@ -1950,17 +1950,17 @@ export const games = {
   },
 
   game41: {
-  id: 'game41',
-  title: 'Wacky Nursery Unlocked - Play Online - Crazy Baby Game',
-  description:
-    'Play Wacky Nursery Unlocked, a chaotic and hilarious baby-sitting simulation game! Survive the madness of caring for wild babies and keep your sanity in check!',
-  keywords:
-    'wacky nursery unlocked, baby simulation game, funny baby game, chaos nursery, babysitting game, play wacky nursery, online baby care game',
-  addressBar: 'wacky-nursery',
-  logoText: 'Wacky Nursery Unlocked',
-  image: 'game-41.webp',
-  iframeUrl: 'https://game.azgame.io/wacky-nursery/',
-  aboutContent: `
+    id: 'game41',
+    title: 'Wacky Nursery Unlocked - Play Online - Crazy Baby Game',
+    description:
+      'Play Wacky Nursery Unlocked, a chaotic and hilarious baby-sitting simulation game! Survive the madness of caring for wild babies and keep your sanity in check!',
+    keywords:
+      'wacky nursery unlocked, baby simulation game, funny baby game, chaos nursery, babysitting game, play wacky nursery, online baby care game',
+    addressBar: 'wacky-nursery',
+    logoText: 'Wacky Nursery Unlocked',
+    image: 'game-41.webp',
+    iframeUrl: 'https://game.azgame.io/wacky-nursery/',
+    aboutContent: `
     <h2>Wacky Nursery Unlocked – A Hilariously Chaotic Babysitting Game</h2>
     <p>Welcome to the wildest daycare on the internet! <strong>Wacky Nursery Unlocked</strong> throws you into the shoes of a rookie babysitter, managing the most chaotic group of babies you've ever encountered. From flying food to explosive diapers and babies crawling into air vents, <strong>Wacky Nursery Unlocked</strong> is no ordinary babysitting game—it's a hilarious challenge of reflexes, patience, and absurdity.</p>
     
@@ -2008,20 +2008,20 @@ export const games = {
 
     <h2>More Wacky Fun? Try These!</h2>
   `,
-},
+  },
 
-game42: {
-  id: 'game42',
-  title: 'Necro Clicker Unlocked - Play Online - Summon the Undead!',
-  description:
-    'Necro Clicker Unlocked is a dark and addictive clicker game where you raise the undead and build your necromancer army. Summon skeletons, upgrade your powers, and conquer the living!',
-  keywords:
-    'necro clicker unlocked, necro clicker game, idle undead clicker, necromancer simulator, summon skeletons game, play necro clicker online',
-  addressBar: 'necro-clicker',
-  logoText: 'Necro Clicker Unlocked',
-  image: 'game-42.webp',
-  iframeUrl: 'https://st.8games.net/7/igra-kliker-mertvetsov/',
-  aboutContent: `
+  game42: {
+    id: 'game42',
+    title: 'Necro Clicker Unlocked - Play Online - Summon the Undead!',
+    description:
+      'Necro Clicker Unlocked is a dark and addictive clicker game where you raise the undead and build your necromancer army. Summon skeletons, upgrade your powers, and conquer the living!',
+    keywords:
+      'necro clicker unlocked, necro clicker game, idle undead clicker, necromancer simulator, summon skeletons game, play necro clicker online',
+    addressBar: 'necro-clicker',
+    logoText: 'Necro Clicker Unlocked',
+    image: 'game-42.webp',
+    iframeUrl: 'https://st.8games.net/7/igra-kliker-mertvetsov/',
+    aboutContent: `
     <h2>Necro Clicker Unlocked – Raise the Undead with Every Click</h2>
     <p><strong>Necro Clicker Unlocked</strong> is a sinister yet strangely satisfying idle clicker game where you take on the role of a rising necromancer. Your mission: build a growing army of undead minions—starting from a single skeleton, all the way to an unstoppable army of horror.</p>
 
@@ -2073,20 +2073,20 @@ game42: {
       <a href="https://escape-road-online.com/tung-sahur-horror">Tung Sahur Horror Unlocked</a>
     </p>
   `,
-},
+  },
 
-game43: {
-  id: 'game43',
-  title: 'Noob Basketball Clicker Unlocked - Play Noob Basketball Clicker Online Now!',
-  description:
-    'Noob Basketball Clicker Unlocked is a fun and fast-paced clicker game where you help Noob score baskets by tapping rapidly. Upgrade, earn, and become the ultimate basketball legend!',
-  keywords:
-    'noob basketball clicker unlocked, noob basketball clicker, play noob basketball clicker, clicker basketball game, noob basketball clicker online',
-  addressBar: 'noob-basketball-clicker',
-  logoText: 'Noob Basketball Clicker Unlocked',
-  image: 'game-43.webp',
-  iframeUrl: 'https://st1.8games.net/7/igra-basketbolnyj-kliker-nubika/',
-  aboutContent: `
+  game43: {
+    id: 'game43',
+    title: 'Noob Basketball Clicker Unlocked - Play Noob Basketball Clicker Online Now!',
+    description:
+      'Noob Basketball Clicker Unlocked is a fun and fast-paced clicker game where you help Noob score baskets by tapping rapidly. Upgrade, earn, and become the ultimate basketball legend!',
+    keywords:
+      'noob basketball clicker unlocked, noob basketball clicker, play noob basketball clicker, clicker basketball game, noob basketball clicker online',
+    addressBar: 'noob-basketball-clicker',
+    logoText: 'Noob Basketball Clicker Unlocked',
+    image: 'game-43.webp',
+    iframeUrl: 'https://st1.8games.net/7/igra-basketbolnyj-kliker-nubika/',
+    aboutContent: `
     <h2>Noob Basketball Clicker Unlocked – Tap Your Way to Victory!</h2>
     <p>Noob Basketball Clicker Unlocked is the ultimate idle basketball tapper for fans of silly fun and fast-clicking action. In Noob Basketball Clicker Unlocked, you're in control of Noob as he aims to become a basketball superstar—one click at a time. With every tap, Noob launches a shot, and each successful basket earns you points and rewards in Noob Basketball Clicker Unlocked.</p>
 
@@ -2115,20 +2115,20 @@ game43: {
     <h3>Conclusion</h3>
     <p>Noob Basketball Clicker Unlocked is a goofy, addictive game that combines the joy of basketball with classic idle clicker mechanics. Whether you play for five minutes or five hours, Noob Basketball Clicker Unlocked delivers quick laughs, steady progress, and satisfying upgrades. Ready to help Noob become a basketball legend? Dive into Noob Basketball Clicker Unlocked and tap your way to greatness!</p>
   `,
-},
+  },
 
-game44: {
-  id: 'game44',
-  title: 'Red Rush Unlocked - Play Red Rush Online Free',
-  description:
-    'Red Rush Unlocked is a fast-paced reflex and timing game where you must react instantly to survive. In Red Rush Unlocked, dodge, dash, and survive wave after wave of chaotic challenges.',
-  keywords:
-    'red rush unlocked, play red rush unlocked, red rush game, red rush online, red rush timing game',
-  addressBar: 'red-rush',
-  logoText: 'Red Rush Unlocked',
-  image: 'game-44.webp',
-  iframeUrl: 'https://game.azgame.io/red-rush/',
-  aboutContent: `
+  game44: {
+    id: 'game44',
+    title: 'Red Rush Unlocked - Play Red Rush Online Free',
+    description:
+      'Red Rush Unlocked is a fast-paced reflex and timing game where you must react instantly to survive. In Red Rush Unlocked, dodge, dash, and survive wave after wave of chaotic challenges.',
+    keywords:
+      'red rush unlocked, play red rush unlocked, red rush game, red rush online, red rush timing game',
+    addressBar: 'red-rush',
+    logoText: 'Red Rush Unlocked',
+    image: 'game-44.webp',
+    iframeUrl: 'https://game.azgame.io/red-rush/',
+    aboutContent: `
     <h2>Red Rush Unlocked – Speed, Reflexes, and Chaos Await!</h2>
     <p>Red Rush Unlocked is not just another casual game—it's an intense test of your reflexes and timing. In Red Rush Unlocked, you’ll be thrown into a high-pressure environment where danger is always one step behind. With vibrant visuals and pulse-pounding gameplay, Red Rush Unlocked keeps your heart racing and your fingers tapping. Whether you're dodging deadly traps or making perfect leaps, Red Rush Unlocked demands focus and lightning-fast reactions.</p>
 
@@ -2165,21 +2165,21 @@ game44: {
     <h3>Conclusion</h3>
     <p>Red Rush Unlocked offers a unique blend of speed, danger, and arcade-style fun. It’s fast, it’s intense, and it never lets up. Whether you have 5 minutes or 5 hours, Red Rush Unlocked delivers an adrenaline-packed experience. Jump into Red Rush Unlocked now, challenge your reflexes, and see how long you can survive the chaos. Red Rush Unlocked is not just a game—it’s a rush!</p>
   `,
-},
+  },
 
-game45: {
-  id: 'game45',
-  title: 'Tralalero Tralala Clicker Unlocked - Play Now Online',
-  description:
-    'Tralalero Tralala Clicker Unlocked is a bizarre and hilarious clicker game. Tap nonstop to generate chaos and unlock weird surprises in Tralalero Tralala Clicker Unlocked.',
-  keywords:
-    'tralalero tralala clicker unlocked, play tralalero tralala clicker, tralala clicker game, tralalero tralala clicker online, tralalero tralala clicker gameplay',
-  addressBar: 'tralalero-tralala-clicker',
-  logoText: 'Tralalero Tralala Clicker Unlocked',
-  image: 'game-45.webp',
-  iframeUrl: 'https://1games.io/game/tralalero-tralala-clicker/',
-  showNew: false,
-  aboutContent: `
+  game45: {
+    id: 'game45',
+    title: 'Tralalero Tralala Clicker Unlocked - Play Now Online',
+    description:
+      'Tralalero Tralala Clicker Unlocked is a bizarre and hilarious clicker game. Tap nonstop to generate chaos and unlock weird surprises in Tralalero Tralala Clicker Unlocked.',
+    keywords:
+      'tralalero tralala clicker unlocked, play tralalero tralala clicker, tralala clicker game, tralalero tralala clicker online, tralalero tralala clicker gameplay',
+    addressBar: 'tralalero-tralala-clicker',
+    logoText: 'Tralalero Tralala Clicker Unlocked',
+    image: 'game-45.webp',
+    iframeUrl: 'https://1games.io/game/tralalero-tralala-clicker/',
+    showNew: false,
+    aboutContent: `
     <h2>Tralalero Tralala Clicker Unlocked – The Funniest Chaos Clicker Game</h2>
     <p>Get ready for the most unpredictable clicker experience in Tralalero Tralala Clicker Unlocked! This is not your ordinary idle game—Tralalero Tralala Clicker Unlocked is pure madness, laughter, and tapping overload. In this game, every click leads to bizarre animations, strange events, and hilarious surprises. With every second you spend in Tralalero Tralala Clicker Unlocked, the game gets weirder and funnier.</p>
 
@@ -2216,21 +2216,21 @@ game45: {
     <h3>Conclusion</h3>
     <p>If you’re looking for something completely random, ridiculously fun, and endlessly entertaining, Tralalero Tralala Clicker Unlocked is your answer. It’s weird in the best way possible. No rules, no logic—just tap, laugh, and enjoy the chaos. Tralalero Tralala Clicker Unlocked will have you grinning from ear to ear with every click. Don’t take it seriously—just dive in and have a blast with Tralalero Tralala Clicker Unlocked!</p>
   `,
-},
+  },
 
-game46: {
-  id: 'game46',
-  title: 'Merge Brainrot Unlocked - Play the Craziest Merge Game Now',
-  description:
-    'Merge Brainrot Unlocked is a chaotic and funny merge game where your goal is to combine brainrot units into increasingly absurd creations. In Merge Brainrot Unlocked, weird things happen all the time.',
-  keywords:
-    'merge brainrot unlocked, play merge brainrot, merge brainrot game, merge brainrot online, merge brainrot gameplay',
-  addressBar: 'merge-brainrot',
-  logoText: 'Merge Brainrot Unlocked',
-  image: 'game-46.webp',
-  iframeUrl: 'https://game.azgame.io/merge-brainrot/',
-  showNew: false,
-  aboutContent: `
+  game46: {
+    id: 'game46',
+    title: 'Merge Brainrot Unlocked - Play the Craziest Merge Game Now',
+    description:
+      'Merge Brainrot Unlocked is a chaotic and funny merge game where your goal is to combine brainrot units into increasingly absurd creations. In Merge Brainrot Unlocked, weird things happen all the time.',
+    keywords:
+      'merge brainrot unlocked, play merge brainrot, merge brainrot game, merge brainrot online, merge brainrot gameplay',
+    addressBar: 'merge-brainrot',
+    logoText: 'Merge Brainrot Unlocked',
+    image: 'game-46.webp',
+    iframeUrl: 'https://game.azgame.io/merge-brainrot/',
+    showNew: false,
+    aboutContent: `
     <h2>Merge Brainrot Unlocked – Welcome to Pure Absurdity</h2>
     <p>If you think you’ve seen it all in merge games, think again. Merge Brainrot Unlocked is a new level of chaos. In Merge Brainrot Unlocked, your task is to merge increasingly brainrotted creatures together and see what kind of hilarious results you get. Every action in Merge Brainrot Unlocked leads to more nonsense, more weird units, and more laugh-out-loud combinations. This is a game for players who love the unexpected.</p>
 
@@ -2265,20 +2265,20 @@ game46: {
     <h3>Merge Brainrot Unlocked – Final Thoughts</h3>
     <p>If you’re tired of typical games and want something truly unexpected, Merge Brainrot Unlocked is the perfect choice. The game’s title says it all—it’s brainrot, it’s merging, and it’s unlocked chaos. Whether you play for five minutes or get stuck for hours, Merge Brainrot Unlocked will surprise and entertain you at every turn. Dive into this beautifully dumb universe and embrace the nonsense. Merge Brainrot Unlocked isn’t trying to make sense—it’s trying to make you laugh, and it succeeds.</p>
   `,
-},
+  },
 
-game47: {
-  id: 'game47',
-  title: 'Tung Sahur Clicker Unlocked - Play the Wildest Sahur Clicking Game',
-  description:
-    'Tung Sahur Clicker Unlocked is a hilarious, chaotic clicking game where you wake people up for sahur in the most absurd ways. In Tung Sahur Clicker Unlocked, your goal is to spam that click and unleash chaos.',
-  keywords:
-    'tung sahur clicker unlocked, play tung sahur clicker, sahur clicker game, tung sahur clicker online, tung sahur clicker gameplay',
-  addressBar: 'tung-sahur-clicker',
-  logoText: 'Tung Sahur Clicker Unlocked',
-  image: 'game-47.webp',
-  iframeUrl: 'https://game.azgame.io/tung-sahur-clicker/',
-  aboutContent: `
+  game47: {
+    id: 'game47',
+    title: 'Tung Sahur Clicker Unlocked - Play the Wildest Sahur Clicking Game',
+    description:
+      'Tung Sahur Clicker Unlocked is a hilarious, chaotic clicking game where you wake people up for sahur in the most absurd ways. In Tung Sahur Clicker Unlocked, your goal is to spam that click and unleash chaos.',
+    keywords:
+      'tung sahur clicker unlocked, play tung sahur clicker, sahur clicker game, tung sahur clicker online, tung sahur clicker gameplay',
+    addressBar: 'tung-sahur-clicker',
+    logoText: 'Tung Sahur Clicker Unlocked',
+    image: 'game-47.webp',
+    iframeUrl: 'https://game.azgame.io/tung-sahur-clicker/',
+    aboutContent: `
     <h2>Tung Sahur Clicker Unlocked – Wake the Neighborhood!</h2>
     <p>Welcome to Tung Sahur Clicker Unlocked, a game unlike any other. In Tung Sahur Clicker Unlocked, your job is to wake people up for sahur — but forget subtlety. This is chaos. This is volume. This is pure clicking madness. In Tung Sahur Clicker Unlocked, every click you make rings louder, hits harder, and spreads the sahur spirit through the entire city block.</p>
 
@@ -2313,20 +2313,20 @@ game47: {
     <h3>Final Thoughts on Tung Sahur Clicker Unlocked</h3>
     <p>Tung Sahur Clicker Unlocked is the definition of joyful nonsense. It turns a cultural tradition into a wild clicking spree that’s endlessly fun. If you’ve got fast fingers and a love for ridiculous energy, Tung Sahur Clicker Unlocked is your game. Wake the neighbors, spam the sahur, and become the legend of the block. This is Tung Sahur Clicker Unlocked — louder, funnier, and better with every click.</p>
   `,
-},
+  },
 
-game48: {
-  id: 'game48',
-  title: 'Italian Brainrot Obby Parkour Unlocked - Meme Parkour Madness',
-  description:
-    'Italian Brainrot Obby Parkour Unlocked is a chaotic meme-filled obby game where players navigate absurd, hilarious obstacles. In Italian Brainrot Obby Parkour Unlocked, prepare for Italian memes, strange jumps, and non-stop brainrot.',
-  keywords:
-    'italian brainrot obby parkour unlocked, play italian brainrot obby parkour, brainrot parkour game, italian obby game, meme obby unlocked',
-  addressBar: 'italian-brainrot-obby-parkour',
-  logoText: 'Italian Brainrot Obby Parkour Unlocked',
-  image: 'game-48.webp',
-  iframeUrl: 'https://st.8games.net/7/8g/igra-italyanskij-brejnrot-obbi-parkur/',
-  aboutContent: `
+  game48: {
+    id: 'game48',
+    title: 'Italian Brainrot Obby Parkour Unlocked - Meme Parkour Madness',
+    description:
+      'Italian Brainrot Obby Parkour Unlocked is a chaotic meme-filled obby game where players navigate absurd, hilarious obstacles. In Italian Brainrot Obby Parkour Unlocked, prepare for Italian memes, strange jumps, and non-stop brainrot.',
+    keywords:
+      'italian brainrot obby parkour unlocked, play italian brainrot obby parkour, brainrot parkour game, italian obby game, meme obby unlocked',
+    addressBar: 'italian-brainrot-obby-parkour',
+    logoText: 'Italian Brainrot Obby Parkour Unlocked',
+    image: 'game-48.webp',
+    iframeUrl: 'https://st.8games.net/7/8g/igra-italyanskij-brejnrot-obbi-parkur/',
+    aboutContent: `
     <h2>Italian Brainrot Obby Parkour Unlocked – Meme-Fueled Obby Chaos</h2>
     <p>Welcome to Italian Brainrot Obby Parkour Unlocked, the wildest meme obby game you’ll ever play. In Italian Brainrot Obby Parkour Unlocked, your brain cells will be challenged (and possibly fried) as you try to parkour your way across platforms filled with chaotic energy, Italian flags, meme faces, and utterly nonsensical level design.</p>
 
@@ -2361,21 +2361,21 @@ game48: {
     <h3>Conclusion</h3>
     <p>Italian Brainrot Obby Parkour Unlocked is not a traditional game. It’s a ride through the wildest parts of the internet, built on chaotic parkour and pure meme insanity. If you want structure, go elsewhere. But if you want madness, laughs, and impossible jumps, then Italian Brainrot Obby Parkour Unlocked is your new obsession. Get ready to lose your mind in the best way possible.</p>
   `,
-},
+  },
 
-game49: {
-  id: 'game49',
-  title: 'Monster Tracks Unlocked - Extreme Truck Balancing Game',
-  description:
-    'Monster Tracks Unlocked is a physics-based monster truck game where you must balance, climb, and drive over impossible tracks. In Monster Tracks Unlocked, every hill and gap is a challenge for your monster vehicle!',
-  keywords:
-    'monster tracks unlocked, play monster tracks, monster truck balance game, monster tracks online, monster tracks game unblocked',
-  addressBar: 'monster-tracks',
-  logoText: 'Monster Tracks Unlocked',
-  image: 'game-49.webp',
-  iframeUrl: 'https://monstertracks.github.io/file/ ',
-  showNew: false,
-  aboutContent: `
+  game49: {
+    id: 'game49',
+    title: 'Monster Tracks Unlocked - Extreme Truck Balancing Game',
+    description:
+      'Monster Tracks Unlocked is a physics-based monster truck game where you must balance, climb, and drive over impossible tracks. In Monster Tracks Unlocked, every hill and gap is a challenge for your monster vehicle!',
+    keywords:
+      'monster tracks unlocked, play monster tracks, monster truck balance game, monster tracks online, monster tracks game unblocked',
+    addressBar: 'monster-tracks',
+    logoText: 'Monster Tracks Unlocked',
+    image: 'game-49.webp',
+    iframeUrl: 'https://monstertracks.github.io/file/ ',
+    showNew: false,
+    aboutContent: `
     <h2>Monster Tracks Unlocked – Master the Madness of Balance and Speed</h2>
     <p>Monster Tracks Unlocked is a physics-based monster truck balancing game that puts your driving skills to the ultimate test. In Monster Tracks Unlocked, every slope, every bump, and every downhill descent is a new kind of danger. Drive massive monster trucks across tightrope-thin tracks, avoid tipping over, and maintain your momentum to survive.</p>
 
@@ -2408,21 +2408,21 @@ game49: {
     <h3>Final Thoughts on Monster Tracks Unlocked</h3>
     <p>Monster Tracks Unlocked is more than just another truck game. It’s a test of skill, patience, and balance under pressure. With tight controls and impossible tracks, Monster Tracks Unlocked delivers a rewarding experience for players who like a real challenge. Whether you're a fan of monster trucks or just love games that push your reflexes and coordination, Monster Tracks Unlocked is a must-play.</p>
   `,
-},
+  },
 
-game50: {
-  id: 'game50',
-  title: 'Tung Sahur Horror Unlocked - Escape the Nightmare',
-  description:
-    'Tung Sahur Horror Unlocked is a terrifying survival horror game set during sahur time. In Tung Sahur Horror Unlocked, you must escape horrifying monsters in a haunted village before dawn breaks.',
-  keywords:
-    'tung sahur horror unlocked, play tung sahur horror, sahur horror game, tung sahur horror online, tung sahur horror unblocked',
-  addressBar: 'tung-sahur-horror',
-  logoText: 'Tung Sahur Horror Unlocked',
-  image: 'game-50.webp',
-  iframeUrl: 'https://game.azgame.io/tung-sahur-horror/',
-  showNew: false,
-  aboutContent: `
+  game50: {
+    id: 'game50',
+    title: 'Tung Sahur Horror Unlocked - Escape the Nightmare',
+    description:
+      'Tung Sahur Horror Unlocked is a terrifying survival horror game set during sahur time. In Tung Sahur Horror Unlocked, you must escape horrifying monsters in a haunted village before dawn breaks.',
+    keywords:
+      'tung sahur horror unlocked, play tung sahur horror, sahur horror game, tung sahur horror online, tung sahur horror unblocked',
+    addressBar: 'tung-sahur-horror',
+    logoText: 'Tung Sahur Horror Unlocked',
+    image: 'game-50.webp',
+    iframeUrl: 'https://game.azgame.io/tung-sahur-horror/',
+    showNew: false,
+    aboutContent: `
     <h2>Tung Sahur Horror Unlocked – Survive the Pre-Dawn Terror</h2>
     <p>Prepare to face your worst fears in <strong>Tung Sahur Horror Unlocked</strong>, a nightmarish horror survival game that unfolds during the early hours of sahur. In Tung Sahur Horror Unlocked, you're trapped in a haunted village crawling with ghostly creatures and terrifying sounds. Your mission is to escape before dawn while solving puzzles, avoiding monsters, and uncovering dark secrets hidden in the shadows.</p>
 
@@ -2456,21 +2456,21 @@ game50: {
     <h3>Conclusion</h3>
     <p>If you're a fan of atmospheric horror and survival challenges, then <strong>Tung Sahur Horror Unlocked</strong> is your next must-play. It captures the essence of horror in a quiet, eerie setting, where your courage and attention to detail will determine if you see daylight again. Do you dare to survive Tung Sahur Horror Unlocked?</p>
   `,
-},
+  },
 
-game51: {
-  id: 'game51',
-  title: 'Slope 3 - 3D Running Game - Play Slope 3 Online',
-  description: 'Slope 3 is a fast-paced 3D running game where players control a ball and race through a series of ramps, dodging obstacles, and navigating increasingly challenging courses.',
-  keywords: 'slope 3, slope game, slope 3d, running game, 3d ball game, slope game online',
-  addressBar: 'Slope-3',
-  logoText: 'Slope 3',
-  image: 'game-51.webp',
-  iframeUrl: 'https://game.azgame.io/brain-lines/',
-  // location: 'left',
-  showHeader: false,
-  showNew: true,
-  aboutContent: `
+  game51: {
+    id: 'game51',
+    title: 'Slope 3 - 3D Running Game - Play Slope 3 Online',
+    description: 'Slope 3 is a fast-paced 3D running game where players control a ball and race through a series of ramps, dodging obstacles, and navigating increasingly challenging courses.',
+    keywords: 'slope 3, slope game, slope 3d, running game, 3d ball game, slope game online',
+    addressBar: 'Slope-3',
+    logoText: 'Slope 3',
+    image: 'game-51.webp',
+    iframeUrl: 'https://game.azgame.io/brain-lines/',
+    // location: 'left',
+    showHeader: false,
+    showNew: false,
+    aboutContent: `
       <h2>Brain Lines game online​​: Game Guide & Key Highlights</h2>
   <p>Brain Lines is a creative and challenging puzzle game where logic meets physics. Your task is to draw lines to guide colored balls into their matching holes. It sounds simple, but each level introduces new mechanics, requiring precision, timing, and clever thinking. With minimalistic graphics and relaxing music, Brain Lines offers a calming yet brain-teasing experience. Can you complete all levels with perfect accuracy? Play Brain Lines online and put your problem-solving skills to the ultimate test.</p>
 
@@ -2517,23 +2517,23 @@ game51: {
   <h3>Conclusion</h3>
   <p>Brain Lines is more than a puzzle game—it's a peaceful journey of logic, patience, and experimentation. Whether you're looking for a casual brain teaser or a more intricate puzzle challenge, Brain Lines is the perfect choice. Draw your solution, watch it unfold, and enjoy the satisfaction of mastering each level. Try Brain Lines for free now!</p>
   `,
-},
+  },
 
-game52: {
-  id: 'game52',
-  title: 'Smash Karts - Multiplayer Kart Battle Game - Smash Karts Unblocked',
-  description:
-    'Smash Karts is a fast-paced multiplayer kart battle game. Drive your kart, collect power-ups, and eliminate other players in chaotic real-time battles. Play Smash Karts unblocked online and dominate the arena!',
-  keywords:
-    'smash karts, smash karts game, smash karts unblocked, multiplayer kart game, online battle game, kart shooter',
-  addressBar: 'Smash-Karts',
-  logoText: 'Smash Karts',
-  image: 'game-52.webp',
-  iframeUrl: 'https://games.crazygames.com/en_US/smash-karts/index.html?czyDynamicPriceFloorVariantsCZY_14537=portal&czyEPBPooling_CZY_14716=enabled&enableAdmiral=0&ssrDevice=desktop&v=1.334/',
-  // location: 'left',
-  showHeader: false,
-  showNew: true,
-  aboutContent: `
+  game52: {
+    id: 'game52',
+    title: 'Smash Karts - Multiplayer Kart Battle Game - Smash Karts Unblocked',
+    description:
+      'Smash Karts is a fast-paced multiplayer kart battle game. Drive your kart, collect power-ups, and eliminate other players in chaotic real-time battles. Play Smash Karts unblocked online and dominate the arena!',
+    keywords:
+      'smash karts, smash karts game, smash karts unblocked, multiplayer kart game, online battle game, kart shooter',
+    addressBar: 'Smash-Karts',
+    logoText: 'Smash Karts',
+    image: 'game-52.webp',
+    iframeUrl: 'https://games.crazygames.com/en_US/smash-karts/index.html?czyDynamicPriceFloorVariantsCZY_14537=portal&czyEPBPooling_CZY_14716=enabled&enableAdmiral=0&ssrDevice=desktop&v=1.334/',
+    // location: 'left',
+    showHeader: false,
+    showNew: false,
+    aboutContent: `
     <h2>Smash Karts Game Online: Game Guide & Key Highlights</h2>
     <p>Smash Karts is a chaotic 3D kart battle game where players race and fight in real-time multiplayer arenas. Jump into your kart, collect random power-ups, and use them to eliminate other players in short, action-packed rounds. With fast driving, explosive weapons, and quirky characters, Smash Karts delivers intense fun and non-stop mayhem.</p>
 
@@ -2578,23 +2578,23 @@ game52: {
     <h3>Conclusion</h3>
     <p>Smash Karts is the perfect combination of racing and battling. With short matches, funny characters, and explosive action, it’s an ideal game to enjoy solo or with friends. Whether you want to climb the leaderboards or just have fun shooting rockets from a banana-shaped kart, Smash Karts delivers. Jump in now and start smashing!</p>
   `,
-},
+  },
 
-game53: {
-  id: 'italianBrainrot2048',
-  title: '2048 Italian Brainrot - Absurdist Puzzle Merge Game',
-  description:
-    '2048 Italian Brainrot is a quirky and hilarious twist on the classic 2048 puzzle game. Merge absurd Italian-inspired characters and items to reach the highest possible score, with an added layer of brainrot chaos!',
-  keywords:
-    '2048 italian brainrot, italian brainrot game, italian 2048, absurd merge game, brainrot puzzle game, funny merge game',
-  addressBar: 'Italian-Brainrot-2048',
-  logoText: '2048 Italian Brainrot',
-  image: 'game-53.webp',
-  iframeUrl: 'https://game.azgame.io/2048-italian-brainrot/',
-  // location: 'left',
-  showHeader: false,
-  showNew: true,
-  aboutContent: `
+  game53: {
+    id: 'italianBrainrot2048',
+    title: '2048 Italian Brainrot - Absurdist Puzzle Merge Game',
+    description:
+      '2048 Italian Brainrot is a quirky and hilarious twist on the classic 2048 puzzle game. Merge absurd Italian-inspired characters and items to reach the highest possible score, with an added layer of brainrot chaos!',
+    keywords:
+      '2048 italian brainrot, italian brainrot game, italian 2048, absurd merge game, brainrot puzzle game, funny merge game',
+    addressBar: 'Italian-Brainrot-2048',
+    logoText: '2048 Italian Brainrot',
+    image: 'game-53.webp',
+    iframeUrl: 'https://game.azgame.io/2048-italian-brainrot/',
+    // location: 'left',
+    showHeader: false,
+    showNew: true,
+    aboutContent: `
     <h2>2048 Italian Brainrot: Game Guide & Key Highlights</h2>
     <p>2048 Italian Brainrot is a humorous and chaotic take on the classic 2048 puzzle game. Merge quirky Italian-inspired characters and items to form the highest-numbered combinations. The game offers both the strategic challenge of 2048 and the wacky, brainrot humor fans love.</p>
 
@@ -2639,23 +2639,23 @@ game53: {
     <h3>Conclusion</h3>
     <p>2048 Italian Brainrot offers a hilarious mix of strategy, creativity, and chaotic humor. If you love puzzles and want a new spin on the 2048 formula, this is the game for you. Start merging, get your brainrot on, and see how absurdly high you can go!</p>
   `,
-},
+  },
 
-game54: {
-  id: 'mergeFellasItalianBrainrot',
-  title: 'Merge Fellas Italian Brainrot - Absurd Merge Game with Italian Chaos',
-  description:
-    'Merge Fellas Italian Brainrot is a hilarious and chaotic merge game where you combine quirky Italian-themed characters and items to create even more absurd creations. Engage in wacky merges with your favorite brainrot-inspired Italian elements in this addictive puzzle game.',
-  keywords:
-    'merge fellas italian brainrot, italian brainrot game, merge fellas, absurd merge game, italian characters merge, chaotic puzzle game',
-  addressBar: 'Merge-Fellas-Italian-Brainrot',
-  logoText: 'Merge Fellas Italian Brainrot',
-  image: 'game-54.webp',
-  iframeUrl: 'https://1games.io/game/merge-fellas-italian-brainrot/',
-  // location: 'left',
-  showHeader: false,
-  showNew: true,
-  aboutContent: `
+  game54: {
+    id: 'mergeFellasItalianBrainrot',
+    title: 'Merge Fellas Italian Brainrot - Absurd Merge Game with Italian Chaos',
+    description:
+      'Merge Fellas Italian Brainrot is a hilarious and chaotic merge game where you combine quirky Italian-themed characters and items to create even more absurd creations. Engage in wacky merges with your favorite brainrot-inspired Italian elements in this addictive puzzle game.',
+    keywords:
+      'merge fellas italian brainrot, italian brainrot game, merge fellas, absurd merge game, italian characters merge, chaotic puzzle game',
+    addressBar: 'Merge-Fellas-Italian-Brainrot',
+    logoText: 'Merge Fellas Italian Brainrot',
+    image: 'game-54.webp',
+    iframeUrl: 'https://1games.io/game/merge-fellas-italian-brainrot/',
+    // location: 'left',
+    showHeader: false,
+    showNew: true,
+    aboutContent: `
     <h2>Merge Fellas Italian Brainrot: Game Guide & Key Highlights</h2>
     <p>Merge Fellas Italian Brainrot is a quirky and chaotic merge game that brings Italian-themed brainrot characters and items into the fold. The goal is to combine these oddballs into even more absurd creations and experience the madness of Italian brainrot as you progress through hilarious and unpredictable merges.</p>
 
@@ -2700,23 +2700,23 @@ game54: {
     <h3>Conclusion</h3>
     <p>Merge Fellas Italian Brainrot is a hilarious and chaotic merge game that combines strategic puzzle gameplay with the absurd humor of Italian brainrot. Whether you’re merging pizza, pasta, or the wildest Italian characters you can imagine, this game is a must-play for fans of quirky, offbeat games. Jump in, start merging, and let the Italian brainrot chaos begin!</p>
   `,
-},
+  },
 
-game55: {
-  id: 'sugarSugar',
-  title: 'Sugar Sugar - Sweet Physics Puzzle Challenge',
-  description:
-    'Sugar Sugar is a relaxing and creative physics puzzle game where you draw lines to guide falling sugar into cups. Solve increasingly complex levels while enjoying soothing gameplay and minimalist visuals.',
-  keywords:
-    'sugar sugar, sugar sugar game, physics puzzle game, draw line puzzle, relaxing puzzle game, creative puzzle challenge',
-  addressBar: 'Sugar-Sugar',
-  logoText: 'Sugar Sugar',
-  image: 'game-55.webp',
-  iframeUrl: 'https://azgames.io/sugar-sugar.embed',
-  // location: 'left',
-  showHeader: false,
-  showNew: true,
-  aboutContent: `
+  game55: {
+    id: 'sugarSugar',
+    title: 'Sugar Sugar - Sweet Physics Puzzle Challenge',
+    description:
+      'Sugar Sugar is a relaxing and creative physics puzzle game where you draw lines to guide falling sugar into cups. Solve increasingly complex levels while enjoying soothing gameplay and minimalist visuals.',
+    keywords:
+      'sugar sugar, sugar sugar game, physics puzzle game, draw line puzzle, relaxing puzzle game, creative puzzle challenge',
+    addressBar: 'Sugar-Sugar',
+    logoText: 'Sugar Sugar',
+    image: 'game-55.webp',
+    iframeUrl: 'https://azgames.io/sugar-sugar.embed',
+    // location: 'left',
+    showHeader: false,
+    showNew: true,
+    aboutContent: `
     <h2>Sugar Sugar: Game Guide & Key Highlights</h2>
     <p>Sugar Sugar is a relaxing and creative physics-based puzzle game that challenges you to draw lines and guide falling sugar granules into designated cups. This game is both soothing and mentally engaging, making it perfect for puzzle lovers and casual players looking for a relaxing experience.</p>
 
@@ -2761,23 +2761,23 @@ game55: {
     <h3>Conclusion</h3>
     <p>Sugar Sugar is a relaxing and highly creative puzzle game that combines simple mechanics with engaging physics challenges. Whether you’re looking to unwind with soothing gameplay or push your problem-solving skills to the limit, Sugar Sugar is the perfect choice. Grab your mouse, start drawing, and watch the sugar flow into perfection!</p>
   `,
-},
+  },
 
-game56: {
-  id: 'geometryLite',
-  title: 'Geometry Lite - Rhythm Platform Challenge',
-  description:
-    'Geometry Lite is a fast-paced rhythm-based platformer where precision and timing are everything. Navigate tricky geometric terrain, dodge spikes, and conquer challenging levels accompanied by dynamic music.',
-  keywords:
-    'geometry lite, rhythm platform game, geometry lite online, cube jumping game, rhythm obstacle challenge, precision platformer',
-  addressBar: 'Geometry-Lite',
-  logoText: 'Geometry Lite',
-  image: 'game-56.webp',
-  iframeUrl: 'https://1games.io/game/geometry-lite/',
-  // location: 'left',
-  showHeader: false,
-  showNew: true,
-  aboutContent: `
+  game56: {
+    id: 'geometryLite',
+    title: 'Geometry Lite - Rhythm Platform Challenge',
+    description:
+      'Geometry Lite is a fast-paced rhythm-based platformer where precision and timing are everything. Navigate tricky geometric terrain, dodge spikes, and conquer challenging levels accompanied by dynamic music.',
+    keywords:
+      'geometry lite, rhythm platform game, geometry lite online, cube jumping game, rhythm obstacle challenge, precision platformer',
+    addressBar: 'Geometry-Lite',
+    logoText: 'Geometry Lite',
+    image: 'game-56.webp',
+    iframeUrl: 'https://1games.io/game/geometry-lite/',
+    // location: 'left',
+    showHeader: false,
+    showNew: true,
+    aboutContent: `
     <h2>Geometry Lite: Rhythm and Precision Platforming</h2>
     <p><strong>Geometry Lite</strong> takes you into a world of rhythm and precision where one wrong move can end your run. This challenging platformer combines vibrant beats, tricky terrains, and intense obstacle courses. The difficulty ranges from Easy to Demon, but even the starting levels require sharp focus and perfect timing.</p>
 
@@ -2815,23 +2815,23 @@ game56: {
     <h3>Conclusion</h3>
     <p>Geometry Lite delivers a thrilling experience for fans of rhythm games and hardcore platformers. With music-synced levels and shape-shifting mechanics, it’s a test of both reflexes and patience. Step into the geometric world, embrace the challenge, and see if you have what it takes to beat every level.</p>
   `,
-},
+  },
 
-game57: {
-  id: 'furyChase2',
-  title: 'Fury Chase 2 - Blazing Wheels Return',
-  description:
-    'Fury Chase 2 brings more chaos, weapons, and destruction in a post-apocalyptic driving shooter. Survive high-speed chases, upgrade your ride, and dominate enemy war rigs in this explosive sequel.',
-  keywords:
-    'fury chase 2, driving shooter game, post-apocalyptic car game, vehicle combat game, action racing, car chase destruction',
-  addressBar: 'Fury-Chase-2',
-  logoText: 'Fury Chase 2',
-  image: 'game-57.webp',
-  iframeUrl: 'https://1games.io/game/fury-chase-2/',
-  // location: 'left',
-  showHeader: false,
-  showNew: true,
-  aboutContent: `
+  game57: {
+    id: 'furyChase2',
+    title: 'Fury Chase 2 - Blazing Wheels Return',
+    description:
+      'Fury Chase 2 brings more chaos, weapons, and destruction in a post-apocalyptic driving shooter. Survive high-speed chases, upgrade your ride, and dominate enemy war rigs in this explosive sequel.',
+    keywords:
+      'fury chase 2, driving shooter game, post-apocalyptic car game, vehicle combat game, action racing, car chase destruction',
+    addressBar: 'Fury-Chase-2',
+    logoText: 'Fury Chase 2',
+    image: 'game-57.webp',
+    iframeUrl: 'https://1games.io/game/fury-chase-2/',
+    // location: 'left',
+    showHeader: false,
+    showNew: true,
+    aboutContent: `
     <h2>Fury Chase 2: Blazing Wheels Return</h2>
     <p><strong>Fury Chase 2</strong> is back, hotter and meaner than ever before. This explosive sequel thrusts players into a post-apocalyptic wasteland full of hostile scavengers, deadly war rigs, and endless high-speed chaos. Compared to the first game, every element has been upgraded—bigger maps, more weapons, more enemy types, and deeper customization. Buckle up, arm your vehicle, and prepare for a road war like no other.</p>
 
@@ -2880,88 +2880,23 @@ game57: {
     <h3>Conclusion</h3>
     <p><strong>Fury Chase 2</strong> delivers non-stop action with its mix of high-speed driving and intense vehicular combat. Jump into your armored ride, hit the accelerator, and embrace the chaos of this wild, post-apocalyptic world. The chase is on—will you survive?</p>
   `,
-},
+  },
 
-game57: {
-  id: 'furyChase2',
-  title: 'Fury Chase 2 - Blazing Wheels Return',
-  description:
-    'Fury Chase 2 brings more chaos, weapons, and destruction in a post-apocalyptic driving shooter. Survive high-speed chases, upgrade your ride, and dominate enemy war rigs in this explosive sequel.',
-  keywords:
-    'fury chase 2, driving shooter game, post-apocalyptic car game, vehicle combat game, action racing, car chase destruction',
-  addressBar: 'Fury-Chase-2',
-  logoText: 'Fury Chase 2',
-  image: 'game-57.webp',
-  iframeUrl: 'https://1games.io/game/fury-chase-2/',
-  // location: 'left',
-  showHeader: false,
-  showNew: true,
-  aboutContent: `
-    <h2>Fury Chase 2: Blazing Wheels Return</h2>
-    <p><strong>Fury Chase 2</strong> is back, hotter and meaner than ever before. This explosive sequel thrusts players into a post-apocalyptic wasteland full of hostile scavengers, deadly war rigs, and endless high-speed chaos. Compared to the first game, every element has been upgraded—bigger maps, more weapons, more enemy types, and deeper customization. Buckle up, arm your vehicle, and prepare for a road war like no other.</p>
-
-    <h3>Gameplay Overview</h3>
-    <p>Step into a lawless world where driving means survival and firepower decides who lives another mile. The open roads are littered with traps, oil-thirsty scavengers, and ruthless war machines determined to stop you. Each mission drops you into intense pursuits where quick reflexes and precision shooting are crucial.</p>
-
-    <h4>New Features in Fury Chase 2</h4>
-    <ul>
-      <li>Expanded vehicle arsenal with customizable weapons and boosters.</li>
-      <li>New terrain and maps featuring cliffs, aerial ramps, and high-speed danger zones.</li>
-      <li>Advanced enemy types, including spiked buggies, flamethrower trucks, and heavily armored rigs.</li>
-      <li>Strategic combat mechanics with oil slicks, shockwave rams, and flamethrower bursts.</li>
-    </ul>
-
-    <h3>How to Play Fury Chase 2?</h3>
-    <p>The goal is simple: survive, fight back, and dominate. Collect fuel barrels to upgrade your ride and unlock powerful combat abilities. Choose between fast escapes or aggressive ambushes depending on the situation. Every level increases the intensity with smarter enemies and harsher terrain.</p>
-
-    <h4>Controls</h4>
-    <p>
-      [↑] or [W]: Accelerate<br/>
-      [↓] or [S]: Brake/Reverse<br/>
-      [←] or [A]: Steer Left<br/>
-      [→] or [D]: Steer Right<br/>
-      [Spacebar]: Special Action (weapons/boosters)
-    </p>
-
-    <h3>Tips for Winning the Chase</h3>
-    <ul>
-      <li>Use ramps for vertical escapes or to smash down on enemies from above.</li>
-      <li>Eliminate trucks first—they block paths and deal heavy damage.</li>
-      <li>Constantly strafe left and right to avoid turret lock-ons and focused fire.</li>
-    </ul>
-
-    <h3>Why Play Fury Chase 2?</h3>
-    <p>Fury Chase 2 isn’t just about driving—it’s about surviving a vehicular war. With adrenaline-pumping chases, brutal combat mechanics, and endless upgrade possibilities, this game keeps you on edge every second. Whether you prefer outpacing enemies or blasting them off the road, Fury Chase 2 gives you the freedom to play your way.</p>
-
-    <h3>Features</h3>
-    <p>Fury Chase 2 includes:<br/>
-    - Explosive post-apocalyptic driving combat.<br/>
-    - Deep vehicle upgrade and weapon systems.<br/>
-    - Dynamic maps with aerial ramps and deadly cliffs.<br/>
-    - Diverse enemy vehicles and attack styles.<br/>
-    - Smooth 3D graphics and immersive sound design.<br/>
-    - Play Fury Chase 2 unblocked on any modern browser.</p>
-
-    <h3>Conclusion</h3>
-    <p><strong>Fury Chase 2</strong> delivers non-stop action with its mix of high-speed driving and intense vehicular combat. Jump into your armored ride, hit the accelerator, and embrace the chaos of this wild, post-apocalyptic world. The chase is on—will you survive?</p>
-  `,
-},
-
-game58: {
-  id: 'ragdollHitStickman',
-  title: 'Ragdoll Hit Stickman - Wild Physics Battle',
-  description:
-    'Ragdoll Hit Stickman is a chaotic action game featuring hilarious ragdoll physics and intense stickman battles. Choose from multiple modes, upgrade your warrior, and unleash wild combat chaos.',
-  keywords:
-    'ragdoll hit stickman, stickman physics game, ragdoll battle game, stickman fighting game, ragdoll chaos, stickman multiplayer',
-  addressBar: 'Ragdoll-Hit-Stickman',
-  logoText: 'Ragdoll Hit Stickman',
-  image: 'game-58.webp',
-  iframeUrl: 'https://1games.io/game/ragdoll-hit-stickman/',
-  // location: 'left',
-  showHeader: false,
-  showNew: true,
-  aboutContent: `
+  game58: {
+    id: 'ragdollHitStickman',
+    title: 'Ragdoll Hit Stickman - Wild Physics Battle',
+    description:
+      'Ragdoll Hit Stickman is a chaotic action game featuring hilarious ragdoll physics and intense stickman battles. Choose from multiple modes, upgrade your warrior, and unleash wild combat chaos.',
+    keywords:
+      'ragdoll hit stickman, stickman physics game, ragdoll battle game, stickman fighting game, ragdoll chaos, stickman multiplayer',
+    addressBar: 'Ragdoll-Hit-Stickman',
+    logoText: 'Ragdoll Hit Stickman',
+    image: 'game-58.webp',
+    iframeUrl: 'https://1games.io/game/ragdoll-hit-stickman/',
+    // location: 'left',
+    showHeader: false,
+    showNew: true,
+    aboutContent: `
     <h2>Ragdoll Hit Stickman: Physics-Driven Chaos</h2>
     <p><strong>Ragdoll Hit Stickman</strong> lets you launch your stickman warrior into fast-paced battles filled with over-the-top ragdoll physics. The harder you hit and the more chaos you cause, the higher your score will be. With hilarious movements, wild physics reactions, and various gameplay modes, every match becomes a unique spectacle of destruction and fun.</p>
 
@@ -3002,23 +2937,23 @@ game58: {
     <h3>Conclusion</h3>
     <p><strong>Ragdoll Hit Stickman</strong> delivers a hilarious and action-packed experience for fans of ragdoll physics and stickman games. Jump into the chaos, perfect your moves, and become the ultimate stickman warrior. Get ready for wild battles and unforgettable physics-driven moments!</p>
   `,
-},
+  },
 
-game59: {
-  id: 'blockSlide',
-  title: 'Block Slide - Strategic Puzzle Challenge',
-  description:
-    'Block Slide is an engaging puzzle game that tests your spatial reasoning and problem-solving skills. Slide colored blocks to their correct doors, avoid obstacles, and complete hundreds of tricky levels.',
-  keywords:
-    'block slide, block puzzle game, sliding puzzle, color block challenge, block slide online, brain training puzzle',
-  addressBar: 'Block-Slide',
-  logoText: 'Block Slide',
-  image: 'game-59.webp',
-  iframeUrl: 'https://1games.io/game/block-slide/',
-  // location: 'left',
-  showHeader: false,
-  showNew: true,
-  aboutContent: `
+  game59: {
+    id: 'blockSlide',
+    title: 'Block Slide - Strategic Puzzle Challenge',
+    description:
+      'Block Slide is an engaging puzzle game that tests your spatial reasoning and problem-solving skills. Slide colored blocks to their correct doors, avoid obstacles, and complete hundreds of tricky levels.',
+    keywords:
+      'block slide, block puzzle game, sliding puzzle, color block challenge, block slide online, brain training puzzle',
+    addressBar: 'Block-Slide',
+    logoText: 'Block Slide',
+    image: 'game-59.webp',
+    iframeUrl: 'https://1games.io/game/block-slide/',
+    // location: 'left',
+    showHeader: false,
+    showNew: true,
+    aboutContent: `
     <h2>Block Slide: Solve Tricky Sliding Puzzles</h2>
     <p><strong>Block Slide</strong> challenges your mind with colorful and strategic block-sliding puzzles. Your goal is to move each colored block to its corresponding door while overcoming a variety of obstacles. The game gradually increases in difficulty, ensuring a stimulating and satisfying puzzle experience for players of all skill levels.</p>
 
@@ -3057,23 +2992,23 @@ game59: {
     <h3>Conclusion</h3>
     <p><strong>Block Slide</strong> is an addictive puzzle experience that will sharpen your mind and test your problem-solving skills. Move blocks with precision, overcome tricky obstacles, and conquer each level’s unique challenges. If you enjoy clever, visually appealing puzzles, Block Slide is the game for you. Get ready to slide, think, and win!</p>
   `,
-},
+  },
 
-game60: {
-  id: 'colorBlockJam',
-  title: 'Color Block Jam - Slide and Outsmart All Puzzles',
-  description:
-    'Color Block Jam is a colorful and addictive block-sliding puzzle game where you move blocks to their matching doors while avoiding tricky obstacles and tight spaces. Perfect for puzzle lovers!',
-  keywords:
-    'color block jam, block puzzle game, sliding block challenge, colorful puzzle game, brain training block game, block jam online',
-  addressBar: 'Color-Block-Jam',
-  logoText: 'Color Block Jam',
-  image: 'game-60.webp',
-  iframeUrl: 'https://1games.io/game/color-block-jam/',
-  // location: 'left',
-  showHeader: false,
-  showNew: true,
-  aboutContent: `
+  game60: {
+    id: 'colorBlockJam',
+    title: 'Color Block Jam - Slide and Outsmart All Puzzles',
+    description:
+      'Color Block Jam is a colorful and addictive block-sliding puzzle game where you move blocks to their matching doors while avoiding tricky obstacles and tight spaces. Perfect for puzzle lovers!',
+    keywords:
+      'color block jam, block puzzle game, sliding block challenge, colorful puzzle game, brain training block game, block jam online',
+    addressBar: 'Color-Block-Jam',
+    logoText: 'Color Block Jam',
+    image: 'game-60.webp',
+    iframeUrl: 'https://1games.io/game/color-block-jam/',
+    // location: 'left',
+    showHeader: false,
+    showNew: true,
+    aboutContent: `
     <h2>Color Block Jam: Slide and Outsmart All Puzzles</h2>
     <p><strong>Color Block Jam</strong> is a colorful brain-teasing puzzle game designed to sharpen your mind and challenge your spatial reasoning skills. Unlike ordinary sliding puzzles, <strong>Color Block Jam</strong> pushes you to think multiple moves ahead, avoid jams, and plan strategically to win each level. Packed with bright visuals and smooth controls, this game is a delightful experience for puzzle lovers of all ages.</p>
 
@@ -3120,22 +3055,22 @@ game60: {
     <h3>Conclusion</h3>
     <p><strong>Color Block Jam</strong> is an addictive puzzle game that combines strategic thinking, colorful visuals, and smooth sliding mechanics. Prepare to outsmart every level, perfect your puzzle-solving skills, and enjoy hours of engaging gameplay. Can you handle the jam?</p>
   `,
-},
+  },
 
-game61: {
-  id: 'arcadeVolley',
-  title: 'Arcade Volley - Fast-Paced Volleyball Fun',
-  description:
-    'Arcade Volley is a fast-paced, arcade-style volleyball game where you jump, spike, and outscore opponents in quick matches. Perfect for casual sports fans looking for thrilling summer vibes!',
-  keywords:
-    'arcade volley, volleyball game, fast-paced sports game, beach volleyball, 2D arcade volleyball, quick match volleyball',
-  addressBar: 'Arcade-Volley',
-  logoText: 'Arcade Volley',
-  image: 'game-61.webp',
-  iframeUrl: 'https://game.azgame.io/arcade-volley/',
-  showHeader: false,
-  showNew: true,
-  aboutContent: `
+  game61: {
+    id: 'arcadeVolley',
+    title: 'Arcade Volley - Fast-Paced Volleyball Fun',
+    description:
+      'Arcade Volley is a fast-paced, arcade-style volleyball game where you jump, spike, and outscore opponents in quick matches. Perfect for casual sports fans looking for thrilling summer vibes!',
+    keywords:
+      'arcade volley, volleyball game, fast-paced sports game, beach volleyball, 2D arcade volleyball, quick match volleyball',
+    addressBar: 'Arcade-Volley',
+    logoText: 'Arcade Volley',
+    image: 'game-61.webp',
+    iframeUrl: 'https://game.azgame.io/arcade-volley/',
+    showHeader: false,
+    showNew: true,
+    aboutContent: `
     <h2>Arcade Volley: Fast-Paced Volleyball Fun</h2>
     <p><strong>Arcade Volley</strong> delivers quick and thrilling volleyball matches with an arcade twist. Compete in dynamic, fast-paced 2D volleyball battles, perfect for casual players and sports fans looking for a quick gaming session. Jump, spike, and outscore your rivals on a variety of unique courts.</p>
 
@@ -3166,22 +3101,22 @@ game61: {
     <h3>Conclusion</h3>
     <p><strong>Arcade Volley</strong> combines the fun of volleyball with fast-paced arcade action. Whether you’re looking for a quick session or want to master the timing of perfect spikes, this game has something for everyone. Jump in, warm up, and take your best shot at volleyball glory!</p>
   `,
-},
+  },
 
-game62: {
-  id: 'billiardsMaster',
-  title: 'Billiards Master - Realistic Pool Game Experience',
-  description:
-    'Billiards Master offers a realistic pool experience with multiple modes including 8-ball, 9-ball, UK 8-ball, Snooker, Time Trial, Matrix Mode, and Practice Mode. Perfect for pool lovers!',
-  keywords:
-    'billiards master, pool game, 8-ball, 9-ball, snooker, online billiards, realistic pool simulator, 3D pool game',
-  addressBar: 'Billiards-Master',
-  logoText: 'Billiards Master',
-  image: 'game-62.webp',
-  iframeUrl: 'https://1games.io/game/billiards-master/',
-  showHeader: false,
-  showNew: true,
-  aboutContent: `
+  game62: {
+    id: 'billiardsMaster',
+    title: 'Billiards Master - Realistic Pool Game Experience',
+    description:
+      'Billiards Master offers a realistic pool experience with multiple modes including 8-ball, 9-ball, UK 8-ball, Snooker, Time Trial, Matrix Mode, and Practice Mode. Perfect for pool lovers!',
+    keywords:
+      'billiards master, pool game, 8-ball, 9-ball, snooker, online billiards, realistic pool simulator, 3D pool game',
+    addressBar: 'Billiards-Master',
+    logoText: 'Billiards Master',
+    image: 'game-62.webp',
+    iframeUrl: 'https://1games.io/game/billiards-master/',
+    showHeader: false,
+    showNew: true,
+    aboutContent: `
     <h2>Billiards Master: An Addictive, Top-Notch Pool Game</h2>
     <p><strong>Billiards Master</strong> is one of the most realistic and enjoyable pool games available on PC and browser. Whether you want to challenge your friends locally, compete online, or simply relax and play solo, <strong>Billiards Master</strong> offers everything a pool enthusiast needs. With multiple game modes including 8-ball, 9-ball, UK 8-ball, Snooker, Time Trial, Matrix Mode, and Practice Mode, you’ll never run out of challenges.</p>
 
@@ -3218,22 +3153,22 @@ game62: {
     <h3>Conclusion</h3>
     <p>Join <strong>Billiards Master</strong> today and dive into an addictive pool journey packed with fun, challenge, and stunning visuals. Pocket balls, rack up high scores, and prove yourself as the ultimate pool champion!</p>
   `,
-},
+  },
 
-game63: {
-    id: 'vex3',
-    title: 'Vex 3 - Fast-Paced Stickman Platformer',
-    description:
-      'Vex 3 is a challenging 2D platformer where you guide a stickman through treacherous levels filled with deadly traps. Test your skills and reflexes in this fast-paced game!',
-    keywords:
-      'vex 3, vex game, stickman platformer, 2D platformer, challenging game, obstacle course, action game, skill-based game',
-    addressBar: 'Vex-3',
-    logoText: 'Vex 3',
-    image: 'game-63.webp',
-    iframeUrl: '//html5.gamedistribution.com/rvvASMiM/762c932b4db74c6da0c1d101b2da8be6/index.html?gd_zone_config=eyJwYXJlbnRVUkwiOiJodHRwczovL2F6Z2FtZXMuaW8vIiwicGFyZW50RG9tYWluIjoiYXpnYW1lcy5pbyIsInRvcERvbWFpbiI6ImF6Z2FtZXMuaW8iLCJoYXNJbXByZXNzaW9uIjp0cnVlLCJsb2FkZXJFbmFibGVkIjp0cnVlLCJob3N0IjoiaHRtbDUuZ2FtZWRpc3RyaWJ1dGlvbi5jb20iLCJ2ZXJzaW9uIjoiMS41LjE3In0%253D',
-    showHeader: false,
-    showNew: true,
-    aboutContent: `
+  game63: {
+    id: 'vex3',
+    title: 'Vex 3 - Fast-Paced Stickman Platformer',
+    description:
+      'Vex 3 is a challenging 2D platformer where you guide a stickman through treacherous levels filled with deadly traps. Test your skills and reflexes in this fast-paced game!',
+    keywords:
+      'vex 3, vex game, stickman platformer, 2D platformer, challenging game, obstacle course, action game, skill-based game',
+    addressBar: 'Vex-3',
+    logoText: 'Vex 3',
+    image: 'game-63.webp',
+    iframeUrl: '//html5.gamedistribution.com/rvvASMiM/762c932b4db74c6da0c1d101b2da8be6/index.html?gd_zone_config=eyJwYXJlbnRVUkwiOiJodHRwczovL2F6Z2FtZXMuaW8vIiwicGFyZW50RG9tYWluIjoiYXpnYW1lcy5pbyIsInRvcERvbWFpbiI6ImF6Z2FtZXMuaW8iLCJoYXNJbXByZXNzaW9uIjp0cnVlLCJsb2FkZXJFbmFibGVkIjp0cnVlLCJob3N0IjoiaHRtbDUuZ2FtZWRpc3RyaWJ1dGlvbi5jb20iLCJ2ZXJzaW9uIjoiMS41LjE3In0%253D',
+    showHeader: false,
+    showNew: true,
+    aboutContent: `
       <h2>Vex 3: The Ultimate Stickman Challenge</h2>
       <p><strong>Vex 3</strong> is the exhilarating third installment of the popular Vex series, a platformer that will push your agility and patience to the limit. As a stickman, you must navigate through a series of "Acts," each one a treacherous labyrinth filled with deadly traps, from sharp spikes and spinning saw blades to crushing blocks. Your goal is to run, jump, climb, and slide your way to the end of each level without getting Vex-ed!</p>
   
@@ -3272,19 +3207,19 @@ game63: {
   },
 
   game64: {
-      id: 'icydash',
-      title: 'Icy Dash - Snowboard Racing Adventure',
-      description:
-        'Icy Dash is a fast-paced arcade racing game where you snowboard down treacherous mountain tracks. Compete against others, perform stunts, and unlock upgrades to become the ultimate winter champion!',
-      keywords:
-        'icy dash, snowboard game, racing game, arcade racer, winter sports, extreme sports, stickman game, multiplayer racing',
-      addressBar: 'Icy-Dash',
-      logoText: 'Icy Dash',
-      image: 'game-64.webp',
-      iframeUrl: 'https://1games.io/game/icy-dash/',
-      showHeader: false,
-      showNew: true,
-      aboutContent: `
+    id: 'icydash',
+    title: 'Icy Dash - Snowboard Racing Adventure',
+    description:
+      'Icy Dash is a fast-paced arcade racing game where you snowboard down treacherous mountain tracks. Compete against others, perform stunts, and unlock upgrades to become the ultimate winter champion!',
+    keywords:
+      'icy dash, snowboard game, racing game, arcade racer, winter sports, extreme sports, stickman game, multiplayer racing',
+    addressBar: 'Icy-Dash',
+    logoText: 'Icy Dash',
+    image: 'game-64.webp',
+    iframeUrl: 'https://1games.io/game/icy-dash/',
+    showHeader: false,
+    showNew: true,
+    aboutContent: `
         <h2>Icy Dash: A Chilling Racing Challenge</h2>
         <p><strong>Icy Dash</strong> is a high-octane arcade racing game that throws you into a thrilling mountain adventure. Strap on your snowboard and get ready to carve your way down challenging, snow-packed tracks. You'll compete against skilled players from all over the world, pushing your limits with speed, precision, and jaw-dropping freestyle tricks. The goal is simple: stay on top of the leaderboard and claim your spot as the ultimate winter champion!</p>
     
@@ -3311,22 +3246,22 @@ game63: {
         <h3>Conclusion</h3>
         <p>Grab your gear and get ready for an epic ride. <strong>Icy Dash</strong> is more than just a racing game—it's a test of skill, a race against rivals, and a wild ride through a frozen wonderland. Can you handle the speed and become the master of the slopes?</p>
       `,
-    },
+  },
 
-    game65: { 
-      id: 'trimerge',
-      title: 'TriMerge - Number Puzzle Challenge',
-      description:
-        'TriMerge is a clever number-merging puzzle game where you slide tiles across a grid to combine numbers and form larger multiples of 3. Start with simple merges like 1 + 2 = 3 and keep going until you reach the biggest numbers possible!',
-      keywords:
-        'trimerge, puzzle game, number merge, sliding puzzle, 2048 alternative, brain game, math puzzle, strategy game',
-      addressBar: 'TriMerge',
-      logoText: 'TriMerge',
-      image: 'game-65.webp',
-      iframeUrl: 'https://game.azgame.io/trimerge/',
-      showHeader: false,
-      showNew: true,
-      aboutContent: `
+  game65: {
+    id: 'trimerge',
+    title: 'TriMerge - Number Puzzle Challenge',
+    description:
+      'TriMerge is a clever number-merging puzzle game where you slide tiles across a grid to combine numbers and form larger multiples of 3. Start with simple merges like 1 + 2 = 3 and keep going until you reach the biggest numbers possible!',
+    keywords:
+      'trimerge, puzzle game, number merge, sliding puzzle, 2048 alternative, brain game, math puzzle, strategy game',
+    addressBar: 'TriMerge',
+    logoText: 'TriMerge',
+    image: 'game-65.webp',
+    iframeUrl: 'https://game.azgame.io/trimerge/',
+    showHeader: false,
+    showNew: true,
+    aboutContent: `
         <h2>About TriMerge</h2>
         <p>TriMerge is a number-based puzzle game that challenges your logic and planning skills. Slide tiles on a 4x4 grid to merge numbers and create bigger values. It starts simple with <strong>1 + 2 = 3</strong>, but soon the challenge grows as you try to chain together merges of larger multiples of 3.</p>
         
@@ -3360,22 +3295,22 @@ game63: {
         
         <p>Keep merging until you’re stuck, and see how high you can climb on the number ladder. Can you reach 192, 384, or even higher? Test your skills now in TriMerge!</p>
       `,
-    },
+  },
 
-    game66: { 
-      id: 'curve-rush-2',
-      title: 'Curve Rush 2 - Momentum Rolling Adventure',
-      description:
-        'Curve Rush 2 is the exciting sequel to the original Curve Rush, featuring momentum-based rolling ball gameplay with new environments, obstacles, and unique balls. Master slopes, keep your rhythm, and push your score higher than ever!',
-      keywords:
-        'curve rush 2, curve rush game, rolling ball, hill racing, momentum game, arcade game, endless runner, ball racing game',
-      addressBar: 'Curve-Rush-2',
-      logoText: 'Curve Rush 2',
-      image: 'game-66.webp',
-      iframeUrl: 'https://game.azgame.io/curve-rush-2/',
-      showHeader: false,
-      showNew: true,
-      aboutContent: `
+  game66: {
+    id: 'curve-rush-2',
+    title: 'Curve Rush 2 - Momentum Rolling Adventure',
+    description:
+      'Curve Rush 2 is the exciting sequel to the original Curve Rush, featuring momentum-based rolling ball gameplay with new environments, obstacles, and unique balls. Master slopes, keep your rhythm, and push your score higher than ever!',
+    keywords:
+      'curve rush 2, curve rush game, rolling ball, hill racing, momentum game, arcade game, endless runner, ball racing game',
+    addressBar: 'Curve-Rush-2',
+    logoText: 'Curve Rush 2',
+    image: 'game-66.webp',
+    iframeUrl: 'https://game.azgame.io/curve-rush-2/',
+    showHeader: false,
+    showNew: true,
+    aboutContent: `
         <h2>About Curve Rush 2</h2>
         <p><strong>Curve Rush 2</strong> is the long-awaited sequel to the original Curve Rush. It still keeps the addictive formula of timing, rhythm, and momentum, as you guide a rolling ball across endless sandy slopes and new environments. With enhanced visuals and fresh gameplay elements, this sequel delivers an even more thrilling experience for fans of speed and flow-based games.</p>
         
@@ -3409,9 +3344,95 @@ game63: {
         
         <p>With its combination of familiar mechanics and exciting new features, <strong>Curve Rush 2</strong> offers both returning players and newcomers a fun, fast-paced arcade challenge. Jump in and see how far you can roll!</p>
       `,
-    }
-    
-    
+  },
+
+  game67: {
+    id: 'slope-rider',
+    title: 'Slope Rider - High-Speed Winter Sledding Adventure',
+    description:
+      'Slope Rider is an adrenaline-pumping sledding game where you race down snowy slopes, dodge obstacles, and aim for the highest score. Master your reflexes, survive tricky terrain, and unlock new sleds!',
+    keywords:
+      'slope rider, sledding game, winter racing, snow adventure, endless runner, obstacle dodging, high score challenge, snow sled game',
+    addressBar: 'Slope-Rider',
+    logoText: 'Slope Rider',
+    image: 'game-67.webp',
+    iframeUrl: 'https://game.azgame.io/slope-rider/',
+    showHeader: false,
+    showNew: true,
+    aboutContent: `
+        <h2>About Slope Rider</h2>
+        <p><strong>Slope Rider</strong> is a thrilling winter sledding adventure where speed, skill, and reflexes are your best friends. Navigate dynamic snowy slopes filled with hazards, breathtaking scenery, and endless opportunities to test your sledding prowess. Your goal is simple: survive as long as possible and score big by avoiding obstacles and maintaining smooth control.</p>
+        
+         <img src="/images/game67-img1.webp" alt="Slope Rider">
+
+        <h2>Experience Fast-Paced Snowy Action</h2>
+        <p>In <strong>Slope Rider</strong>, every run is unique. Snowy forests, icy hills, and treacherous terrain keep you on your toes. The longer you stay upright and avoid collisions, the higher your score climbs. But beware—pine trees, rolling snowballs, ice patches, and falling icicles all threaten your sledding journey.</p>
+
+        <h2>How to Play Slope Rider</h2>
+        <ul>
+          <li><strong>Steer Your Sled:</strong> Slide left or right to dodge obstacles while racing downhill at full speed.</li>
+          <li><strong>Jump to Avoid Hazards:</strong> Tap to leap over ice blocks, snow mounds, and other hazards.</li>
+          <li><strong>Stay Alert:</strong> One wrong move can end your run instantly, so keep your focus sharp!</li>
+          <li><strong>Collect Gifts:</strong> Grab scattered gift boxes along the slopes to unlock new sleds and stylish upgrades.</li>
+        </ul>
+        
+        <h2>Gameplay Objectives</h2>
+        <p>The main objective in <strong>Slope Rider</strong> is to last as long as possible while earning the highest score. Every second survived, every obstacle avoided, and every gift collected contributes to your final points. Speed, precision, and quick reflexes are essential for mastering the slopes.</p>
+        
+        <h2>Tips for Success</h2>
+        <p>
+          <strong>Anticipate Obstacles:</strong> Keep your eyes ahead to react quickly to trees, ice patches, and rolling snowballs.<br>
+          <strong>Perfect Your Timing:</strong> Learn the right moments to jump and steer for maximum control.<br>
+          <strong>Unlock New Sleds:</strong> Use collected gifts to try out different sleds, each offering unique looks and slight variations in handling.<br>
+        </p>
+        
+        <p>With its fast-paced gameplay, beautiful winter landscapes, and challenging obstacles, <strong>Slope Rider</strong> offers endless fun for players of all skill levels. Jump on your sled, test your reflexes, and see how far you can ride!</p>
+      `,
+  },
+
+  game68: {
+    id: 'meme-puzzle',
+    title: 'Meme Puzzle - Funny Meme Matching Challenge',
+    description:
+      'Meme Puzzle is a hilarious matching game where you solve meme-themed jigsaw puzzles. Piece together your favorite memes, test your puzzle skills, and enjoy endless fun!',
+    keywords:
+      'meme puzzle, meme matching game, jigsaw puzzle, funny memes, brain teaser, casual game, puzzle challenge, meme game',
+    addressBar: 'Meme-Puzzle',
+    logoText: 'Meme Puzzle',
+    image: 'game-68.webp',
+    iframeUrl: 'https://game.azgame.io/meme-puzzle/',
+    showHeader: false,
+    showNew: true,
+    aboutContent: `
+        <h2>About Meme Puzzle</h2>
+        <p><strong>Meme Puzzle</strong> is a lighthearted and entertaining puzzle game where you can enjoy solving jigsaw puzzles featuring hilarious memes. Each puzzle brings a popular meme to life, providing endless fun for casual gamers and meme lovers alike.</p>
+        
+        <img src="/images/game68-img1.webp" alt="Meme Puzzle">
+        
+        <h2>Why Meme Puzzle is Fun</h2>
+        <p>The game combines the challenge of classic jigsaw puzzles with the humor of viral memes. Piece together images to complete memes and unlock new funny content. It’s perfect for passing time, exercising your brain, and laughing at your favorite internet culture moments.</p>
+        
+        <h2>How to Play Meme Puzzle</h2>
+        <ul>
+          <li><strong>Select a Puzzle:</strong> Choose from a wide variety of meme images to start.</li>
+          <li><strong>Drag & Drop Pieces:</strong> Move pieces around to match edges and complete the image.</li>
+          <li><strong>Use Hints:</strong> Get hints if you’re stuck, helping you find the right spot for tricky pieces.</li>
+          <li><strong>Complete Puzzles:</strong> Finish the puzzle to unlock more memes and increase your score.</li>
+        </ul>
+        
+        <h2>Gameplay Objectives</h2>
+        <p>Your main goal is to complete as many meme puzzles as possible. The faster you finish, the higher your score. Pay attention to piece shapes, colors, and details to assemble the memes correctly.</p>
+        
+        <h2>Tips for Success</h2>
+        <p>
+          <strong>Start with Corners:</strong> Identify corner and edge pieces first to frame your puzzle.<br>
+          <strong>Sort Pieces by Color:</strong> Group similar colors or patterns to make assembling easier.<br>
+          <strong>Enjoy the Humor:</strong> Remember to have fun—the memes are meant to make you laugh while you play.<br>
+        </p>
+        
+        <p>With its mix of puzzle-solving and meme entertainment, <strong>Meme Puzzle</strong> is perfect for gamers looking for a casual, funny, and brain-engaging experience. Solve memes, collect laughs, and challenge yourself!</p>
+      `,
+  }
 
 
 
@@ -3421,5 +3442,9 @@ game63: {
 
 
 
-  
+
+
+
+
+
 }
