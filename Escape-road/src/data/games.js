@@ -2593,7 +2593,7 @@ export const games = {
     iframeUrl: 'https://game.azgame.io/2048-italian-brainrot/',
     // location: 'left',
     showHeader: false,
-    showNew: true,
+    showNew: false,
     aboutContent: `
     <h2>2048 Italian Brainrot: Game Guide & Key Highlights</h2>
     <p>2048 Italian Brainrot is a humorous and chaotic take on the classic 2048 puzzle game. Merge quirky Italian-inspired characters and items to form the highest-numbered combinations. The game offers both the strategic challenge of 2048 and the wacky, brainrot humor fans love.</p>
@@ -2654,7 +2654,7 @@ export const games = {
     iframeUrl: 'https://1games.io/game/merge-fellas-italian-brainrot/',
     // location: 'left',
     showHeader: false,
-    showNew: true,
+    showNew: false,
     aboutContent: `
     <h2>Merge Fellas Italian Brainrot: Game Guide & Key Highlights</h2>
     <p>Merge Fellas Italian Brainrot is a quirky and chaotic merge game that brings Italian-themed brainrot characters and items into the fold. The goal is to combine these oddballs into even more absurd creations and experience the madness of Italian brainrot as you progress through hilarious and unpredictable merges.</p>
@@ -3432,7 +3432,103 @@ export const games = {
         
         <p>With its mix of puzzle-solving and meme entertainment, <strong>Meme Puzzle</strong> is perfect for gamers looking for a casual, funny, and brain-engaging experience. Solve memes, collect laughs, and challenge yourself!</p>
       `,
+  },
+
+  game69: {
+    id: 'lizard-lizard-clicker',
+    title: 'Lizard Lizard Clicker - Cute Idle Clicker Fun',
+    description:
+      'Lizard Lizard Clicker is a fun and quirky idle clicker game where you meet adorable lizards, click to earn points, and buy upgrades to unlock more lizards and boost your progress!',
+    keywords:
+      'lizard lizard clicker, idle clicker, clicker game, casual game, lizard game, upgrade clicker, idle fun, incremental game',
+    addressBar: 'Lizard-Lizard-Clicker',
+    logoText: 'Lizard Lizard Clicker',
+    image: 'game-69.webp',
+    iframeUrl: 'https://game.azgame.io/lizard-lizard-clicker/',
+    showHeader: false,
+    showNew: true,
+    aboutContent: `
+      <h2>About Lizard Lizard Clicker</h2>
+      <p><strong>Lizard Lizard Clicker</strong> is the latest addition to the Clicker Games collection, where players get to meet cute and quirky lizards by simply clicking and upgrading. Each click brings you closer to unlocking a new lizard companion, making it a relaxing and fun experience for casual gamers.</p>
+  
+      <img src="/images/game69-img1.webp" alt="Lizard Lizard Clicker">
+  
+      <h2>Lizard Lizard Clicker Gameplay Walkthrough</h2>
+      <p><strong>Lizard Lizard Clicker</strong> is a thrilling idle clicker game developed by Azgames.io. The gameplay is simple yet addictive—click the lizard to earn points, buy upgrades, and watch your progress skyrocket. Unlike many other idle games, this one is centered around a cast of unique lizards that appear as you hit milestones. Relax, collect, and enjoy the quirky charm!</p>
+  
+      <h2>Ready to Dive In? Here's How to Play</h2>
+      <ul>
+        <li><strong>Click to Start:</strong> Begin with nothing and click the lizard repeatedly to earn your first points. Each click gives you 1 point, and fast clicking can even earn you 2 points per click.</li>
+        <li><strong>Buy Upgrades:</strong> Use your earnings to purchase upgrades. These upgrades improve your click power and unlock idle income, allowing points to accumulate automatically.</li>
+        <li><strong>Unlock Lizards:</strong> As you progress, meet new and adorable lizards. Each one adds charm and keeps you motivated to keep clicking.</li>
+        <li><strong>Scale Up:</strong> The more upgrades you invest in, the faster your progress. Unlock stronger upgrades, boost your score, and continue the rewarding loop of clicking and upgrading.</li>
+      </ul>
+  
+      <h2>Gameplay Objectives</h2>
+      <p>The main goal of <strong>Lizard Lizard Clicker</strong> is simple: unlock as many lizards as possible while scaling up your earnings. There are no strict levels or competition—just relaxed, incremental progress and the joy of discovering more lizards with each milestone.</p>
+  
+      <h2>Tips for Success</h2>
+      <p>
+        <strong>Click First:</strong> Focus on clicking early to earn your starter points.<br>
+        <strong>Upgrade Wisely:</strong> Buy the most impactful upgrades early to boost both clicks and idle income.<br>
+        <strong>Keep Unlocking:</strong> Stay motivated by unlocking new lizards, which keeps the game fresh and fun.<br>
+        <strong>Relax & Enjoy:</strong> Remember, the game is about laid-back fun. No rush, no stress—just clicks and lizards!<br>
+      </p>
+  
+      <p>With its mix of incremental progress and quirky lizard characters, <strong>Lizard Lizard Clicker</strong> offers a funny, relaxing, and endlessly replayable clicker experience. Click, upgrade, unlock, and enjoy your journey with these charming lizards!</p>
+    `,
+  },
+
+  game70: {
+    id: 'hoop-legends',
+    title: 'Hoop Legends - Realistic 3D Basketball Game',
+    description:
+      'Hoop Legends is a realistic 3D basketball game with immersive visuals, smooth gameplay, and exciting customization options. Play now and shoot your way to victory!',
+    keywords:
+      'hoop legends, basketball game, 3D basketball, sports game, hoop shooting, basketball simulator, casual sports game, basketball challenge',
+    addressBar: 'Hoop-Legends',
+    logoText: 'Hoop Legends',
+    image: 'game-70.webp',
+    iframeUrl: 'https://game.azgame.io/hoop-legends/',
+    showHeader: false,
+    showNew: true,
+    aboutContent: `
+      <h2>About Hoop Legends</h2>
+      <p><strong>Hoop Legends</strong> is a realistic 3D basketball game packed with different modes and customization options. Unlike many other sports games, it emphasizes lifelike basketball visuals and immersive gameplay, giving you a truly engaging hoops experience. Play it now on AZgames.io and enjoy the thrill of shooting baskets!</p>
+  
+      <img src="/images/game70-img1.webp" alt="Hoop Legends">
+  
+      <h2>More About Hoop Legends</h2>
+      <p><strong>Hoop Legends</strong> is perfect for anyone who loves basketball. The gameplay is focused on hooping and scoring, keeping things fast and exciting without unnecessary complexity. With its strong customization features, different play modes, and realistic animations, this game brings the excitement of the court straight to your fingertips.</p>
+  
+      <h2>Gameplay Highlights</h2>
+      <ul>
+        <li><strong>Immersive Graphics:</strong> Realistic 3D visuals with smooth animations make every shot feel authentic and satisfying.</li>
+        <li><strong>Multiple Game Modes:</strong> Play single-player challenges, timed shooting matches, and more exciting modes.</li>
+        <li><strong>Customization:</strong> Unlock basketball skins, uniforms, and unique courts to personalize your experience.</li>
+        <li><strong>Easy Controls:</strong> Intuitive drag-and-release mechanics make shooting hoops simple and fun.</li>
+      </ul>
+  
+      <h2>Shoot the Hoop & Become a Court Legend</h2>
+      <p>Choose your favorite mode and jump into the action. In time-based challenges, score as many baskets as possible within the limit. In competitive modes, outscore your opponent to claim victory. Each successful basket increases your score, bringing you closer to becoming a true hoop legend.</p>
+  
+      <p>With the MP you earn, unlock new basketballs, courts, and uniforms. These upgrades not only enhance the visuals but may also provide small performance boosts, keeping the game fresh and rewarding as you progress.</p>
+  
+      <h2>How to Play</h2>
+      <ul>
+        <li><strong>Aim Your Shot:</strong> Drag to set your angle and power.</li>
+        <li><strong>Release to Shoot:</strong> Let go to throw the ball toward the hoop.</li>
+        <li><strong>Score Points:</strong> Only baskets that go in count toward your score.</li>
+      </ul>
+  
+      <h2>Game Controls</h2>
+      <p>Use the <strong>left mouse button</strong> to swipe and throw the basketball toward the hoop.</p>
+  
+      <p>Whether you’re aiming for high scores or unlocking all customization options, <strong>Hoop Legends</strong> offers a fun and engaging basketball experience. Shoot, score, and prove yourself as the ultimate hoop legend!</p>
+    `,
   }
+  
+  
 
 
 
