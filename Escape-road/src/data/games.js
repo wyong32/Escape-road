@@ -2715,7 +2715,7 @@ export const games = {
     iframeUrl: 'https://azgames.io/sugar-sugar.embed',
     // location: 'left',
     showHeader: false,
-    showNew: true,
+    showNew: false,
     aboutContent: `
     <h2>Sugar Sugar: Game Guide & Key Highlights</h2>
     <p>Sugar Sugar is a relaxing and creative physics-based puzzle game that challenges you to draw lines and guide falling sugar granules into designated cups. This game is both soothing and mentally engaging, making it perfect for puzzle lovers and casual players looking for a relaxing experience.</p>
@@ -2776,7 +2776,7 @@ export const games = {
     iframeUrl: 'https://1games.io/game/geometry-lite/',
     // location: 'left',
     showHeader: false,
-    showNew: true,
+    showNew: false,
     aboutContent: `
     <h2>Geometry Lite: Rhythm and Precision Platforming</h2>
     <p><strong>Geometry Lite</strong> takes you into a world of rhythm and precision where one wrong move can end your run. This challenging platformer combines vibrant beats, tricky terrains, and intense obstacle courses. The difficulty ranges from Easy to Demon, but even the starting levels require sharp focus and perfect timing.</p>
@@ -3526,9 +3526,93 @@ export const games = {
   
       <p>Whether you’re aiming for high scores or unlocking all customization options, <strong>Hoop Legends</strong> offers a fun and engaging basketball experience. Shoot, score, and prove yourself as the ultimate hoop legend!</p>
     `,
+  },
+  
+  game71: {
+    id: "jump-boy-jack",
+    logoText: "Jump Boy Jack",
+    addressBar: "jump-boy-jack-arcade-game",
+    iframeUrl: "https://play.gamepix.com/jump-boy-jack/embed?sid=e4515",
+    publishDate: "2025-10-13",
+    image: "game-71.webp",
+    title: "Jump Boy Jack - Addictive Arcade Jumping Game | Play Now!",
+    description: "Jump Boy Jack: A fast-paced arcade adventure where jumping prowess earns top scores. Dodge monsters, collect points, and conquer the leaderboards on mobile and PC.",
+    keywords: "jump, boy, jack, jumping game, arcade, mobile game, PC game, platformer, action game, online game",
+    showHeader: false,
+    showNew: true,
+    aboutContent: `
+    <div class="game-details">
+    <h2>JUMP BOY JACK: A Leap into Arcade Fun</h2>
+    <p>The arcade gaming scene is constantly evolving, but classic gameplay never goes out of style. <b>Jump Boy Jack</b> taps into this enduring appeal, offering a dynamic experience that's both accessible and challenging. In today's market, players crave instant gratification combined with skill-based progression, and this game delivers on both fronts. With its simple controls and increasingly complex levels, <b>Jump Boy Jack</b> provides hours of entertainment for players of all skill levels.</p>
+  
+    <h2>Mastering the Jump: Key to Success</h2>
+    <p>At its core, <b>Jump Boy Jack</b> is about precision and timing. Every <b>jump</b> must be carefully calculated to avoid enemies and collect valuable points. The game leverages the inherent fun of platforming, a genre that has captivated audiences for decades. The market trends show a resurgence of retro-inspired games, and <b>Jump Boy Jack</b> perfectly fits this niche. Its bright visuals and engaging sound effects create an immersive experience that keeps players coming back for more.</p>
+  
+    <h2>Gameplay Mechanics</h2>
+    <p>To achieve high scores in <b>Jump Boy Jack</b>, consider these tips:</p>
+    <ul>
+      <li><b>Strategic Jumping:</b> Plan your jumps ahead to avoid obstacles and monsters.</li>
+      <li><b>Collect Power-ups:</b> Grab special items to boost your score and abilities.</li>
+      <li><b>Master the Timing:</b> Precise timing is crucial for navigating the challenging levels.</li>
+    </ul>
+  
+    <h2>Why Jump Boy Jack Stands Out</h2>
+    <p>In a crowded market of mobile and PC games, <b>Jump Boy Jack</b> distinguishes itself through its engaging gameplay loop and accessibility. The game's intuitive controls make it easy to pick up and play, while the increasing difficulty curve ensures that players are constantly challenged. The art style is vibrant and appealing, making it a visually engaging experience.</p>
+  
+    <h2>Target Audience & Market Analysis</h2>
+    <p><b>Jump Boy Jack</b> appeals to a broad audience, including casual gamers looking for a quick and fun experience, as well as hardcore players seeking a challenging score-based game. The game's availability on both mobile and PC platforms expands its reach and caters to different gaming preferences. Market research indicates a strong demand for simple yet addictive arcade games, and <b>Jump Boy Jack</b> is well-positioned to capitalize on this trend.</p>
+    <p>The character <b>Jump Boy Jack</b> is a simple, lovable one. Players will love taking control of <b>Jump Boy Jack</b> to achieve the best possible score. Every perfect <b>jump</b> is satisfying. </p>
+  
+    <h2>The Future of Arcade Gaming</h2>
+    <p>Arcade games are evolving, blending classic gameplay with modern technology. <b>Jump Boy Jack</b> embraces this evolution, offering a seamless experience across multiple platforms. As the gaming market continues to grow, games like <b>Jump Boy Jack</b> will play a crucial role in shaping the future of arcade entertainment. It is a lot of fun to watch <b>Jump Boy Jack</b> progress through the game.</p>
+  
+  </div>`,
+  },
+
+  game72: {
+    id: "eggy-car",
+    logoText: "Eggy Car",
+    addressBar: "eggy-car-driving-game",
+    iframeUrl: "https://azgames.io/eggy-car.embed",
+    publishDate: "2025-10-13",
+    image: "game-72.webp",
+    title: "Eggy Car: The Ultimate Balancing Act - Play Free Online!",
+    description: "Play Eggy Car online for free! Test your balance and driving skills as you transport a fragile egg across treacherous terrain. Unlock cars and beat your high score!",
+    keywords: "Eggy Car, driving game, balance game, free online game, Beedo Games, Azgames",
+    showHeader: false,
+    showNew: true,
+    aboutContent: `<div class="container">
+   <h2>Eggy Car: A Hilariously Challenging Driving Adventure</h2>
+   <p>Prepare for a uniquely frustrating and addictive experience with <b>Eggy Car</b>! This physics-based driving game from Beedo Games puts you in the driver's seat of a car precariously balancing a single, fragile egg. Your mission? To transport that egg as far as possible across a series of undulating, obstacle-ridden roads. Released in February 2019, this simple premise unlocks hours of surprisingly engaging gameplay.</p>
+   <h2>How to Play Eggy Car and Not Crack Under Pressure</h2>
+   <p>The core gameplay of <b>Eggy Car</b> is deceptively simple. Use the arrow keys (or A and D) to control the car's acceleration. The catch? Overdoing it in either direction will send your eggy passenger tumbling to its doom. Careful throttle control and precise timing are crucial to navigate the hills, dips, and bumps that stand between you and a new distance record.</p>
+   <p>Along the way, you'll encounter coins scattered across the landscape. Collecting these coins is essential, as they can be used to unlock new and improved <b>car</b> models. These new vehicles boast unique handling characteristics, potentially giving you the edge you need to conquer even the most treacherous stretches of road. The ultimate goal is to purchase the most expensive car, priced at a cool 1000 coins, and see just how far you can push your eggy luck!</p>
+   <h3>Eggy Car Controls and Features</h3>
+   <ul>
+    <li><b>Right Arrow / D:</b> Accelerate Forward</li>
+    <li><b>Left Arrow / A:</b> Accelerate Backward</li>
+   </ul>
+   <h3>Key Features:</h3>
+   <ul>
+    <li>Realistic Physics: Experience the thrill of truly unbalanced driving!</li>
+    <li>Easy to Learn, Hard to Master: Simple controls, but a high skill ceiling.</li>
+    <li>Increasing Difficulty: The further you go, the trickier the terrain becomes.</li>
+    <li>Unlockable Cars: Experiment with different vehicles to find your perfect eggy transport.</li>
+    <li>Vibrant Graphics: A charming and colorful art style.</li>
+   </ul>
+   <h2>Top Tips for Eggy Car Success</h2>
+   <p>Mastering <b>Eggy Car</b> requires patience, precision, and a healthy dose of trial and error. Here are a few tips to help you improve your eggy-driving skills:</p>
+   <ul>
+    <li><b>Gentle Acceleration:</b> Avoid sudden bursts of speed. Smooth, controlled movements are key.</li>
+    <li><b>Patience is a Virtue:</b> Don't rush! Take your time to assess the terrain and plan your approach.</li>
+    <li><b>Hill Navigation:</b> Learn to anticipate the car's momentum and adjust your speed accordingly when climbing or descending hills.</li>
+    <li><b>Coin Collection:</b> Prioritize collecting coins to unlock better cars, but not at the expense of your eggy cargo!</li>
+    <li><b>Practice Makes Perfect:</b> The more you play, the better you'll become at anticipating the car's movements and maintaining balance.</li>
+   </ul>
+   <h2>Ready to Play Eggy Car?</h2>
+   <p><b>Eggy Car</b> offers a unique and addictive blend of driving, skill, and physics-based gameplay. Its simple premise and challenging mechanics make it a perfect choice for a quick gaming break. Head over to <a href="https://azgames.io/eggy-car.embed">Azgames.io</a> and play <b>Eggy Car</b> for free today! See if you have what it takes to deliver the egg and become an Eggy Car champion. Good luck, and try not to crack under the pressure!</p>
+  </div>`
   }
-  
-  
 
 
 
