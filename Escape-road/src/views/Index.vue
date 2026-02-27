@@ -112,6 +112,20 @@
                 </div>
               </aside>
             </div>
+
+            <!-- Escaperoad-展示广告纵向3 -->
+            <aside class="ads-wrapper" v-if="!isMobile">
+          <ins
+            :key="`pc-top-${adKey}`"
+            class="adsbygoogle"
+            style="display: block"
+            data-ad-client="ca-pub-5437957765171705"
+            data-ad-slot="8679817511"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          ></ins>
+        </aside>
+
             <!-- PC端NewGames，桌面端显示 -->
             <NewGames class="desktop-only" />
             <!-- 移动端布局 -->
@@ -163,6 +177,21 @@
           </div>
           <!-- 主内容区域外层包裹结束 -->
         </div>
+
+        <!-- 头部横幅广告-PC -->
+        <aside class="ads-wrapper" v-if="!isMobile">
+          <ins
+            :key="`pc-top-${adKey}`"
+            class="adsbygoogle"
+            style="display: block"
+            data-ad-client="ca-pub-5437957765171705"
+            data-ad-slot="8679817511"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          ></ins>
+        </aside>
+
+
         <footer class="below" role="contentinfo" aria-label="Game information and recommendations">
           <About :game-id="currentGameId" />
           <!-- 移动端底部广告-PH -->
